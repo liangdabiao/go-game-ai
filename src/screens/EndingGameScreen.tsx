@@ -49,6 +49,7 @@ export function EndingGameScreen({
 
     const progress = save.progress[level.id];
     const stars = totalStars(save);
+    const points = totalPoints(save);
     const nextLevel = getNextLevel(level.id);
 
     const complete = useCallback(() => {
@@ -147,6 +148,7 @@ export function EndingGameScreen({
                 title={t}
                 subtitle={locale === "zh" ? `第 ${level.order} 关` : `Level ${level.order}`}
                 totalStars={stars}
+                totalPoints={points}
                 locale={locale}
                 onBack={onBack}
             />

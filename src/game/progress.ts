@@ -58,6 +58,15 @@ export function loadSave(): GameSave {
             } else if (typeof parsed.progress[level.id].bestPoints !== "number") {
                 parsed.progress[level.id].bestPoints = 0;
             }
+            // 旧存档回填：已通关但没积分记录的关卡，按最佳星数折算（100/星）
+            const lv = parsed.progress[level.id];
+            if (
+                lv.status === "completed" &&
+                lv.bestPoints === 0 &&
+                (lv.bestStars ?? 0) > 0
+            ) {
+                lv.bestPoints = lv.bestStars * 100;
+            }
         }
         return parsed;
     } catch {

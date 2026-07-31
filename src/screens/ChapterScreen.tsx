@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { LEVELS } from "../game/levels";
-import { chapterStats, getChapter, loadSave, totalStars } from "../game/progress";
+import { chapterStats, getChapter, loadSave, totalPoints, totalStars } from "../game/progress";
 import type { GameSave, Locale } from "../game/types";
 import { LevelTile } from "../components/LevelTile";
 import { TopBar } from "../components/TopBar";
@@ -33,6 +33,7 @@ export function ChapterScreen({ chapterId, locale, onBack, onSelectLevel }: Chap
     const chapter = getChapter(chapterId);
     const levels = LEVELS.filter((l) => l.chapterId === chapterId);
     const stars = totalStars(save);
+    const points = totalPoints(save);
     const stats = chapterStats(chapterId, save);
 
     const title = chapter
@@ -48,6 +49,7 @@ export function ChapterScreen({ chapterId, locale, onBack, onSelectLevel }: Chap
                 title={title}
                 subtitle={subtitle}
                 totalStars={stars}
+                totalPoints={points}
                 locale={locale}
                 onBack={onBack}
             />

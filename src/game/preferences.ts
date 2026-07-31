@@ -47,9 +47,9 @@ const BGM_KEY = "go-game:bgm";
 export function loadBgmEnabled(): boolean {
     try {
         const v = localStorage.getItem(BGM_KEY);
-        return v !== null ? v !== "0" : false;
+        return v !== null ? v !== "0" : true;
     } catch {
-        return false;
+        return true;
     }
 }
 

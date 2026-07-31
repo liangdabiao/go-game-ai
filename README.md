@@ -23,7 +23,7 @@
 - **三星评分**：按错误次数评星，鼓励完美通关
 - **世界地图 / 章节 / 关卡**三级导航，进度可视化
 - **中文优先**，内置英文切换
-- **音效与背景音乐**全部用 Web Audio API 实时合成（无音频文件）
+- **音效**用 Web Audio API 实时合成，**背景音乐**播放内置 `aaa.mp3`
 - **纯静态 SPA**，无后端，localStorage 存档，断网可玩
 - **响应式**，桌面与手机浏览器自适应
 
@@ -59,7 +59,8 @@ go-game/
 ├── tsconfig.json
 ├── package.json
 ├── public/
-│   └── favicon.svg             # SVG 棋子图标
+│   ├── favicon.svg             # SVG 棋子图标
+│   └── aaa.mp3                 # 背景音乐（循环播放）
 ├── scripts/                    # 关卡数据抽取与翻译脚本
 │   ├── extract-levels.ts       # 从 OGS LearningHub 源码 AST 抽取关卡
 │   ├── generate-chapter.ts     # 生成章节 TS 数据
@@ -87,7 +88,7 @@ go-game/
     │   ├── progress.ts         # 存档与解锁逻辑（localStorage）
     │   ├── preferences.ts      # 语言 / 音效 / BGM 持久化
     │   ├── audio.ts            # Web Audio 音效合成
-    │   ├── bgm.ts              # Web Audio 电子背景音乐合成
+    │   ├── bgm.ts              # 背景音乐播放（public/aaa.mp3，默认开）
     │   ├── engine.ts           # 谜题判定引擎（正确/错误点）
     │   ├── moveTree.ts         # move_tree / marks 构造
     │   └── chapters/           # 7 个章节的关卡数据（自动生成）
@@ -125,13 +126,13 @@ go-game/
 | `go-game:save` | 关卡完成状态、最佳星数、解锁进度 |
 | `go-game:locale` | `zh` / `en` |
 | `go-game:sound` | 音效开关（默认开） |
-| `go-game:bgm` | BGM 开关（默认关） |
+| `go-game:bgm` | BGM 开关（默认开） |
 
 ## 技术要点
 
 - **Vendored goban**：`src/vendor/goban/` 是从 OGS 主仓 `submodules/goban/` 裁剪出来的纯棋盘引擎，只保留单机谜题模式需要的部分，去掉了 socket、对手、计时等在线逻辑。通过 `vite.config.ts` 的 `goban` 别名引入。
 - **AST 抽取**：`scripts/extract-levels.ts` 用 TypeScript Compiler API 解析 LearningHub 的 `.tsx` 源码，识别 `<PuzzleConfig>`、`<div>` + `<label>` 等结构，输出 JSON 中间产物。
-- **Web Audio 合成**：音效和 138 BPM 电子 BGM 全部用 `OscillatorNode` / `GainNode` / 噪声缓冲实时合成，零音频资源。
+- **Web Audio 合成**：音效用 `OscillatorNode` / `GainNode` 实时合成，零音频资源；背景音乐播放 `public/aaa.mp3`（`HTMLAudioElement` 循环 + 渐入渐出）。
 - **Hash 路由**：导航用 React 内存状态 + `location.hash`（`#level=<id>`），所以部署到任意静态主机都不需要配置 SPA fallback 重写规则。
 
 ## 部署
@@ -153,7 +154,7 @@ npx edgeone makers deploy dist -n go-game
 
 ### 修改 BGM
 
-`src/game/bgm.ts` 顶部定义了 BPM、音阶表、旋律（`LEAD`）、贝斯（`BASS`）、镲片（`HAT`）三个数组，每个数组长度 32（对应 4 小节 × 8 个八分音符）。改数组即可换曲，无需音频文件。
+把 `public/aaa.mp3` 替换成自己的音频文件即可换曲（默认循环播放、默认开启）。音量在 `src/game/bgm.ts` 顶部 `VOLUME` 常量调整。
 
 ### 调试单关
 
@@ -171,3 +172,5 @@ http://localhost:5173/#level=<level-id>
 ## License
 
 [AGPL-3.0](./LICENSE)（与 online-go.com 主项目一致）。
+
+感谢 https://linux.do 社区佬友

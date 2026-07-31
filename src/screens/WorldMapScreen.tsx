@@ -13,6 +13,7 @@ interface WorldMapScreenProps {
 export function WorldMapScreen({ locale, onSelectChapter }: WorldMapScreenProps): React.ReactElement {
     const [save, setSave] = useState<GameSave>(() => loadSave());
     const stars = totalStars(save);
+    const points = totalPoints(save);
 
     return (
         <div className="worldmap-screen">
@@ -20,6 +21,7 @@ export function WorldMapScreen({ locale, onSelectChapter }: WorldMapScreenProps)
                 title={locale === "zh" ? "章节地图" : "Chapter Map"}
                 subtitle={locale === "zh" ? `${LEVELS.length} 关 · ${CHAPTERS.length} 章` : `${LEVELS.length} levels · ${CHAPTERS.length} chapters`}
                 totalStars={stars}
+                totalPoints={points}
                 locale={locale}
             />
             <div className="chapter-list">
