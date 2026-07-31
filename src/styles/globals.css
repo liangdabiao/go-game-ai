@@ -1,0 +1,461 @@
+:root {
+    color-scheme: dark;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background: #1a1d2e;
+    color: #e8e8f0;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1rem 3rem;
+}
+
+.app main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.app .menu-main {
+    max-width: 720px;
+}
+
+.app .level-main {
+    max-width: 600px;
+}
+
+/* ---------- LevelScreen ---------- */
+
+.level-screen {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+.level-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.level-title {
+    flex: 1;
+    text-align: center;
+}
+
+.level-title .level-no {
+    font-size: 0.75rem;
+    color: #8b8fa3;
+    letter-spacing: 0.05em;
+}
+
+.level-title h2 {
+    margin: 0.1rem 0 0;
+    font-size: 1.1rem;
+    color: #f5c451;
+}
+
+.stars-badge {
+    font-size: 0.8rem;
+    color: #f5c451;
+    background: rgba(245, 196, 81, 0.1);
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.instruction {
+    margin: 0;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid #f5c451;
+    border-radius: 4px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.instruction.wrong-flash {
+    background: rgba(231, 76, 60, 0.18);
+    border-left-color: #e74c3c;
+}
+
+.go-game-board {
+    width: min(80vw, 560px);
+    height: min(80vw, 560px);
+    align-self: center;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.wrong-count {
+    color: #e74c3c;
+    font-size: 0.85rem;
+}
+
+.best-record {
+    color: #6bce8a;
+    font-size: 0.85rem;
+}
+
+.ghost-btn,
+.primary-btn {
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.ghost-btn {
+    background: rgba(255, 255, 255, 0.06);
+    color: #c5c9dd;
+}
+
+.ghost-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.primary-btn {
+    background: #f5c451;
+    color: #1a1d2e;
+    font-weight: 600;
+}
+
+.primary-btn:hover {
+    background: #ffd470;
+}
+
+/* ---------- Result dialog ---------- */
+
+.result-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    animation: fade-in 0.18s ease-out;
+}
+
+.result-card {
+    background: #232845;
+    border: 1px solid rgba(245, 196, 81, 0.3);
+    border-radius: 12px;
+    padding: 1.75rem 2rem 1.5rem;
+    width: min(90vw, 320px);
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.result-title {
+    font-size: 1.4rem;
+    color: #f5c451;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.result-stars {
+    font-size: 2.4rem;
+    line-height: 1;
+    margin: 0.5rem 0 0.75rem;
+}
+
+.result-stars .star {
+    color: #444;
+    margin: 0 0.1rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.result-stars .star.on {
+    color: #f5c451;
+    transform: scale(1.1);
+}
+
+.result-points {
+    color: #8b8fa3;
+    margin-bottom: 1.25rem;
+}
+
+.result-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ---------- TopBar (shared) ---------- */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.topbar-back {
+    min-width: 5rem;
+}
+
+.topbar-spacer {
+    min-width: 5rem;
+}
+
+.topbar-title {
+    flex: 1;
+    text-align: center;
+}
+
+.topbar-subtitle {
+    font-size: 0.72rem;
+    color: #8b8fa3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.topbar-title h2 {
+    margin: 0.15rem 0 0;
+    font-size: 1.05rem;
+    color: #f5c451;
+    line-height: 1.2;
+}
+
+/* ---------- WorldMap ---------- */
+
+.worldmap-screen,
+.chapter-screen {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.chapter-card {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: #232845;
+    border: 1px solid rgba(245, 196, 81, 0.18);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+.chapter-card:hover:not(.locked) {
+    border-color: rgba(245, 196, 81, 0.5);
+    transform: translateY(-1px);
+}
+
+.chapter-card.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.chapter-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+}
+
+.chapter-title {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #f5c451;
+}
+
+.chapter-lock {
+    font-size: 0.95rem;
+}
+
+.chapter-desc {
+    margin: 0 0 0.6rem;
+    color: #8b8fa3;
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+.chapter-progress {
+    height: 5px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 0.4rem;
+}
+
+.chapter-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #f5c451, #ffd470);
+    transition: width 0.4s ease-out;
+}
+
+.chapter-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: #c5c9dd;
+}
+
+.chapter-stars {
+    color: #f5c451;
+}
+
+/* ---------- Chapter Screen ---------- */
+
+.chapter-description {
+    margin: 0 0 1rem;
+    padding: 0.6rem 0.9rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 2px solid #f5c451;
+    border-radius: 4px;
+    color: #c5c9dd;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+}
+
+@media (min-width: 540px) {
+    .level-grid {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+.level-tile {
+    aspect-ratio: 1;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #c5c9dd;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    padding: 0.35rem 0.2rem;
+    transition: transform 0.12s, background 0.12s, border-color 0.12s;
+}
+
+.level-tile:hover:not(:disabled) {
+    transform: translateY(-1px);
+    border-color: rgba(245, 196, 81, 0.4);
+}
+
+.level-tile.locked {
+    opacity: 0.4;
+    background: rgba(255, 255, 255, 0.02);
+    cursor: not-allowed;
+}
+
+.level-tile.unlocked {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e8e8f0;
+}
+
+.level-tile.completed {
+    background: linear-gradient(135deg, rgba(245, 196, 81, 0.25), rgba(245, 196, 81, 0.08));
+    border-color: rgba(245, 196, 81, 0.45);
+    color: #f5c451;
+}
+
+.level-tile-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.level-tile-no {
+    font-size: 1.05rem;
+}
+
+.level-tile-lock {
+    font-size: 0.95rem;
+}
+
+/* ---------- StarRow ---------- */
+
+.star-row {
+    display: inline-flex;
+    gap: 0.05rem;
+    line-height: 1;
+}
+
+.star-row .star {
+    color: #444;
+    transition: color 0.2s;
+}
+
+.star-row .star.on {
+    color: #f5c451;
+}
+
+.star-row.sm .star {
+    font-size: 0.55rem;
+}
+
+.star-row.md .star {
+    font-size: 0.85rem;
+}
+
+.star-row.lg .star {
+    font-size: 2.4rem;
+}

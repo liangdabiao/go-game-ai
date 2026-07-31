@@ -1,0 +1,23 @@
+{
+  "_comment": "Chinese translations for Fundamentals chapter. Keyed by source English string. Value is the Chinese translation.",
+  "Point A is surrounded by white stones; it is called an 'eye'. Black can not play at A (self-capture). Point B is also an eye, but Black can play at B and capture. Capture the white stones.": "A 点被白子包围，这叫『眼』。黑不能下在 A（自吃）。B 点也是眼，但黑可以下在 B 并吃掉白子。请吃掉这些白子。",
+  "White has a single bigger eye of two points, but the white group is not safe. Black to play. Capture the white stones by filling the eye point by point.": "白棋有一个由两个空点组成的大眼，但白棋并不安全。黑先，逐一填眼吃掉白棋。",
+  "White has two groups of stones. One group has two eyes. The other group has a single big eye. The group with two eyes is safe and can never be captured. Black to play. Capture a white group.": "白棋有两块棋。一块有两只眼，另一块只有一个大眼。两眼的那块是活的，永远吃不掉。黑先，吃掉那块可以吃的白棋。",
+  "One white group has two 'real' eyes. The other group has a real eye at A and a 'false' eye at B. The false eye is not safe and can be attacked. Black to play. Capture the white group by attacking the false eye.": "一块白棋有两只『真眼』。另一块在 A 处有真眼、在 B 处是『假眼』。假眼不安全，可以被攻破。黑先，从假眼入手吃掉这块白棋。",
+  "The game starts with an empty board. Two players, Black and White, take turns placing stones on the board. Black starts. You can play a stone on any empty intersection, even the outer ones. Make a move to continue.": "棋局从一个空棋盘开始。两位玩家，黑和白，轮流在棋盘上落子。黑棋先行。你可以在任意空交叉点落子，包括最外圈。请下一步继续。",
+  "Black has played the first move. Now it is White's turn. Make a move to continue.": "黑棋已经走了第一步。现在轮到白棋。请下一步继续。",
+  "The points next to a stone are called liberties. Fill one of the liberties of the black stone.": "棋子相邻的空点叫做『气』。请填上黑子的一个气。",
+  "A stone is captured when all its liberties are occupied by the opponent's stones. Capture the black stone by filling the last liberty of the black stone.": "当一个棋子所有的气都被对方棋子占满，它就被吃掉了。请填上黑子的最后一口气把它吃掉。",
+  "Stones of the same color next to each other form a chain. Fill one of the liberties of the black chain.": "同色相邻的棋子连成一气，称为『链』。请填上这条黑链的一个气。",
+  "The black chain has only one liberty left. This is called 'atari'. Capture the black chain that is in atari.": "这条黑链只剩一气了，这叫做『打吃』（atari）。请吃掉这条被打吃的黑链。",
+  "To prevent endlessly recapturing the same space, there is a special rule called the 'Ko rule' which prevents immediately recapturing the same position. Black can capture the marked white stone. White is not allowed to recapture the black stone immediately. White has to play elsewhere first. Capture the marked stone.": "为了避免无限互相提子，有一条特殊规则叫『劫规』：禁止立即提回同样的形状。黑可以吃掉标▲的白子，但白不能立刻提回。白必须先在别处下一手。请吃掉标▲的白子。",
+  "Capture the white group by exploiting the Ko rule.": "利用劫规吃掉这块白棋。",
+  "Connect your black stones.": "请把你的黑子连接起来。",
+  "Capture two white stones by exploiting the Ko rule.": "利用劫规吃掉这两颗白子。",
+  "White just captured a black stone by playing 1. To move past the ko rule, find a place to play for Black where White must capture. This is called a 'ko threat'. Next, Black can capture White's marked group.": "白刚走了 1 吃掉一颗黑子。要绕过劫规，请为黑棋找一个白必须应的地方下子，这叫做『劫材』。然后黑就能吃掉标▲的白棋。",
+  "White to play. Playing at A or B is called 'self-capture' (no liberties for White) and is not allowed. But playing at C is allowed, because it captures the marked stones, creating liberties for White. Capture the marked black stones.": "白先。下在 A 或 B 是『自杀』（白没有气），不允许。但下在 C 是允许的，因为能吃掉标▲的黑子从而给自己造出气。请吃掉标▲的黑子。",
+  "White to play. Both players are in atari. Placing a stone where you have no liberties is not allowed, unless you can capture stones. Capture one or more black stones.": "白先。双方都被打吃。没有气的着法不允许，除非能吃掉对方。请吃掉一颗或更多黑子。",
+  "You can play anywhere, but a good general strategy is to focus on the corners first, then sides, then the middle. Play a stone in the upper right hand corner.": "棋盘上哪里都能下，但常见的好策略是先占角、再占边、最后走中腹。请把棋子下在右上角。",
+  "Go can be played on any size board, but the most common are 9x9 (which you should start on), 13x13, and the most popular, 19x19. Play on the right side of the board (not in a corner).": "围棋的棋盘大小不限，但最常见的是 9×9（建议新手从这里开始）、13×13，以及最流行的 19×19。请把棋子下在棋盘右侧（不要下在角上）。",
+  "You will note that there are several circles on the board, these are called \"Star Points\". These are not particularly special, they are just useful for orienting yourself with the board. Play on a star point.": "棋盘上有几个圆点，叫做『星位』。它们本身并不特别，只是用来帮助定位。请下在任意一个星位上。"
+}

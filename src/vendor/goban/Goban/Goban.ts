@@ -1,0 +1,867 @@
+/*
+ * Copyright (C) Online-Go.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+// @ts-nocheck
+
+import { MARK_TYPES } from "./InteractiveBase";
+import { OGSConnectivity } from "./OGSConnectivity";
+import { GobanConfig } from "../GobanBase";
+import { callbacks } from "./callbacks";
+import { makeMatrix, StoneStringBuilder } from "../engine";
+import { getRelativeEventPosition } from "./canvas_utils";
+import { THEMES, THEMES_SORTED } from "./themes";
+import type { GobanTheme, GobanThemeBackgroundCSS } from "./themes/GobanTheme";
+
+export const GOBAN_FONT = "Verdana,Arial,sans-serif";
+export type ShadowTheme = "none" | "low" | "mid" | "high" | "custom" | "default" | "anime";
+export type BoardGridBackgroundSize = "9" | "13" | "19";
+export type BoardGridBackgroundNumericSize = 9 | 13 | 19;
+export type CustomBoardGridBackgrounds = Record<BoardGridBackgroundSize, string>;
+
+export const emptyCustomBoardGridBackgrounds: CustomBoardGridBackgrounds = {
+    "9": "",
+    "13": "",
+    "19": "",
+};
+
+export type BoardBackgroundAsset =
+    | { kind: "default"; url: string; hasGrid: false }
+    | {
+          kind: "grid";
+          url: string;
+          hasGrid: true;
+          size: BoardGridBackgroundNumericSize;
+          marginProfile: "coordinate-space-all-sides";
+          bakedCoordinates: false;
+      };
+
+export interface ResolvedBoardBackground {
+    baseCSS: GobanThemeBackgroundCSS;
+    grid?: {
+        asset: Extract<BoardBackgroundAsset, { kind: "grid" }>;
+        css: GobanThemeBackgroundCSS;
+        x: number;
+        y: number;
+        width: number;
+        height: number;
+        url: string;
+    };
+}
+
+function isBoardGridBackgroundSize(size: number): size is BoardGridBackgroundNumericSize {
+    return size === 9 || size === 13 || size === 19;
+}
+
+function boardGridBackgroundKey(size: BoardGridBackgroundNumericSize): BoardGridBackgroundSize {
+    switch (size) {
+        case 9:
+            return "9";
+        case 13:
+            return "13";
+        case 19:
+            return "19";
+    }
+}
+
+export interface CustomShadowConfig {
+    black?: {
+        gradientTransform?: string;
+        shadow_color?: string;
+    };
+    white?: {
+        gradientTransform?: string;
+        shadow_color?: string;
+    };
+}
+
+export interface GobanSelectedThemes {
+    "board": string;
+    "white": string;
+    "black": string;
+    "removal-graphic": "square" | "x";
+    "removal-scale": number;
+    "stone-scale": number;
+    "stone-shadows"?: ShadowTheme;
+    "custom-shadow-config"?: CustomShadowConfig;
+    /*
+     * V1 stores only one baked-grid background URL per supported board size, and those
+     * assets use the same margin geometry as a board with coordinate labels on all sides.
+     * Keep the renderer-facing asset descriptor more explicit than this compact preference
+     * so future small-margin assets, baked labels, label origins, and coordinate systems can
+     * be added without reinterpreting saved URLs.
+     */
+    "custom-board-grid-backgrounds"?: CustomBoardGridBackgrounds;
+}
+export type LabelPosition =
+    | "all"
+    | "none"
+    | "top-left"
+    | "top-right"
+    | "bottom-right"
+    | "bottom-left";
+
+export interface GobanMetrics {
+    width: number;
+    height: number;
+    mid: number;
+    offset: number;
+}
+
+export interface CaptureDisplayConfig {
+    stone_color: "black" | "white";
+    stone_count: number;
+    stone_radius?: number;
+    stone_overlap?: number;
+    max_stones?: number;
+}
+
+export interface CaptureDisplay {
+    readonly element: HTMLCanvasElement | SVGSVGElement;
+    updateStoneCount(count: number): void;
+    destroy(): void;
+}
+
+/* Max time between two releases on the same square for the timing-based
+ * double-click fallback to treat them as a double-click (#3364). */
+const DOUBLE_CLICK_TIMEOUT_MS = 500;
+
+/**
+ * Goban serves as a base class for our renderers as well as a namespace for various
+ * classes, types, and enums.
+ *
+ * You can't create an instance of a Goban directly, you have to create an instance of
+ * one of the renderers, such as GobanSVG.
+ */
+export abstract class Goban extends OGSConnectivity {
+    static THEMES = THEMES;
+    static THEMES_SORTED = THEMES_SORTED;
+
+    protected abstract setTheme(themes: GobanSelectedThemes, dont_redraw: boolean): void;
+
+    public parent!: HTMLElement;
+    protected title_div?: HTMLElement;
+    public evaluation_bar_container?: HTMLDivElement;
+    public evaluation_bar_div?: HTMLDivElement;
+    private analysis_scoring_color?: "black" | "white" | string;
+    private analysis_scoring_last_position: { i: number; j: number } = { i: NaN, j: NaN };
+    private _evaluation: number = 0.5;
+    private _evaluation_bar_width: number = 8;
+    private board_background_sync_key?: string;
+
+    /* State for the timing-based double-click fallback shared by the renderers
+     * (#3364). The browser does not always synthesize a native `dblclick`: if
+     * the DOM under the cursor is mutated between the two clicks (e.g. after an
+     * opponent's pass the board is redrawn when the provisional stone is placed)
+     * the click/dblclick events are dropped, which left `double-click-to-move`
+     * behaving like the submit-button mode. We therefore detect the double-tap
+     * ourselves from the timing + position of the two pointer releases. */
+    private last_pointer_up_timestamp = 0;
+    private last_pointer_up_square: { i: number; j: number } = { i: -1, j: -1 };
+    private synthesized_double_click = false;
+
+    private prng(seed: number, irrational: number): number {
+        return (((seed + irrational) % 1) - 0.5) * 2;
+    }
+
+    /**
+     * Resolve whether a pointer release should be handled as a single click, a
+     * double-click, or ignored, for `double-click-to-move`. Called from each
+     * renderer's `pointerUp` so the logic isn't duplicated. `double_clicked` is
+     * `true` when the browser delivered a native `dblclick` event.
+     *
+     * Returns:
+     *  - `"double"` — submit-as-double-click (place + submit),
+     *  - `"single"` — ordinary single click (place provisional),
+     *  - `"ignore"` — drop this event (wrong square, or a native `dblclick` that
+     *    we already handled via the timing fallback).
+     */
+    protected resolveDoubleClick(
+        pt: { i: number; j: number },
+        double_clicked: boolean,
+        right_click: boolean = false,
+    ): "single" | "double" | "ignore" {
+        if (right_click) {
+            /* A non-primary button (e.g. right-click) is never a
+             * double-click-to-move. Crucially we must not record its timing,
+             * otherwise a following primary click on the same square within the
+             * window would be mistaken for a double-click (#3364 review). The
+             * native `dblclick` event only ever fired for the primary button,
+             * so this matches the previous behavior. */
+            return "single";
+        }
+        const now = performance.now();
+        if (!double_clicked) {
+            let is_double = false;
+            /* Timing-based fallback: a second release on the same square shortly
+             * after the first is a double-click even when no native `dblclick`
+             * was emitted. */
+            if (
+                this.double_click_submit &&
+                !this.synthesized_double_click &&
+                this.last_pointer_up_square.i === pt.i &&
+                this.last_pointer_up_square.j === pt.j &&
+                now - this.last_pointer_up_timestamp <= DOUBLE_CLICK_TIMEOUT_MS
+            ) {
+                is_double = true;
+                this.synthesized_double_click = true;
+            } else {
+                this.synthesized_double_click = false;
+            }
+            this.last_pointer_up_timestamp = now;
+            this.last_pointer_up_square = pt;
+            return is_double ? "double" : "single";
+        }
+
+        /* Native `dblclick`. */
+        if (this.last_pointer_up_square.i !== pt.i || this.last_pointer_up_square.j !== pt.j) {
+            return "ignore";
+        }
+        /* Reset the timing baseline either way (whether or not we already
+         * handled this double via the fallback) so the first click of the next
+         * move can't chain off this now-stale timestamp and be mistaken for a
+         * double-click. */
+        const already_handled = this.synthesized_double_click;
+        this.synthesized_double_click = false;
+        this.last_pointer_up_timestamp = 0;
+        return already_handled ? "ignore" : "double";
+    }
+
+    public getStonePlacementOffset(i: number, j: number): { x: number; y: number } {
+        const max_shift = 0.05 * this.square_size;
+        const seed = ((this.game_id || 0) % 1000) / 1000;
+        const stone_index = 1 + i * this.width + j;
+        const dx = this.prng(seed, stone_index * Math.sqrt(2)) * max_shift;
+        const dy = this.prng(seed, stone_index * Math.sqrt(3)) * max_shift;
+        return { x: dx, y: dy };
+    }
+
+    constructor(config: GobanConfig, preloaded_data?: GobanConfig) {
+        super(config, preloaded_data);
+
+        if (config.display_width && this.original_square_size === "auto") {
+            const suppress_redraw = true;
+            this.setSquareSizeBasedOnDisplayWidth(config.display_width, suppress_redraw);
+        }
+
+        this.on("load", (_config) => {
+            if (this.display_width && this.original_square_size === "auto") {
+                const suppress_redraw = true;
+                this.setSquareSizeBasedOnDisplayWidth(this.display_width, suppress_redraw);
+            }
+        });
+
+        if (config.board_div) {
+            this.parent = config["board_div"];
+        } else {
+            this.no_display = true;
+            // unattached div dangle prevent null pointer refs
+            this.parent = document.createElement("div");
+        }
+        this.title_div = config["title_div"];
+
+        if (config.evaluation_bar) {
+            this.parent.style.position = "relative";
+            this.evaluation_bar_container = document.createElement("div");
+            this.evaluation_bar_container.style.position = "absolute";
+            this.evaluation_bar_container.style.top = "0";
+            this.evaluation_bar_container.style.left = "-1rem";
+            this.evaluation_bar_container.style.bottom = "0";
+            this.evaluation_bar_container.style.width = "0.5rem";
+            this.evaluation_bar_container.style.backgroundColor = "white";
+            this.evaluation_bar_container.style.marginRight = "4px";
+            this.evaluation_bar_container.style.overflow = "hidden";
+            //this.evaluation_bar_container.style.border = "1px solid #333";
+            this.evaluation_bar_div = document.createElement("div");
+            this.evaluation_bar_div.style.position = "absolute";
+            this.evaluation_bar_div.style.right = "0";
+            this.evaluation_bar_div.style.left = "0";
+            this.evaluation_bar_div.style.bottom = "0";
+            this.evaluation_bar_div.style.backgroundColor = "#112";
+            this.evaluation_bar_div.style.height = `${this._evaluation * 100}%`;
+            this.evaluation_bar_div.style.transition = "height 0.3s ease-in-out";
+            this.evaluation_bar_div.style.zIndex = "1000";
+            this.evaluation_bar_div.style.width = "100%";
+            this.evaluation_bar_container.appendChild(this.evaluation_bar_div);
+            this.evaluation_bar_container.style.border = "1px solid #666";
+            this.parent.appendChild(this.evaluation_bar_container);
+        }
+    }
+    public override destroy(): void {
+        super.destroy();
+    }
+
+    set evaluation(value: number) {
+        value = Math.max(0, Math.min(1, value));
+        if (this.evaluation_bar_div) {
+            this.evaluation_bar_div.style.height = `${value * 100}%`;
+        }
+    }
+
+    get evaluation(): number {
+        return this._evaluation;
+    }
+
+    protected getSelectedThemes(): GobanSelectedThemes {
+        if (callbacks.getSelectedThemes) {
+            return callbacks.getSelectedThemes();
+        }
+        //return {white:'Plain', black:'Plain', board:'Plain'};
+        //return {white:'Plain', black:'Plain', board:'Kaya'};
+        return {
+            "white": "Shell",
+            "black": "Slate",
+            "board": "Kaya",
+            "removal-graphic": "square",
+            "removal-scale": 1.0,
+            "stone-scale": 1.0,
+            "stone-shadows": "default",
+        };
+    }
+
+    protected putOrClearLabel(x: number, y: number, mode?: "put" | "clear"): boolean {
+        let ret = false;
+        if (mode == null || typeof mode === "undefined") {
+            if (this.analyze_subtool === "letters" || this.analyze_subtool === "numbers") {
+                this.label_mark = this.label_character;
+                ret = this.toggleMark(x, y, this.label_character, true);
+                if (ret === true) {
+                    this.incrementLabelCharacter();
+                } else {
+                    this.setLabelCharacterFromMarks();
+                }
+            } else {
+                this.label_mark = this.analyze_subtool;
+                ret = this.toggleMark(x, y, this.analyze_subtool);
+            }
+        } else {
+            if (mode === "put") {
+                ret = this.toggleMark(x, y, this.label_mark, this.label_mark.length <= 3, true);
+            } else {
+                const marks = this.getMarks(x, y);
+
+                for (let i = 0; i < MARK_TYPES.length; ++i) {
+                    delete marks[MARK_TYPES[i]];
+                }
+                this.drawSquare(x, y);
+            }
+        }
+
+        this.syncReviewMove();
+        return ret;
+    }
+
+    protected getAnalysisScoreColorAtLocation(
+        x: number,
+        y: number,
+    ): "black" | "white" | string | undefined {
+        return this.getMarks(x, y).score;
+    }
+    protected putAnalysisScoreColorAtLocation(
+        x: number,
+        y: number,
+        color?: "black" | "white" | string,
+        sync_review_move: boolean = true,
+    ): void {
+        const marks = this.getMarks(x, y);
+        marks.score = color;
+        this.drawSquare(x, y);
+        if (sync_review_move) {
+            this.syncReviewMove();
+        }
+    }
+    protected putAnalysisRemovalAtLocation(x: number, y: number, removal?: boolean): void {
+        const marks = this.getMarks(x, y);
+        marks.remove = removal;
+        marks.stone_removed = removal;
+        this.drawSquare(x, y);
+        this.syncReviewMove();
+    }
+
+    /** Marks scores on the board when in analysis mode. Note: this will not
+     * clear existing scores, this is intentional as I think it's the expected
+     * behavior of reviewers */
+    public markAnalysisScores() {
+        if (this.mode !== "analyze") {
+            console.error("markAnalysisScores called when not in analyze mode");
+            return;
+        }
+
+        /* Clear any previous auto-markings */
+        if (this.marked_analysis_score) {
+            for (let x = 0; x < this.width; ++x) {
+                for (let y = 0; y < this.height; ++y) {
+                    if (this.marked_analysis_score[y][x]) {
+                        this.putAnalysisScoreColorAtLocation(x, y, undefined, false);
+                    }
+                }
+            }
+        }
+
+        this.marked_analysis_score = makeMatrix(this.width, this.height, false);
+
+        const board_state = this.engine.cloneBoardState();
+
+        for (let x = 0; x < this.width; ++x) {
+            for (let y = 0; y < this.height; ++y) {
+                board_state.removal[y][x] ||= !!this.getMarks(x, y).stone_removed;
+            }
+        }
+
+        const territory_scoring =
+            this.engine.rules === "japanese" || this.engine.rules === "korean";
+        const scores = board_state.computeScoringLocations(!territory_scoring);
+        for (const color of ["black", "white"] as ("black" | "white")[]) {
+            for (const loc of scores[color].locations) {
+                this.putAnalysisScoreColorAtLocation(loc.x, loc.y, color, false);
+                this.marked_analysis_score[loc.y][loc.x] = true;
+            }
+        }
+        this.syncReviewMove();
+    }
+
+    public setSquareSizeBasedOnDisplayWidth(display_width: number, suppress_redraw = false): void {
+        this.display_width = display_width;
+
+        if (isNaN(this.display_width)) {
+            console.error("Invalid display width. (NaN)");
+            this.display_width = 320;
+        }
+
+        const square_size = Goban.computeSquareSizeFromDisplayWidth(this.display_width, {
+            bounded_width: this.bounded_width,
+            bounded_height: this.bounded_height,
+            draw_left_labels: this.draw_left_labels,
+            draw_right_labels: this.draw_right_labels,
+            draw_top_labels: this.draw_top_labels,
+            draw_bottom_labels: this.draw_bottom_labels,
+            evaluation_bar: !!this.evaluation_bar_container,
+        });
+        this.setSquareSize(square_size, suppress_redraw);
+        this.evaluation_bar_width = Goban.computeEvaluationBarWidth(this.display_width);
+    }
+
+    protected resolveBoardBackground(
+        theme_board: Pick<GobanTheme, "getBackgroundCSS">,
+        themes: GobanSelectedThemes,
+    ): ResolvedBoardBackground {
+        const default_css = theme_board.getBackgroundCSS();
+        const default_background: ResolvedBoardBackground = {
+            baseCSS: {
+                ...default_css,
+                "background-position": "",
+                "background-repeat": "",
+            },
+        };
+
+        if (themes.board !== "Custom" || this.width !== this.height) {
+            return default_background;
+        }
+
+        const board_size = this.width;
+        if (!isBoardGridBackgroundSize(board_size)) {
+            return default_background;
+        }
+
+        if (!Number.isFinite(this.square_size) || this.square_size <= 0) {
+            return default_background;
+        }
+
+        const url =
+            themes["custom-board-grid-backgrounds"]?.[boardGridBackgroundKey(board_size)].trim() ||
+            "";
+
+        if (!url) {
+            return default_background;
+        }
+
+        /*
+         * The first baked-grid asset profile is intentionally explicit:
+         * - marginProfile describes geometry, not whether coordinates are in the image.
+         * - bakedCoordinates stays false for v1 because OGS still draws labels as overlays.
+         * Future profiles can add small margins or baked coordinate labels without changing
+         * the meaning of existing saved preferences.
+         *
+         * The baked-grid image is rendered as a layer above the vector grid, not as a
+         * replacement for it. This is deliberate graceful degradation: if an external
+         * baked-grid URL is slow or broken, the browser simply leaves that layer blank and
+         * the default board background plus vector grid below remain usable. The default
+         * board image itself still falls back to the board color if its URL fails.
+         */
+        const asset: Extract<BoardBackgroundAsset, { kind: "grid" }> = {
+            kind: "grid",
+            url,
+            hasGrid: true,
+            size: board_size,
+            marginProfile: "coordinate-space-all-sides",
+            bakedCoordinates: false,
+        };
+        const virtual_width = (this.width + 2) * this.square_size;
+        const virtual_height = (this.height + 2) * this.square_size;
+        const visible_left =
+            this.bounds.left + (this.draw_left_labels && this.bounds.left === 0 ? 0 : 1);
+        const visible_top =
+            this.bounds.top + (this.draw_top_labels && this.bounds.top === 0 ? 0 : 1);
+
+        return {
+            baseCSS: default_background.baseCSS,
+            grid: {
+                asset,
+                url,
+                x: -visible_left * this.square_size,
+                y: -visible_top * this.square_size,
+                width: virtual_width,
+                height: virtual_height,
+                css: {
+                    "background-image": "url('" + url + "')",
+                    "background-size": `${virtual_width}px ${virtual_height}px`,
+                    "background-position": `${-visible_left * this.square_size}px ${
+                        -visible_top * this.square_size
+                    }px`,
+                    "background-repeat": "no-repeat",
+                },
+            },
+        };
+    }
+
+    /*
+     * Baked-grid backgrounds are synced from redraw, not only from theme changes,
+     * because their geometry follows square size, cropped bounds, and coordinate
+     * label margins. Keep that redraw call cheap: theme changes explicitly
+     * invalidate this key, and geometry changes produce a different key.
+     */
+    protected syncBoardBackgroundIfNeeded(
+        theme_board: Pick<GobanTheme, "getBackgroundCSS">,
+        themes: GobanSelectedThemes,
+        sync: (background: ResolvedBoardBackground) => void,
+        force: boolean = false,
+    ): void {
+        const sync_key = this.getBoardBackgroundSyncKey(themes);
+        if (!force && this.board_background_sync_key === sync_key) {
+            return;
+        }
+
+        sync(this.resolveBoardBackground(theme_board, themes));
+        this.board_background_sync_key = sync_key;
+    }
+
+    protected invalidateBoardBackgroundSync(): void {
+        this.board_background_sync_key = undefined;
+    }
+
+    private getBoardBackgroundSyncKey(themes: GobanSelectedThemes): string {
+        const grid_backgrounds = themes["custom-board-grid-backgrounds"];
+
+        return JSON.stringify([
+            themes.board,
+            grid_backgrounds?.["9"] || "",
+            grid_backgrounds?.["13"] || "",
+            grid_backgrounds?.["19"] || "",
+            this.width,
+            this.height,
+            this.square_size,
+            this.bounds.left,
+            this.bounds.top,
+            this.bounds.right,
+            this.bounds.bottom,
+            this.draw_left_labels,
+            this.draw_right_labels,
+            this.draw_top_labels,
+            this.draw_bottom_labels,
+        ]);
+    }
+
+    protected applyBaseBoardBackground(background: ResolvedBoardBackground): void {
+        const css = background.baseCSS;
+
+        this.parent.style.backgroundColor = css["background-color"] || "";
+        this.parent.style.backgroundImage = css["background-image"] || "";
+        this.parent.style.backgroundSize = css["background-size"] || "";
+        this.parent.style.backgroundPosition = css["background-position"] || "";
+        this.parent.style.backgroundRepeat = css["background-repeat"] || "";
+    }
+
+    set evaluation_bar_width(width: number) {
+        this._evaluation_bar_width = Math.max(0, Math.round(width));
+        if (this.evaluation_bar_container && this.evaluation_bar_div) {
+            this.evaluation_bar_container.style.width = `${this._evaluation_bar_width}px`;
+            this.evaluation_bar_container.style.left = `-${this._evaluation_bar_width + 8}px`;
+            this.evaluation_bar_div.style.width = `${this._evaluation_bar_width}px`;
+        }
+    }
+
+    get evaluation_bar_width(): number {
+        return this._evaluation_bar_width;
+    }
+
+    public static computeEvaluationBarWidth(display_width: number): number {
+        return Math.max(8, Math.round(display_width * 0.03));
+    }
+
+    public static computeSquareSizeFromDisplayWidth(
+        display_width: number,
+        config: {
+            bounded_width: number;
+            bounded_height: number;
+            draw_left_labels: boolean;
+            draw_right_labels: boolean;
+            draw_top_labels: boolean;
+            draw_bottom_labels: boolean;
+            evaluation_bar: boolean;
+        },
+    ): number {
+        const {
+            bounded_width,
+            bounded_height,
+            draw_left_labels,
+            draw_right_labels,
+            draw_top_labels,
+            draw_bottom_labels,
+        } = config;
+
+        const n_squares = Math.max(
+            bounded_width + +draw_left_labels + +draw_right_labels,
+            bounded_height + +draw_bottom_labels + +draw_top_labels,
+        );
+
+        if (isNaN(display_width) || display_width <= 0) {
+            console.warn("Invalid display width, using default");
+            display_width = 320;
+        }
+
+        if (isNaN(n_squares) || n_squares <= 0) {
+            console.warn("Invalid n_squares, falling back to board size with no labels");
+            const fallback_n_squares = Math.max(bounded_width, bounded_height);
+            return Math.floor(display_width / fallback_n_squares);
+        }
+
+        if (config.evaluation_bar) {
+            display_width -= Goban.computeEvaluationBarWidth(display_width) * 2;
+        }
+
+        return Math.floor(display_width / n_squares);
+    }
+
+    public setLabelPosition(label_position: LabelPosition) {
+        this.draw_top_labels = label_position === "all" || label_position.indexOf("top") >= 0;
+        this.draw_left_labels = label_position === "all" || label_position.indexOf("left") >= 0;
+        this.draw_right_labels = label_position === "all" || label_position.indexOf("right") >= 0;
+        this.draw_bottom_labels = label_position === "all" || label_position.indexOf("bottom") >= 0;
+        this.setSquareSizeBasedOnDisplayWidth(Number(this.display_width));
+        this.redraw(true);
+    }
+
+    protected onAnalysisToggleStoneRemoval(ev: MouseEvent | TouchEvent) {
+        const pos = getRelativeEventPosition(ev, this.parent);
+        this.analysis_removal_last_position = this.xy2ij(pos.x, pos.y, false);
+        const { i, j } = this.analysis_removal_last_position;
+        const x = i;
+        const y = j;
+
+        if (!(x >= 0 && x < this.width && y >= 0 && y < this.height)) {
+            return;
+        }
+
+        const existing_removal_state = this.getMarks(x, y).stone_removed;
+
+        if (existing_removal_state) {
+            this.analysis_removal_state = undefined;
+        } else {
+            this.analysis_removal_state = true;
+        }
+
+        const all_strings = new StoneStringBuilder(this.engine);
+        const stone_string = all_strings.getGroup(x, y);
+
+        stone_string.map((loc) => {
+            this.putAnalysisRemovalAtLocation(loc.x, loc.y, this.analysis_removal_state);
+        });
+
+        // If we have any scores on the board, we assume we are interested in those
+        // and we recompute scores, updating
+        const have_any_scores = this.marked_analysis_score?.some((row) => row.includes(true));
+
+        if (have_any_scores) {
+            this.markAnalysisScores();
+        }
+    }
+
+    /** Clears any analysis scores on the board */
+    public clearAnalysisScores() {
+        delete this.marked_analysis_score;
+        if (this.mode !== "analyze") {
+            console.error("clearAnalysisScores called when not in analyze mode");
+            return;
+        }
+        for (let x = 0; x < this.width; ++x) {
+            for (let y = 0; y < this.height; ++y) {
+                this.putAnalysisScoreColorAtLocation(x, y, undefined, false);
+            }
+        }
+        this.syncReviewMove();
+    }
+
+    public setSquareSize(new_ss: number, suppress_redraw = false): void {
+        const redraw = this.square_size !== new_ss && !suppress_redraw;
+        this.square_size = Math.max(new_ss, 1);
+        if (redraw) {
+            this.redraw(true);
+        }
+    }
+
+    public setStoneFontScale(new_ss: number, suppress_redraw = false): void {
+        const redraw = this.stone_font_scale !== new_ss && !suppress_redraw;
+        this.stone_font_scale = new_ss;
+        if (redraw) {
+            this.redraw(true);
+        }
+    }
+
+    public computeMetrics(): GobanMetrics {
+        if (!this.square_size || this.square_size <= 0) {
+            this.square_size = 12;
+        }
+
+        const ret = {
+            width:
+                this.square_size *
+                (this.bounded_width + +this.draw_left_labels + +this.draw_right_labels),
+            height:
+                this.square_size *
+                (this.bounded_height + +this.draw_top_labels + +this.draw_bottom_labels),
+            mid: this.square_size / 2,
+            offset: 0,
+        };
+
+        if (this.square_size % 2 === 0) {
+            ret.mid -= 0.5;
+            ret.offset = 0.5;
+        }
+
+        return ret;
+    }
+
+    protected onAnalysisScoringStart(ev: MouseEvent | TouchEvent) {
+        const pos = getRelativeEventPosition(ev, this.parent);
+        this.analysis_scoring_last_position = this.xy2ij(pos.x, pos.y, false);
+
+        {
+            const x = this.analysis_scoring_last_position.i;
+            const y = this.analysis_scoring_last_position.j;
+            if (!(x >= 0 && x < this.width && y >= 0 && y < this.height)) {
+                return;
+            }
+        }
+
+        const existing_color = this.getAnalysisScoreColorAtLocation(
+            this.analysis_scoring_last_position.i,
+            this.analysis_scoring_last_position.j,
+        );
+
+        if (existing_color === this.analyze_subtool) {
+            this.analysis_scoring_color = undefined;
+        } else {
+            this.analysis_scoring_color = this.analyze_subtool;
+        }
+
+        this.putAnalysisScoreColorAtLocation(
+            this.analysis_scoring_last_position.i,
+            this.analysis_scoring_last_position.j,
+            this.analysis_scoring_color,
+        );
+
+        /* clear hover */
+        if (this.__last_pt.valid) {
+            const last_hover = this.last_hover_square;
+            delete this.last_hover_square;
+            if (last_hover) {
+                this.drawSquare(last_hover.x, last_hover.y);
+            }
+        }
+        this.__last_pt = this.xy2ij(-1, -1);
+        this.drawSquare(
+            this.analysis_scoring_last_position.i,
+            this.analysis_scoring_last_position.j,
+        );
+    }
+    protected onAnalysisScoringMove(ev: MouseEvent | TouchEvent) {
+        const pos = getRelativeEventPosition(ev, this.parent);
+        const cur = this.xy2ij(pos.x, pos.y);
+
+        {
+            const x = cur.i;
+            const y = cur.j;
+            if (!(x >= 0 && x < this.width && y >= 0 && y < this.height)) {
+                return;
+            }
+        }
+
+        if (
+            cur.i !== this.analysis_scoring_last_position.i ||
+            cur.j !== this.analysis_scoring_last_position.j
+        ) {
+            this.analysis_scoring_last_position = cur;
+            this.putAnalysisScoreColorAtLocation(cur.i, cur.j, this.analysis_scoring_color);
+        }
+    }
+
+    protected normalizeCaptureConfig(config: CaptureDisplayConfig): Required<CaptureDisplayConfig> {
+        const stone_radius = Math.round(config.stone_radius ?? 11);
+        const stone_overlap = config.stone_overlap ?? 0.8;
+        const max_stones = config.max_stones ?? 10;
+
+        if (stone_radius <= 0) {
+            throw new Error(`Invalid stone radius: ${stone_radius}. Must be positive.`);
+        }
+        if (stone_overlap < 0 || stone_overlap >= 1) {
+            throw new Error(`Invalid stone overlap: ${stone_overlap}. Must be in range [0, 1).`);
+        }
+        if (max_stones <= 0) {
+            throw new Error(`Invalid max_stones: ${max_stones}. Must be positive.`);
+        }
+
+        return {
+            stone_color: config.stone_color,
+            stone_count: Math.max(0, Math.round(config.stone_count)),
+            stone_radius,
+            stone_overlap,
+            max_stones,
+        };
+    }
+
+    protected calculateCaptureDisplayDimensions(
+        config: Required<CaptureDisplayConfig>,
+        count: number,
+    ): {
+        radius: number;
+        displayCount: number;
+        stone_spacing: number;
+        width: number;
+        height: number;
+    } {
+        const radius = config.stone_radius;
+        const overlap = config.stone_overlap;
+        const displayCount = Math.max(0, Math.min(count, config.max_stones));
+
+        const stone_diameter = radius * 2;
+        const stone_spacing = Math.round(stone_diameter * (1 - overlap));
+        const width =
+            displayCount === 0
+                ? 0
+                : Math.round(stone_diameter + (displayCount - 1) * stone_spacing);
+        const height = Math.round(stone_diameter);
+
+        return { radius, displayCount, stone_spacing, width, height };
+    }
+}

@@ -1,0 +1,145 @@
+/*
+ * Copyright (C) Online-Go.com
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.Goban {
+    position: relative;
+    background-color: #dcb35c;
+    display: inline-block;
+    box-shadow: var(--goban-shadow);
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .GobanMessage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        font-size: large;
+        text-align: center;
+        z-index: var(--z-goban-message);
+    }
+
+    .PenLayer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: var(--z-goban-pen-layer);
+    }
+
+    /*
+     * The host application defines the --z-goban-* values. The optional themed
+     * baked-grid image layer is intentionally above the vector grid and below
+     * shadows/stones: if the image loads it covers the vector grid; if it does
+     * not load, the vector grid remains visible as graceful degradation.
+     */
+    .GridLayer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: var(--z-goban-grid-layer);
+        pointer-events: none;
+    }
+
+    .GridBackgroundLayer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: var(--z-goban-grid-background-layer);
+        pointer-events: none;
+    }
+
+    .StoneLayer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: var(--z-goban-stone-layer);
+    }
+
+    .ShadowLayer {
+        position: absolute;
+        z-index: var(--z-goban-shadow-layer);
+        left: 0;
+        right: 0;
+    }
+
+    .CrosshairLayer {
+        position: absolute;
+        z-index: var(--z-goban-crosshair-layer);
+        left: 0;
+        right: 0;
+    }
+
+    .GobanMessage table {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .GobanMessage table td {
+        /* background-color: #f00; */
+        background-image: none;
+    }
+
+    .GobanMessage table td div {
+        border-radius: 3px;
+        box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.26);
+        color: #ff5500;
+        background-color: #262626;
+        padding: 0.3em;
+        margin: 0.4em;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    &.borderless {
+        box-shadow: var(--goban-shadow-borderless);
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    &.small {
+        font-size: small;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
+
+        canvas {
+            box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.16);
+        }
+    }
+
+    /* This is necessary for non shadow-dom mode */
+    svg {
+        text {
+            font-family: Verdana, Arial, sans-serif;
+            text-anchor: middle;
+            font-weight: bold;
+            user-select: none;
+        }
+    }
+}

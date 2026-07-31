@@ -1,0 +1,22 @@
+{
+  "Black to play. Capture the marked white stone.": "黑先。吃掉被标记的白棋。",
+  "Black to play. The marked white chain is in atari. Capture these stones.": "黑先。被标记的白棋棋串处于打吃状态。吃掉这些棋子。",
+  "Black to play. Capture one or more white stones.": "黑先。吃掉一个或多个白棋。",
+  "White to play. Capture one or more black stones.": "白先。吃掉一个或多个黑棋。",
+  "White to play. Both players are in atari. Capture one or more black stones.": "白先。双方都处于打吃状态。吃掉一个或多个黑棋。",
+  "White to play. The marked white stone is in atari. You can save this stone by capturing the marked black stones. Capture these black stones.": "白先。被标记的白棋处于打吃状态。你可以通过吃掉被标记的黑棋来救活这颗棋子。吃掉这些黑棋。",
+  "White to play. Escape with the marked chain that is in atari, by lengthening the white chain and creating more liberties.": "白先。通过延长白棋棋串并增加气数，来解救被打吃的被标记棋串。",
+  "White to play. Escape with the marked chain that is in atari.": "白先。解救被打吃的被标记棋串。",
+  "Black to play. Find the black chain that is in atari and escape with this chain.": "黑先。找到处于打吃状态的黑棋棋串，并解救它。",
+  "Black to play. Escape with the chain that is in atari.": "黑先。解救处于打吃的棋串。",
+  "White to play. The marked white chain can not escape by lengthening this chain at A. But white can escape by creating an opening. Capture the marked black stone to create this opening.": "白先。被标记的白棋棋串无法通过在A点延伸来逃脱。但白棋可以通过制造一个突破口来逃脱。吃掉被标记的黑棋以制造突破口。",
+  "White to play. Escape with the chain in atari by creating an opening.": "白先。通过制造一个突破口来解救被打吃的棋串。",
+  "Stones can help each other by forming a chain. Chains are harder to capture than single stones. You can form a chain by connecting your stones. Connect the white stones.": "棋子可以通过形成棋串来互相帮助。棋串比单颗棋子更难被吃。你可以通过连接你的棋子来形成棋串。连接白棋。",
+  "White to play. Connect the white stones.": "白先。连接白棋。",
+  "White can connect the stones by playing at A. Black is to play and can prevent White from connecting these white stones. Cut the white stones.": "白棋可以在A点落子来连接这些棋子。轮到黑棋走，可以阻止白棋连接这些白棋。切断白棋。",
+  "Black to play. Cut the white stones.": "黑先。切断白棋。",
+  "The white group is not safe yet. Black can prevent White from making two eyes by playing at A. White to play. Make the white group alive by making two eyes.": "白棋棋块还不安全。黑棋可以通过在A点落子来阻止白棋做出两只眼。白先。通过做出两只眼来使白棋棋块活棋。",
+  "White to play. Make two eyes.": "白先。做出两只眼。",
+  "White can make two eyes by playing at A. Black to play. Capture the white group.": "白棋可以通过在A点落子来做出两只眼。黑先。吃掉白棋棋块。",
+  "Black to play. Capture the white group.": "黑先。吃掉白棋棋块。"
+}
