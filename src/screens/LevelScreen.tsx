@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Board } from "../components/Board/Board";
 import { TopBar } from "../components/TopBar";
+import { Fireworks } from "../components/Fireworks";
 import { getNextLevel } from "../game/levels";
-import { applyResult, loadSave, totalStars } from "../game/progress";
+import { applyResult, loadSave, totalPoints, totalStars } from "../game/progress";
 import type { GameSave, Level, LevelResult, Locale } from "../game/types";
 
 interface LevelScreenProps {
@@ -34,7 +35,6 @@ export function LevelScreen({ level, locale = "zh", onBack, onAdvance }: LevelSc
 
     const handleReset = useCallback(() => {
         setResult(null);
-        setWrongAttempts(0);
         setResetKey((k) => k + 1);
     }, []);
 
@@ -54,9 +54,10 @@ export function LevelScreen({ level, locale = "zh", onBack, onAdvance }: LevelSc
         [level.id],
     );
 
-    const handleNext = useCallback(() => {
+    const advanceAfterFireworks = useCallback(() => {
         if (nextLevel) onAdvance?.(nextLevel.id);
-    }, [nextLevel, onAdvance]);
+        else onBack?.();
+    }, [nextLevel, onAdvance, onBack]);
 
     return (
         <div className="level-screen">
@@ -98,40 +99,7 @@ export function LevelScreen({ level, locale = "zh", onBack, onAdvance }: LevelSc
             </div>
 
             {result && result.passed && (
-                <div className="result-overlay" role="dialog" aria-modal="true">
-                    <div className="result-card">
-                        <div className="result-title">
-                            {locale === "zh" ? "过关！" : "Complete!"}
-                        </div>
-                        <div className="result-stars">
-                            {[0, 1, 2].map((i) => (
-                                <span
-                                    key={i}
-                                    className={`star ${i < result.stars ? "on" : ""}`}
-                                >
-                                    ★
-                                </span>
-                            ))}
-                        </div>
-                        <div className="result-points">
-                            {locale === "zh" ? `+${result.points} 分` : `+${result.points} pts`}
-                        </div>
-                        <div className="result-actions">
-                            <button className="ghost-btn" onClick={handleReset}>
-                                {locale === "zh" ? "重玩" : "Replay"}
-                            </button>
-                            {nextLevel ? (
-                                <button className="primary-btn" onClick={handleNext}>
-                                    {locale === "zh" ? "下一关 →" : "Next →"}
-                                </button>
-                            ) : (
-                                <button className="primary-btn" onClick={onBack}>
-                                    {locale === "zh" ? "全部完成 🎉" : "All done 🎉"}
-                                </button>
-                            )}
-                        </div>
-                    </div>
-                </div>
+                <Fireworks points={result.points} onDone={advanceAfterFireworks} />
             )}
         </div>
     );

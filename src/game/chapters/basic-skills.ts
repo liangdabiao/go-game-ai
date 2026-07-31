@@ -9,10 +9,10 @@ export const CHAPTER_ID = "basic-skills";
 
 export const CHAPTER: Chapter = {
     id: "basic-skills",
-    title: { zh: "围棋基本技巧", en: "Basic Skills" },
+    title: { zh: "黄金", en: "Gold" },
     description: {
-        zh: "围棋基本技巧",
-        en: "Basic Skills",
+        zh: "吃子手筋、征子、罩与基础战术",
+        en: "Capturing tesuji, ladders, nets and basic tactics",
     },
 };
 
@@ -21,7 +21,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-1",
         chapterId: "basic-skills",
         order: 1,
-        title: { zh: "Atari To Side · 1/18", en: "Atari To Side · 1/18" },
+        title: { zh: "打吃至边 · 1/18", en: "Atari To Side · 1/18" },
         instruction: { zh: "黑先。将带标记的白棋驱向棋盘边缘，可以更容易地吃掉它。选择落子点A或B，将带标记的白棋推向边缘。", en: "Black to play. Driving the marked white stone to the side of the board makes it easier to capture it. Choose the point to play to push the marked white stone to the edge, A or B." },
         puzzle: {
             width: 9,
@@ -37,7 +37,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-2",
         chapterId: "basic-skills",
         order: 2,
-        title: { zh: "Atari To Side · 2/18", en: "Atari To Side · 2/18" },
+        title: { zh: "打吃至边 · 2/18", en: "Atari To Side · 2/18" },
         instruction: { zh: "黑先。选择落子点A或B，将带标记的白棋棋串推向棋盘边缘。", en: "Black to play. Choose the point to play to push the marked white chain to the side, A or B." },
         puzzle: {
             width: 9,
@@ -53,7 +53,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-3",
         chapterId: "basic-skills",
         order: 3,
-        title: { zh: "Atari To Side · 3/18", en: "Atari To Side · 3/18" },
+        title: { zh: "打吃至边 · 3/18", en: "Atari To Side · 3/18" },
         instruction: { zh: "黑先。选择落子点A或B，将带标记的白棋棋串推向棋盘边缘。", en: "Black to play. Choose the point to play to push the marked white chain to the side, A or B." },
         puzzle: {
             width: 9,
@@ -69,7 +69,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-4",
         chapterId: "basic-skills",
         order: 4,
-        title: { zh: "Atari To Side · 4/18", en: "Atari To Side · 4/18" },
+        title: { zh: "打吃至边 · 4/18", en: "Atari To Side · 4/18" },
         instruction: { zh: "黑先。选择落子点A或B，将带标记的白棋棋串推向棋盘边缘。", en: "Black to play. Choose the point to play to push the marked white chain to the side, A or B." },
         puzzle: {
             width: 9,
@@ -85,7 +85,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-5",
         chapterId: "basic-skills",
         order: 5,
-        title: { zh: "Atari To Side · 5/18", en: "Atari To Side · 5/18" },
+        title: { zh: "打吃至边 · 5/18", en: "Atari To Side · 5/18" },
         instruction: { zh: "黑先。选择落子点A或B，将带标记的白棋棋串推向棋盘边缘。", en: "Black to play. Choose the point to play to push the marked white chain to the side, A or B." },
         puzzle: {
             width: 9,
@@ -101,7 +101,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-6",
         chapterId: "basic-skills",
         order: 6,
-        title: { zh: "Atari To Side · 6/18", en: "Atari To Side · 6/18" },
+        title: { zh: "打吃至边 · 6/18", en: "Atari To Side · 6/18" },
         instruction: { zh: "黑先。选择落子点A或B，将带标记的白棋棋串推向棋盘边缘。", en: "Black to play. Choose the point to play to push the marked white chain to the side, A or B." },
         puzzle: {
             width: 9,
@@ -117,7 +117,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-7",
         chapterId: "basic-skills",
         order: 7,
-        title: { zh: "Atari To Side · 7/18", en: "Atari To Side · 7/18" },
+        title: { zh: "打吃至边 · 7/18", en: "Atari To Side · 7/18" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -133,7 +133,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-8",
         chapterId: "basic-skills",
         order: 8,
-        title: { zh: "Atari To Side · 8/18", en: "Atari To Side · 8/18" },
+        title: { zh: "打吃至边 · 8/18", en: "Atari To Side · 8/18" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -149,7 +149,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-9",
         chapterId: "basic-skills",
         order: 9,
-        title: { zh: "Atari To Side · 9/18", en: "Atari To Side · 9/18" },
+        title: { zh: "打吃至边 · 9/18", en: "Atari To Side · 9/18" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -165,7 +165,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-10",
         chapterId: "basic-skills",
         order: 10,
-        title: { zh: "Atari To Side · 10/18", en: "Atari To Side · 10/18" },
+        title: { zh: "打吃至边 · 10/18", en: "Atari To Side · 10/18" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -181,7 +181,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-11",
         chapterId: "basic-skills",
         order: 11,
-        title: { zh: "Atari To Side · 11/18", en: "Atari To Side · 11/18" },
+        title: { zh: "打吃至边 · 11/18", en: "Atari To Side · 11/18" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -197,7 +197,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-12",
         chapterId: "basic-skills",
         order: 12,
-        title: { zh: "Atari To Side · 12/18", en: "Atari To Side · 12/18" },
+        title: { zh: "打吃至边 · 12/18", en: "Atari To Side · 12/18" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -213,7 +213,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-13",
         chapterId: "basic-skills",
         order: 13,
-        title: { zh: "Atari To Side · 13/18", en: "Atari To Side · 13/18" },
+        title: { zh: "打吃至边 · 13/18", en: "Atari To Side · 13/18" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -229,7 +229,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-14",
         chapterId: "basic-skills",
         order: 14,
-        title: { zh: "Atari To Side · 14/18", en: "Atari To Side · 14/18" },
+        title: { zh: "打吃至边 · 14/18", en: "Atari To Side · 14/18" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -245,7 +245,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-15",
         chapterId: "basic-skills",
         order: 15,
-        title: { zh: "Atari To Side · 15/18", en: "Atari To Side · 15/18" },
+        title: { zh: "打吃至边 · 15/18", en: "Atari To Side · 15/18" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -261,7 +261,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-16",
         chapterId: "basic-skills",
         order: 16,
-        title: { zh: "Atari To Side · 16/18", en: "Atari To Side · 16/18" },
+        title: { zh: "打吃至边 · 16/18", en: "Atari To Side · 16/18" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -277,7 +277,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-17",
         chapterId: "basic-skills",
         order: 17,
-        title: { zh: "Atari To Side · 17/18", en: "Atari To Side · 17/18" },
+        title: { zh: "打吃至边 · 17/18", en: "Atari To Side · 17/18" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -293,7 +293,7 @@ const atariToSideLevels: Level[] = [
         id: "basic-skills-atari-to-side-18",
         chapterId: "basic-skills",
         order: 18,
-        title: { zh: "Atari To Side · 18/18", en: "Atari To Side · 18/18" },
+        title: { zh: "打吃至边 · 18/18", en: "Atari To Side · 18/18" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -312,7 +312,7 @@ const atariToStonesLevels: Level[] = [
         id: "basic-skills-atari-to-stones-1",
         chapterId: "basic-skills",
         order: 19,
-        title: { zh: "Atari to Stones · 1/6", en: "Atari to Stones · 1/6" },
+        title: { zh: "打吃棋子 · 1/6", en: "Atari to Stones · 1/6" },
         instruction: { zh: "黑先。将带标记的白棋驱向己方棋子，有助于吃掉这些棋子。对带标记的白棋进行打吃。", en: "Black to play. Driving the marked stones towards your own stones helps you capture these stones. Put the marked stones in atari." },
         puzzle: {
             width: 9,
@@ -328,7 +328,7 @@ const atariToStonesLevels: Level[] = [
         id: "basic-skills-atari-to-stones-2",
         chapterId: "basic-skills",
         order: 20,
-        title: { zh: "Atari to Stones · 2/6", en: "Atari to Stones · 2/6" },
+        title: { zh: "打吃棋子 · 2/6", en: "Atari to Stones · 2/6" },
         instruction: { zh: "黑先。向己方棋子方向打吃。", en: "Black to play. Put in atari towards your own stones." },
         puzzle: {
             width: 9,
@@ -343,7 +343,7 @@ const atariToStonesLevels: Level[] = [
         id: "basic-skills-atari-to-stones-3",
         chapterId: "basic-skills",
         order: 21,
-        title: { zh: "Atari to Stones · 3/6", en: "Atari to Stones · 3/6" },
+        title: { zh: "打吃棋子 · 3/6", en: "Atari to Stones · 3/6" },
         instruction: { zh: "黑先。向己方棋子方向打吃。", en: "Black to play. Put in atari towards your own stones." },
         puzzle: {
             width: 9,
@@ -358,7 +358,7 @@ const atariToStonesLevels: Level[] = [
         id: "basic-skills-atari-to-stones-4",
         chapterId: "basic-skills",
         order: 22,
-        title: { zh: "Atari to Stones · 4/6", en: "Atari to Stones · 4/6" },
+        title: { zh: "打吃棋子 · 4/6", en: "Atari to Stones · 4/6" },
         instruction: { zh: "黑先。向己方棋子方向打吃。", en: "Black to play. Put in atari towards your own stones." },
         puzzle: {
             width: 9,
@@ -373,7 +373,7 @@ const atariToStonesLevels: Level[] = [
         id: "basic-skills-atari-to-stones-5",
         chapterId: "basic-skills",
         order: 23,
-        title: { zh: "Atari to Stones · 5/6", en: "Atari to Stones · 5/6" },
+        title: { zh: "打吃棋子 · 5/6", en: "Atari to Stones · 5/6" },
         instruction: { zh: "黑先。向己方棋子方向打吃。", en: "Black to play. Put in atari towards your own stones." },
         puzzle: {
             width: 9,
@@ -388,7 +388,7 @@ const atariToStonesLevels: Level[] = [
         id: "basic-skills-atari-to-stones-6",
         chapterId: "basic-skills",
         order: 24,
-        title: { zh: "Atari to Stones · 6/6", en: "Atari to Stones · 6/6" },
+        title: { zh: "打吃棋子 · 6/6", en: "Atari to Stones · 6/6" },
         instruction: { zh: "黑先。向己方棋子方向打吃。", en: "Black to play. Put in atari towards your own stones." },
         puzzle: {
             width: 9,
@@ -406,7 +406,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-1",
         chapterId: "basic-skills",
         order: 25,
-        title: { zh: "Atari with Cut · 1/18", en: "Atari with Cut · 1/18" },
+        title: { zh: "打吃并切断 · 1/18", en: "Atari with Cut · 1/18" },
         instruction: { zh: "黑先。白棋可以将带标记的棋子与其他白棋连接并逃脱被吃。通过切断来阻止，并吃掉带标记的白棋。", en: "Black to play. White can connect the marked stones to the other white stones and escape from being captured. Prevent this by cutting and capture the marked stones." },
         puzzle: {
             width: 9,
@@ -422,7 +422,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-2",
         chapterId: "basic-skills",
         order: 26,
-        title: { zh: "Atari with Cut · 2/18", en: "Atari with Cut · 2/18" },
+        title: { zh: "打吃并切断 · 2/18", en: "Atari with Cut · 2/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -437,7 +437,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-3",
         chapterId: "basic-skills",
         order: 27,
-        title: { zh: "Atari with Cut · 3/18", en: "Atari with Cut · 3/18" },
+        title: { zh: "打吃并切断 · 3/18", en: "Atari with Cut · 3/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -452,7 +452,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-4",
         chapterId: "basic-skills",
         order: 28,
-        title: { zh: "Atari with Cut · 4/18", en: "Atari with Cut · 4/18" },
+        title: { zh: "打吃并切断 · 4/18", en: "Atari with Cut · 4/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -466,7 +466,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-5",
         chapterId: "basic-skills",
         order: 29,
-        title: { zh: "Atari with Cut · 5/18", en: "Atari with Cut · 5/18" },
+        title: { zh: "打吃并切断 · 5/18", en: "Atari with Cut · 5/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -481,7 +481,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-6",
         chapterId: "basic-skills",
         order: 30,
-        title: { zh: "Atari with Cut · 6/18", en: "Atari with Cut · 6/18" },
+        title: { zh: "打吃并切断 · 6/18", en: "Atari with Cut · 6/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -496,7 +496,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-7",
         chapterId: "basic-skills",
         order: 31,
-        title: { zh: "Atari with Cut · 7/18", en: "Atari with Cut · 7/18" },
+        title: { zh: "打吃并切断 · 7/18", en: "Atari with Cut · 7/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -511,7 +511,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-8",
         chapterId: "basic-skills",
         order: 32,
-        title: { zh: "Atari with Cut · 8/18", en: "Atari with Cut · 8/18" },
+        title: { zh: "打吃并切断 · 8/18", en: "Atari with Cut · 8/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -526,7 +526,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-9",
         chapterId: "basic-skills",
         order: 33,
-        title: { zh: "Atari with Cut · 9/18", en: "Atari with Cut · 9/18" },
+        title: { zh: "打吃并切断 · 9/18", en: "Atari with Cut · 9/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -541,7 +541,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-10",
         chapterId: "basic-skills",
         order: 34,
-        title: { zh: "Atari with Cut · 10/18", en: "Atari with Cut · 10/18" },
+        title: { zh: "打吃并切断 · 10/18", en: "Atari with Cut · 10/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -556,7 +556,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-11",
         chapterId: "basic-skills",
         order: 35,
-        title: { zh: "Atari with Cut · 11/18", en: "Atari with Cut · 11/18" },
+        title: { zh: "打吃并切断 · 11/18", en: "Atari with Cut · 11/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -571,7 +571,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-12",
         chapterId: "basic-skills",
         order: 36,
-        title: { zh: "Atari with Cut · 12/18", en: "Atari with Cut · 12/18" },
+        title: { zh: "打吃并切断 · 12/18", en: "Atari with Cut · 12/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -586,7 +586,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-13",
         chapterId: "basic-skills",
         order: 37,
-        title: { zh: "Atari with Cut · 13/18", en: "Atari with Cut · 13/18" },
+        title: { zh: "打吃并切断 · 13/18", en: "Atari with Cut · 13/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -600,7 +600,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-14",
         chapterId: "basic-skills",
         order: 38,
-        title: { zh: "Atari with Cut · 14/18", en: "Atari with Cut · 14/18" },
+        title: { zh: "打吃并切断 · 14/18", en: "Atari with Cut · 14/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -615,7 +615,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-15",
         chapterId: "basic-skills",
         order: 39,
-        title: { zh: "Atari with Cut · 15/18", en: "Atari with Cut · 15/18" },
+        title: { zh: "打吃并切断 · 15/18", en: "Atari with Cut · 15/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -630,7 +630,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-16",
         chapterId: "basic-skills",
         order: 40,
-        title: { zh: "Atari with Cut · 16/18", en: "Atari with Cut · 16/18" },
+        title: { zh: "打吃并切断 · 16/18", en: "Atari with Cut · 16/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -645,7 +645,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-17",
         chapterId: "basic-skills",
         order: 41,
-        title: { zh: "Atari with Cut · 17/18", en: "Atari with Cut · 17/18" },
+        title: { zh: "打吃并切断 · 17/18", en: "Atari with Cut · 17/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -660,7 +660,7 @@ const atariWithCutLevels: Level[] = [
         id: "basic-skills-atari-with-cut-18",
         chapterId: "basic-skills",
         order: 42,
-        title: { zh: "Atari with Cut · 18/18", en: "Atari with Cut · 18/18" },
+        title: { zh: "打吃并切断 · 18/18", en: "Atari with Cut · 18/18" },
         instruction: { zh: "黑先。阻止白棋连接，并吃掉一颗或多颗白棋。", en: "Black to play. Prevent White from connecting and capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -678,7 +678,7 @@ const atariCorrectSideLevels: Level[] = [
         id: "basic-skills-atari-correct-side-1",
         chapterId: "basic-skills",
         order: 43,
-        title: { zh: "Atari Correct Side · 1/6", en: "Atari Correct Side · 1/6" },
+        title: { zh: "打吃正确方向 · 1/6", en: "Atari Correct Side · 1/6" },
         instruction: { zh: "白棋可以在A或B点落子，对带标记的黑棋进行打吃。在正确的一侧对带标记的黑棋进行打吃。", en: "White can put the marked stones in atari by playing at A or B. Put the marked stones in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -694,7 +694,7 @@ const atariCorrectSideLevels: Level[] = [
         id: "basic-skills-atari-correct-side-2",
         chapterId: "basic-skills",
         order: 44,
-        title: { zh: "Atari Correct Side · 2/6", en: "Atari Correct Side · 2/6" },
+        title: { zh: "打吃正确方向 · 2/6", en: "Atari Correct Side · 2/6" },
         instruction: { zh: "白先。在正确的一侧对带标记的黑棋进行打吃。", en: "White to play. Put the marked stones in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -710,7 +710,7 @@ const atariCorrectSideLevels: Level[] = [
         id: "basic-skills-atari-correct-side-3",
         chapterId: "basic-skills",
         order: 45,
-        title: { zh: "Atari Correct Side · 3/6", en: "Atari Correct Side · 3/6" },
+        title: { zh: "打吃正确方向 · 3/6", en: "Atari Correct Side · 3/6" },
         instruction: { zh: "白先。在正确的一侧对带标记的黑棋进行打吃。", en: "White to play. Put the marked stones in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -726,7 +726,7 @@ const atariCorrectSideLevels: Level[] = [
         id: "basic-skills-atari-correct-side-4",
         chapterId: "basic-skills",
         order: 46,
-        title: { zh: "Atari Correct Side · 4/6", en: "Atari Correct Side · 4/6" },
+        title: { zh: "打吃正确方向 · 4/6", en: "Atari Correct Side · 4/6" },
         instruction: { zh: "白先。在正确的一侧对带标记的黑棋进行打吃。", en: "White to play. Put the marked stones in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -742,7 +742,7 @@ const atariCorrectSideLevels: Level[] = [
         id: "basic-skills-atari-correct-side-5",
         chapterId: "basic-skills",
         order: 47,
-        title: { zh: "Atari Correct Side · 5/6", en: "Atari Correct Side · 5/6" },
+        title: { zh: "打吃正确方向 · 5/6", en: "Atari Correct Side · 5/6" },
         instruction: { zh: "白先。在正确的一侧对带标记的黑棋进行打吃。", en: "White to play. Put the marked stones in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -758,7 +758,7 @@ const atariCorrectSideLevels: Level[] = [
         id: "basic-skills-atari-correct-side-6",
         chapterId: "basic-skills",
         order: 48,
-        title: { zh: "Atari Correct Side · 6/6", en: "Atari Correct Side · 6/6" },
+        title: { zh: "打吃正确方向 · 6/6", en: "Atari Correct Side · 6/6" },
         instruction: { zh: "白先。在正确的一侧对带标记的黑棋进行打吃。", en: "White to play. Put the marked stones in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -772,14 +772,483 @@ const atariCorrectSideLevels: Level[] = [
     },
 ];
 
-/* Section escape-possible (Escape Possible) had no migratable pages — skipped. */
+const escapePossibleLevels: Level[] = [
+    {
+        id: "basic-skills-escape-possible-1",
+        chapterId: "basic-skills",
+        order: 49,
+        title: { zh: "可逃跑 · 1/18", en: "Escape Possible · 1/18" },
+        instruction: { zh: "当你的棋子受到攻击时，你通常想要逃跑。在尝试逃跑之前，请确保你能救活这些棋子。如果不能，就不应再往已死的棋块中添加棋子。白先。白棋能否救出被标记的棋串？", en: "If your stones are under attack, you would like to escape. Before you try to escape, make sure you can save your stones. If not, you should not add stones to a lost group. White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "egdhei", white: "ggeh" },
+            marks: { triangle: "eh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "当你的棋子受到攻击时，你通常想要逃跑。在尝试逃跑之前，请确保你能救活这些棋子。如果不能，就不应再往已死的棋块中添加棋子。白先。白棋能否救出被标记的棋串？", en: "If your stones are under attack, you would like to escape. Before you try to escape, make sure you can save your stones. If not, you should not add stones to a lost group. White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "egdhei", white: "ggeh" },
+                marks: { triangle: "eh" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-2",
+        chapterId: "basic-skills",
+        order: 50,
+        title: { zh: "可逃跑 · 2/18", en: "Escape Possible · 2/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ccdgfgeh", white: "gfeggg" },
+            marks: { triangle: "eg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ccdgfgeh", white: "gfeggg" },
+                marks: { triangle: "eg" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-3",
+        chapterId: "basic-skills",
+        order: 51,
+        title: { zh: "可逃跑 · 3/18", en: "Escape Possible · 3/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ccdgegdhfh", white: "fgggehhh" },
+            marks: { triangle: "eh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ccdgegdhfh", white: "fgggehhh" },
+                marks: { triangle: "eh" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-4",
+        chapterId: "basic-skills",
+        order: 52,
+        title: { zh: "可逃跑 · 4/18", en: "Escape Possible · 4/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ccdgegchfhdi", white: "fgggdhehhh" },
+            marks: { triangle: "ehdh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ccdgegchfhdi", white: "fgggdhehhh" },
+                marks: { triangle: "ehdh" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-5",
+        chapterId: "basic-skills",
+        order: 53,
+        title: { zh: "可逃跑 · 5/18", en: "Escape Possible · 5/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "eigi", white: "fi" },
+            marks: { triangle: "fi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "eigi", white: "fi" },
+                marks: { triangle: "fi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-6",
+        chapterId: "basic-skills",
+        order: 54,
+        title: { zh: "可逃跑 · 6/18", en: "Escape Possible · 6/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ccehfhei", white: "ggghfi" },
+            marks: { triangle: "fi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ccehfhei", white: "ggghfi" },
+                marks: { triangle: "fi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-7",
+        chapterId: "basic-skills",
+        order: 55,
+        title: { zh: "可逃跑 · 7/18", en: "Escape Possible · 7/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ccceehfhdi", white: "gggheifi" },
+            marks: { triangle: "fiei" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ccceehfhdi", white: "gggheifi" },
+                marks: { triangle: "fiei" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-8",
+        chapterId: "basic-skills",
+        order: 56,
+        title: { zh: "可逃跑 · 8/18", en: "Escape Possible · 8/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ccehfhdi", white: "ggeifi" },
+            marks: { triangle: "fiei" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ccehfhdi", white: "ggeifi" },
+                marks: { triangle: "fiei" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-9",
+        chapterId: "basic-skills",
+        order: 57,
+        title: { zh: "可逃跑 · 9/18", en: "Escape Possible · 9/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ccefdgfgdhfh", white: "gfegggehgh" },
+            marks: { triangle: "eheg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ccefdgfgdhfh", white: "gfegggehgh" },
+                marks: { triangle: "eheg" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-10",
+        chapterId: "basic-skills",
+        order: 58,
+        title: { zh: "可逃跑 · 10/18", en: "Escape Possible · 10/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ecgceeffdgfgeh", white: "gegfegggfhgh" },
+            marks: { triangle: "eg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ecgceeffdgfgeh", white: "gegfegggfhgh" },
+                marks: { triangle: "eg" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-11",
+        chapterId: "basic-skills",
+        order: 59,
+        title: { zh: "可逃跑 · 11/18", en: "Escape Possible · 11/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "egehgheigi", white: "gdgffhfi" },
+            marks: { triangle: "fifh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "egehgheigi", white: "gdgffhfi" },
+                marks: { triangle: "fifh" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-12",
+        chapterId: "basic-skills",
+        order: 60,
+        title: { zh: "可逃跑 · 12/18", en: "Escape Possible · 12/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "egggehgheigi", white: "gcgdgffhfi" },
+            marks: { triangle: "fifh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "egggehgheigi", white: "gcgdgffhfi" },
+                marks: { triangle: "fifh" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-13",
+        chapterId: "basic-skills",
+        order: 61,
+        title: { zh: "可逃跑 · 13/18", en: "Escape Possible · 13/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "efdgfgdhfh", white: "gcgeegeh" },
+            marks: { triangle: "eheg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "efdgfgdhfh", white: "gcgeegeh" },
+                marks: { triangle: "eheg" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-14",
+        chapterId: "basic-skills",
+        order: 62,
+        title: { zh: "可逃跑 · 14/18", en: "Escape Possible · 14/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "eeefgfegggfh", white: "hdgeffhffg" },
+            marks: { triangle: "fgff" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "eeefgfegggfh", white: "hdgeffhffg" },
+                marks: { triangle: "fgff" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-15",
+        chapterId: "basic-skills",
+        order: 63,
+        title: { zh: "可逃跑 · 15/18", en: "Escape Possible · 15/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ccefffdgggehgh", white: "gegfegfghghh" },
+            marks: { triangle: "fgeg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ccefffdgggehgh", white: "gegfegfghghh" },
+                marks: { triangle: "fgeg" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-16",
+        chapterId: "basic-skills",
+        order: 64,
+        title: { zh: "可逃跑 · 16/18", en: "Escape Possible · 16/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ccffdgggehfhgh", white: "eegegfegfghghh" },
+            marks: { triangle: "fgeg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ccffdgggehfhgh", white: "eegegfegfghghh" },
+                marks: { triangle: "fgeg" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-17",
+        chapterId: "basic-skills",
+        order: 65,
+        title: { zh: "可逃跑 · 17/18", en: "Escape Possible · 17/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dfefcgfgggeh", white: "ffgfhfeghg" },
+            marks: { triangle: "eg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dfefcgfgggeh", white: "ffgfhfeghg" },
+                marks: { triangle: "eg" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-escape-possible-18",
+        chapterId: "basic-skills",
+        order: 66,
+        title: { zh: "可逃跑 · 18/18", en: "Escape Possible · 18/18" },
+        instruction: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dgfgdhfhei", white: "ecgcegeh" },
+            marks: { triangle: "eheg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能否救出被标记的棋串？", en: "White to play. Can White escape with the marked chain?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dgfgdhfhei", white: "ecgcegeh" },
+                marks: { triangle: "eheg" },
+            },
+        },
+    },
+];
 
 const makeKoLevels: Level[] = [
     {
         id: "basic-skills-make-ko-1",
         chapterId: "basic-skills",
-        order: 49,
-        title: { zh: "Make Ko · 1/12", en: "Make Ko · 1/12" },
+        order: 67,
+        title: { zh: "制造劫 · 1/12", en: "Make Ko · 1/12" },
         instruction: { zh: "白先。黑棋已下1。白棋可以在A点连接，但有时在B点制造劫争更好。制造劫争。", en: "White to play. Black has played 1. White can connect his stones by playing at A, but sometimes it is better to make a ko by playing at B. Make a ko." },
         puzzle: {
             width: 9,
@@ -793,8 +1262,8 @@ const makeKoLevels: Level[] = [
     {
         id: "basic-skills-make-ko-2",
         chapterId: "basic-skills",
-        order: 50,
-        title: { zh: "Make Ko · 2/12", en: "Make Ko · 2/12" },
+        order: 68,
+        title: { zh: "制造劫 · 2/12", en: "Make Ko · 2/12" },
         instruction: { zh: "白先。黑棋已下1。制造劫争。", en: "White to play. Black has played 1. Make a ko." },
         puzzle: {
             width: 9,
@@ -808,8 +1277,8 @@ const makeKoLevels: Level[] = [
     {
         id: "basic-skills-make-ko-3",
         chapterId: "basic-skills",
-        order: 51,
-        title: { zh: "Make Ko · 3/12", en: "Make Ko · 3/12" },
+        order: 69,
+        title: { zh: "制造劫 · 3/12", en: "Make Ko · 3/12" },
         instruction: { zh: "白先。黑棋已下1。制造劫争。", en: "White to play. Black has played 1. Make a ko." },
         puzzle: {
             width: 9,
@@ -823,8 +1292,8 @@ const makeKoLevels: Level[] = [
     {
         id: "basic-skills-make-ko-4",
         chapterId: "basic-skills",
-        order: 52,
-        title: { zh: "Make Ko · 4/12", en: "Make Ko · 4/12" },
+        order: 70,
+        title: { zh: "制造劫 · 4/12", en: "Make Ko · 4/12" },
         instruction: { zh: "白先。黑棋已下1。制造劫争。", en: "White to play. Black has played 1. Make a ko." },
         puzzle: {
             width: 9,
@@ -838,8 +1307,8 @@ const makeKoLevels: Level[] = [
     {
         id: "basic-skills-make-ko-5",
         chapterId: "basic-skills",
-        order: 53,
-        title: { zh: "Make Ko · 5/12", en: "Make Ko · 5/12" },
+        order: 71,
+        title: { zh: "制造劫 · 5/12", en: "Make Ko · 5/12" },
         instruction: { zh: "白先。黑棋已下1。制造劫争。", en: "White to play. Black has played 1. Make a ko." },
         puzzle: {
             width: 9,
@@ -853,8 +1322,8 @@ const makeKoLevels: Level[] = [
     {
         id: "basic-skills-make-ko-6",
         chapterId: "basic-skills",
-        order: 54,
-        title: { zh: "Make Ko · 6/12", en: "Make Ko · 6/12" },
+        order: 72,
+        title: { zh: "制造劫 · 6/12", en: "Make Ko · 6/12" },
         instruction: { zh: "白先。黑棋已下1。制造劫争。", en: "White to play. Black has played 1. Make a ko." },
         puzzle: {
             width: 9,
@@ -868,8 +1337,8 @@ const makeKoLevels: Level[] = [
     {
         id: "basic-skills-make-ko-7",
         chapterId: "basic-skills",
-        order: 55,
-        title: { zh: "Make Ko · 7/12", en: "Make Ko · 7/12" },
+        order: 73,
+        title: { zh: "制造劫 · 7/12", en: "Make Ko · 7/12" },
         instruction: { zh: "白先。黑棋已下1。制造劫争。", en: "White to play. Black has played 1. Make a ko." },
         puzzle: {
             width: 9,
@@ -883,8 +1352,8 @@ const makeKoLevels: Level[] = [
     {
         id: "basic-skills-make-ko-8",
         chapterId: "basic-skills",
-        order: 56,
-        title: { zh: "Make Ko · 8/12", en: "Make Ko · 8/12" },
+        order: 74,
+        title: { zh: "制造劫 · 8/12", en: "Make Ko · 8/12" },
         instruction: { zh: "白先。黑棋已下1。制造劫争。", en: "White to play. Black has played 1. Make a ko." },
         puzzle: {
             width: 9,
@@ -898,8 +1367,8 @@ const makeKoLevels: Level[] = [
     {
         id: "basic-skills-make-ko-9",
         chapterId: "basic-skills",
-        order: 57,
-        title: { zh: "Make Ko · 9/12", en: "Make Ko · 9/12" },
+        order: 75,
+        title: { zh: "制造劫 · 9/12", en: "Make Ko · 9/12" },
         instruction: { zh: "白先。黑棋已下1。制造劫争。", en: "White to play. Black has played 1. Make a ko." },
         puzzle: {
             width: 9,
@@ -913,8 +1382,8 @@ const makeKoLevels: Level[] = [
     {
         id: "basic-skills-make-ko-10",
         chapterId: "basic-skills",
-        order: 58,
-        title: { zh: "Make Ko · 10/12", en: "Make Ko · 10/12" },
+        order: 76,
+        title: { zh: "制造劫 · 10/12", en: "Make Ko · 10/12" },
         instruction: { zh: "白先。黑棋已下1。制造劫争。", en: "White to play. Black has played 1. Make a ko." },
         puzzle: {
             width: 9,
@@ -928,8 +1397,8 @@ const makeKoLevels: Level[] = [
     {
         id: "basic-skills-make-ko-11",
         chapterId: "basic-skills",
-        order: 59,
-        title: { zh: "Make Ko · 11/12", en: "Make Ko · 11/12" },
+        order: 77,
+        title: { zh: "制造劫 · 11/12", en: "Make Ko · 11/12" },
         instruction: { zh: "白先。黑棋已下1。制造劫争。", en: "White to play. Black has played 1. Make a ko." },
         puzzle: {
             width: 9,
@@ -943,8 +1412,8 @@ const makeKoLevels: Level[] = [
     {
         id: "basic-skills-make-ko-12",
         chapterId: "basic-skills",
-        order: 60,
-        title: { zh: "Make Ko · 12/12", en: "Make Ko · 12/12" },
+        order: 78,
+        title: { zh: "制造劫 · 12/12", en: "Make Ko · 12/12" },
         instruction: { zh: "白先。黑棋已下1。制造劫争。", en: "White to play. Black has played 1. Make a ko." },
         puzzle: {
             width: 9,
@@ -961,8 +1430,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-1",
         chapterId: "basic-skills",
-        order: 61,
-        title: { zh: "Play Double-Atari · 1/18", en: "Play Double-Atari · 1/18" },
+        order: 79,
+        title: { zh: "下双打吃 · 1/18", en: "Play Double-Atari · 1/18" },
         instruction: { zh: "白棋可以用一颗棋子同时对两颗带标记的黑棋进行打吃，这称为'双打吃'。黑棋只能防守其中一颗棋子。对带标记的黑棋进行双打吃。", en: "White can put both marked stones in atari with one stone. This is called 'double-atari'. Black can only defend one of the stones. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -976,8 +1445,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-2",
         chapterId: "basic-skills",
-        order: 62,
-        title: { zh: "Play Double-Atari · 2/18", en: "Play Double-Atari · 2/18" },
+        order: 80,
+        title: { zh: "下双打吃 · 2/18", en: "Play Double-Atari · 2/18" },
         instruction: { zh: "白先。对带标记的黑棋进行双打吃。", en: "White to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -991,8 +1460,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-3",
         chapterId: "basic-skills",
-        order: 63,
-        title: { zh: "Play Double-Atari · 3/18", en: "Play Double-Atari · 3/18" },
+        order: 81,
+        title: { zh: "下双打吃 · 3/18", en: "Play Double-Atari · 3/18" },
         instruction: { zh: "白先。对带标记的黑棋进行双打吃。", en: "White to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1006,8 +1475,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-4",
         chapterId: "basic-skills",
-        order: 64,
-        title: { zh: "Play Double-Atari · 4/18", en: "Play Double-Atari · 4/18" },
+        order: 82,
+        title: { zh: "下双打吃 · 4/18", en: "Play Double-Atari · 4/18" },
         instruction: { zh: "白先。对带标记的黑棋进行双打吃。", en: "White to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1021,8 +1490,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-5",
         chapterId: "basic-skills",
-        order: 65,
-        title: { zh: "Play Double-Atari · 5/18", en: "Play Double-Atari · 5/18" },
+        order: 83,
+        title: { zh: "下双打吃 · 5/18", en: "Play Double-Atari · 5/18" },
         instruction: { zh: "白先。对带标记的黑棋进行双打吃。", en: "White to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1036,8 +1505,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-6",
         chapterId: "basic-skills",
-        order: 66,
-        title: { zh: "Play Double-Atari · 6/18", en: "Play Double-Atari · 6/18" },
+        order: 84,
+        title: { zh: "下双打吃 · 6/18", en: "Play Double-Atari · 6/18" },
         instruction: { zh: "白先。对带标记的黑棋进行双打吃。", en: "White to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1051,8 +1520,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-7",
         chapterId: "basic-skills",
-        order: 67,
-        title: { zh: "Play Double-Atari · 7/18", en: "Play Double-Atari · 7/18" },
+        order: 85,
+        title: { zh: "下双打吃 · 7/18", en: "Play Double-Atari · 7/18" },
         instruction: { zh: "白先。对带标记的黑棋进行双打吃。", en: "White to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1066,8 +1535,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-8",
         chapterId: "basic-skills",
-        order: 68,
-        title: { zh: "Play Double-Atari · 8/18", en: "Play Double-Atari · 8/18" },
+        order: 86,
+        title: { zh: "下双打吃 · 8/18", en: "Play Double-Atari · 8/18" },
         instruction: { zh: "白先。对带标记的黑棋进行双打吃。", en: "White to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1081,8 +1550,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-9",
         chapterId: "basic-skills",
-        order: 69,
-        title: { zh: "Play Double-Atari · 9/18", en: "Play Double-Atari · 9/18" },
+        order: 87,
+        title: { zh: "下双打吃 · 9/18", en: "Play Double-Atari · 9/18" },
         instruction: { zh: "白先。对带标记的黑棋进行双打吃。", en: "White to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1096,8 +1565,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-10",
         chapterId: "basic-skills",
-        order: 70,
-        title: { zh: "Play Double-Atari · 10/18", en: "Play Double-Atari · 10/18" },
+        order: 88,
+        title: { zh: "下双打吃 · 10/18", en: "Play Double-Atari · 10/18" },
         instruction: { zh: "黑先。对带标记的白棋进行双打吃。", en: "Black to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1111,8 +1580,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-11",
         chapterId: "basic-skills",
-        order: 71,
-        title: { zh: "Play Double-Atari · 11/18", en: "Play Double-Atari · 11/18" },
+        order: 89,
+        title: { zh: "下双打吃 · 11/18", en: "Play Double-Atari · 11/18" },
         instruction: { zh: "黑先。对带标记的白棋进行双打吃。", en: "Black to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1126,8 +1595,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-12",
         chapterId: "basic-skills",
-        order: 72,
-        title: { zh: "Play Double-Atari · 12/18", en: "Play Double-Atari · 12/18" },
+        order: 90,
+        title: { zh: "下双打吃 · 12/18", en: "Play Double-Atari · 12/18" },
         instruction: { zh: "黑先。对带标记的白棋进行双打吃。", en: "Black to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1141,8 +1610,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-13",
         chapterId: "basic-skills",
-        order: 73,
-        title: { zh: "Play Double-Atari · 13/18", en: "Play Double-Atari · 13/18" },
+        order: 91,
+        title: { zh: "下双打吃 · 13/18", en: "Play Double-Atari · 13/18" },
         instruction: { zh: "黑先。对带标记的白棋进行双打吃。", en: "Black to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1156,8 +1625,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-14",
         chapterId: "basic-skills",
-        order: 74,
-        title: { zh: "Play Double-Atari · 14/18", en: "Play Double-Atari · 14/18" },
+        order: 92,
+        title: { zh: "下双打吃 · 14/18", en: "Play Double-Atari · 14/18" },
         instruction: { zh: "黑先。对带标记的白棋进行双打吃。", en: "Black to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1171,8 +1640,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-15",
         chapterId: "basic-skills",
-        order: 75,
-        title: { zh: "Play Double-Atari · 15/18", en: "Play Double-Atari · 15/18" },
+        order: 93,
+        title: { zh: "下双打吃 · 15/18", en: "Play Double-Atari · 15/18" },
         instruction: { zh: "黑先。对带标记的白棋进行双打吃。", en: "Black to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1186,8 +1655,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-16",
         chapterId: "basic-skills",
-        order: 76,
-        title: { zh: "Play Double-Atari · 16/18", en: "Play Double-Atari · 16/18" },
+        order: 94,
+        title: { zh: "下双打吃 · 16/18", en: "Play Double-Atari · 16/18" },
         instruction: { zh: "黑先。对带标记的白棋进行双打吃。", en: "Black to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1201,8 +1670,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-17",
         chapterId: "basic-skills",
-        order: 77,
-        title: { zh: "Play Double-Atari · 17/18", en: "Play Double-Atari · 17/18" },
+        order: 95,
+        title: { zh: "下双打吃 · 17/18", en: "Play Double-Atari · 17/18" },
         instruction: { zh: "黑先。对带标记的白棋进行双打吃。", en: "Black to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1216,8 +1685,8 @@ const playDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-play_double_atari-18",
         chapterId: "basic-skills",
-        order: 78,
-        title: { zh: "Play Double-Atari · 18/18", en: "Play Double-Atari · 18/18" },
+        order: 96,
+        title: { zh: "下双打吃 · 18/18", en: "Play Double-Atari · 18/18" },
         instruction: { zh: "黑先。对带标记的白棋进行双打吃。", en: "Black to play. Play double-atari on the marked stones." },
         puzzle: {
             width: 9,
@@ -1234,8 +1703,8 @@ const preventDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-prevent_double_atari-1",
         chapterId: "basic-skills",
-        order: 79,
-        title: { zh: "Prevent Double-Atari · 1/9", en: "Prevent Double-Atari · 1/9" },
+        order: 97,
+        title: { zh: "防止双打吃 · 1/9", en: "Prevent Double-Atari · 1/9" },
         instruction: { zh: "白先。防止双打吃。", en: "White to play. Prevent a double-atari." },
         puzzle: {
             width: 19,
@@ -1248,8 +1717,8 @@ const preventDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-prevent_double_atari-2",
         chapterId: "basic-skills",
-        order: 80,
-        title: { zh: "Prevent Double-Atari · 2/9", en: "Prevent Double-Atari · 2/9" },
+        order: 98,
+        title: { zh: "防止双打吃 · 2/9", en: "Prevent Double-Atari · 2/9" },
         instruction: { zh: "白先。防止双打吃。", en: "White to play. Prevent a double-atari." },
         puzzle: {
             width: 19,
@@ -1262,8 +1731,8 @@ const preventDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-prevent_double_atari-3",
         chapterId: "basic-skills",
-        order: 81,
-        title: { zh: "Prevent Double-Atari · 3/9", en: "Prevent Double-Atari · 3/9" },
+        order: 99,
+        title: { zh: "防止双打吃 · 3/9", en: "Prevent Double-Atari · 3/9" },
         instruction: { zh: "白先。防止双打吃。", en: "White to play. Prevent a double-atari." },
         puzzle: {
             width: 19,
@@ -1276,8 +1745,8 @@ const preventDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-prevent_double_atari-4",
         chapterId: "basic-skills",
-        order: 82,
-        title: { zh: "Prevent Double-Atari · 4/9", en: "Prevent Double-Atari · 4/9" },
+        order: 100,
+        title: { zh: "防止双打吃 · 4/9", en: "Prevent Double-Atari · 4/9" },
         instruction: { zh: "白先。防止双打吃。", en: "White to play. Prevent a double-atari." },
         puzzle: {
             width: 19,
@@ -1290,8 +1759,8 @@ const preventDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-prevent_double_atari-5",
         chapterId: "basic-skills",
-        order: 83,
-        title: { zh: "Prevent Double-Atari · 5/9", en: "Prevent Double-Atari · 5/9" },
+        order: 101,
+        title: { zh: "防止双打吃 · 5/9", en: "Prevent Double-Atari · 5/9" },
         instruction: { zh: "白先。防止双打吃。", en: "White to play. Prevent a double-atari." },
         puzzle: {
             width: 19,
@@ -1305,8 +1774,8 @@ const preventDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-prevent_double_atari-6",
         chapterId: "basic-skills",
-        order: 84,
-        title: { zh: "Prevent Double-Atari · 6/9", en: "Prevent Double-Atari · 6/9" },
+        order: 102,
+        title: { zh: "防止双打吃 · 6/9", en: "Prevent Double-Atari · 6/9" },
         instruction: { zh: "白先。防止双打吃。", en: "White to play. Prevent a double-atari." },
         puzzle: {
             width: 19,
@@ -1319,8 +1788,8 @@ const preventDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-prevent_double_atari-7",
         chapterId: "basic-skills",
-        order: 85,
-        title: { zh: "Prevent Double-Atari · 7/9", en: "Prevent Double-Atari · 7/9" },
+        order: 103,
+        title: { zh: "防止双打吃 · 7/9", en: "Prevent Double-Atari · 7/9" },
         instruction: { zh: "白先。防止双打吃。", en: "White to play. Prevent a double-atari." },
         puzzle: {
             width: 19,
@@ -1333,8 +1802,8 @@ const preventDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-prevent_double_atari-8",
         chapterId: "basic-skills",
-        order: 86,
-        title: { zh: "Prevent Double-Atari · 8/9", en: "Prevent Double-Atari · 8/9" },
+        order: 104,
+        title: { zh: "防止双打吃 · 8/9", en: "Prevent Double-Atari · 8/9" },
         instruction: { zh: "白先。防止双打吃。", en: "White to play. Prevent a double-atari." },
         puzzle: {
             width: 19,
@@ -1348,8 +1817,8 @@ const preventDoubleAtariLevels: Level[] = [
     {
         id: "basic-skills-prevent_double_atari-9",
         chapterId: "basic-skills",
-        order: 87,
-        title: { zh: "Prevent Double-Atari · 9/9", en: "Prevent Double-Atari · 9/9" },
+        order: 105,
+        title: { zh: "防止双打吃 · 9/9", en: "Prevent Double-Atari · 9/9" },
         instruction: { zh: "白先。防止双打吃。", en: "White to play. Prevent a double-atari." },
         puzzle: {
             width: 19,
@@ -1365,8 +1834,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-1",
         chapterId: "basic-skills",
-        order: 88,
-        title: { zh: "Connected Shape · 1/15", en: "Connected Shape · 1/15" },
+        order: 106,
+        title: { zh: "连接形状 · 1/15", en: "Connected Shape · 1/15" },
         instruction: { zh: "这三颗白棋没有形成一个棋串，但它们是连接的。如果黑棋试图在1点落子切断，白棋可以在A点落子防止切断。防止黑棋切断。", en: "The three white stones do not form a chain; still, they are connected. If Black tries to cut the stones by playing 1, White can prevent the cut by playing at A. Prevent Black from cutting." },
         puzzle: {
             width: 9,
@@ -1380,8 +1849,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-2",
         chapterId: "basic-skills",
-        order: 89,
-        title: { zh: "Connected Shape · 2/15", en: "Connected Shape · 2/15" },
+        order: 107,
+        title: { zh: "连接形状 · 2/15", en: "Connected Shape · 2/15" },
         instruction: { zh: "这两颗白棋可以在A点连接。防止黑棋切断。", en: "The two white stones can be connected by playing at A. Prevent Black from cutting." },
         puzzle: {
             width: 9,
@@ -1395,8 +1864,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-3",
         chapterId: "basic-skills",
-        order: 90,
-        title: { zh: "Connected Shape · 3/15", en: "Connected Shape · 3/15" },
+        order: 108,
+        title: { zh: "连接形状 · 3/15", en: "Connected Shape · 3/15" },
         instruction: { zh: "这两颗白棋可以直接连接，或在A或B点连接；这称为'虎口'或'虎口连接'。通过下虎口来防止黑棋切断。", en: "The two white stones can be connected directly, or by playing at A or B; this is called a 'hanging connection' or 'tiger's mouth'. Prevent Black from cutting by playing a tiger's mouth." },
         puzzle: {
             width: 9,
@@ -1410,8 +1879,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-4",
         chapterId: "basic-skills",
-        order: 91,
-        title: { zh: "Connected Shape · 4/15", en: "Connected Shape · 4/15" },
+        order: 109,
+        title: { zh: "连接形状 · 4/15", en: "Connected Shape · 4/15" },
         instruction: { zh: "白先。确保黑棋无法再切断白棋。", en: "White to play. Make sure black can no longer cut the white stones." },
         puzzle: {
             width: 9,
@@ -1425,8 +1894,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-5",
         chapterId: "basic-skills",
-        order: 92,
-        title: { zh: "Connected Shape · 5/15", en: "Connected Shape · 5/15" },
+        order: 110,
+        title: { zh: "连接形状 · 5/15", en: "Connected Shape · 5/15" },
         instruction: { zh: "白先。确保黑棋无法再切断白棋。", en: "White to play. Make sure black can no longer cut the white stones." },
         puzzle: {
             width: 9,
@@ -1440,8 +1909,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-6",
         chapterId: "basic-skills",
-        order: 93,
-        title: { zh: "Connected Shape · 6/15", en: "Connected Shape · 6/15" },
+        order: 111,
+        title: { zh: "连接形状 · 6/15", en: "Connected Shape · 6/15" },
         instruction: { zh: "白先。确保黑棋无法再切断白棋。", en: "White to play. Make sure black can no longer cut the white stones." },
         puzzle: {
             width: 9,
@@ -1454,8 +1923,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-7",
         chapterId: "basic-skills",
-        order: 94,
-        title: { zh: "Connected Shape · 7/15", en: "Connected Shape · 7/15" },
+        order: 112,
+        title: { zh: "连接形状 · 7/15", en: "Connected Shape · 7/15" },
         instruction: { zh: "白先。确保黑棋无法再切断白棋。", en: "White to play. Make sure black can no longer cut the white stones." },
         puzzle: {
             width: 9,
@@ -1468,8 +1937,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-8",
         chapterId: "basic-skills",
-        order: 95,
-        title: { zh: "Connected Shape · 8/15", en: "Connected Shape · 8/15" },
+        order: 113,
+        title: { zh: "连接形状 · 8/15", en: "Connected Shape · 8/15" },
         instruction: { zh: "白先。确保黑棋无法再切断白棋。", en: "White to play. Make sure black can no longer cut the white stones." },
         puzzle: {
             width: 9,
@@ -1482,8 +1951,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-9",
         chapterId: "basic-skills",
-        order: 96,
-        title: { zh: "Connected Shape · 9/15", en: "Connected Shape · 9/15" },
+        order: 114,
+        title: { zh: "连接形状 · 9/15", en: "Connected Shape · 9/15" },
         instruction: { zh: "白先。确保黑棋无法再切断白棋。", en: "White to play. Make sure black can no longer cut the white stones." },
         puzzle: {
             width: 9,
@@ -1497,8 +1966,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-10",
         chapterId: "basic-skills",
-        order: 97,
-        title: { zh: "Connected Shape · 10/15", en: "Connected Shape · 10/15" },
+        order: 115,
+        title: { zh: "连接形状 · 10/15", en: "Connected Shape · 10/15" },
         instruction: { zh: "白先。确保黑棋无法再切断白棋。", en: "White to play. Make sure black can no longer cut the white stones." },
         puzzle: {
             width: 9,
@@ -1511,8 +1980,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-11",
         chapterId: "basic-skills",
-        order: 98,
-        title: { zh: "Connected Shape · 11/15", en: "Connected Shape · 11/15" },
+        order: 116,
+        title: { zh: "连接形状 · 11/15", en: "Connected Shape · 11/15" },
         instruction: { zh: "白先。确保黑棋无法再切断白棋。", en: "White to play. Make sure black can no longer cut the white stones." },
         puzzle: {
             width: 9,
@@ -1526,8 +1995,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-12",
         chapterId: "basic-skills",
-        order: 99,
-        title: { zh: "Connected Shape · 12/15", en: "Connected Shape · 12/15" },
+        order: 117,
+        title: { zh: "连接形状 · 12/15", en: "Connected Shape · 12/15" },
         instruction: { zh: "白先。确保黑棋无法再切断白棋。", en: "White to play. Make sure black can no longer cut the white stones." },
         puzzle: {
             width: 9,
@@ -1540,8 +2009,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-13",
         chapterId: "basic-skills",
-        order: 100,
-        title: { zh: "Connected Shape · 13/15", en: "Connected Shape · 13/15" },
+        order: 118,
+        title: { zh: "连接形状 · 13/15", en: "Connected Shape · 13/15" },
         instruction: { zh: "白先。确保黑棋无法再切断白棋。", en: "White to play. Make sure black can no longer cut the white stones." },
         puzzle: {
             width: 9,
@@ -1555,8 +2024,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-14",
         chapterId: "basic-skills",
-        order: 101,
-        title: { zh: "Connected Shape · 14/15", en: "Connected Shape · 14/15" },
+        order: 119,
+        title: { zh: "连接形状 · 14/15", en: "Connected Shape · 14/15" },
         instruction: { zh: "白先。确保黑棋无法再切断白棋。", en: "White to play. Make sure black can no longer cut the white stones." },
         puzzle: {
             width: 9,
@@ -1569,8 +2038,8 @@ const connectedShapeLevels: Level[] = [
     {
         id: "basic-skills-connected-shape-15",
         chapterId: "basic-skills",
-        order: 102,
-        title: { zh: "Connected Shape · 15/15", en: "Connected Shape · 15/15" },
+        order: 120,
+        title: { zh: "连接形状 · 15/15", en: "Connected Shape · 15/15" },
         instruction: { zh: "白先。确保黑棋无法再切断白棋。", en: "White to play. Make sure black can no longer cut the white stones." },
         puzzle: {
             width: 9,
@@ -1587,8 +2056,8 @@ const basicSkillsCutLevels: Level[] = [
     {
         id: "basic-skills-basic-skills-cut-1",
         chapterId: "basic-skills",
-        order: 103,
-        title: { zh: "Cut · 1/6", en: "Cut · 1/6" },
+        order: 121,
+        title: { zh: "切断 · 1/6", en: "Cut · 1/6" },
         instruction: { zh: "黑先。切断白棋。", en: "Black to play. Cut the white stones." },
         puzzle: {
             width: 9,
@@ -1602,8 +2071,8 @@ const basicSkillsCutLevels: Level[] = [
     {
         id: "basic-skills-basic-skills-cut-2",
         chapterId: "basic-skills",
-        order: 104,
-        title: { zh: "Cut · 2/6", en: "Cut · 2/6" },
+        order: 122,
+        title: { zh: "切断 · 2/6", en: "Cut · 2/6" },
         instruction: { zh: "黑先。切断白棋。", en: "Black to play. Cut the white stones." },
         puzzle: {
             width: 9,
@@ -1616,8 +2085,8 @@ const basicSkillsCutLevels: Level[] = [
     {
         id: "basic-skills-basic-skills-cut-3",
         chapterId: "basic-skills",
-        order: 105,
-        title: { zh: "Cut · 3/6", en: "Cut · 3/6" },
+        order: 123,
+        title: { zh: "切断 · 3/6", en: "Cut · 3/6" },
         instruction: { zh: "黑先。切断白棋。", en: "Black to play. Cut the white stones." },
         puzzle: {
             width: 9,
@@ -1630,8 +2099,8 @@ const basicSkillsCutLevels: Level[] = [
     {
         id: "basic-skills-basic-skills-cut-4",
         chapterId: "basic-skills",
-        order: 106,
-        title: { zh: "Cut · 4/6", en: "Cut · 4/6" },
+        order: 124,
+        title: { zh: "切断 · 4/6", en: "Cut · 4/6" },
         instruction: { zh: "黑先。切断白棋。", en: "Black to play. Cut the white stones." },
         puzzle: {
             width: 9,
@@ -1644,8 +2113,8 @@ const basicSkillsCutLevels: Level[] = [
     {
         id: "basic-skills-basic-skills-cut-5",
         chapterId: "basic-skills",
-        order: 107,
-        title: { zh: "Cut · 5/6", en: "Cut · 5/6" },
+        order: 125,
+        title: { zh: "切断 · 5/6", en: "Cut · 5/6" },
         instruction: { zh: "黑先。切断白棋。", en: "Black to play. Cut the white stones." },
         puzzle: {
             width: 9,
@@ -1658,8 +2127,8 @@ const basicSkillsCutLevels: Level[] = [
     {
         id: "basic-skills-basic-skills-cut-6",
         chapterId: "basic-skills",
-        order: 108,
-        title: { zh: "Cut · 6/6", en: "Cut · 6/6" },
+        order: 126,
+        title: { zh: "切断 · 6/6", en: "Cut · 6/6" },
         instruction: { zh: "黑先。切断白棋。", en: "Black to play. Cut the white stones." },
         puzzle: {
             width: 9,
@@ -1675,8 +2144,8 @@ const connectWithHangingConnectionLevels: Level[] = [
     {
         id: "basic-skills-connect_with_hanging_connection-1",
         chapterId: "basic-skills",
-        order: 109,
-        title: { zh: "Hanging connection · 1/6", en: "Hanging connection · 1/6" },
+        order: 127,
+        title: { zh: "虎口连接 · 1/6", en: "Hanging connection · 1/6" },
         instruction: { zh: "白先。用虎口连接白棋。", en: "White to play. Connect the white stones with a hanging connection." },
         puzzle: {
             width: 9,
@@ -1689,8 +2158,8 @@ const connectWithHangingConnectionLevels: Level[] = [
     {
         id: "basic-skills-connect_with_hanging_connection-2",
         chapterId: "basic-skills",
-        order: 110,
-        title: { zh: "Hanging connection · 2/6", en: "Hanging connection · 2/6" },
+        order: 128,
+        title: { zh: "虎口连接 · 2/6", en: "Hanging connection · 2/6" },
         instruction: { zh: "白先。用虎口连接白棋。", en: "White to play. Connect the white stones with a hanging connection." },
         puzzle: {
             width: 9,
@@ -1703,8 +2172,8 @@ const connectWithHangingConnectionLevels: Level[] = [
     {
         id: "basic-skills-connect_with_hanging_connection-3",
         chapterId: "basic-skills",
-        order: 111,
-        title: { zh: "Hanging connection · 3/6", en: "Hanging connection · 3/6" },
+        order: 129,
+        title: { zh: "虎口连接 · 3/6", en: "Hanging connection · 3/6" },
         instruction: { zh: "白先。用虎口连接白棋。", en: "White to play. Connect the white stones with a hanging connection." },
         puzzle: {
             width: 9,
@@ -1717,8 +2186,8 @@ const connectWithHangingConnectionLevels: Level[] = [
     {
         id: "basic-skills-connect_with_hanging_connection-4",
         chapterId: "basic-skills",
-        order: 112,
-        title: { zh: "Hanging connection · 4/6", en: "Hanging connection · 4/6" },
+        order: 130,
+        title: { zh: "虎口连接 · 4/6", en: "Hanging connection · 4/6" },
         instruction: { zh: "白先。用虎口连接白棋。", en: "White to play. Connect the white stones with a hanging connection." },
         puzzle: {
             width: 9,
@@ -1731,8 +2200,8 @@ const connectWithHangingConnectionLevels: Level[] = [
     {
         id: "basic-skills-connect_with_hanging_connection-5",
         chapterId: "basic-skills",
-        order: 113,
-        title: { zh: "Hanging connection · 5/6", en: "Hanging connection · 5/6" },
+        order: 131,
+        title: { zh: "虎口连接 · 5/6", en: "Hanging connection · 5/6" },
         instruction: { zh: "白先。用虎口连接白棋。", en: "White to play. Connect the white stones with a hanging connection." },
         puzzle: {
             width: 9,
@@ -1745,8 +2214,8 @@ const connectWithHangingConnectionLevels: Level[] = [
     {
         id: "basic-skills-connect_with_hanging_connection-6",
         chapterId: "basic-skills",
-        order: 114,
-        title: { zh: "Hanging connection · 6/6", en: "Hanging connection · 6/6" },
+        order: 132,
+        title: { zh: "虎口连接 · 6/6", en: "Hanging connection · 6/6" },
         instruction: { zh: "白先。用虎口连接白棋。", en: "White to play. Connect the white stones with a hanging connection." },
         puzzle: {
             width: 9,
@@ -1762,8 +2231,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-1",
         chapterId: "basic-skills",
-        order: 115,
-        title: { zh: "Ladder · 1/24", en: "Ladder · 1/24" },
+        order: 133,
+        title: { zh: "征子 · 1/24", en: "Ladder · 1/24" },
         instruction: { zh: "黑先。带标记的棋串只有两口气。通过反复在白棋棋串的头部落子，黑棋可以吃掉带标记的棋子，这称为'征子'。黑棋应阻止白棋获得三口气。用征子吃掉带标记的白棋。", en: "Black to play. The marked chain has only two liberties. By repeatedly playing at the head of the white chain, Black can capture the marked stones. This is called a 'ladder'. Black should prevent White from creating three liberties. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -1778,8 +2247,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-2",
         chapterId: "basic-skills",
-        order: 116,
-        title: { zh: "Ladder · 2/24", en: "Ladder · 2/24" },
+        order: 134,
+        title: { zh: "征子 · 2/24", en: "Ladder · 2/24" },
         instruction: { zh: "黑先。用征子吃掉带标记的白棋。", en: "Black to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -1794,8 +2263,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-3",
         chapterId: "basic-skills",
-        order: 117,
-        title: { zh: "Ladder · 3/24", en: "Ladder · 3/24" },
+        order: 135,
+        title: { zh: "征子 · 3/24", en: "Ladder · 3/24" },
         instruction: { zh: "黑先。用征子吃掉带标记的白棋。", en: "Black to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -1810,8 +2279,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-4",
         chapterId: "basic-skills",
-        order: 118,
-        title: { zh: "Ladder · 4/24", en: "Ladder · 4/24" },
+        order: 136,
+        title: { zh: "征子 · 4/24", en: "Ladder · 4/24" },
         instruction: { zh: "黑先。用征子吃掉带标记的白棋。", en: "Black to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -1826,8 +2295,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-5",
         chapterId: "basic-skills",
-        order: 119,
-        title: { zh: "Ladder · 5/24", en: "Ladder · 5/24" },
+        order: 137,
+        title: { zh: "征子 · 5/24", en: "Ladder · 5/24" },
         instruction: { zh: "黑先。用征子吃掉带标记的白棋。", en: "Black to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -1842,8 +2311,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-6",
         chapterId: "basic-skills",
-        order: 120,
-        title: { zh: "Ladder · 6/24", en: "Ladder · 6/24" },
+        order: 138,
+        title: { zh: "征子 · 6/24", en: "Ladder · 6/24" },
         instruction: { zh: "黑先。用征子吃掉带标记的白棋。", en: "Black to play. Capture the marked stone in a ladder." },
         puzzle: {
             width: 9,
@@ -1858,8 +2327,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-7",
         chapterId: "basic-skills",
-        order: 121,
-        title: { zh: "Ladder · 7/24", en: "Ladder · 7/24" },
+        order: 139,
+        title: { zh: "征子 · 7/24", en: "Ladder · 7/24" },
         instruction: { zh: "黑先。用征子吃掉带标记的白棋。", en: "Black to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -1874,8 +2343,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-8",
         chapterId: "basic-skills",
-        order: 122,
-        title: { zh: "Ladder · 8/24", en: "Ladder · 8/24" },
+        order: 140,
+        title: { zh: "征子 · 8/24", en: "Ladder · 8/24" },
         instruction: { zh: "黑先。用征子吃掉带标记的白棋。", en: "Black to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -1890,8 +2359,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-9",
         chapterId: "basic-skills",
-        order: 123,
-        title: { zh: "Ladder · 9/24", en: "Ladder · 9/24" },
+        order: 141,
+        title: { zh: "征子 · 9/24", en: "Ladder · 9/24" },
         instruction: { zh: "黑先。用征子吃掉带标记的白棋。", en: "Black to play. Capture the marked stone in a ladder." },
         puzzle: {
             width: 9,
@@ -1906,8 +2375,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-10",
         chapterId: "basic-skills",
-        order: 124,
-        title: { zh: "Ladder · 10/24", en: "Ladder · 10/24" },
+        order: 142,
+        title: { zh: "征子 · 10/24", en: "Ladder · 10/24" },
         instruction: { zh: "黑先。用征子吃掉带标记的白棋。", en: "Black to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -1922,8 +2391,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-11",
         chapterId: "basic-skills",
-        order: 125,
-        title: { zh: "Ladder · 11/24", en: "Ladder · 11/24" },
+        order: 143,
+        title: { zh: "征子 · 11/24", en: "Ladder · 11/24" },
         instruction: { zh: "黑先。用征子吃掉带标记的白棋。", en: "Black to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -1938,8 +2407,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-12",
         chapterId: "basic-skills",
-        order: 126,
-        title: { zh: "Ladder · 12/24", en: "Ladder · 12/24" },
+        order: 144,
+        title: { zh: "征子 · 12/24", en: "Ladder · 12/24" },
         instruction: { zh: "黑先。用征子吃掉带标记的白棋。", en: "Black to play. Capture the marked stone in a ladder." },
         puzzle: {
             width: 9,
@@ -1954,8 +2423,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-13",
         chapterId: "basic-skills",
-        order: 127,
-        title: { zh: "Ladder · 13/24", en: "Ladder · 13/24" },
+        order: 145,
+        title: { zh: "征子 · 13/24", en: "Ladder · 13/24" },
         instruction: { zh: "白先。用征子吃掉带标记的黑棋。", en: "White to play. Capture the marked stone in a ladder." },
         puzzle: {
             width: 9,
@@ -1970,8 +2439,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-14",
         chapterId: "basic-skills",
-        order: 128,
-        title: { zh: "Ladder · 14/24", en: "Ladder · 14/24" },
+        order: 146,
+        title: { zh: "征子 · 14/24", en: "Ladder · 14/24" },
         instruction: { zh: "白先。用征子吃掉带标记的黑棋。", en: "White to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -1986,8 +2455,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-15",
         chapterId: "basic-skills",
-        order: 129,
-        title: { zh: "Ladder · 15/24", en: "Ladder · 15/24" },
+        order: 147,
+        title: { zh: "征子 · 15/24", en: "Ladder · 15/24" },
         instruction: { zh: "白先。用征子吃掉带标记的黑棋。", en: "White to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -2002,8 +2471,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-16",
         chapterId: "basic-skills",
-        order: 130,
-        title: { zh: "Ladder · 16/24", en: "Ladder · 16/24" },
+        order: 148,
+        title: { zh: "征子 · 16/24", en: "Ladder · 16/24" },
         instruction: { zh: "白先。用征子吃掉带标记的黑棋。", en: "White to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -2018,8 +2487,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-17",
         chapterId: "basic-skills",
-        order: 131,
-        title: { zh: "Ladder · 17/24", en: "Ladder · 17/24" },
+        order: 149,
+        title: { zh: "征子 · 17/24", en: "Ladder · 17/24" },
         instruction: { zh: "白先。用征子吃掉带标记的黑棋。", en: "White to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -2034,8 +2503,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-18",
         chapterId: "basic-skills",
-        order: 132,
-        title: { zh: "Ladder · 18/24", en: "Ladder · 18/24" },
+        order: 150,
+        title: { zh: "征子 · 18/24", en: "Ladder · 18/24" },
         instruction: { zh: "白先。用征子吃掉带标记的黑棋。", en: "White to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -2050,8 +2519,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-19",
         chapterId: "basic-skills",
-        order: 133,
-        title: { zh: "Ladder · 19/24", en: "Ladder · 19/24" },
+        order: 151,
+        title: { zh: "征子 · 19/24", en: "Ladder · 19/24" },
         instruction: { zh: "白先。用征子吃掉带标记的黑棋。", en: "White to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -2066,8 +2535,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-20",
         chapterId: "basic-skills",
-        order: 134,
-        title: { zh: "Ladder · 20/24", en: "Ladder · 20/24" },
+        order: 152,
+        title: { zh: "征子 · 20/24", en: "Ladder · 20/24" },
         instruction: { zh: "白先。用征子吃掉带标记的黑棋。", en: "White to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -2082,8 +2551,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-21",
         chapterId: "basic-skills",
-        order: 135,
-        title: { zh: "Ladder · 21/24", en: "Ladder · 21/24" },
+        order: 153,
+        title: { zh: "征子 · 21/24", en: "Ladder · 21/24" },
         instruction: { zh: "白先。用征子吃掉带标记的黑棋。", en: "White to play. Capture the marked stone in a ladder." },
         puzzle: {
             width: 9,
@@ -2098,8 +2567,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-22",
         chapterId: "basic-skills",
-        order: 136,
-        title: { zh: "Ladder · 22/24", en: "Ladder · 22/24" },
+        order: 154,
+        title: { zh: "征子 · 22/24", en: "Ladder · 22/24" },
         instruction: { zh: "白先。用征子吃掉带标记的黑棋。", en: "White to play. Capture the marked stone in a ladder." },
         puzzle: {
             width: 9,
@@ -2114,8 +2583,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-23",
         chapterId: "basic-skills",
-        order: 137,
-        title: { zh: "Ladder · 23/24", en: "Ladder · 23/24" },
+        order: 155,
+        title: { zh: "征子 · 23/24", en: "Ladder · 23/24" },
         instruction: { zh: "白先。用征子吃掉带标记的黑棋。", en: "White to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -2130,8 +2599,8 @@ const ladderLevels: Level[] = [
     {
         id: "basic-skills-ladder-24",
         chapterId: "basic-skills",
-        order: 138,
-        title: { zh: "Ladder · 24/24", en: "Ladder · 24/24" },
+        order: 156,
+        title: { zh: "征子 · 24/24", en: "Ladder · 24/24" },
         instruction: { zh: "白先。用征子吃掉带标记的黑棋。", en: "White to play. Capture the marked stones in a ladder." },
         puzzle: {
             width: 9,
@@ -2149,8 +2618,8 @@ const shortageLibertiesLevels: Level[] = [
     {
         id: "basic-skills-shortage-liberties-1",
         chapterId: "basic-skills",
-        order: 139,
-        title: { zh: "Shortage Liberties · 1/12", en: "Shortage Liberties · 1/12" },
+        order: 157,
+        title: { zh: "气不够 · 1/12", en: "Shortage Liberties · 1/12" },
         instruction: { zh: "黑棋可以在A点落子对带标记的白棋进行打吃。接下来，白棋可以在B点连接，但白棋仍然处于被打吃状态，这称为'气不够'。利用白棋气不够吃掉带标记的白棋。", en: "Black can put the marked stones in atari by playing at A. Next, White can connect at B, but the white stones will still be in atari. This is called 'shortage of liberties'. Capture the marked stones using a shortage of liberties for White." },
         puzzle: {
             width: 9,
@@ -2165,8 +2634,8 @@ const shortageLibertiesLevels: Level[] = [
     {
         id: "basic-skills-shortage-liberties-2",
         chapterId: "basic-skills",
-        order: 140,
-        title: { zh: "Shortage Liberties · 2/12", en: "Shortage Liberties · 2/12" },
+        order: 158,
+        title: { zh: "气不够 · 2/12", en: "Shortage Liberties · 2/12" },
         instruction: { zh: "黑先。利用白棋气不够吃掉带标记的白棋。", en: "Black to play. Capture the marked stones using a shortage of liberties for White." },
         puzzle: {
             width: 9,
@@ -2181,8 +2650,8 @@ const shortageLibertiesLevels: Level[] = [
     {
         id: "basic-skills-shortage-liberties-3",
         chapterId: "basic-skills",
-        order: 141,
-        title: { zh: "Shortage Liberties · 3/12", en: "Shortage Liberties · 3/12" },
+        order: 159,
+        title: { zh: "气不够 · 3/12", en: "Shortage Liberties · 3/12" },
         instruction: { zh: "黑先。利用白棋气不够吃掉带标记的白棋。", en: "Black to play. Capture the marked stones using a shortage of liberties for White." },
         puzzle: {
             width: 9,
@@ -2197,8 +2666,8 @@ const shortageLibertiesLevels: Level[] = [
     {
         id: "basic-skills-shortage-liberties-4",
         chapterId: "basic-skills",
-        order: 142,
-        title: { zh: "Shortage Liberties · 4/12", en: "Shortage Liberties · 4/12" },
+        order: 160,
+        title: { zh: "气不够 · 4/12", en: "Shortage Liberties · 4/12" },
         instruction: { zh: "黑先。利用白棋气不够吃掉带标记的白棋。", en: "Black to play. Capture the marked stones using a shortage of liberties for White." },
         puzzle: {
             width: 9,
@@ -2212,8 +2681,8 @@ const shortageLibertiesLevels: Level[] = [
     {
         id: "basic-skills-shortage-liberties-5",
         chapterId: "basic-skills",
-        order: 143,
-        title: { zh: "Shortage Liberties · 5/12", en: "Shortage Liberties · 5/12" },
+        order: 161,
+        title: { zh: "气不够 · 5/12", en: "Shortage Liberties · 5/12" },
         instruction: { zh: "黑先。利用白棋气不够吃掉带标记的白棋。", en: "Black to play. Capture the marked stones using a shortage of liberties for White." },
         puzzle: {
             width: 9,
@@ -2227,8 +2696,8 @@ const shortageLibertiesLevels: Level[] = [
     {
         id: "basic-skills-shortage-liberties-6",
         chapterId: "basic-skills",
-        order: 144,
-        title: { zh: "Shortage Liberties · 6/12", en: "Shortage Liberties · 6/12" },
+        order: 162,
+        title: { zh: "气不够 · 6/12", en: "Shortage Liberties · 6/12" },
         instruction: { zh: "黑先。利用白棋气不够吃掉带标记的白棋。", en: "Black to play. Capture the marked stones using a shortage of liberties for White." },
         puzzle: {
             width: 9,
@@ -2242,8 +2711,8 @@ const shortageLibertiesLevels: Level[] = [
     {
         id: "basic-skills-shortage-liberties-7",
         chapterId: "basic-skills",
-        order: 145,
-        title: { zh: "Shortage Liberties · 7/12", en: "Shortage Liberties · 7/12" },
+        order: 163,
+        title: { zh: "气不够 · 7/12", en: "Shortage Liberties · 7/12" },
         instruction: { zh: "黑先。利用白棋气不够吃掉带标记的白棋。", en: "Black to play. Capture the marked stones using a shortage of liberties for White." },
         puzzle: {
             width: 9,
@@ -2257,8 +2726,8 @@ const shortageLibertiesLevels: Level[] = [
     {
         id: "basic-skills-shortage-liberties-8",
         chapterId: "basic-skills",
-        order: 146,
-        title: { zh: "Shortage Liberties · 8/12", en: "Shortage Liberties · 8/12" },
+        order: 164,
+        title: { zh: "气不够 · 8/12", en: "Shortage Liberties · 8/12" },
         instruction: { zh: "黑先。利用白棋气不够吃掉带标记的白棋。", en: "Black to play. Capture the marked stones using a shortage of liberties for White." },
         puzzle: {
             width: 9,
@@ -2273,8 +2742,8 @@ const shortageLibertiesLevels: Level[] = [
     {
         id: "basic-skills-shortage-liberties-9",
         chapterId: "basic-skills",
-        order: 147,
-        title: { zh: "Shortage Liberties · 9/12", en: "Shortage Liberties · 9/12" },
+        order: 165,
+        title: { zh: "气不够 · 9/12", en: "Shortage Liberties · 9/12" },
         instruction: { zh: "黑先。利用白棋气不够吃掉带标记的白棋。", en: "Black to play. Capture the marked stones using a shortage of liberties for White." },
         puzzle: {
             width: 9,
@@ -2289,8 +2758,8 @@ const shortageLibertiesLevels: Level[] = [
     {
         id: "basic-skills-shortage-liberties-10",
         chapterId: "basic-skills",
-        order: 148,
-        title: { zh: "Shortage Liberties · 10/12", en: "Shortage Liberties · 10/12" },
+        order: 166,
+        title: { zh: "气不够 · 10/12", en: "Shortage Liberties · 10/12" },
         instruction: { zh: "黑先。利用白棋气不够吃掉带标记的白棋。", en: "Black to play. Capture the marked stones using a shortage of liberties for White." },
         puzzle: {
             width: 9,
@@ -2304,8 +2773,8 @@ const shortageLibertiesLevels: Level[] = [
     {
         id: "basic-skills-shortage-liberties-11",
         chapterId: "basic-skills",
-        order: 149,
-        title: { zh: "Shortage Liberties · 11/12", en: "Shortage Liberties · 11/12" },
+        order: 167,
+        title: { zh: "气不够 · 11/12", en: "Shortage Liberties · 11/12" },
         instruction: { zh: "黑先。利用白棋气不够吃掉带标记的白棋。", en: "Black to play. Capture the marked stones using a shortage of liberties for White." },
         puzzle: {
             width: 9,
@@ -2320,8 +2789,8 @@ const shortageLibertiesLevels: Level[] = [
     {
         id: "basic-skills-shortage-liberties-12",
         chapterId: "basic-skills",
-        order: 150,
-        title: { zh: "Shortage Liberties · 12/12", en: "Shortage Liberties · 12/12" },
+        order: 168,
+        title: { zh: "气不够 · 12/12", en: "Shortage Liberties · 12/12" },
         instruction: { zh: "黑先。利用白棋气不够吃掉带标记的白棋。", en: "Black to play. Capture the marked stones using a shortage of liberties for White." },
         puzzle: {
             width: 9,
@@ -2339,8 +2808,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-1",
         chapterId: "basic-skills",
-        order: 151,
-        title: { zh: "False Eye · 1/18", en: "False Eye · 1/18" },
+        order: 169,
+        title: { zh: "假眼 · 1/18", en: "False Eye · 1/18" },
         instruction: { zh: "黑棋有两个眼，但A点的眼不安全。白先。使A点的眼成为假眼，从而吃掉黑棋棋块。", en: "Black has two eyes, but the eye at A is not safe. White to play. Make the eye at A false, capturing the black group." },
         puzzle: {
             width: 9,
@@ -2355,8 +2824,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-2",
         chapterId: "basic-skills",
-        order: 152,
-        title: { zh: "False Eye · 2/18", en: "False Eye · 2/18" },
+        order: 170,
+        title: { zh: "假眼 · 2/18", en: "False Eye · 2/18" },
         instruction: { zh: "白先。使A点的眼成为假眼，从而吃掉黑棋棋块。", en: "White to play. Make eye A false capturing the black group." },
         puzzle: {
             width: 9,
@@ -2371,8 +2840,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-3",
         chapterId: "basic-skills",
-        order: 153,
-        title: { zh: "False Eye · 3/18", en: "False Eye · 3/18" },
+        order: 171,
+        title: { zh: "假眼 · 3/18", en: "False Eye · 3/18" },
         instruction: { zh: "白先。使A点的眼成为假眼，从而吃掉黑棋棋块。", en: "White to play. Make eye A false capturing the black group." },
         puzzle: {
             width: 9,
@@ -2387,8 +2856,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-4",
         chapterId: "basic-skills",
-        order: 154,
-        title: { zh: "False Eye · 4/18", en: "False Eye · 4/18" },
+        order: 172,
+        title: { zh: "假眼 · 4/18", en: "False Eye · 4/18" },
         instruction: { zh: "白先。使A点的眼成为假眼，从而吃掉黑棋棋块。", en: "White to play. Make eye A false capturing the black group." },
         puzzle: {
             width: 9,
@@ -2403,8 +2872,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-5",
         chapterId: "basic-skills",
-        order: 155,
-        title: { zh: "False Eye · 5/18", en: "False Eye · 5/18" },
+        order: 173,
+        title: { zh: "假眼 · 5/18", en: "False Eye · 5/18" },
         instruction: { zh: "白先。使A点的眼成为假眼，从而吃掉黑棋棋块。", en: "White to play. Make eye A false capturing the black group." },
         puzzle: {
             width: 9,
@@ -2419,8 +2888,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-6",
         chapterId: "basic-skills",
-        order: 156,
-        title: { zh: "False Eye · 6/18", en: "False Eye · 6/18" },
+        order: 174,
+        title: { zh: "假眼 · 6/18", en: "False Eye · 6/18" },
         instruction: { zh: "白先。使A点的眼成为假眼，从而吃掉黑棋棋块。", en: "White to play. Make eye A false capturing the black group." },
         puzzle: {
             width: 9,
@@ -2435,8 +2904,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-7",
         chapterId: "basic-skills",
-        order: 157,
-        title: { zh: "False Eye · 7/18", en: "False Eye · 7/18" },
+        order: 175,
+        title: { zh: "假眼 · 7/18", en: "False Eye · 7/18" },
         instruction: { zh: "白先。使A点的眼成为假眼，从而吃掉黑棋棋块。", en: "White to play. Make eye A false capturing the black group." },
         puzzle: {
             width: 9,
@@ -2450,8 +2919,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-8",
         chapterId: "basic-skills",
-        order: 158,
-        title: { zh: "False Eye · 8/18", en: "False Eye · 8/18" },
+        order: 176,
+        title: { zh: "假眼 · 8/18", en: "False Eye · 8/18" },
         instruction: { zh: "白先。使A点的眼成为假眼，从而吃掉黑棋棋块。", en: "White to play. Make eye A false capturing the black group." },
         puzzle: {
             width: 9,
@@ -2466,8 +2935,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-9",
         chapterId: "basic-skills",
-        order: 159,
-        title: { zh: "False Eye · 9/18", en: "False Eye · 9/18" },
+        order: 177,
+        title: { zh: "假眼 · 9/18", en: "False Eye · 9/18" },
         instruction: { zh: "白先。使A点的眼成为假眼，从而吃掉黑棋棋块。", en: "White to play. Make eye A false capturing the black group." },
         puzzle: {
             width: 9,
@@ -2482,8 +2951,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-10",
         chapterId: "basic-skills",
-        order: 160,
-        title: { zh: "False Eye · 10/18", en: "False Eye · 10/18" },
+        order: 178,
+        title: { zh: "假眼 · 10/18", en: "False Eye · 10/18" },
         instruction: { zh: "白先。使A点的眼成为假眼，从而吃掉黑棋棋块。", en: "White to play. Make eye A false capturing the black group." },
         puzzle: {
             width: 9,
@@ -2497,8 +2966,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-11",
         chapterId: "basic-skills",
-        order: 161,
-        title: { zh: "False Eye · 11/18", en: "False Eye · 11/18" },
+        order: 179,
+        title: { zh: "假眼 · 11/18", en: "False Eye · 11/18" },
         instruction: { zh: "白先。使A点的眼成为假眼，从而吃掉黑棋棋块。", en: "White to play. Make eye A false capturing the black group." },
         puzzle: {
             width: 9,
@@ -2513,8 +2982,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-12",
         chapterId: "basic-skills",
-        order: 162,
-        title: { zh: "False Eye · 12/18", en: "False Eye · 12/18" },
+        order: 180,
+        title: { zh: "假眼 · 12/18", en: "False Eye · 12/18" },
         instruction: { zh: "白先。使A点的眼成为假眼，从而吃掉黑棋棋块。", en: "White to play. Make eye A false capturing the black group." },
         puzzle: {
             width: 9,
@@ -2528,8 +2997,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-13",
         chapterId: "basic-skills",
-        order: 163,
-        title: { zh: "False Eye · 13/18", en: "False Eye · 13/18" },
+        order: 181,
+        title: { zh: "假眼 · 13/18", en: "False Eye · 13/18" },
         instruction: { zh: "白先。阻止黑棋将白棋的眼做成假眼。", en: "White to play. Prevent Black from making a white eye false." },
         puzzle: {
             width: 9,
@@ -2542,8 +3011,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-14",
         chapterId: "basic-skills",
-        order: 164,
-        title: { zh: "False Eye · 14/18", en: "False Eye · 14/18" },
+        order: 182,
+        title: { zh: "假眼 · 14/18", en: "False Eye · 14/18" },
         instruction: { zh: "白先。阻止黑棋将白棋的眼做成假眼。", en: "White to play. Prevent Black from making a white eye false." },
         puzzle: {
             width: 9,
@@ -2556,8 +3025,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-15",
         chapterId: "basic-skills",
-        order: 165,
-        title: { zh: "False Eye · 15/18", en: "False Eye · 15/18" },
+        order: 183,
+        title: { zh: "假眼 · 15/18", en: "False Eye · 15/18" },
         instruction: { zh: "白先。阻止黑棋将白棋的眼做成假眼。", en: "White to play. Prevent Black from making a white eye false." },
         puzzle: {
             width: 9,
@@ -2570,8 +3039,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-16",
         chapterId: "basic-skills",
-        order: 166,
-        title: { zh: "False Eye · 16/18", en: "False Eye · 16/18" },
+        order: 184,
+        title: { zh: "假眼 · 16/18", en: "False Eye · 16/18" },
         instruction: { zh: "白先。阻止黑棋将白棋的眼做成假眼。", en: "White to play. Prevent Black from making a white eye false." },
         puzzle: {
             width: 9,
@@ -2585,8 +3054,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-17",
         chapterId: "basic-skills",
-        order: 167,
-        title: { zh: "False Eye · 17/18", en: "False Eye · 17/18" },
+        order: 185,
+        title: { zh: "假眼 · 17/18", en: "False Eye · 17/18" },
         instruction: { zh: "白先。阻止黑棋将白棋的眼做成假眼。", en: "White to play. Prevent Black from making a white eye false." },
         puzzle: {
             width: 9,
@@ -2600,8 +3069,8 @@ const falseEyeLevels: Level[] = [
     {
         id: "basic-skills-false-eye-18",
         chapterId: "basic-skills",
-        order: 168,
-        title: { zh: "False Eye · 18/18", en: "False Eye · 18/18" },
+        order: 186,
+        title: { zh: "假眼 · 18/18", en: "False Eye · 18/18" },
         instruction: { zh: "白先。阻止黑棋将白棋的眼做成假眼。", en: "White to play. Prevent Black from making a white eye false." },
         puzzle: {
             width: 9,
@@ -2618,8 +3087,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-1",
         chapterId: "basic-skills",
-        order: 169,
-        title: { zh: "Large Eye · 1/29", en: "Large Eye · 1/29" },
+        order: 187,
+        title: { zh: "大眼 · 1/29", en: "Large Eye · 1/29" },
         instruction: { zh: "黑棋有一个3目的大眼。为确保棋块安全，黑棋需要两个眼。黑先。通过落子于'要点'来做成两个眼。", en: "Black has a large eye of 3 points. For a safe group, Black needs two eyes. Black to play. Make two eyes, by playing at the 'vital point'." },
         puzzle: {
             width: 9,
@@ -2633,8 +3102,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-2",
         chapterId: "basic-skills",
-        order: 170,
-        title: { zh: "Large Eye · 2/29", en: "Large Eye · 2/29" },
+        order: 188,
+        title: { zh: "大眼 · 2/29", en: "Large Eye · 2/29" },
         instruction: { zh: "黑棋又有一个3目的眼形。黑先。通过落子于要点来做成两个眼。", en: "Again, Black has a 3-points eye shape. Black to play. Make two eyes, by playing at the vital point." },
         puzzle: {
             width: 9,
@@ -2648,8 +3117,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-3",
         chapterId: "basic-skills",
-        order: 171,
-        title: { zh: "Large Eye · 3/29", en: "Large Eye · 3/29" },
+        order: 189,
+        title: { zh: "大眼 · 3/29", en: "Large Eye · 3/29" },
         instruction: { zh: "黑棋有一个4目的眼形。黑先。通过落子于要点来做成两个眼。", en: "Black has a 4-points eye shape. Black to play. Make two eyes, by playing at the vital point." },
         puzzle: {
             width: 9,
@@ -2663,8 +3132,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-4",
         chapterId: "basic-skills",
-        order: 172,
-        title: { zh: "Large Eye · 4/29", en: "Large Eye · 4/29" },
+        order: 190,
+        title: { zh: "大眼 · 4/29", en: "Large Eye · 4/29" },
         instruction: { zh: "黑棋有一个5目的眼形。黑先。通过落子于要点来做成两个或更多眼。", en: "Black has a 5-points eye shape. Black to play. Make two (or more) eyes, by playing at the vital point." },
         puzzle: {
             width: 9,
@@ -2678,8 +3147,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-5",
         chapterId: "basic-skills",
-        order: 173,
-        title: { zh: "Large Eye · 5/29", en: "Large Eye · 5/29" },
+        order: 191,
+        title: { zh: "大眼 · 5/29", en: "Large Eye · 5/29" },
         instruction: { zh: "黑棋有一个5目的眼形。黑先。通过落子于要点来做成两个眼。", en: "Black has a 5-points eye shape. Black to play. Make two eyes, by playing at the vital point." },
         puzzle: {
             width: 9,
@@ -2693,8 +3162,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-6",
         chapterId: "basic-skills",
-        order: 174,
-        title: { zh: "Large Eye · 6/29", en: "Large Eye · 6/29" },
+        order: 192,
+        title: { zh: "大眼 · 6/29", en: "Large Eye · 6/29" },
         instruction: { zh: "白先。做成两个眼，使白棋块活棋。", en: "White to play. Make two eyes so the white group lives." },
         puzzle: {
             width: 9,
@@ -2707,8 +3176,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-7",
         chapterId: "basic-skills",
-        order: 175,
-        title: { zh: "Large Eye · 7/29", en: "Large Eye · 7/29" },
+        order: 193,
+        title: { zh: "大眼 · 7/29", en: "Large Eye · 7/29" },
         instruction: { zh: "白先。做成两个眼，使白棋块活棋。", en: "White to play. Make two eyes so the white group lives." },
         puzzle: {
             width: 9,
@@ -2721,8 +3190,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-8",
         chapterId: "basic-skills",
-        order: 176,
-        title: { zh: "Large Eye · 8/29", en: "Large Eye · 8/29" },
+        order: 194,
+        title: { zh: "大眼 · 8/29", en: "Large Eye · 8/29" },
         instruction: { zh: "白先。做成两个眼，使白棋块活棋。", en: "White to play. Make two eyes so the white group lives." },
         puzzle: {
             width: 9,
@@ -2735,8 +3204,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-9",
         chapterId: "basic-skills",
-        order: 177,
-        title: { zh: "Large Eye · 9/29", en: "Large Eye · 9/29" },
+        order: 195,
+        title: { zh: "大眼 · 9/29", en: "Large Eye · 9/29" },
         instruction: { zh: "白先。做成两个眼，使白棋块活棋。", en: "White to play. Make two eyes so the white group lives." },
         puzzle: {
             width: 9,
@@ -2749,8 +3218,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-10",
         chapterId: "basic-skills",
-        order: 178,
-        title: { zh: "Large Eye · 10/29", en: "Large Eye · 10/29" },
+        order: 196,
+        title: { zh: "大眼 · 10/29", en: "Large Eye · 10/29" },
         instruction: { zh: "白先。做成两个眼，使白棋块活棋。", en: "White to play. Make two eyes so the white group lives." },
         puzzle: {
             width: 9,
@@ -2763,8 +3232,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-11",
         chapterId: "basic-skills",
-        order: 179,
-        title: { zh: "Large Eye · 11/29", en: "Large Eye · 11/29" },
+        order: 197,
+        title: { zh: "大眼 · 11/29", en: "Large Eye · 11/29" },
         instruction: { zh: "白先。做成两个眼，使白棋块活棋。", en: "White to play. Make two eyes so the white group lives." },
         puzzle: {
             width: 9,
@@ -2777,8 +3246,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-12",
         chapterId: "basic-skills",
-        order: 180,
-        title: { zh: "Large Eye · 12/29", en: "Large Eye · 12/29" },
+        order: 198,
+        title: { zh: "大眼 · 12/29", en: "Large Eye · 12/29" },
         instruction: { zh: "白先。做成两个眼，使白棋块活棋。", en: "White to play. Make two eyes so the white group lives." },
         puzzle: {
             width: 9,
@@ -2791,8 +3260,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-13",
         chapterId: "basic-skills",
-        order: 181,
-        title: { zh: "Large Eye · 13/29", en: "Large Eye · 13/29" },
+        order: 199,
+        title: { zh: "大眼 · 13/29", en: "Large Eye · 13/29" },
         instruction: { zh: "白先。做成两个眼，使白棋块活棋。", en: "White to play. Make two eyes so the white group lives." },
         puzzle: {
             width: 9,
@@ -2805,8 +3274,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-14",
         chapterId: "basic-skills",
-        order: 182,
-        title: { zh: "Large Eye · 14/29", en: "Large Eye · 14/29" },
+        order: 200,
+        title: { zh: "大眼 · 14/29", en: "Large Eye · 14/29" },
         instruction: { zh: "白先。做成两个眼，使白棋块活棋。", en: "White to play. Make two eyes so the white group lives." },
         puzzle: {
             width: 9,
@@ -2820,8 +3289,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-15",
         chapterId: "basic-skills",
-        order: 183,
-        title: { zh: "Large Eye · 15/29", en: "Large Eye · 15/29" },
+        order: 201,
+        title: { zh: "大眼 · 15/29", en: "Large Eye · 15/29" },
         instruction: { zh: "白先。做成两个眼，使白棋块活棋。", en: "White to play. Make two eyes so the white group lives." },
         puzzle: {
             width: 9,
@@ -2835,8 +3304,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-16",
         chapterId: "basic-skills",
-        order: 184,
-        title: { zh: "Large Eye · 16/29", en: "Large Eye · 16/29" },
+        order: 202,
+        title: { zh: "大眼 · 16/29", en: "Large Eye · 16/29" },
         instruction: { zh: "白先。做成两个眼，使白棋块活棋。", en: "White to play. Make two eyes so the white group lives." },
         puzzle: {
             width: 9,
@@ -2850,8 +3319,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-17",
         chapterId: "basic-skills",
-        order: 185,
-        title: { zh: "Large Eye · 17/29", en: "Large Eye · 17/29" },
+        order: 203,
+        title: { zh: "大眼 · 17/29", en: "Large Eye · 17/29" },
         instruction: { zh: "白先。做成两个眼，使白棋块活棋。", en: "White to play. Make two eyes so the white group lives." },
         puzzle: {
             width: 9,
@@ -2864,8 +3333,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-18",
         chapterId: "basic-skills",
-        order: 186,
-        title: { zh: "Large Eye · 18/29", en: "Large Eye · 18/29" },
+        order: 204,
+        title: { zh: "大眼 · 18/29", en: "Large Eye · 18/29" },
         instruction: { zh: "白先。阻止黑棋做成两个眼，从而吃掉黑棋块。", en: "White to play. Prevent two eyes, capturing the black group." },
         puzzle: {
             width: 9,
@@ -2878,8 +3347,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-19",
         chapterId: "basic-skills",
-        order: 187,
-        title: { zh: "Large Eye · 19/29", en: "Large Eye · 19/29" },
+        order: 205,
+        title: { zh: "大眼 · 19/29", en: "Large Eye · 19/29" },
         instruction: { zh: "白先。阻止黑棋做成两个眼，从而吃掉黑棋块。", en: "White to play. Prevent two eyes, capturing the black group." },
         puzzle: {
             width: 9,
@@ -2892,8 +3361,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-20",
         chapterId: "basic-skills",
-        order: 188,
-        title: { zh: "Large Eye · 20/29", en: "Large Eye · 20/29" },
+        order: 206,
+        title: { zh: "大眼 · 20/29", en: "Large Eye · 20/29" },
         instruction: { zh: "白先。阻止黑棋做成两个眼，从而吃掉黑棋块。", en: "White to play. Prevent two eyes, capturing the black group." },
         puzzle: {
             width: 9,
@@ -2906,8 +3375,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-21",
         chapterId: "basic-skills",
-        order: 189,
-        title: { zh: "Large Eye · 21/29", en: "Large Eye · 21/29" },
+        order: 207,
+        title: { zh: "大眼 · 21/29", en: "Large Eye · 21/29" },
         instruction: { zh: "白先。阻止黑棋做成两个眼，从而吃掉黑棋块。", en: "White to play. Prevent two eyes, capturing the black group." },
         puzzle: {
             width: 9,
@@ -2920,8 +3389,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-22",
         chapterId: "basic-skills",
-        order: 190,
-        title: { zh: "Large Eye · 22/29", en: "Large Eye · 22/29" },
+        order: 208,
+        title: { zh: "大眼 · 22/29", en: "Large Eye · 22/29" },
         instruction: { zh: "白先。阻止黑棋做成两个眼，从而吃掉黑棋块。", en: "White to play. Prevent two eyes, capturing the black group." },
         puzzle: {
             width: 9,
@@ -2934,8 +3403,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-23",
         chapterId: "basic-skills",
-        order: 191,
-        title: { zh: "Large Eye · 23/29", en: "Large Eye · 23/29" },
+        order: 209,
+        title: { zh: "大眼 · 23/29", en: "Large Eye · 23/29" },
         instruction: { zh: "白先。阻止黑棋做成两个眼，从而吃掉黑棋块。", en: "White to play. Prevent two eyes, capturing the black group." },
         puzzle: {
             width: 9,
@@ -2948,8 +3417,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-24",
         chapterId: "basic-skills",
-        order: 192,
-        title: { zh: "Large Eye · 24/29", en: "Large Eye · 24/29" },
+        order: 210,
+        title: { zh: "大眼 · 24/29", en: "Large Eye · 24/29" },
         instruction: { zh: "白先。阻止黑棋做成两个眼，从而吃掉黑棋块。", en: "White to play. Prevent two eyes, capturing the black group." },
         puzzle: {
             width: 9,
@@ -2962,8 +3431,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-25",
         chapterId: "basic-skills",
-        order: 193,
-        title: { zh: "Large Eye · 25/29", en: "Large Eye · 25/29" },
+        order: 211,
+        title: { zh: "大眼 · 25/29", en: "Large Eye · 25/29" },
         instruction: { zh: "白先。阻止黑棋做成两个眼，从而吃掉黑棋块。", en: "White to play. Prevent two eyes, capturing the black group." },
         puzzle: {
             width: 9,
@@ -2976,8 +3445,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-26",
         chapterId: "basic-skills",
-        order: 194,
-        title: { zh: "Large Eye · 26/29", en: "Large Eye · 26/29" },
+        order: 212,
+        title: { zh: "大眼 · 26/29", en: "Large Eye · 26/29" },
         instruction: { zh: "白先。阻止黑棋做成两个眼，从而吃掉黑棋块。", en: "White to play. Prevent two eyes, capturing the black group." },
         puzzle: {
             width: 9,
@@ -2990,8 +3459,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-27",
         chapterId: "basic-skills",
-        order: 195,
-        title: { zh: "Large Eye · 27/29", en: "Large Eye · 27/29" },
+        order: 213,
+        title: { zh: "大眼 · 27/29", en: "Large Eye · 27/29" },
         instruction: { zh: "白先。阻止黑棋做成两个眼，从而吃掉黑棋块。", en: "White to play. Prevent two eyes, capturing the black group." },
         puzzle: {
             width: 9,
@@ -3004,8 +3473,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-28",
         chapterId: "basic-skills",
-        order: 196,
-        title: { zh: "Large Eye · 28/29", en: "Large Eye · 28/29" },
+        order: 214,
+        title: { zh: "大眼 · 28/29", en: "Large Eye · 28/29" },
         instruction: { zh: "白先。阻止黑棋做成两个眼，从而吃掉黑棋块。", en: "White to play. Prevent two eyes, capturing the black group." },
         puzzle: {
             width: 9,
@@ -3018,8 +3487,8 @@ const largeEyeLevels: Level[] = [
     {
         id: "basic-skills-large-eye-29",
         chapterId: "basic-skills",
-        order: 197,
-        title: { zh: "Large Eye · 29/29", en: "Large Eye · 29/29" },
+        order: 215,
+        title: { zh: "大眼 · 29/29", en: "Large Eye · 29/29" },
         instruction: { zh: "白先。阻止黑棋做成两个眼，从而吃掉黑棋块。", en: "White to play. Prevent two eyes, capturing the black group." },
         puzzle: {
             width: 9,
@@ -3031,14 +3500,309 @@ const largeEyeLevels: Level[] = [
     },
 ];
 
-/* Section bs-group-alive (Group Alive) had no migratable pages — skipped. */
+const bsGroupAliveLevels: Level[] = [
+    {
+        id: "basic-skills-bs-group-alive-1",
+        chapterId: "basic-skills",
+        order: 216,
+        title: { zh: "棋块活棋 · 1/12", en: "Group Alive · 1/12" },
+        instruction: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "fcgdhdceeebfcfefbgahchci", white: "ccbdbedeafdfcgdgggdhfhbi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "fcgdhdceeebfcfefbgahchci", white: "ccbdbedeafdfcgdgggdhfhbi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-bs-group-alive-2",
+        chapterId: "basic-skills",
+        order: 217,
+        title: { zh: "棋块活棋 · 2/12", en: "Group Alive · 2/12" },
+        instruction: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "gbfdgdhddeeeafcfagbgcgchdhdi", white: "bcdcddaebecebfdfhfdgegggehbi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "gbfdgdhddeeeafcfagbgcgchdhdi", white: "bcdcddaebecebfdfhfdgegggehbi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-bs-group-alive-3",
+        chapterId: "basic-skills",
+        order: 218,
+        title: { zh: "棋块活棋 · 3/12", en: "Group Alive · 3/12" },
+        instruction: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ecgdbgcgdgahdhbidi", white: "eeafbfcfdfagegehei" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ecgdbgcgdgahdhbidi", white: "eeafbfcfdfagegehei" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-bs-group-alive-4",
+        chapterId: "basic-skills",
+        order: 219,
+        title: { zh: "棋块活棋 · 4/12", en: "Group Alive · 4/12" },
+        instruction: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ebfcgdhddgegfgchdhfhghcigi", white: "dccdcedfefffbgcggghgbhhhei" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ebfcgdhddgegfgchdhfhghcigi", white: "dccdcedfefffbgcggghgbhhhei" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-bs-group-alive-5",
+        chapterId: "basic-skills",
+        order: 220,
+        title: { zh: "棋块活棋 · 5/12", en: "Group Alive · 5/12" },
+        instruction: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ecgcagbgcgdgbhdhci", white: "eeafbfcfdfegggehei" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ecgcagbgcgdgbhdhci", white: "eeafbfcfdfegggehei" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-bs-group-alive-6",
+        chapterId: "basic-skills",
+        order: 221,
+        title: { zh: "棋块活棋 · 6/12", en: "Group Alive · 6/12" },
+        instruction: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "gcbfcfagcgdgbhdhdi", white: "aebeceeeafdfegggeh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "gcbfcfagcgdgbhdhdi", white: "aebeceeeafdfegggeh" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-bs-group-alive-7",
+        chapterId: "basic-skills",
+        order: 222,
+        title: { zh: "棋块活棋 · 7/12", en: "Group Alive · 7/12" },
+        instruction: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "black",
+            initial_state: { black: "ecgdafbfgfcgbhchbi", white: "ddbecedfagdgahdhai" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ecgdafbfgfcgbhchbi", white: "ddbecedfagdgahdhai" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-bs-group-alive-8",
+        chapterId: "basic-skills",
+        order: 223,
+        title: { zh: "棋块活棋 · 8/12", en: "Group Alive · 8/12" },
+        instruction: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "black",
+            initial_state: { black: "agbgcgchdhdi", white: "bfcfefdgehbi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "agbgcgchdhdi", white: "bfcfefdgehbi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-bs-group-alive-9",
+        chapterId: "basic-skills",
+        order: 224,
+        title: { zh: "棋块活棋 · 9/12", en: "Group Alive · 9/12" },
+        instruction: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "black",
+            initial_state: { black: "beceafcfagcgdgdhaibicidi", white: "bdcddddebfdfffbgegbhcheh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "beceafcfagcgdgdhaibicidi", white: "bdcddddebfdfffbgegbhcheh" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-bs-group-alive-10",
+        chapterId: "basic-skills",
+        order: 225,
+        title: { zh: "棋块活棋 · 10/12", en: "Group Alive · 10/12" },
+        instruction: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "black",
+            initial_state: { black: "egfgggchdhghbicieigi", white: "bfefffgfcgdghgbhfhhh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "egfgggchdhghbicieigi", white: "bfefffgfcgdghgbhfhhh" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-bs-group-alive-11",
+        chapterId: "basic-skills",
+        order: 226,
+        title: { zh: "棋块活棋 · 11/12", en: "Group Alive · 11/12" },
+        instruction: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "black",
+            initial_state: { black: "dcfcgdagbgcgdgahdhdi", white: "eebfcfdfegbhchehbici" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dcfcgdagbgcgdgahdhdi", white: "eebfcfdfegbhchehbici" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-bs-group-alive-12",
+        chapterId: "basic-skills",
+        order: 227,
+        title: { zh: "棋块活棋 · 12/12", en: "Group Alive · 12/12" },
+        instruction: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "black",
+            initial_state: { black: "agbgcgdgahdhcidi", white: "bfcfdfffegbhehbi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋的这个棋块活了吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "能", en: "Yes" } }, { value: "no", label: { zh: "不能", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "agbgcgdgahdhcidi", white: "bfcfdfffegbhehbi" },
+            },
+        },
+    },
+];
 
 const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-1",
         chapterId: "basic-skills",
-        order: 198,
-        title: { zh: "Snapback · 1/25", en: "Snapback · 1/25" },
+        order: 228,
+        title: { zh: "倒扑 · 1/25", en: "Snapback · 1/25" },
         instruction: { zh: "黑棋可以吃掉被标记的两个白棋。黑棋不应在A点打吃，因为白棋可以通过落子于B点来防守。黑棋应先通过落子于B点使自己处于打吃状态。白棋可以通过落子于A点吃掉这颗黑棋。但随后三个白棋将处于打吃状态。这种吃掉白棋的方式称为'倒扑'。吃掉被标记的白棋。", en: "Black can capture the two marked white stones. Black should not give atari at A, because white would defend by playing at B. Black should first put himself in atari by playing at B. White can take this stone, by playing at A. But then the three white stones are in atari. Capturing the white stones this way is called a 'snapback'. Capture the marked white stones." },
         puzzle: {
             width: 9,
@@ -3053,8 +3817,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-2",
         chapterId: "basic-skills",
-        order: 199,
-        title: { zh: "Snapback · 2/25", en: "Snapback · 2/25" },
+        order: 229,
+        title: { zh: "倒扑 · 2/25", en: "Snapback · 2/25" },
         instruction: { zh: "黑先。吃掉被标记的棋子。", en: "Black to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3069,8 +3833,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-3",
         chapterId: "basic-skills",
-        order: 200,
-        title: { zh: "Snapback · 3/25", en: "Snapback · 3/25" },
+        order: 230,
+        title: { zh: "倒扑 · 3/25", en: "Snapback · 3/25" },
         instruction: { zh: "黑先。吃掉被标记的棋子。", en: "Black to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3085,8 +3849,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-4",
         chapterId: "basic-skills",
-        order: 201,
-        title: { zh: "Snapback · 4/25", en: "Snapback · 4/25" },
+        order: 231,
+        title: { zh: "倒扑 · 4/25", en: "Snapback · 4/25" },
         instruction: { zh: "黑先。吃掉被标记的棋子。", en: "Black to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3101,8 +3865,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-5",
         chapterId: "basic-skills",
-        order: 202,
-        title: { zh: "Snapback · 5/25", en: "Snapback · 5/25" },
+        order: 232,
+        title: { zh: "倒扑 · 5/25", en: "Snapback · 5/25" },
         instruction: { zh: "黑先。吃掉被标记的棋子。", en: "Black to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3117,8 +3881,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-6",
         chapterId: "basic-skills",
-        order: 203,
-        title: { zh: "Snapback · 6/25", en: "Snapback · 6/25" },
+        order: 233,
+        title: { zh: "倒扑 · 6/25", en: "Snapback · 6/25" },
         instruction: { zh: "黑先。吃掉被标记的棋子。", en: "Black to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3133,8 +3897,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-7",
         chapterId: "basic-skills",
-        order: 204,
-        title: { zh: "Snapback · 7/25", en: "Snapback · 7/25" },
+        order: 234,
+        title: { zh: "倒扑 · 7/25", en: "Snapback · 7/25" },
         instruction: { zh: "黑先。吃掉被标记的棋子。", en: "Black to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3149,8 +3913,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-8",
         chapterId: "basic-skills",
-        order: 205,
-        title: { zh: "Snapback · 8/25", en: "Snapback · 8/25" },
+        order: 235,
+        title: { zh: "倒扑 · 8/25", en: "Snapback · 8/25" },
         instruction: { zh: "黑先。吃掉被标记的棋子。", en: "Black to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3165,8 +3929,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-9",
         chapterId: "basic-skills",
-        order: 206,
-        title: { zh: "Snapback · 9/25", en: "Snapback · 9/25" },
+        order: 236,
+        title: { zh: "倒扑 · 9/25", en: "Snapback · 9/25" },
         instruction: { zh: "黑先。吃掉被标记的棋子。", en: "Black to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3181,8 +3945,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-10",
         chapterId: "basic-skills",
-        order: 207,
-        title: { zh: "Snapback · 10/25", en: "Snapback · 10/25" },
+        order: 237,
+        title: { zh: "倒扑 · 10/25", en: "Snapback · 10/25" },
         instruction: { zh: "黑先。吃掉被标记的棋子。", en: "Black to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3197,8 +3961,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-11",
         chapterId: "basic-skills",
-        order: 208,
-        title: { zh: "Snapback · 11/25", en: "Snapback · 11/25" },
+        order: 238,
+        title: { zh: "倒扑 · 11/25", en: "Snapback · 11/25" },
         instruction: { zh: "黑先。吃掉被标记的棋子。", en: "Black to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3213,8 +3977,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-12",
         chapterId: "basic-skills",
-        order: 209,
-        title: { zh: "Snapback · 12/25", en: "Snapback · 12/25" },
+        order: 239,
+        title: { zh: "倒扑 · 12/25", en: "Snapback · 12/25" },
         instruction: { zh: "黑先。吃掉被标记的棋子。", en: "Black to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3229,8 +3993,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-13",
         chapterId: "basic-skills",
-        order: 210,
-        title: { zh: "Snapback · 13/25", en: "Snapback · 13/25" },
+        order: 240,
+        title: { zh: "倒扑 · 13/25", en: "Snapback · 13/25" },
         instruction: { zh: "黑先。吃掉被标记的棋子。", en: "Black to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3245,8 +4009,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-14",
         chapterId: "basic-skills",
-        order: 211,
-        title: { zh: "Snapback · 14/25", en: "Snapback · 14/25" },
+        order: 241,
+        title: { zh: "倒扑 · 14/25", en: "Snapback · 14/25" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3261,8 +4025,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-15",
         chapterId: "basic-skills",
-        order: 212,
-        title: { zh: "Snapback · 15/25", en: "Snapback · 15/25" },
+        order: 242,
+        title: { zh: "倒扑 · 15/25", en: "Snapback · 15/25" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3277,8 +4041,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-16",
         chapterId: "basic-skills",
-        order: 213,
-        title: { zh: "Snapback · 16/25", en: "Snapback · 16/25" },
+        order: 243,
+        title: { zh: "倒扑 · 16/25", en: "Snapback · 16/25" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3293,8 +4057,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-17",
         chapterId: "basic-skills",
-        order: 214,
-        title: { zh: "Snapback · 17/25", en: "Snapback · 17/25" },
+        order: 244,
+        title: { zh: "倒扑 · 17/25", en: "Snapback · 17/25" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3309,8 +4073,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-18",
         chapterId: "basic-skills",
-        order: 215,
-        title: { zh: "Snapback · 18/25", en: "Snapback · 18/25" },
+        order: 245,
+        title: { zh: "倒扑 · 18/25", en: "Snapback · 18/25" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3325,8 +4089,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-19",
         chapterId: "basic-skills",
-        order: 216,
-        title: { zh: "Snapback · 19/25", en: "Snapback · 19/25" },
+        order: 246,
+        title: { zh: "倒扑 · 19/25", en: "Snapback · 19/25" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3341,8 +4105,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-20",
         chapterId: "basic-skills",
-        order: 217,
-        title: { zh: "Snapback · 20/25", en: "Snapback · 20/25" },
+        order: 247,
+        title: { zh: "倒扑 · 20/25", en: "Snapback · 20/25" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3357,8 +4121,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-21",
         chapterId: "basic-skills",
-        order: 218,
-        title: { zh: "Snapback · 21/25", en: "Snapback · 21/25" },
+        order: 248,
+        title: { zh: "倒扑 · 21/25", en: "Snapback · 21/25" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3373,8 +4137,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-22",
         chapterId: "basic-skills",
-        order: 219,
-        title: { zh: "Snapback · 22/25", en: "Snapback · 22/25" },
+        order: 249,
+        title: { zh: "倒扑 · 22/25", en: "Snapback · 22/25" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3389,8 +4153,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-23",
         chapterId: "basic-skills",
-        order: 220,
-        title: { zh: "Snapback · 23/25", en: "Snapback · 23/25" },
+        order: 250,
+        title: { zh: "倒扑 · 23/25", en: "Snapback · 23/25" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3405,8 +4169,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-24",
         chapterId: "basic-skills",
-        order: 221,
-        title: { zh: "Snapback · 24/25", en: "Snapback · 24/25" },
+        order: 251,
+        title: { zh: "倒扑 · 24/25", en: "Snapback · 24/25" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3421,8 +4185,8 @@ const snapbackLevels: Level[] = [
     {
         id: "basic-skills-snapback-25",
         chapterId: "basic-skills",
-        order: 222,
-        title: { zh: "Snapback · 25/25", en: "Snapback · 25/25" },
+        order: 252,
+        title: { zh: "倒扑 · 25/25", en: "Snapback · 25/25" },
         instruction: { zh: "白先。吃掉带标记的棋子。", en: "White to play. Capture the marked stones." },
         puzzle: {
             width: 9,
@@ -3440,8 +4204,8 @@ const netLevels: Level[] = [
     {
         id: "basic-skills-net-1",
         chapterId: "basic-skills",
-        order: 223,
-        title: { zh: "Net · 1/13", en: "Net · 1/13" },
+        order: 253,
+        title: { zh: "罩 · 1/13", en: "Net · 1/13" },
         instruction: { zh: "如果黑棋试图通过连续打吃来吃掉被标记的白棋，白棋可以逃脱。但黑棋可以通过落子于A点，用'罩'的方式吃掉这颗棋子。用罩的方式吃掉被标记的棋子。", en: "If Black tries to capture the marked white stone by playing a series of ataris, White can escape. But Black can capture the stone in a 'net' by playing at A. Capture the marked stone in a net." },
         puzzle: {
             width: 9,
@@ -3456,8 +4220,8 @@ const netLevels: Level[] = [
     {
         id: "basic-skills-net-2",
         chapterId: "basic-skills",
-        order: 224,
-        title: { zh: "Net · 2/13", en: "Net · 2/13" },
+        order: 254,
+        title: { zh: "罩 · 2/13", en: "Net · 2/13" },
         instruction: { zh: "白先。用罩的方式吃掉被标记的棋子。", en: "White to play. Capture the marked stones in a net." },
         puzzle: {
             width: 9,
@@ -3472,8 +4236,8 @@ const netLevels: Level[] = [
     {
         id: "basic-skills-net-3",
         chapterId: "basic-skills",
-        order: 225,
-        title: { zh: "Net · 3/13", en: "Net · 3/13" },
+        order: 255,
+        title: { zh: "罩 · 3/13", en: "Net · 3/13" },
         instruction: { zh: "白先。用罩的方式吃掉被标记的棋子。", en: "White to play. Capture the marked stones in a net." },
         puzzle: {
             width: 9,
@@ -3488,8 +4252,8 @@ const netLevels: Level[] = [
     {
         id: "basic-skills-net-4",
         chapterId: "basic-skills",
-        order: 226,
-        title: { zh: "Net · 4/13", en: "Net · 4/13" },
+        order: 256,
+        title: { zh: "罩 · 4/13", en: "Net · 4/13" },
         instruction: { zh: "白先。用罩的方式吃掉被标记的棋子。", en: "White to play. Capture the marked stones in a net." },
         puzzle: {
             width: 9,
@@ -3504,8 +4268,8 @@ const netLevels: Level[] = [
     {
         id: "basic-skills-net-5",
         chapterId: "basic-skills",
-        order: 227,
-        title: { zh: "Net · 5/13", en: "Net · 5/13" },
+        order: 257,
+        title: { zh: "罩 · 5/13", en: "Net · 5/13" },
         instruction: { zh: "白先。用罩的方式吃掉被标记的棋子。", en: "White to play. Capture the marked stones in a net." },
         puzzle: {
             width: 9,
@@ -3520,8 +4284,8 @@ const netLevels: Level[] = [
     {
         id: "basic-skills-net-6",
         chapterId: "basic-skills",
-        order: 228,
-        title: { zh: "Net · 6/13", en: "Net · 6/13" },
+        order: 258,
+        title: { zh: "罩 · 6/13", en: "Net · 6/13" },
         instruction: { zh: "白先。用罩的方式吃掉被标记的棋子。", en: "White to play. Capture the marked stone in a net." },
         puzzle: {
             width: 9,
@@ -3536,8 +4300,8 @@ const netLevels: Level[] = [
     {
         id: "basic-skills-net-7",
         chapterId: "basic-skills",
-        order: 229,
-        title: { zh: "Net · 7/13", en: "Net · 7/13" },
+        order: 259,
+        title: { zh: "罩 · 7/13", en: "Net · 7/13" },
         instruction: { zh: "白先。用罩的方式吃掉被标记的棋子。", en: "White to play. Capture the marked stone in a net." },
         puzzle: {
             width: 9,
@@ -3552,8 +4316,8 @@ const netLevels: Level[] = [
     {
         id: "basic-skills-net-8",
         chapterId: "basic-skills",
-        order: 230,
-        title: { zh: "Net · 8/13", en: "Net · 8/13" },
+        order: 260,
+        title: { zh: "罩 · 8/13", en: "Net · 8/13" },
         instruction: { zh: "白先。用罩的方式吃掉被标记的棋子。", en: "White to play. Capture the marked stones in a net." },
         puzzle: {
             width: 9,
@@ -3568,8 +4332,8 @@ const netLevels: Level[] = [
     {
         id: "basic-skills-net-9",
         chapterId: "basic-skills",
-        order: 231,
-        title: { zh: "Net · 9/13", en: "Net · 9/13" },
+        order: 261,
+        title: { zh: "罩 · 9/13", en: "Net · 9/13" },
         instruction: { zh: "白先。用罩的方式吃掉被标记的棋子。", en: "White to play. Capture the marked stones in a net." },
         puzzle: {
             width: 9,
@@ -3584,8 +4348,8 @@ const netLevels: Level[] = [
     {
         id: "basic-skills-net-10",
         chapterId: "basic-skills",
-        order: 232,
-        title: { zh: "Net · 10/13", en: "Net · 10/13" },
+        order: 262,
+        title: { zh: "罩 · 10/13", en: "Net · 10/13" },
         instruction: { zh: "白先。用罩的方式吃掉被标记的棋子。", en: "White to play. Capture the marked stones in a net." },
         puzzle: {
             width: 9,
@@ -3600,8 +4364,8 @@ const netLevels: Level[] = [
     {
         id: "basic-skills-net-11",
         chapterId: "basic-skills",
-        order: 233,
-        title: { zh: "Net · 11/13", en: "Net · 11/13" },
+        order: 263,
+        title: { zh: "罩 · 11/13", en: "Net · 11/13" },
         instruction: { zh: "白先。用罩的方式吃掉被标记的棋子。", en: "White to play. Capture the marked stone in a net." },
         puzzle: {
             width: 9,
@@ -3616,8 +4380,8 @@ const netLevels: Level[] = [
     {
         id: "basic-skills-net-12",
         chapterId: "basic-skills",
-        order: 234,
-        title: { zh: "Net · 12/13", en: "Net · 12/13" },
+        order: 264,
+        title: { zh: "罩 · 12/13", en: "Net · 12/13" },
         instruction: { zh: "白先。用罩的方式吃掉被标记的棋子。", en: "White to play. Capture the marked stones in a net." },
         puzzle: {
             width: 9,
@@ -3632,8 +4396,8 @@ const netLevels: Level[] = [
     {
         id: "basic-skills-net-13",
         chapterId: "basic-skills",
-        order: 235,
-        title: { zh: "Net · 13/13", en: "Net · 13/13" },
+        order: 265,
+        title: { zh: "罩 · 13/13", en: "Net · 13/13" },
         instruction: { zh: "白先。用罩的方式吃掉被标记的棋子。", en: "White to play. Capture the marked stones in a net." },
         puzzle: {
             width: 9,
@@ -3647,16 +4411,597 @@ const netLevels: Level[] = [
     },
 ];
 
-/* Section count-territory (Territory) had no migratable pages — skipped. */
+const countTerritoryLevels: Level[] = [
+    {
+        id: "basic-skills-count-territory-1",
+        chapterId: "basic-skills",
+        order: 266,
+        title: { zh: "领地 · 1/12", en: "Territory · 1/12" },
+        instruction: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "aebedecfdgdhcidi", white: "afbfbgcgahchbi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+            options: [{ value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }],
+            correctValue: "3",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "aebedecfdgdhcidi", white: "afbfbgcgahchbi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-count-territory-2",
+        chapterId: "basic-skills",
+        order: 267,
+        title: { zh: "领地 · 2/12", en: "Territory · 2/12" },
+        instruction: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "aebecedeeeafefegeh", white: "bfcfdfagdgbhdhcidi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+            options: [{ value: "3", label: { zh: "3", en: "3" } }, { value: "6", label: { zh: "6", en: "6" } }, { value: "7", label: { zh: "7", en: "7" } }],
+            correctValue: "6",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "aebecedeeeafefegeh", white: "bfcfdfagdgbhdhcidi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-count-territory-3",
+        chapterId: "basic-skills",
+        order: 268,
+        title: { zh: "领地 · 3/12", en: "Territory · 3/12" },
+        instruction: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "efffgfcgdghgbhhhbi", white: "egfgggchdhghcieigi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+            options: [{ value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }, { value: "5", label: { zh: "5", en: "5" } }],
+            correctValue: "4",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "efffgfcgdghgbhhhbi", white: "egfgggchdhghcieigi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-count-territory-4",
+        chapterId: "basic-skills",
+        order: 269,
+        title: { zh: "领地 · 4/12", en: "Territory · 4/12" },
+        instruction: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "adbdcddebfdfbgdgdhdi", white: "aebececfcgbhchci" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+            options: [{ value: "5", label: { zh: "5", en: "5" } }, { value: "7", label: { zh: "7", en: "7" } }, { value: "9", label: { zh: "9", en: "9" } }],
+            correctValue: "9",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "adbdcddebfdfbgdgdhdi", white: "aebececfcgbhchci" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-count-territory-5",
+        chapterId: "basic-skills",
+        order: 270,
+        title: { zh: "领地 · 5/12", en: "Territory · 5/12" },
+        instruction: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "aebecedeeefegfgggh", white: "afbfcfdfeffffgfhfi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+            options: [{ value: "12", label: { zh: "12", en: "12" } }, { value: "15", label: { zh: "15", en: "15" } }, { value: "18", label: { zh: "18", en: "18" } }],
+            correctValue: "15",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "aebecedeeefegfgggh", white: "afbfcfdfeffffgfhfi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-count-territory-6",
+        chapterId: "basic-skills",
+        order: 271,
+        title: { zh: "领地 · 6/12", en: "Territory · 6/12" },
+        instruction: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "acbcccddbedebfdfdgchdh", white: "adbdcdcecfagbgcgbhbi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+            options: [{ value: "4", label: { zh: "4", en: "4" } }, { value: "6", label: { zh: "6", en: "6" } }, { value: "8", label: { zh: "8", en: "8" } }],
+            correctValue: "8",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "acbcccddbedebfdfdgchdh", white: "adbdcdcecfagbgcgbhbi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-count-territory-7",
+        chapterId: "basic-skills",
+        order: 272,
+        title: { zh: "领地 · 7/12", en: "Territory · 7/12" },
+        instruction: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "aebecedeeefegeafgfbgcgdgggghgi", white: "bfcfdfefffagfgahbhchdhfhfi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+            options: [{ value: "7", label: { zh: "7", en: "7" } }, { value: "10", label: { zh: "10", en: "10" } }, { value: "13", label: { zh: "13", en: "13" } }],
+            correctValue: "13",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "aebecedeeefegeafgfbgcgdgggghgi", white: "bfcfdfefffagfgahbhchdhfhfi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-count-territory-8",
+        chapterId: "basic-skills",
+        order: 273,
+        title: { zh: "领地 · 8/12", en: "Territory · 8/12" },
+        instruction: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "acbcccddbedebfdfbgdgdhdi", white: "adbdcdcecfagcgbhchci" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+            options: [{ value: "5", label: { zh: "5", en: "5" } }, { value: "8", label: { zh: "8", en: "8" } }, { value: "11", label: { zh: "11", en: "11" } }],
+            correctValue: "11",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "acbcccddbedebfdfbgdgdhdi", white: "adbdcdcecfagcgbhchci" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-count-territory-9",
+        chapterId: "basic-skills",
+        order: 274,
+        title: { zh: "领地 · 9/12", en: "Territory · 9/12" },
+        instruction: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cdddedfdgdhdidcecfhfifcghgchhhihcihi", white: "deeefegeheiedfgfdgggdhghdigi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+            options: [{ value: "8", label: { zh: "8", en: "8" } }, { value: "10", label: { zh: "10", en: "10" } }, { value: "22", label: { zh: "22", en: "22" } }],
+            correctValue: "8",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cdddedfdgdhdidcecfhfifcghgchhhihcihi", white: "deeefegeheiedfgfdgggdhghdigi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-count-territory-10",
+        chapterId: "basic-skills",
+        order: 275,
+        title: { zh: "领地 · 10/12", en: "Territory · 10/12" },
+        instruction: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "bdbfcfdfffdhehei", white: "agbgcgahchbidi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+            options: [{ value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }],
+            correctValue: "2",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "bdbfcfdfffdhehei", white: "agbgcgahchbidi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-count-territory-11",
+        chapterId: "basic-skills",
+        order: 276,
+        title: { zh: "领地 · 11/12", en: "Territory · 11/12" },
+        instruction: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "dbbcbdedcedeefegfggghgehghhi", white: "adbeafbfcfdfdgbhdhfhdieigi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+            options: [{ value: "8", label: { zh: "8", en: "8" } }, { value: "9", label: { zh: "9", en: "9" } }, { value: "10", label: { zh: "10", en: "10" } }],
+            correctValue: "8",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dbbcbdedcedeefegfggghgehghhi", white: "adbeafbfcfdfdgbhdhfhdieigi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-count-territory-12",
+        chapterId: "basic-skills",
+        order: 277,
+        title: { zh: "领地 · 12/12", en: "Territory · 12/12" },
+        instruction: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "bbdcechcbdcdeegecfdfffggfhgh", white: "aebebfefagbgcgdgfgdhehbidi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白棋的地盘有多少目？注意：一个死子算两目。", en: "How many points is the white territory? Note: a dead stone counts for two." },
+            options: [{ value: "5", label: { zh: "5", en: "5" } }, { value: "6", label: { zh: "6", en: "6" } }, { value: "7", label: { zh: "7", en: "7" } }],
+            correctValue: "6",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "bbdcechcbdcdeegecfdfffggfhgh", white: "aebebfefagbgcgdgfgdhehbidi" },
+            },
+        },
+    },
+];
 
-/* Section determine-winner (Winner) had no migratable pages — skipped. */
+const determineWinnerLevels: Level[] = [
+    {
+        id: "basic-skills-determine-winner-1",
+        chapterId: "basic-skills",
+        order: 278,
+        title: { zh: "胜者 · 1/12", en: "Winner · 1/12" },
+        instruction: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dadbdccdedceeeefdgegdhdi", white: "eaebecfcfdfefffgehgheifi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "平局", en: "Same" } }],
+            correctValue: "White",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dadbdccdedceeeefdgegdhdi", white: "eaebecfcfdfefffgehgheifi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-determine-winner-2",
+        chapterId: "basic-skills",
+        order: 279,
+        title: { zh: "胜者 · 2/12", en: "Winner · 2/12" },
+        instruction: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "caeacbebacbcccdcecffgfhfiffgfhhhfi", white: "fafbfcadbdcdddedfdfegeheieefegehei" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "平局", en: "Same" } }],
+            correctValue: "White",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "caeacbebacbcccdcecffgfhfiffgfhhhfi", white: "fafbfcadbdcdddedfdfegeheieefegehei" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-determine-winner-3",
+        chapterId: "basic-skills",
+        order: 280,
+        title: { zh: "胜者 · 3/12", en: "Winner · 3/12" },
+        instruction: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "caeacbebfbgbccgcicadcdgdhdbeceheiebfbgbhbi", white: "dbdcecfcddfddefegecfdfgfhfifcgegfgggchci" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "平局", en: "Same" } }],
+            correctValue: "Black",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "caeacbebfbgbccgcicadcdgdhdbeceheiebfbgbhbi", white: "dbdcecfcddfddefegecfdfgfhfifcgegfgggchci" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-determine-winner-4",
+        chapterId: "basic-skills",
+        order: 281,
+        title: { zh: "胜者 · 4/12", en: "Winner · 4/12" },
+        instruction: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "eabbebbcecedfdgdhdidaebebfbgcgdgahdhdi", white: "cacbccadbdcdddceeefegeheiecfdfefagegehei" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "平局", en: "Same" } }],
+            correctValue: "White",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "eabbebbcecedfdgdhdidaebebfbgcgdgahdhdi", white: "cacbccadbdcdddceeefegeheiecfdfefagegehei" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-determine-winner-5",
+        chapterId: "basic-skills",
+        order: 282,
+        title: { zh: "胜者 · 5/12", en: "Winner · 5/12" },
+        instruction: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "bacagaabcbgbibacbcgchcedhdidefffgfhfifcgdgeghgdhfhhheifi", white: "eafahadbfbccdcfcadbdcdgddeeefegeheiebfcfdfbgggbhghbicigi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "平局", en: "Same" } }],
+            correctValue: "Black",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "bacagaabcbgbibacbcgchcedhdidefffgfhfifcgdgeghgdhfhhheifi", white: "eafahadbfbccdcfcadbdcdgddeeefegeheiebfcfdfbgggbhghbicigi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-determine-winner-6",
+        chapterId: "basic-skills",
+        order: 283,
+        title: { zh: "胜者 · 6/12", en: "Winner · 6/12" },
+        instruction: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cacbccdcecadbdcdedfdgdbedegeheiebfdfbgcgdgegehhhei", white: "baeagabbebfbhbacbcfcgchdideefeefffgfhfiffghgfhghgi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "平局", en: "Same" } }],
+            correctValue: "Black",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cacbccdcecadbdcdedfdgdbedegeheiebfdfbgcgdgegehhhei", white: "baeagabbebfbhbacbcfcgchdideefeefffgfhfiffghgfhghgi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-determine-winner-7",
+        chapterId: "basic-skills",
+        order: 284,
+        title: { zh: "胜者 · 7/12", en: "Winner · 7/12" },
+        instruction: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "gahagbhbdchcadbdddedhdidbeceeeheiecfefcgdgdhehfhghgi", white: "baeacbdbebfbibacbcccecgccdfdgdfegeffhfifegfgggighhhi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "平局", en: "Same" } }],
+            correctValue: "White",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "gahagbhbdchcadbdddedhdidbeceeeheiecfefcgdgdhehfhghgi", white: "baeacbdbebfbibacbcccecgccdfdgdfegeffhfifegfgggighhhi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-determine-winner-8",
+        chapterId: "basic-skills",
+        order: 285,
+        title: { zh: "胜者 · 8/12", en: "Winner · 8/12" },
+        instruction: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "baabbbebfbbcadcedeeefeafbfcfffhfifdgfghgbhchdhfhghhhbi", white: "cafacbgbccfchcbdcdddedfdgdhdidaebegeheiegfggcidi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "平局", en: "Same" } }],
+            correctValue: "White",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "baabbbebfbbcadcedeeefeafbfcfffhfifdgfghgbhchdhfhghhhbi", white: "cafacbgbccfchcbdcdddedfdgdhdidaebegeheiegfggcidi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-determine-winner-9",
+        chapterId: "basic-skills",
+        order: 286,
+        title: { zh: "胜者 · 9/12", en: "Winner · 9/12" },
+        instruction: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "caeadbebacbcccdcddcedecfdfefffcgfgchfhci", white: "fafbecgcedgdeefegeheiegfdgggdhghdieifigi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "平局", en: "Same" } }],
+            correctValue: "White",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "caeadbebacbcccdcddcedecfdfefffcgfgchfhci", white: "fafbecgcedgdeefegeheiegfdgggdhghdieifigi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-determine-winner-10",
+        chapterId: "basic-skills",
+        order: 287,
+        title: { zh: "胜者 · 10/12", en: "Winner · 10/12" },
+        instruction: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "bagabbgbibbchcicddedaebecedefecfdfefffgfhfifbgfhgh", white: "cafahacbfbccdcecfcgcadbdcdfdgdidgeheiebfhgighhhi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "平局", en: "Same" } }],
+            correctValue: "Black",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "bagabbgbibbchcicddedaebecedefecfdfefffgfhfifbgfhgh", white: "cafahacbfbccdcecfcgcadbdcdfdgdidgeheiebfhgighhhi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-determine-winner-11",
+        chapterId: "basic-skills",
+        order: 288,
+        title: { zh: "胜者 · 11/12", en: "Winner · 11/12" },
+        instruction: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dafahabbcbdbebfbgbhbibacdcfcddfdaebecededfffhfdgegfghgahbh", white: "bacabcccecgchciccdedgdeefegeheafbfcfefgfcgggchdhehfhghaidi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "平局", en: "Same" } }],
+            correctValue: "White",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dafahabbcbdbebfbgbhbibacdcfcddfdaebecededfffhfdgegfghgahbh", white: "bacabcccecgchciccdedgdeefegeheafbfcfefgfcgggchdhehfhghaidi" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-determine-winner-12",
+        chapterId: "basic-skills",
+        order: 289,
+        title: { zh: "胜者 · 12/12", en: "Winner · 12/12" },
+        instruction: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dagabbcbdbgbacbcgchcbdfdgdbegeheafbfgfhfifagigahchdhehfhihdifi", white: "baeaabebfbccdcecfccdedhdidceeefecfffbgcgdgegfggghgbhghhhbihi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "棋局结束了。谁赢了？", en: "The game is over. Who has won?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "平局", en: "Same" } }],
+            correctValue: "White",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dagabbcbdbgbacbcgchcbdfdgdbegeheafbfgfhfifagigahchdhehfhihdifi", white: "baeaabebfbccdcecfccdedhdidceeefecfffbgcgdgegfggghgbhghhhbihi" },
+            },
+        },
+    },
+];
 
 const closeTerritoryLevels: Level[] = [
     {
         id: "basic-skills-close_territory-1",
         chapterId: "basic-skills",
-        order: 236,
-        title: { zh: "Close Territory · 1/12", en: "Close Territory · 1/12" },
+        order: 290,
+        title: { zh: "封锁领地 · 1/12", en: "Close Territory · 1/12" },
         instruction: { zh: "黑棋领地较小，但白棋可以通过落子于A点来缩减它。黑先。通过一手棋封闭领地，阻止这种缩减。", en: "Black has a small territory, but White can reduce it by playing at A. Black to play. Prevent this reduction by closing the territory with one move." },
         puzzle: {
             width: 9,
@@ -3670,8 +5015,8 @@ const closeTerritoryLevels: Level[] = [
     {
         id: "basic-skills-close_territory-2",
         chapterId: "basic-skills",
-        order: 237,
-        title: { zh: "Close Territory · 2/12", en: "Close Territory · 2/12" },
+        order: 291,
+        title: { zh: "封锁领地 · 2/12", en: "Close Territory · 2/12" },
         instruction: { zh: "黑先。通过一手棋封闭黑棋领地。", en: "Black to play. Close the black territory with one move." },
         puzzle: {
             width: 9,
@@ -3684,8 +5029,8 @@ const closeTerritoryLevels: Level[] = [
     {
         id: "basic-skills-close_territory-3",
         chapterId: "basic-skills",
-        order: 238,
-        title: { zh: "Close Territory · 3/12", en: "Close Territory · 3/12" },
+        order: 292,
+        title: { zh: "封锁领地 · 3/12", en: "Close Territory · 3/12" },
         instruction: { zh: "黑先。通过一手棋封闭黑棋领地。", en: "Black to play. Close the black territory with one move." },
         puzzle: {
             width: 9,
@@ -3698,8 +5043,8 @@ const closeTerritoryLevels: Level[] = [
     {
         id: "basic-skills-close_territory-4",
         chapterId: "basic-skills",
-        order: 239,
-        title: { zh: "Close Territory · 4/12", en: "Close Territory · 4/12" },
+        order: 293,
+        title: { zh: "封锁领地 · 4/12", en: "Close Territory · 4/12" },
         instruction: { zh: "黑先。通过一手棋封闭黑棋领地。", en: "Black to play. Close the black territory with one move." },
         puzzle: {
             width: 9,
@@ -3712,8 +5057,8 @@ const closeTerritoryLevels: Level[] = [
     {
         id: "basic-skills-close_territory-5",
         chapterId: "basic-skills",
-        order: 240,
-        title: { zh: "Close Territory · 5/12", en: "Close Territory · 5/12" },
+        order: 294,
+        title: { zh: "封锁领地 · 5/12", en: "Close Territory · 5/12" },
         instruction: { zh: "黑先。通过一手棋封闭黑棋领地。", en: "Black to play. Close the black territory with one move." },
         puzzle: {
             width: 9,
@@ -3726,8 +5071,8 @@ const closeTerritoryLevels: Level[] = [
     {
         id: "basic-skills-close_territory-6",
         chapterId: "basic-skills",
-        order: 241,
-        title: { zh: "Close Territory · 6/12", en: "Close Territory · 6/12" },
+        order: 295,
+        title: { zh: "封锁领地 · 6/12", en: "Close Territory · 6/12" },
         instruction: { zh: "黑先。通过一手棋封闭黑棋领地。", en: "Black to play. Close the black territory with one move." },
         puzzle: {
             width: 9,
@@ -3740,8 +5085,8 @@ const closeTerritoryLevels: Level[] = [
     {
         id: "basic-skills-close_territory-7",
         chapterId: "basic-skills",
-        order: 242,
-        title: { zh: "Close Territory · 7/12", en: "Close Territory · 7/12" },
+        order: 296,
+        title: { zh: "封锁领地 · 7/12", en: "Close Territory · 7/12" },
         instruction: { zh: "黑先。通过一手棋封闭黑棋领地。", en: "Black to play. Close the black territory with one move." },
         puzzle: {
             width: 9,
@@ -3754,8 +5099,8 @@ const closeTerritoryLevels: Level[] = [
     {
         id: "basic-skills-close_territory-8",
         chapterId: "basic-skills",
-        order: 243,
-        title: { zh: "Close Territory · 8/12", en: "Close Territory · 8/12" },
+        order: 297,
+        title: { zh: "封锁领地 · 8/12", en: "Close Territory · 8/12" },
         instruction: { zh: "黑先。通过一手棋封闭黑棋领地。", en: "Black to play. Close the black territory with one move." },
         puzzle: {
             width: 9,
@@ -3768,8 +5113,8 @@ const closeTerritoryLevels: Level[] = [
     {
         id: "basic-skills-close_territory-9",
         chapterId: "basic-skills",
-        order: 244,
-        title: { zh: "Close Territory · 9/12", en: "Close Territory · 9/12" },
+        order: 298,
+        title: { zh: "封锁领地 · 9/12", en: "Close Territory · 9/12" },
         instruction: { zh: "黑先。通过一手棋封闭黑棋领地。", en: "Black to play. Close the black territory with one move." },
         puzzle: {
             width: 9,
@@ -3782,8 +5127,8 @@ const closeTerritoryLevels: Level[] = [
     {
         id: "basic-skills-close_territory-10",
         chapterId: "basic-skills",
-        order: 245,
-        title: { zh: "Close Territory · 10/12", en: "Close Territory · 10/12" },
+        order: 299,
+        title: { zh: "封锁领地 · 10/12", en: "Close Territory · 10/12" },
         instruction: { zh: "黑先。通过一手棋封闭黑棋领地。", en: "Black to play. Close the black territory with one move." },
         puzzle: {
             width: 9,
@@ -3797,8 +5142,8 @@ const closeTerritoryLevels: Level[] = [
     {
         id: "basic-skills-close_territory-11",
         chapterId: "basic-skills",
-        order: 246,
-        title: { zh: "Close Territory · 11/12", en: "Close Territory · 11/12" },
+        order: 300,
+        title: { zh: "封锁领地 · 11/12", en: "Close Territory · 11/12" },
         instruction: { zh: "黑先。通过一手棋封闭黑棋领地。", en: "Black to play. Close the black territory with one move." },
         puzzle: {
             width: 9,
@@ -3812,8 +5157,8 @@ const closeTerritoryLevels: Level[] = [
     {
         id: "basic-skills-close_territory-12",
         chapterId: "basic-skills",
-        order: 247,
-        title: { zh: "Close Territory · 12/12", en: "Close Territory · 12/12" },
+        order: 301,
+        title: { zh: "封锁领地 · 12/12", en: "Close Territory · 12/12" },
         instruction: { zh: "黑先。通过一手棋封闭黑棋领地。", en: "Black to play. Close the black territory with one move." },
         puzzle: {
             width: 9,
@@ -3826,14 +5171,327 @@ const closeTerritoryLevels: Level[] = [
     },
 ];
 
-/* Section compare-liberties (Compare Liberties) had no migratable pages — skipped. */
+const compareLibertiesLevels: Level[] = [
+    {
+        id: "basic-skills-compare-liberties-1",
+        chapterId: "basic-skills",
+        order: 302,
+        title: { zh: "比较气数 · 1/12", en: "Compare Liberties · 1/12" },
+        instruction: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dgcheh", white: "egdhfh" },
+            marks: { triangle: "ehdh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "一样多", en: "same" } }],
+            correctValue: "same",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dgcheh", white: "egdhfh" },
+                marks: { triangle: "ehdh" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-compare-liberties-2",
+        chapterId: "basic-skills",
+        order: 303,
+        title: { zh: "比较气数 · 2/12", en: "Compare Liberties · 2/12" },
+        instruction: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "hcgdgehfhg", white: "hdhegfgghh" },
+            marks: { triangle: "hghfhehd" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "一样多", en: "same" } }],
+            correctValue: "same",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "hcgdgehfhg", white: "hdhegfgghh" },
+                marks: { triangle: "hghfhehd" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-compare-liberties-3",
+        chapterId: "basic-skills",
+        order: 304,
+        title: { zh: "比较气数 · 3/12", en: "Compare Liberties · 3/12" },
+        instruction: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cbdbhbecfcgc", white: "bbebfbgbccdc" },
+            marks: { triangle: "gbfbebdbcb" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "一样多", en: "same" } }],
+            correctValue: "White",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cbdbhbecfcgc", white: "bbebfbgbccdc" },
+                marks: { triangle: "gbfbebdbcb" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-compare-liberties-4",
+        chapterId: "basic-skills",
+        order: 305,
+        title: { zh: "比较气数 · 4/12", en: "Compare Liberties · 4/12" },
+        instruction: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "bccdbebf", white: "bdcecfbg" },
+            marks: { triangle: "bfbebd" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "一样多", en: "same" } }],
+            correctValue: "Black",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "bccdbebf", white: "bdcecfbg" },
+                marks: { triangle: "bfbebd" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-compare-liberties-5",
+        chapterId: "basic-skills",
+        order: 306,
+        title: { zh: "比较气数 · 5/12", en: "Compare Liberties · 5/12" },
+        instruction: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "bgcgdgegfgbhghhhihgi", white: "gdgegghgigchdhehfhfi" },
+            marks: { triangle: "gifiihhhghfhehdhch" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "一样多", en: "same" } }],
+            correctValue: "White",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "bgcgdgegfgbhghhhihgi", white: "gdgegghgigchdhehfhfi" },
+                marks: { triangle: "gifiihhhghfhehdhch" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-compare-liberties-6",
+        chapterId: "basic-skills",
+        order: 307,
+        title: { zh: "比较气数 · 6/12", en: "Compare Liberties · 6/12" },
+        instruction: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dehedfhfegfggg", white: "efffgfcgdghgehhh" },
+            marks: { triangle: "ggfgeggfffef" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "一样多", en: "same" } }],
+            correctValue: "White",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dehedfhfegfggg", white: "efffgfcgdghgehhh" },
+                marks: { triangle: "ggfgeggfffef" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-compare-liberties-7",
+        chapterId: "basic-skills",
+        order: 308,
+        title: { zh: "比较气数 · 7/12", en: "Compare Liberties · 7/12" },
+        instruction: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "fafbfcdded", white: "eaebecfdgd" },
+            marks: { triangle: "fcecfbebfaea" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "一样多", en: "same" } }],
+            correctValue: "same",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "fafbfcdded", white: "eaebecfdgd" },
+                marks: { triangle: "fcecfbebfaea" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-compare-liberties-8",
+        chapterId: "basic-skills",
+        order: 309,
+        title: { zh: "比较气数 · 8/12", en: "Compare Liberties · 8/12" },
+        instruction: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "bccceccdbebfcf", white: "adbdcededfbgcg" },
+            marks: { triangle: "cfbfbebdad" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "一样多", en: "same" } }],
+            correctValue: "same",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "bccceccdbebfcf", white: "adbdcededfbgcg" },
+                marks: { triangle: "cfbfbebdad" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-compare-liberties-9",
+        chapterId: "basic-skills",
+        order: 310,
+        title: { zh: "比较气数 · 9/12", en: "Compare Liberties · 9/12" },
+        instruction: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "fegehefffghgfhhhhi", white: "ccecgcgfhfggghfigi" },
+            marks: { triangle: "higifihhghhggghfgf" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "一样多", en: "same" } }],
+            correctValue: "Black",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "fegehefffghgfhhhhi", white: "ccecgcgfhfggghfigi" },
+                marks: { triangle: "higifihhghhggghfgf" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-compare-liberties-10",
+        chapterId: "basic-skills",
+        order: 311,
+        title: { zh: "比较气数 · 10/12", en: "Compare Liberties · 10/12" },
+        instruction: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dfefcgegbhcheh", white: "bfcfbgdgahdhfh" },
+            marks: { triangle: "dhchbhdgcg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "一样多", en: "same" } }],
+            correctValue: "Black",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dfefcgegbhcheh", white: "bfcfbgdgahdhfh" },
+                marks: { triangle: "dhchbhdgcg" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-compare-liberties-11",
+        chapterId: "basic-skills",
+        order: 312,
+        title: { zh: "比较气数 · 11/12", en: "Compare Liberties · 11/12" },
+        instruction: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "bfcgdgbhehfhgh", white: "egfgggchdhhhgi" },
+            marks: { triangle: "ghfhehdhch" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "一样多", en: "same" } }],
+            correctValue: "same",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "bfcgdgbhehfhgh", white: "egfgggchdhhhgi" },
+                marks: { triangle: "ghfhehdhch" },
+            },
+        },
+    },
+    {
+        id: "basic-skills-compare-liberties-12",
+        chapterId: "basic-skills",
+        order: 313,
+        title: { zh: "比较气数 · 12/12", en: "Compare Liberties · 12/12" },
+        instruction: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cfhfdgegfghgchghhhihgiii", white: "ecgcgeheiegfifggdhehfhfi" },
+            marks: { triangle: "iigifiihhhghfhehdhhghf" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋和白棋的哪个棋串气更多？", en: "Which chain has most liberties, black or white?" },
+            options: [{ value: "Black", label: { zh: "黑棋", en: "Black" } }, { value: "White", label: { zh: "白棋", en: "White" } }, { value: "same", label: { zh: "一样多", en: "same" } }],
+            correctValue: "same",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cfhfdgegfghgchghhhihgiii", white: "ecgcgeheiegfifggdhehfhfi" },
+                marks: { triangle: "iigifiihhhghfhehdhhghf" },
+            },
+        },
+    },
+];
 
 const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-1",
         chapterId: "basic-skills",
-        order: 248,
-        title: { zh: "Capturing Race · 1/18", en: "Capturing Race · 1/18" },
+        order: 314,
+        title: { zh: "对杀 · 1/18", en: "Capturing Race · 1/18" },
         instruction: { zh: "被标记的两个棋串都有两口气。白棋可以通过减少黑棋串的气来吃掉它。如果轮到黑棋走，黑棋也可以做同样的事情。这被称为'对杀'。如果双方气数相同，先落子的一方将赢得对杀。白先。赢得对杀。", en: "The two marked chains both have two liberties. White can capture the black chain by reducing its liberties. Black can do the same if it was Black's turn to play. This is called a 'capturing race'. If both players have the same number of liberties, the player that plays first will win the capturing race. White to play. Win the capturing race." },
         puzzle: {
             width: 9,
@@ -3848,8 +5506,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-2",
         chapterId: "basic-skills",
-        order: 249,
-        title: { zh: "Capturing Race · 2/18", en: "Capturing Race · 2/18" },
+        order: 315,
+        title: { zh: "对杀 · 2/18", en: "Capturing Race · 2/18" },
         instruction: { zh: "白先。赢得对杀。", en: "White to play. Win the capturing race." },
         puzzle: {
             width: 9,
@@ -3864,8 +5522,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-3",
         chapterId: "basic-skills",
-        order: 250,
-        title: { zh: "Capturing Race · 3/18", en: "Capturing Race · 3/18" },
+        order: 316,
+        title: { zh: "对杀 · 3/18", en: "Capturing Race · 3/18" },
         instruction: { zh: "白先。赢得对杀。", en: "White to play. Win the capturing race." },
         puzzle: {
             width: 9,
@@ -3880,8 +5538,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-4",
         chapterId: "basic-skills",
-        order: 251,
-        title: { zh: "Capturing Race · 4/18", en: "Capturing Race · 4/18" },
+        order: 317,
+        title: { zh: "对杀 · 4/18", en: "Capturing Race · 4/18" },
         instruction: { zh: "白先。赢得对杀。", en: "White to play. Win the capturing race." },
         puzzle: {
             width: 9,
@@ -3896,8 +5554,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-5",
         chapterId: "basic-skills",
-        order: 252,
-        title: { zh: "Capturing Race · 5/18", en: "Capturing Race · 5/18" },
+        order: 318,
+        title: { zh: "对杀 · 5/18", en: "Capturing Race · 5/18" },
         instruction: { zh: "白先。赢得对杀。", en: "White to play. Win the capturing race." },
         puzzle: {
             width: 9,
@@ -3912,8 +5570,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-6",
         chapterId: "basic-skills",
-        order: 253,
-        title: { zh: "Capturing Race · 6/18", en: "Capturing Race · 6/18" },
+        order: 319,
+        title: { zh: "对杀 · 6/18", en: "Capturing Race · 6/18" },
         instruction: { zh: "白先。赢得对杀。", en: "White to play. Win the capturing race." },
         puzzle: {
             width: 9,
@@ -3928,8 +5586,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-7",
         chapterId: "basic-skills",
-        order: 254,
-        title: { zh: "Capturing Race · 7/18", en: "Capturing Race · 7/18" },
+        order: 320,
+        title: { zh: "对杀 · 7/18", en: "Capturing Race · 7/18" },
         instruction: { zh: "白先。赢得对杀。", en: "White to play. Win the capturing race." },
         puzzle: {
             width: 9,
@@ -3944,8 +5602,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-8",
         chapterId: "basic-skills",
-        order: 255,
-        title: { zh: "Capturing Race · 8/18", en: "Capturing Race · 8/18" },
+        order: 321,
+        title: { zh: "对杀 · 8/18", en: "Capturing Race · 8/18" },
         instruction: { zh: "白先。赢得对杀。", en: "White to play. Win the capturing race." },
         puzzle: {
             width: 9,
@@ -3960,8 +5618,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-9",
         chapterId: "basic-skills",
-        order: 256,
-        title: { zh: "Capturing Race · 9/18", en: "Capturing Race · 9/18" },
+        order: 322,
+        title: { zh: "对杀 · 9/18", en: "Capturing Race · 9/18" },
         instruction: { zh: "白先。赢得对杀。", en: "White to play. Win the capturing race." },
         puzzle: {
             width: 9,
@@ -3976,8 +5634,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-10",
         chapterId: "basic-skills",
-        order: 257,
-        title: { zh: "Capturing Race · 10/18", en: "Capturing Race · 10/18" },
+        order: 323,
+        title: { zh: "对杀 · 10/18", en: "Capturing Race · 10/18" },
         instruction: { zh: "白先。赢得对杀。", en: "White to play. Win the capturing race." },
         puzzle: {
             width: 9,
@@ -3992,8 +5650,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-11",
         chapterId: "basic-skills",
-        order: 258,
-        title: { zh: "Capturing Race · 11/18", en: "Capturing Race · 11/18" },
+        order: 324,
+        title: { zh: "对杀 · 11/18", en: "Capturing Race · 11/18" },
         instruction: { zh: "白先。赢得对杀。", en: "White to play. Win the capturing race." },
         puzzle: {
             width: 9,
@@ -4008,8 +5666,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-12",
         chapterId: "basic-skills",
-        order: 259,
-        title: { zh: "Capturing Race · 12/18", en: "Capturing Race · 12/18" },
+        order: 325,
+        title: { zh: "对杀 · 12/18", en: "Capturing Race · 12/18" },
         instruction: { zh: "白先。赢得对杀。", en: "White to play. Win the capturing race." },
         puzzle: {
             width: 9,
@@ -4024,8 +5682,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-13",
         chapterId: "basic-skills",
-        order: 260,
-        title: { zh: "Capturing Race · 13/18", en: "Capturing Race · 13/18" },
+        order: 326,
+        title: { zh: "对杀 · 13/18", en: "Capturing Race · 13/18" },
         instruction: { zh: "黑先。赢得对杀并吃掉被标记的棋子，同时避免使自己处于打吃状态。", en: "Black to play. Win the capturing race and capture the marked stones without putting yourself in atari." },
         puzzle: {
             width: 9,
@@ -4040,8 +5698,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-14",
         chapterId: "basic-skills",
-        order: 261,
-        title: { zh: "Capturing Race · 14/18", en: "Capturing Race · 14/18" },
+        order: 327,
+        title: { zh: "对杀 · 14/18", en: "Capturing Race · 14/18" },
         instruction: { zh: "黑先。赢得对杀并吃掉被标记的棋子，同时避免使自己处于打吃状态。", en: "Black to play. Win the capturing race and capture the marked stones without putting yourself in atari." },
         puzzle: {
             width: 9,
@@ -4056,8 +5714,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-15",
         chapterId: "basic-skills",
-        order: 262,
-        title: { zh: "Capturing Race · 15/18", en: "Capturing Race · 15/18" },
+        order: 328,
+        title: { zh: "对杀 · 15/18", en: "Capturing Race · 15/18" },
         instruction: { zh: "黑先。赢得对杀并吃掉被标记的棋子，同时避免使自己处于打吃状态。", en: "Black to play. Win the capturing race and capture the marked stones without putting yourself in atari." },
         puzzle: {
             width: 9,
@@ -4072,8 +5730,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-16",
         chapterId: "basic-skills",
-        order: 263,
-        title: { zh: "Capturing Race · 16/18", en: "Capturing Race · 16/18" },
+        order: 329,
+        title: { zh: "对杀 · 16/18", en: "Capturing Race · 16/18" },
         instruction: { zh: "黑先。赢得对杀并吃掉被标记的棋子，同时避免使自己处于打吃状态。", en: "Black to play. Win the capturing race and capture the marked stones without putting yourself in atari." },
         puzzle: {
             width: 9,
@@ -4088,8 +5746,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-17",
         chapterId: "basic-skills",
-        order: 264,
-        title: { zh: "Capturing Race · 17/18", en: "Capturing Race · 17/18" },
+        order: 330,
+        title: { zh: "对杀 · 17/18", en: "Capturing Race · 17/18" },
         instruction: { zh: "黑先。赢得对杀并吃掉被标记的棋子，同时避免使自己处于打吃状态。", en: "Black to play. Win the capturing race and capture the marked stones without putting yourself in atari." },
         puzzle: {
             width: 9,
@@ -4104,8 +5762,8 @@ const capturingRaceLevels: Level[] = [
     {
         id: "basic-skills-capturing_race-18",
         chapterId: "basic-skills",
-        order: 265,
-        title: { zh: "Capturing Race · 18/18", en: "Capturing Race · 18/18" },
+        order: 331,
+        title: { zh: "对杀 · 18/18", en: "Capturing Race · 18/18" },
         instruction: { zh: "黑先。赢得对杀并吃掉被标记的棋子，同时避免使自己处于打吃状态。", en: "Black to play. Win the capturing race and capture the marked stones without putting yourself in atari." },
         puzzle: {
             width: 9,
@@ -4123,8 +5781,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-1",
         chapterId: "basic-skills",
-        order: 266,
-        title: { zh: "Correct Side · 1/24", en: "Correct Side · 1/24" },
+        order: 332,
+        title: { zh: "正确方向 · 1/24", en: "Correct Side · 1/24" },
         instruction: { zh: "黑先。通过正确方向的打吃来吃掉白棋串。", en: "Black to play. Capture a white chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4138,8 +5796,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-2",
         chapterId: "basic-skills",
-        order: 267,
-        title: { zh: "Correct Side · 2/24", en: "Correct Side · 2/24" },
+        order: 333,
+        title: { zh: "正确方向 · 2/24", en: "Correct Side · 2/24" },
         instruction: { zh: "黑先。通过正确方向的打吃来吃掉白棋串。", en: "Black to play. Capture a white chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4153,8 +5811,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-3",
         chapterId: "basic-skills",
-        order: 268,
-        title: { zh: "Correct Side · 3/24", en: "Correct Side · 3/24" },
+        order: 334,
+        title: { zh: "正确方向 · 3/24", en: "Correct Side · 3/24" },
         instruction: { zh: "黑先。通过正确方向的打吃来吃掉白棋串。", en: "Black to play. Capture a white chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4168,8 +5826,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-4",
         chapterId: "basic-skills",
-        order: 269,
-        title: { zh: "Correct Side · 4/24", en: "Correct Side · 4/24" },
+        order: 335,
+        title: { zh: "正确方向 · 4/24", en: "Correct Side · 4/24" },
         instruction: { zh: "黑先。通过正确方向的打吃来吃掉白棋串。", en: "Black to play. Capture a white chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4183,8 +5841,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-5",
         chapterId: "basic-skills",
-        order: 270,
-        title: { zh: "Correct Side · 5/24", en: "Correct Side · 5/24" },
+        order: 336,
+        title: { zh: "正确方向 · 5/24", en: "Correct Side · 5/24" },
         instruction: { zh: "黑先。通过正确方向的打吃来吃掉白棋串。", en: "Black to play. Capture a white chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4198,8 +5856,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-6",
         chapterId: "basic-skills",
-        order: 271,
-        title: { zh: "Correct Side · 6/24", en: "Correct Side · 6/24" },
+        order: 337,
+        title: { zh: "正确方向 · 6/24", en: "Correct Side · 6/24" },
         instruction: { zh: "黑先。通过正确方向的打吃来吃掉白棋串。", en: "Black to play. Capture a white chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4213,8 +5871,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-7",
         chapterId: "basic-skills",
-        order: 272,
-        title: { zh: "Correct Side · 7/24", en: "Correct Side · 7/24" },
+        order: 338,
+        title: { zh: "正确方向 · 7/24", en: "Correct Side · 7/24" },
         instruction: { zh: "黑先。通过正确方向的打吃来吃掉白棋串。", en: "Black to play. Capture a white chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4228,8 +5886,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-8",
         chapterId: "basic-skills",
-        order: 273,
-        title: { zh: "Correct Side · 8/24", en: "Correct Side · 8/24" },
+        order: 339,
+        title: { zh: "正确方向 · 8/24", en: "Correct Side · 8/24" },
         instruction: { zh: "黑先。通过正确方向的打吃来吃掉白棋串。", en: "Black to play. Capture a white chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4243,8 +5901,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-9",
         chapterId: "basic-skills",
-        order: 274,
-        title: { zh: "Correct Side · 9/24", en: "Correct Side · 9/24" },
+        order: 340,
+        title: { zh: "正确方向 · 9/24", en: "Correct Side · 9/24" },
         instruction: { zh: "黑先。通过正确方向的打吃来吃掉白棋串。", en: "Black to play. Capture a white chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4258,8 +5916,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-10",
         chapterId: "basic-skills",
-        order: 275,
-        title: { zh: "Correct Side · 10/24", en: "Correct Side · 10/24" },
+        order: 341,
+        title: { zh: "正确方向 · 10/24", en: "Correct Side · 10/24" },
         instruction: { zh: "黑先。通过正确方向的打吃来吃掉白棋串。", en: "Black to play. Capture a white chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4273,8 +5931,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-11",
         chapterId: "basic-skills",
-        order: 276,
-        title: { zh: "Correct Side · 11/24", en: "Correct Side · 11/24" },
+        order: 342,
+        title: { zh: "正确方向 · 11/24", en: "Correct Side · 11/24" },
         instruction: { zh: "黑先。通过正确方向的打吃来吃掉白棋串。", en: "Black to play. Capture a white chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4288,8 +5946,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-12",
         chapterId: "basic-skills",
-        order: 277,
-        title: { zh: "Correct Side · 12/24", en: "Correct Side · 12/24" },
+        order: 343,
+        title: { zh: "正确方向 · 12/24", en: "Correct Side · 12/24" },
         instruction: { zh: "黑先。通过正确方向的打吃来吃掉白棋串。", en: "Black to play. Capture a white chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4303,8 +5961,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-13",
         chapterId: "basic-skills",
-        order: 278,
-        title: { zh: "Correct Side · 13/24", en: "Correct Side · 13/24" },
+        order: 344,
+        title: { zh: "正确方向 · 13/24", en: "Correct Side · 13/24" },
         instruction: { zh: "白先。通过正确方向的打吃来吃掉黑棋串。", en: "White to play. Capture a black chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4318,8 +5976,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-14",
         chapterId: "basic-skills",
-        order: 279,
-        title: { zh: "Correct Side · 14/24", en: "Correct Side · 14/24" },
+        order: 345,
+        title: { zh: "正确方向 · 14/24", en: "Correct Side · 14/24" },
         instruction: { zh: "白先。通过正确方向的打吃来吃掉黑棋串。", en: "White to play. Capture a black chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4333,8 +5991,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-15",
         chapterId: "basic-skills",
-        order: 280,
-        title: { zh: "Correct Side · 15/24", en: "Correct Side · 15/24" },
+        order: 346,
+        title: { zh: "正确方向 · 15/24", en: "Correct Side · 15/24" },
         instruction: { zh: "白先。通过正确方向的打吃来吃掉黑棋串。", en: "White to play. Capture a black chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4348,8 +6006,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-16",
         chapterId: "basic-skills",
-        order: 281,
-        title: { zh: "Correct Side · 16/24", en: "Correct Side · 16/24" },
+        order: 347,
+        title: { zh: "正确方向 · 16/24", en: "Correct Side · 16/24" },
         instruction: { zh: "白先。通过正确方向的打吃来吃掉黑棋串。", en: "White to play. Capture a black chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4363,8 +6021,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-17",
         chapterId: "basic-skills",
-        order: 282,
-        title: { zh: "Correct Side · 17/24", en: "Correct Side · 17/24" },
+        order: 348,
+        title: { zh: "正确方向 · 17/24", en: "Correct Side · 17/24" },
         instruction: { zh: "白先。通过正确方向的打吃来吃掉黑棋串。", en: "White to play. Capture a black chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4378,8 +6036,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-18",
         chapterId: "basic-skills",
-        order: 283,
-        title: { zh: "Correct Side · 18/24", en: "Correct Side · 18/24" },
+        order: 349,
+        title: { zh: "正确方向 · 18/24", en: "Correct Side · 18/24" },
         instruction: { zh: "白先。通过正确方向的打吃来吃掉黑棋串。", en: "White to play. Capture a black chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4393,8 +6051,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-19",
         chapterId: "basic-skills",
-        order: 284,
-        title: { zh: "Correct Side · 19/24", en: "Correct Side · 19/24" },
+        order: 350,
+        title: { zh: "正确方向 · 19/24", en: "Correct Side · 19/24" },
         instruction: { zh: "白先。通过正确方向的打吃来吃掉黑棋串。", en: "White to play. Capture a black chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4408,8 +6066,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-20",
         chapterId: "basic-skills",
-        order: 285,
-        title: { zh: "Correct Side · 20/24", en: "Correct Side · 20/24" },
+        order: 351,
+        title: { zh: "正确方向 · 20/24", en: "Correct Side · 20/24" },
         instruction: { zh: "白先。通过正确方向的打吃来吃掉黑棋串。", en: "White to play. Capture a black chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4423,8 +6081,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-21",
         chapterId: "basic-skills",
-        order: 286,
-        title: { zh: "Correct Side · 21/24", en: "Correct Side · 21/24" },
+        order: 352,
+        title: { zh: "正确方向 · 21/24", en: "Correct Side · 21/24" },
         instruction: { zh: "白先。通过正确方向的打吃来吃掉黑棋串。", en: "White to play. Capture a black chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4438,8 +6096,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-22",
         chapterId: "basic-skills",
-        order: 287,
-        title: { zh: "Correct Side · 22/24", en: "Correct Side · 22/24" },
+        order: 353,
+        title: { zh: "正确方向 · 22/24", en: "Correct Side · 22/24" },
         instruction: { zh: "白先。通过正确方向的打吃来吃掉黑棋串。", en: "White to play. Capture a black chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4453,8 +6111,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-23",
         chapterId: "basic-skills",
-        order: 288,
-        title: { zh: "Correct Side · 23/24", en: "Correct Side · 23/24" },
+        order: 354,
+        title: { zh: "正确方向 · 23/24", en: "Correct Side · 23/24" },
         instruction: { zh: "白先。通过正确方向的打吃来吃掉黑棋串。", en: "White to play. Capture a black chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4468,8 +6126,8 @@ const correctSideLevels: Level[] = [
     {
         id: "basic-skills-correct-side-24",
         chapterId: "basic-skills",
-        order: 289,
-        title: { zh: "Correct Side · 24/24", en: "Correct Side · 24/24" },
+        order: 355,
+        title: { zh: "正确方向 · 24/24", en: "Correct Side · 24/24" },
         instruction: { zh: "白先。通过正确方向的打吃来吃掉黑棋串。", en: "White to play. Capture a black chain by putting it in atari at the correct side." },
         puzzle: {
             width: 9,
@@ -4486,8 +6144,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-1",
         chapterId: "basic-skills",
-        order: 290,
-        title: { zh: "Capture · 1/21", en: "Capture · 1/21" },
+        order: 356,
+        title: { zh: "提子 · 1/21", en: "Capture · 1/21" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stone." },
         puzzle: {
             width: 9,
@@ -4502,8 +6160,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-2",
         chapterId: "basic-skills",
-        order: 291,
-        title: { zh: "Capture · 2/21", en: "Capture · 2/21" },
+        order: 357,
+        title: { zh: "提子 · 2/21", en: "Capture · 2/21" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stone." },
         puzzle: {
             width: 9,
@@ -4518,8 +6176,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-3",
         chapterId: "basic-skills",
-        order: 292,
-        title: { zh: "Capture · 3/21", en: "Capture · 3/21" },
+        order: 358,
+        title: { zh: "提子 · 3/21", en: "Capture · 3/21" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stones." },
         puzzle: {
             width: 9,
@@ -4534,8 +6192,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-4",
         chapterId: "basic-skills",
-        order: 293,
-        title: { zh: "Capture · 4/21", en: "Capture · 4/21" },
+        order: 359,
+        title: { zh: "提子 · 4/21", en: "Capture · 4/21" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stones." },
         puzzle: {
             width: 9,
@@ -4550,8 +6208,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-5",
         chapterId: "basic-skills",
-        order: 294,
-        title: { zh: "Capture · 5/21", en: "Capture · 5/21" },
+        order: 360,
+        title: { zh: "提子 · 5/21", en: "Capture · 5/21" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stones." },
         puzzle: {
             width: 9,
@@ -4566,8 +6224,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-6",
         chapterId: "basic-skills",
-        order: 295,
-        title: { zh: "Capture · 6/21", en: "Capture · 6/21" },
+        order: 361,
+        title: { zh: "提子 · 6/21", en: "Capture · 6/21" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stones." },
         puzzle: {
             width: 9,
@@ -4582,8 +6240,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-7",
         chapterId: "basic-skills",
-        order: 296,
-        title: { zh: "Capture · 7/21", en: "Capture · 7/21" },
+        order: 362,
+        title: { zh: "提子 · 7/21", en: "Capture · 7/21" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stones." },
         puzzle: {
             width: 9,
@@ -4598,8 +6256,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-8",
         chapterId: "basic-skills",
-        order: 297,
-        title: { zh: "Capture · 8/21", en: "Capture · 8/21" },
+        order: 363,
+        title: { zh: "提子 · 8/21", en: "Capture · 8/21" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stones." },
         puzzle: {
             width: 9,
@@ -4614,8 +6272,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-9",
         chapterId: "basic-skills",
-        order: 298,
-        title: { zh: "Capture · 9/21", en: "Capture · 9/21" },
+        order: 364,
+        title: { zh: "提子 · 9/21", en: "Capture · 9/21" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stones." },
         puzzle: {
             width: 9,
@@ -4630,8 +6288,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-10",
         chapterId: "basic-skills",
-        order: 299,
-        title: { zh: "Capture · 10/21", en: "Capture · 10/21" },
+        order: 365,
+        title: { zh: "提子 · 10/21", en: "Capture · 10/21" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stone." },
         puzzle: {
             width: 9,
@@ -4646,8 +6304,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-11",
         chapterId: "basic-skills",
-        order: 300,
-        title: { zh: "Capture · 11/21", en: "Capture · 11/21" },
+        order: 366,
+        title: { zh: "提子 · 11/21", en: "Capture · 11/21" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stone." },
         puzzle: {
             width: 9,
@@ -4662,8 +6320,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-12",
         chapterId: "basic-skills",
-        order: 301,
-        title: { zh: "Capture · 12/21", en: "Capture · 12/21" },
+        order: 367,
+        title: { zh: "提子 · 12/21", en: "Capture · 12/21" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stone." },
         puzzle: {
             width: 9,
@@ -4678,8 +6336,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-13",
         chapterId: "basic-skills",
-        order: 302,
-        title: { zh: "Capture · 13/21", en: "Capture · 13/21" },
+        order: 368,
+        title: { zh: "提子 · 13/21", en: "Capture · 13/21" },
         instruction: { zh: "黑先。在不使自己处于打吃状态的情况下吃掉白棋。", en: "Black to play. Capture white stones without putting yourself into atari." },
         puzzle: {
             width: 19,
@@ -4693,8 +6351,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-14",
         chapterId: "basic-skills",
-        order: 303,
-        title: { zh: "Capture · 14/21", en: "Capture · 14/21" },
+        order: 369,
+        title: { zh: "提子 · 14/21", en: "Capture · 14/21" },
         instruction: { zh: "黑先。在不使自己处于打吃状态的情况下吃掉白棋。", en: "Black to play. Capture white stones without putting yourself into atari." },
         puzzle: {
             width: 19,
@@ -4708,8 +6366,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-15",
         chapterId: "basic-skills",
-        order: 304,
-        title: { zh: "Capture · 15/21", en: "Capture · 15/21" },
+        order: 370,
+        title: { zh: "提子 · 15/21", en: "Capture · 15/21" },
         instruction: { zh: "黑先。在不使自己处于打吃状态的情况下吃掉白棋。", en: "Black to play. Capture white stones without putting yourself into atari." },
         puzzle: {
             width: 19,
@@ -4723,8 +6381,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-16",
         chapterId: "basic-skills",
-        order: 305,
-        title: { zh: "Capture · 16/21", en: "Capture · 16/21" },
+        order: 371,
+        title: { zh: "提子 · 16/21", en: "Capture · 16/21" },
         instruction: { zh: "黑先。在不使自己处于打吃状态的情况下吃掉白棋。", en: "Black to play. Capture white stones without putting yourself into atari." },
         puzzle: {
             width: 19,
@@ -4738,8 +6396,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-17",
         chapterId: "basic-skills",
-        order: 306,
-        title: { zh: "Capture · 17/21", en: "Capture · 17/21" },
+        order: 372,
+        title: { zh: "提子 · 17/21", en: "Capture · 17/21" },
         instruction: { zh: "黑先。在不使自己处于打吃状态的情况下吃掉白棋。", en: "Black to play. Capture white stones without putting yourself into atari." },
         puzzle: {
             width: 19,
@@ -4753,8 +6411,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-18",
         chapterId: "basic-skills",
-        order: 307,
-        title: { zh: "Capture · 18/21", en: "Capture · 18/21" },
+        order: 373,
+        title: { zh: "提子 · 18/21", en: "Capture · 18/21" },
         instruction: { zh: "黑先。在不使自己处于打吃状态的情况下吃掉白棋。", en: "Black to play. Capture white stones without putting yourself into atari." },
         puzzle: {
             width: 19,
@@ -4768,8 +6426,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-19",
         chapterId: "basic-skills",
-        order: 308,
-        title: { zh: "Capture · 19/21", en: "Capture · 19/21" },
+        order: 374,
+        title: { zh: "提子 · 19/21", en: "Capture · 19/21" },
         instruction: { zh: "黑先。在不使自己处于打吃状态的情况下吃掉白棋。", en: "Black to play. Capture white stones without putting yourself into atari." },
         puzzle: {
             width: 19,
@@ -4783,8 +6441,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-20",
         chapterId: "basic-skills",
-        order: 309,
-        title: { zh: "Capture · 20/21", en: "Capture · 20/21" },
+        order: 375,
+        title: { zh: "提子 · 20/21", en: "Capture · 20/21" },
         instruction: { zh: "黑先。在不使自己处于打吃状态的情况下吃掉白棋。", en: "Black to play. Capture white stones without putting yourself into atari." },
         puzzle: {
             width: 19,
@@ -4798,8 +6456,8 @@ const captureLevels: Level[] = [
     {
         id: "basic-skills-capture-21",
         chapterId: "basic-skills",
-        order: 310,
-        title: { zh: "Capture · 21/21", en: "Capture · 21/21" },
+        order: 376,
+        title: { zh: "提子 · 21/21", en: "Capture · 21/21" },
         instruction: { zh: "黑先。在不使自己处于打吃状态的情况下吃掉白棋。", en: "Black to play. Capture white stones without putting yourself into atari." },
         puzzle: {
             width: 19,
@@ -4816,8 +6474,8 @@ const bsEscapeLevels: Level[] = [
     {
         id: "basic-skills-bs-escape-1",
         chapterId: "basic-skills",
-        order: 311,
-        title: { zh: "Escape · 1/12", en: "Escape · 1/12" },
+        order: 377,
+        title: { zh: "逃跑 · 1/12", en: "Escape · 1/12" },
         instruction: { zh: "白先。选择落子于A或B点，使被标记的棋子逃脱？", en: "White to play. Choose where to play to escape with the marked stones, A or B?" },
         puzzle: {
             width: 9,
@@ -4831,8 +6489,8 @@ const bsEscapeLevels: Level[] = [
     {
         id: "basic-skills-bs-escape-2",
         chapterId: "basic-skills",
-        order: 312,
-        title: { zh: "Escape · 2/12", en: "Escape · 2/12" },
+        order: 378,
+        title: { zh: "逃跑 · 2/12", en: "Escape · 2/12" },
         instruction: { zh: "白先。选择落子于A或B点，使被标记的棋子逃脱？", en: "White to play. Choose where to play to escape with the marked stones, A or B?" },
         puzzle: {
             width: 9,
@@ -4846,8 +6504,8 @@ const bsEscapeLevels: Level[] = [
     {
         id: "basic-skills-bs-escape-3",
         chapterId: "basic-skills",
-        order: 313,
-        title: { zh: "Escape · 3/12", en: "Escape · 3/12" },
+        order: 379,
+        title: { zh: "逃跑 · 3/12", en: "Escape · 3/12" },
         instruction: { zh: "白先。选择落子于A或B点，使被标记的棋子逃脱？", en: "White to play. Choose where to play to escape with the marked stones, A or B?" },
         puzzle: {
             width: 9,
@@ -4861,8 +6519,8 @@ const bsEscapeLevels: Level[] = [
     {
         id: "basic-skills-bs-escape-4",
         chapterId: "basic-skills",
-        order: 314,
-        title: { zh: "Escape · 4/12", en: "Escape · 4/12" },
+        order: 380,
+        title: { zh: "逃跑 · 4/12", en: "Escape · 4/12" },
         instruction: { zh: "白先。选择落子于A或B点，使被标记的棋子逃脱？", en: "White to play. Choose where to play to escape with the marked stones, A or B?" },
         puzzle: {
             width: 9,
@@ -4876,8 +6534,8 @@ const bsEscapeLevels: Level[] = [
     {
         id: "basic-skills-bs-escape-5",
         chapterId: "basic-skills",
-        order: 315,
-        title: { zh: "Escape · 5/12", en: "Escape · 5/12" },
+        order: 381,
+        title: { zh: "逃跑 · 5/12", en: "Escape · 5/12" },
         instruction: { zh: "白先。选择落子于A或B点，使被标记的棋子逃脱？", en: "White to play. Choose where to play to escape with the marked stones, A or B?" },
         puzzle: {
             width: 9,
@@ -4891,8 +6549,8 @@ const bsEscapeLevels: Level[] = [
     {
         id: "basic-skills-bs-escape-6",
         chapterId: "basic-skills",
-        order: 316,
-        title: { zh: "Escape · 6/12", en: "Escape · 6/12" },
+        order: 382,
+        title: { zh: "逃跑 · 6/12", en: "Escape · 6/12" },
         instruction: { zh: "白先。选择落子于A或B点，使被标记的棋子逃脱？", en: "White to play. Choose where to play to escape with the marked stones, A or B?" },
         puzzle: {
             width: 9,
@@ -4906,8 +6564,8 @@ const bsEscapeLevels: Level[] = [
     {
         id: "basic-skills-bs-escape-7",
         chapterId: "basic-skills",
-        order: 317,
-        title: { zh: "Escape · 7/12", en: "Escape · 7/12" },
+        order: 383,
+        title: { zh: "逃跑 · 7/12", en: "Escape · 7/12" },
         instruction: { zh: "白先。选择落子于A或B点，使被标记的棋子逃脱？", en: "White to play. Choose where to play to escape with the marked stones, A or B?" },
         puzzle: {
             width: 9,
@@ -4921,8 +6579,8 @@ const bsEscapeLevels: Level[] = [
     {
         id: "basic-skills-bs-escape-8",
         chapterId: "basic-skills",
-        order: 318,
-        title: { zh: "Escape · 8/12", en: "Escape · 8/12" },
+        order: 384,
+        title: { zh: "逃跑 · 8/12", en: "Escape · 8/12" },
         instruction: { zh: "白先。选择落子于A或B点，使被标记的棋子逃脱？", en: "White to play. Choose where to play to escape with the marked stones, A or B?" },
         puzzle: {
             width: 9,
@@ -4936,8 +6594,8 @@ const bsEscapeLevels: Level[] = [
     {
         id: "basic-skills-bs-escape-9",
         chapterId: "basic-skills",
-        order: 319,
-        title: { zh: "Escape · 9/12", en: "Escape · 9/12" },
+        order: 385,
+        title: { zh: "逃跑 · 9/12", en: "Escape · 9/12" },
         instruction: { zh: "白先。选择落子于A或B点，使被标记的棋子逃脱？", en: "White to play. Choose where to play to escape with the marked stones, A or B?" },
         puzzle: {
             width: 9,
@@ -4951,8 +6609,8 @@ const bsEscapeLevels: Level[] = [
     {
         id: "basic-skills-bs-escape-10",
         chapterId: "basic-skills",
-        order: 320,
-        title: { zh: "Escape · 10/12", en: "Escape · 10/12" },
+        order: 386,
+        title: { zh: "逃跑 · 10/12", en: "Escape · 10/12" },
         instruction: { zh: "白先。选择落子于A或B点，使被标记的棋子逃脱？", en: "White to play. Choose where to play to escape with the marked stones, A or B?" },
         puzzle: {
             width: 9,
@@ -4966,8 +6624,8 @@ const bsEscapeLevels: Level[] = [
     {
         id: "basic-skills-bs-escape-11",
         chapterId: "basic-skills",
-        order: 321,
-        title: { zh: "Escape · 11/12", en: "Escape · 11/12" },
+        order: 387,
+        title: { zh: "逃跑 · 11/12", en: "Escape · 11/12" },
         instruction: { zh: "白先。选择落子于A或B点，使被标记的棋子逃脱？", en: "White to play. Choose where to play to escape with the marked stones, A or B?" },
         puzzle: {
             width: 9,
@@ -4981,8 +6639,8 @@ const bsEscapeLevels: Level[] = [
     {
         id: "basic-skills-bs-escape-12",
         chapterId: "basic-skills",
-        order: 322,
-        title: { zh: "Escape · 12/12", en: "Escape · 12/12" },
+        order: 388,
+        title: { zh: "逃跑 · 12/12", en: "Escape · 12/12" },
         instruction: { zh: "白先。选择落子于A或B点，使被标记的棋子逃脱？", en: "White to play. Choose where to play to escape with the marked stones, A or B?" },
         puzzle: {
             width: 9,
@@ -4999,8 +6657,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-1",
         chapterId: "basic-skills",
-        order: 323,
-        title: { zh: "Liberties · 1/22", en: "Liberties · 1/22" },
+        order: 389,
+        title: { zh: "气数 · 1/22", en: "Liberties · 1/22" },
         instruction: { zh: "你可以通过夺气来攻击一个棋串。在这样做的同时，也要尝试实现其他目标，例如连接自己的棋子或保护领地。白先。选择最佳的夺气方式，A、B或C。", en: "You can attack a chain by taking away a liberty. In doing so, try to achieve other goals as well, such as connecting your stones or protecting territory. White to play. Choose the best way to reduce liberties, A, B or C." },
         puzzle: {
             width: 19,
@@ -5014,8 +6672,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-2",
         chapterId: "basic-skills",
-        order: 324,
-        title: { zh: "Liberties · 2/22", en: "Liberties · 2/22" },
+        order: 390,
+        title: { zh: "气数 · 2/22", en: "Liberties · 2/22" },
         instruction: { zh: "夺气的另一个目标是切断对手的棋子。白先。选择最佳的夺气方式，A、B或C。", en: "Another goal while taking away a liberty is to cut opponent's stones. White to play. Choose the best way to reduce liberties, A, B or C." },
         puzzle: {
             width: 19,
@@ -5029,8 +6687,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-3",
         chapterId: "basic-skills",
-        order: 325,
-        title: { zh: "Liberties · 3/22", en: "Liberties · 3/22" },
+        order: 391,
+        title: { zh: "气数 · 3/22", en: "Liberties · 3/22" },
         instruction: { zh: "白先。选择最佳的夺气方式，A、B或C。", en: "White to play. Choose the best way to reduce liberties, A, B or C." },
         puzzle: {
             width: 19,
@@ -5044,8 +6702,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-4",
         chapterId: "basic-skills",
-        order: 326,
-        title: { zh: "Liberties · 4/22", en: "Liberties · 4/22" },
+        order: 392,
+        title: { zh: "气数 · 4/22", en: "Liberties · 4/22" },
         instruction: { zh: "还有一个目标是阻止对手棋子的推进。白先。选择最佳的夺气方式，A、B或C。", en: "Yet another goal is to block the advance of stones of your opponent. White to play. Choose the best way to reduce liberties, A, B or C." },
         puzzle: {
             width: 19,
@@ -5059,8 +6717,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-5",
         chapterId: "basic-skills",
-        order: 327,
-        title: { zh: "Liberties · 5/22", en: "Liberties · 5/22" },
+        order: 393,
+        title: { zh: "气数 · 5/22", en: "Liberties · 5/22" },
         instruction: { zh: "白先。选择最佳的夺气方式，A、B或C。", en: "White to play. Choose the best way to reduce liberties, A, B or C." },
         puzzle: {
             width: 19,
@@ -5074,8 +6732,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-6",
         chapterId: "basic-skills",
-        order: 328,
-        title: { zh: "Liberties · 6/22", en: "Liberties · 6/22" },
+        order: 394,
+        title: { zh: "气数 · 6/22", en: "Liberties · 6/22" },
         instruction: { zh: "白先。选择最佳的夺气方式，A、B或C。", en: "White to play. Choose the best way to reduce liberties, A, B or C." },
         puzzle: {
             width: 19,
@@ -5089,8 +6747,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-7",
         chapterId: "basic-skills",
-        order: 329,
-        title: { zh: "Liberties · 7/22", en: "Liberties · 7/22" },
+        order: 395,
+        title: { zh: "气数 · 7/22", en: "Liberties · 7/22" },
         instruction: { zh: "白先。选择最佳的夺气方式，A、B或C。", en: "White to play. Choose the best way to reduce liberties, A, B or C." },
         puzzle: {
             width: 19,
@@ -5104,8 +6762,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-8",
         chapterId: "basic-skills",
-        order: 330,
-        title: { zh: "Liberties · 8/22", en: "Liberties · 8/22" },
+        order: 396,
+        title: { zh: "气数 · 8/22", en: "Liberties · 8/22" },
         instruction: { zh: "白先。选择最佳的夺气方式，A、B或C。", en: "White to play. Choose the best way to reduce liberties, A, B or C." },
         puzzle: {
             width: 19,
@@ -5119,8 +6777,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-9",
         chapterId: "basic-skills",
-        order: 331,
-        title: { zh: "Liberties · 9/22", en: "Liberties · 9/22" },
+        order: 397,
+        title: { zh: "气数 · 9/22", en: "Liberties · 9/22" },
         instruction: { zh: "白先。选择最佳的夺气方式，A、B或C。", en: "White to play. Choose the best way to reduce liberties, A, B or C." },
         puzzle: {
             width: 19,
@@ -5134,8 +6792,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-10",
         chapterId: "basic-skills",
-        order: 332,
-        title: { zh: "Liberties · 10/22", en: "Liberties · 10/22" },
+        order: 398,
+        title: { zh: "气数 · 10/22", en: "Liberties · 10/22" },
         instruction: { zh: "白先。选择最佳的夺气方式，A、B或C。", en: "White to play. Choose the best way to reduce liberties, A, B or C." },
         puzzle: {
             width: 19,
@@ -5149,8 +6807,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-11",
         chapterId: "basic-skills",
-        order: 333,
-        title: { zh: "Liberties · 11/22", en: "Liberties · 11/22" },
+        order: 399,
+        title: { zh: "气数 · 11/22", en: "Liberties · 11/22" },
         instruction: { zh: "黑先。增加被标记棋串的气数。", en: "Black to play. Increase the number of liberties of the marked chain." },
         puzzle: {
             width: 19,
@@ -5164,8 +6822,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-12",
         chapterId: "basic-skills",
-        order: 334,
-        title: { zh: "Liberties · 12/22", en: "Liberties · 12/22" },
+        order: 400,
+        title: { zh: "气数 · 12/22", en: "Liberties · 12/22" },
         instruction: { zh: "黑先。增加被标记棋串的气数。", en: "Black to play. Increase the number of liberties of the marked chain." },
         puzzle: {
             width: 19,
@@ -5179,8 +6837,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-13",
         chapterId: "basic-skills",
-        order: 335,
-        title: { zh: "Liberties · 13/22", en: "Liberties · 13/22" },
+        order: 401,
+        title: { zh: "气数 · 13/22", en: "Liberties · 13/22" },
         instruction: { zh: "黑先。增加被标记棋串的气数。", en: "Black to play. Increase the number of liberties of the marked chain." },
         puzzle: {
             width: 19,
@@ -5194,8 +6852,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-14",
         chapterId: "basic-skills",
-        order: 336,
-        title: { zh: "Liberties · 14/22", en: "Liberties · 14/22" },
+        order: 402,
+        title: { zh: "气数 · 14/22", en: "Liberties · 14/22" },
         instruction: { zh: "黑先。增加被标记棋串的气数。", en: "Black to play. Increase the number of liberties of the marked chain." },
         puzzle: {
             width: 19,
@@ -5209,8 +6867,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-15",
         chapterId: "basic-skills",
-        order: 337,
-        title: { zh: "Liberties · 15/22", en: "Liberties · 15/22" },
+        order: 403,
+        title: { zh: "气数 · 15/22", en: "Liberties · 15/22" },
         instruction: { zh: "黑先。增加被标记棋串的气数。", en: "Black to play. Increase the number of liberties of the marked chain." },
         puzzle: {
             width: 19,
@@ -5224,8 +6882,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-16",
         chapterId: "basic-skills",
-        order: 338,
-        title: { zh: "Liberties · 16/22", en: "Liberties · 16/22" },
+        order: 404,
+        title: { zh: "气数 · 16/22", en: "Liberties · 16/22" },
         instruction: { zh: "黑先。增加被标记棋串的气数。", en: "Black to play. Increase the number of liberties of the marked chain." },
         puzzle: {
             width: 19,
@@ -5239,8 +6897,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-17",
         chapterId: "basic-skills",
-        order: 339,
-        title: { zh: "Liberties · 17/22", en: "Liberties · 17/22" },
+        order: 405,
+        title: { zh: "气数 · 17/22", en: "Liberties · 17/22" },
         instruction: { zh: "白先。黑棋用第1手填塞了自己的气。惩罚这一着。", en: "White to play. Black has filled his own liberty with move 1. Punish this." },
         puzzle: {
             width: 19,
@@ -5254,8 +6912,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-18",
         chapterId: "basic-skills",
-        order: 340,
-        title: { zh: "Liberties · 18/22", en: "Liberties · 18/22" },
+        order: 406,
+        title: { zh: "气数 · 18/22", en: "Liberties · 18/22" },
         instruction: { zh: "白先。黑棋用第1手填塞了自己的气。惩罚这一着。", en: "White to play. Black has filled his own liberty with move 1. Punish this." },
         puzzle: {
             width: 19,
@@ -5269,8 +6927,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-19",
         chapterId: "basic-skills",
-        order: 341,
-        title: { zh: "Liberties · 19/22", en: "Liberties · 19/22" },
+        order: 407,
+        title: { zh: "气数 · 19/22", en: "Liberties · 19/22" },
         instruction: { zh: "白先。黑棋用第1手填塞了自己的气。惩罚这一着。", en: "White to play. Black has filled his own liberty with move 1. Punish this." },
         puzzle: {
             width: 19,
@@ -5285,8 +6943,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-20",
         chapterId: "basic-skills",
-        order: 342,
-        title: { zh: "Liberties · 20/22", en: "Liberties · 20/22" },
+        order: 408,
+        title: { zh: "气数 · 20/22", en: "Liberties · 20/22" },
         instruction: { zh: "白先。黑棋用第1手填塞了自己的气。惩罚这一着。", en: "White to play. Black has filled his own liberty with move 1. Punish this." },
         puzzle: {
             width: 19,
@@ -5301,8 +6959,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-21",
         chapterId: "basic-skills",
-        order: 343,
-        title: { zh: "Liberties · 21/22", en: "Liberties · 21/22" },
+        order: 409,
+        title: { zh: "气数 · 21/22", en: "Liberties · 21/22" },
         instruction: { zh: "白先。黑棋用第1手填塞了自己的气。惩罚这一着。", en: "White to play. Black has filled his own liberty with move 1. Punish this." },
         puzzle: {
             width: 19,
@@ -5317,8 +6975,8 @@ const bsLibertiesLevels: Level[] = [
     {
         id: "basic-skills-bs-liberties-22",
         chapterId: "basic-skills",
-        order: 344,
-        title: { zh: "Liberties · 22/22", en: "Liberties · 22/22" },
+        order: 410,
+        title: { zh: "气数 · 22/22", en: "Liberties · 22/22" },
         instruction: { zh: "白先。黑棋用第1手填塞了自己的气。惩罚这一着。", en: "White to play. Black has filled his own liberty with move 1. Punish this." },
         puzzle: {
             width: 19,
@@ -5335,8 +6993,8 @@ const encloseLevels: Level[] = [
     {
         id: "basic-skills-enclose-1",
         chapterId: "basic-skills",
-        order: 345,
-        title: { zh: "Enclose · 1/9", en: "Enclose · 1/9" },
+        order: 411,
+        title: { zh: "包围 · 1/9", en: "Enclose · 1/9" },
         instruction: { zh: "你不能总是通过直接打吃来提子。有时你需要先阻止对方逃跑来为提子做准备。白先。通过包围来提黑棋棋子。", en: "You can not always capture stones by putting them in atari immediately. Sometimes you need to prepare the capture by first preventing an escape. White to play. Capture black stones by enclosing them." },
         puzzle: {
             width: 19,
@@ -5351,8 +7009,8 @@ const encloseLevels: Level[] = [
     {
         id: "basic-skills-enclose-2",
         chapterId: "basic-skills",
-        order: 346,
-        title: { zh: "Enclose · 2/9", en: "Enclose · 2/9" },
+        order: 412,
+        title: { zh: "包围 · 2/9", en: "Enclose · 2/9" },
         instruction: { zh: "白先。通过包围来提黑棋棋子。", en: "White to play. Capture black stones by enclosing them." },
         puzzle: {
             width: 19,
@@ -5366,8 +7024,8 @@ const encloseLevels: Level[] = [
     {
         id: "basic-skills-enclose-3",
         chapterId: "basic-skills",
-        order: 347,
-        title: { zh: "Enclose · 3/9", en: "Enclose · 3/9" },
+        order: 413,
+        title: { zh: "包围 · 3/9", en: "Enclose · 3/9" },
         instruction: { zh: "白先。通过包围来提黑棋棋子。", en: "White to play. Capture black stones by enclosing them." },
         puzzle: {
             width: 19,
@@ -5380,8 +7038,8 @@ const encloseLevels: Level[] = [
     {
         id: "basic-skills-enclose-4",
         chapterId: "basic-skills",
-        order: 348,
-        title: { zh: "Enclose · 4/9", en: "Enclose · 4/9" },
+        order: 414,
+        title: { zh: "包围 · 4/9", en: "Enclose · 4/9" },
         instruction: { zh: "白先。通过包围来提黑棋棋子。", en: "White to play. Capture black stones by enclosing them." },
         puzzle: {
             width: 19,
@@ -5395,8 +7053,8 @@ const encloseLevels: Level[] = [
     {
         id: "basic-skills-enclose-5",
         chapterId: "basic-skills",
-        order: 349,
-        title: { zh: "Enclose · 5/9", en: "Enclose · 5/9" },
+        order: 415,
+        title: { zh: "包围 · 5/9", en: "Enclose · 5/9" },
         instruction: { zh: "白先。通过包围来提黑棋棋子。", en: "White to play. Capture black stones by enclosing them." },
         puzzle: {
             width: 19,
@@ -5409,8 +7067,8 @@ const encloseLevels: Level[] = [
     {
         id: "basic-skills-enclose-6",
         chapterId: "basic-skills",
-        order: 350,
-        title: { zh: "Enclose · 6/9", en: "Enclose · 6/9" },
+        order: 416,
+        title: { zh: "包围 · 6/9", en: "Enclose · 6/9" },
         instruction: { zh: "白先。通过包围来提黑棋棋子。", en: "White to play. Capture black stones by enclosing them." },
         puzzle: {
             width: 19,
@@ -5424,8 +7082,8 @@ const encloseLevels: Level[] = [
     {
         id: "basic-skills-enclose-7",
         chapterId: "basic-skills",
-        order: 351,
-        title: { zh: "Enclose · 7/9", en: "Enclose · 7/9" },
+        order: 417,
+        title: { zh: "包围 · 7/9", en: "Enclose · 7/9" },
         instruction: { zh: "白先。通过包围来提黑棋棋子。", en: "White to play. Capture black stones by enclosing them." },
         puzzle: {
             width: 19,
@@ -5439,8 +7097,8 @@ const encloseLevels: Level[] = [
     {
         id: "basic-skills-enclose-8",
         chapterId: "basic-skills",
-        order: 352,
-        title: { zh: "Enclose · 8/9", en: "Enclose · 8/9" },
+        order: 418,
+        title: { zh: "包围 · 8/9", en: "Enclose · 8/9" },
         instruction: { zh: "白先。通过包围来提黑棋棋子。", en: "White to play. Capture black stones by enclosing them." },
         puzzle: {
             width: 19,
@@ -5454,8 +7112,8 @@ const encloseLevels: Level[] = [
     {
         id: "basic-skills-enclose-9",
         chapterId: "basic-skills",
-        order: 353,
-        title: { zh: "Enclose · 9/9", en: "Enclose · 9/9" },
+        order: 419,
+        title: { zh: "包围 · 9/9", en: "Enclose · 9/9" },
         instruction: { zh: "白先。通过包围来提黑棋棋子。", en: "White to play. Capture black stones by enclosing them." },
         puzzle: {
             width: 19,
@@ -5472,8 +7130,8 @@ const firstLineLevels: Level[] = [
     {
         id: "basic-skills-first-line-1",
         chapterId: "basic-skills",
-        order: 354,
-        title: { zh: "First Line · 1/12", en: "First Line · 1/12" },
+        order: 420,
+        title: { zh: "一路 · 1/12", en: "First Line · 1/12" },
         instruction: { zh: "在第一线的棋子很难逃脱。黑先。提掉第一线被标记的棋子。", en: "It is difficult to escape with stones on the first line. Black to play. Capture the marked stone on the first line." },
         puzzle: {
             width: 19,
@@ -5487,8 +7145,8 @@ const firstLineLevels: Level[] = [
     {
         id: "basic-skills-first-line-2",
         chapterId: "basic-skills",
-        order: 355,
-        title: { zh: "First Line · 2/12", en: "First Line · 2/12" },
+        order: 421,
+        title: { zh: "一路 · 2/12", en: "First Line · 2/12" },
         instruction: { zh: "黑先。提掉第一线被标记的棋子。", en: "Black to play. Capture the marked stone on the first line." },
         puzzle: {
             width: 19,
@@ -5503,8 +7161,8 @@ const firstLineLevels: Level[] = [
     {
         id: "basic-skills-first-line-3",
         chapterId: "basic-skills",
-        order: 356,
-        title: { zh: "First Line · 3/12", en: "First Line · 3/12" },
+        order: 422,
+        title: { zh: "一路 · 3/12", en: "First Line · 3/12" },
         instruction: { zh: "黑先。提掉第一线被标记的棋子。", en: "Black to play. Capture the marked stone on the first line." },
         puzzle: {
             width: 19,
@@ -5519,8 +7177,8 @@ const firstLineLevels: Level[] = [
     {
         id: "basic-skills-first-line-4",
         chapterId: "basic-skills",
-        order: 357,
-        title: { zh: "First Line · 4/12", en: "First Line · 4/12" },
+        order: 423,
+        title: { zh: "一路 · 4/12", en: "First Line · 4/12" },
         instruction: { zh: "黑先。提掉第一线被标记的棋子。", en: "Black to play. Capture the marked stone on the first line." },
         puzzle: {
             width: 19,
@@ -5534,8 +7192,8 @@ const firstLineLevels: Level[] = [
     {
         id: "basic-skills-first-line-5",
         chapterId: "basic-skills",
-        order: 358,
-        title: { zh: "First Line · 5/12", en: "First Line · 5/12" },
+        order: 424,
+        title: { zh: "一路 · 5/12", en: "First Line · 5/12" },
         instruction: { zh: "黑先。提掉第一线被标记的棋子。", en: "Black to play. Capture the marked stone on the first line." },
         puzzle: {
             width: 19,
@@ -5550,8 +7208,8 @@ const firstLineLevels: Level[] = [
     {
         id: "basic-skills-first-line-6",
         chapterId: "basic-skills",
-        order: 359,
-        title: { zh: "First Line · 6/12", en: "First Line · 6/12" },
+        order: 425,
+        title: { zh: "一路 · 6/12", en: "First Line · 6/12" },
         instruction: { zh: "黑先。提掉第一线被标记的棋子。", en: "Black to play. Capture the marked stones on the first line." },
         puzzle: {
             width: 19,
@@ -5566,8 +7224,8 @@ const firstLineLevels: Level[] = [
     {
         id: "basic-skills-first-line-7",
         chapterId: "basic-skills",
-        order: 360,
-        title: { zh: "First Line · 7/12", en: "First Line · 7/12" },
+        order: 426,
+        title: { zh: "一路 · 7/12", en: "First Line · 7/12" },
         instruction: { zh: "黑先。提掉第一线被标记的棋子。", en: "Black to play. Capture the marked stones on the first line." },
         puzzle: {
             width: 19,
@@ -5582,8 +7240,8 @@ const firstLineLevels: Level[] = [
     {
         id: "basic-skills-first-line-8",
         chapterId: "basic-skills",
-        order: 361,
-        title: { zh: "First Line · 8/12", en: "First Line · 8/12" },
+        order: 427,
+        title: { zh: "一路 · 8/12", en: "First Line · 8/12" },
         instruction: { zh: "黑先。提掉第一线被标记的棋子。", en: "Black to play. Capture the marked stones on the first line." },
         puzzle: {
             width: 19,
@@ -5598,8 +7256,8 @@ const firstLineLevels: Level[] = [
     {
         id: "basic-skills-first-line-9",
         chapterId: "basic-skills",
-        order: 362,
-        title: { zh: "First Line · 9/12", en: "First Line · 9/12" },
+        order: 428,
+        title: { zh: "一路 · 9/12", en: "First Line · 9/12" },
         instruction: { zh: "黑先。提掉第一线被标记的棋子。", en: "Black to play. Capture the marked stones on the first line." },
         puzzle: {
             width: 19,
@@ -5614,8 +7272,8 @@ const firstLineLevels: Level[] = [
     {
         id: "basic-skills-first-line-10",
         chapterId: "basic-skills",
-        order: 363,
-        title: { zh: "First Line · 10/12", en: "First Line · 10/12" },
+        order: 429,
+        title: { zh: "一路 · 10/12", en: "First Line · 10/12" },
         instruction: { zh: "黑先。提掉第一线被标记的棋子。", en: "Black to play. Capture the marked stones on the first line." },
         puzzle: {
             width: 19,
@@ -5630,8 +7288,8 @@ const firstLineLevels: Level[] = [
     {
         id: "basic-skills-first-line-11",
         chapterId: "basic-skills",
-        order: 364,
-        title: { zh: "First Line · 11/12", en: "First Line · 11/12" },
+        order: 430,
+        title: { zh: "一路 · 11/12", en: "First Line · 11/12" },
         instruction: { zh: "黑先。提掉第一线被标记的棋子。", en: "Black to play. Capture the marked stone on the first line." },
         puzzle: {
             width: 19,
@@ -5646,8 +7304,8 @@ const firstLineLevels: Level[] = [
     {
         id: "basic-skills-first-line-12",
         chapterId: "basic-skills",
-        order: 365,
-        title: { zh: "First Line · 12/12", en: "First Line · 12/12" },
+        order: 431,
+        title: { zh: "一路 · 12/12", en: "First Line · 12/12" },
         instruction: { zh: "黑先。提掉第一线被标记的棋子。", en: "Black to play. Capture the marked stone on the first line." },
         puzzle: {
             width: 19,
@@ -5665,8 +7323,8 @@ const preventTwoEyesLevels: Level[] = [
     {
         id: "basic-skills-prevent_two_eyes-1",
         chapterId: "basic-skills",
-        order: 366,
-        title: { zh: "Prevent two eyes · 1/12", en: "Prevent two eyes · 1/12" },
+        order: 432,
+        title: { zh: "防止做两眼 · 1/12", en: "Prevent two eyes · 1/12" },
         instruction: { zh: "白先。阻止黑棋棋块做出两个眼而活棋。", en: "White to play. Prevent two eyes killing the black group." },
         puzzle: {
             width: 9,
@@ -5679,8 +7337,8 @@ const preventTwoEyesLevels: Level[] = [
     {
         id: "basic-skills-prevent_two_eyes-2",
         chapterId: "basic-skills",
-        order: 367,
-        title: { zh: "Prevent two eyes · 2/12", en: "Prevent two eyes · 2/12" },
+        order: 433,
+        title: { zh: "防止做两眼 · 2/12", en: "Prevent two eyes · 2/12" },
         instruction: { zh: "白先。阻止黑棋棋块做出两个眼而活棋。", en: "White to play. Prevent two eyes killing the black group." },
         puzzle: {
             width: 9,
@@ -5693,8 +7351,8 @@ const preventTwoEyesLevels: Level[] = [
     {
         id: "basic-skills-prevent_two_eyes-3",
         chapterId: "basic-skills",
-        order: 368,
-        title: { zh: "Prevent two eyes · 3/12", en: "Prevent two eyes · 3/12" },
+        order: 434,
+        title: { zh: "防止做两眼 · 3/12", en: "Prevent two eyes · 3/12" },
         instruction: { zh: "白先。阻止黑棋棋块做出两个眼而活棋。", en: "White to play. Prevent two eyes killing the black group." },
         puzzle: {
             width: 9,
@@ -5707,8 +7365,8 @@ const preventTwoEyesLevels: Level[] = [
     {
         id: "basic-skills-prevent_two_eyes-4",
         chapterId: "basic-skills",
-        order: 369,
-        title: { zh: "Prevent two eyes · 4/12", en: "Prevent two eyes · 4/12" },
+        order: 435,
+        title: { zh: "防止做两眼 · 4/12", en: "Prevent two eyes · 4/12" },
         instruction: { zh: "白先。阻止黑棋棋块做出两个眼而活棋。", en: "White to play. Prevent two eyes killing the black group." },
         puzzle: {
             width: 9,
@@ -5721,8 +7379,8 @@ const preventTwoEyesLevels: Level[] = [
     {
         id: "basic-skills-prevent_two_eyes-5",
         chapterId: "basic-skills",
-        order: 370,
-        title: { zh: "Prevent two eyes · 5/12", en: "Prevent two eyes · 5/12" },
+        order: 436,
+        title: { zh: "防止做两眼 · 5/12", en: "Prevent two eyes · 5/12" },
         instruction: { zh: "白先。阻止黑棋棋块做出两个眼而活棋。", en: "White to play. Prevent two eyes killing the black group." },
         puzzle: {
             width: 9,
@@ -5735,8 +7393,8 @@ const preventTwoEyesLevels: Level[] = [
     {
         id: "basic-skills-prevent_two_eyes-6",
         chapterId: "basic-skills",
-        order: 371,
-        title: { zh: "Prevent two eyes · 6/12", en: "Prevent two eyes · 6/12" },
+        order: 437,
+        title: { zh: "防止做两眼 · 6/12", en: "Prevent two eyes · 6/12" },
         instruction: { zh: "白先。阻止黑棋棋块做出两个眼而活棋。", en: "White to play. Prevent two eyes killing the black group." },
         puzzle: {
             width: 9,
@@ -5749,8 +7407,8 @@ const preventTwoEyesLevels: Level[] = [
     {
         id: "basic-skills-prevent_two_eyes-7",
         chapterId: "basic-skills",
-        order: 372,
-        title: { zh: "Prevent two eyes · 7/12", en: "Prevent two eyes · 7/12" },
+        order: 438,
+        title: { zh: "防止做两眼 · 7/12", en: "Prevent two eyes · 7/12" },
         instruction: { zh: "白先。阻止黑棋棋块做出两个眼而活棋。", en: "White to play. Prevent two eyes killing the black group." },
         puzzle: {
             width: 9,
@@ -5763,8 +7421,8 @@ const preventTwoEyesLevels: Level[] = [
     {
         id: "basic-skills-prevent_two_eyes-8",
         chapterId: "basic-skills",
-        order: 373,
-        title: { zh: "Prevent two eyes · 8/12", en: "Prevent two eyes · 8/12" },
+        order: 439,
+        title: { zh: "防止做两眼 · 8/12", en: "Prevent two eyes · 8/12" },
         instruction: { zh: "白先。阻止黑棋棋块做出两个眼而活棋。", en: "White to play. Prevent two eyes killing the black group." },
         puzzle: {
             width: 9,
@@ -5777,8 +7435,8 @@ const preventTwoEyesLevels: Level[] = [
     {
         id: "basic-skills-prevent_two_eyes-9",
         chapterId: "basic-skills",
-        order: 374,
-        title: { zh: "Prevent two eyes · 9/12", en: "Prevent two eyes · 9/12" },
+        order: 440,
+        title: { zh: "防止做两眼 · 9/12", en: "Prevent two eyes · 9/12" },
         instruction: { zh: "白先。阻止黑棋棋块做出两个眼而活棋。", en: "White to play. Prevent two eyes killing the black group." },
         puzzle: {
             width: 9,
@@ -5791,8 +7449,8 @@ const preventTwoEyesLevels: Level[] = [
     {
         id: "basic-skills-prevent_two_eyes-10",
         chapterId: "basic-skills",
-        order: 375,
-        title: { zh: "Prevent two eyes · 10/12", en: "Prevent two eyes · 10/12" },
+        order: 441,
+        title: { zh: "防止做两眼 · 10/12", en: "Prevent two eyes · 10/12" },
         instruction: { zh: "白先。阻止黑棋棋块做出两个眼而活棋。", en: "White to play. Prevent two eyes killing the black group." },
         puzzle: {
             width: 9,
@@ -5805,8 +7463,8 @@ const preventTwoEyesLevels: Level[] = [
     {
         id: "basic-skills-prevent_two_eyes-11",
         chapterId: "basic-skills",
-        order: 376,
-        title: { zh: "Prevent two eyes · 11/12", en: "Prevent two eyes · 11/12" },
+        order: 442,
+        title: { zh: "防止做两眼 · 11/12", en: "Prevent two eyes · 11/12" },
         instruction: { zh: "白先。阻止黑棋棋块做出两个眼而活棋。", en: "White to play. Prevent two eyes killing the black group." },
         puzzle: {
             width: 9,
@@ -5819,8 +7477,8 @@ const preventTwoEyesLevels: Level[] = [
     {
         id: "basic-skills-prevent_two_eyes-12",
         chapterId: "basic-skills",
-        order: 377,
-        title: { zh: "Prevent two eyes · 12/12", en: "Prevent two eyes · 12/12" },
+        order: 443,
+        title: { zh: "防止做两眼 · 12/12", en: "Prevent two eyes · 12/12" },
         instruction: { zh: "白先。阻止黑棋棋块做出两个眼而活棋。", en: "White to play. Prevent two eyes killing the black group." },
         puzzle: {
             width: 9,
@@ -5837,6 +7495,7 @@ export const LEVELS: Level[] = [
     ...atariToStonesLevels,
     ...atariWithCutLevels,
     ...atariCorrectSideLevels,
+    ...escapePossibleLevels,
     ...makeKoLevels,
     ...playDoubleAtariLevels,
     ...preventDoubleAtariLevels,
@@ -5847,9 +7506,13 @@ export const LEVELS: Level[] = [
     ...shortageLibertiesLevels,
     ...falseEyeLevels,
     ...largeEyeLevels,
+    ...bsGroupAliveLevels,
     ...snapbackLevels,
     ...netLevels,
+    ...countTerritoryLevels,
+    ...determineWinnerLevels,
     ...closeTerritoryLevels,
+    ...compareLibertiesLevels,
     ...capturingRaceLevels,
     ...correctSideLevels,
     ...captureLevels,

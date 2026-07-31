@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createGoban, type GobanRenderer, type GobanRendererConfig } from "goban";
 import { attachEngine } from "../../game/engine";
+import { audio } from "../../game/audio";
 import { buildMarks, buildMoveTree } from "../../game/moveTree";
 import type { Level } from "../../game/types";
 import "../../vendor/goban/Goban.css";
@@ -61,16 +62,39 @@ export function Board({
         } as GobanRendererConfig;
 
         const goban = createGoban(config);
+
+        // Capture detection: snapshot stones before placement, check diff after.
+        let prevStoneCount = 0;
+        const onMoveMade = (): void => {
+            const cur = goban.engine.board;
+            let curCount = 0;
+            for (const row of cur) for (const cell of row) if (cell !== 0) curCount++;
+            // More stones on board than before + delta == 1 → pure place.
+            // Fewer/same stones or delta > 1 → captures happened.
+            const delta = curCount - prevStoneCount;
+            audio.play(delta < 1 ? "capture" : "place");
+            prevStoneCount = curCount;
+        };
+        goban.on("move-made", onMoveMade);
+
         const detach = attachEngine(goban, level, {
-            onCorrect: () => cbRef.current.onCorrect?.(),
-            onWrong: () => cbRef.current.onWrong?.(),
-            onComplete: (r) =>
+            onCorrect: () => {
+                audio.play("correct");
+                cbRef.current.onCorrect?.();
+            },
+            onWrong: () => {
+                audio.play("wrong");
+                cbRef.current.onWrong?.();
+            },
+            onComplete: (r) => {
+                audio.play("complete");
                 cbRef.current.onComplete?.({
                     passed: true,
                     stars: r.stars,
                     wrongAttempts: r.wrongAttempts,
                     points: r.points,
-                }),
+                });
+            },
         });
 
         return () => {

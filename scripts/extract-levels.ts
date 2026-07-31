@@ -23,6 +23,16 @@ import * as path from "path";
 export interface ExtractedMark {
     [shape: string]: string;
 }
+export interface ExtractedMultipleChoice {
+    question: string;
+    options: { value: string; label: string }[];
+    correctValue: string;
+    hasBoard: boolean;
+}
+export interface ExtractedEndingGame {
+    interaction: "pass" | "stoneRemoval" | "finish";
+    targetRemoval?: string;
+}
 export interface ExtractedPage {
     pageClassName: string;
     pageIndex: number;
@@ -34,6 +44,10 @@ export interface ExtractedPage {
     marks: ExtractedMark | null;
     correct: string[];
     wrong: string[];
+    /** If the page is a MultipleChoice React component, parse result lives here. */
+    multipleChoice: ExtractedMultipleChoice | null;
+    /** If the page is an end-of-game tutorial (pass / stone removal / finish). */
+    endingGame: ExtractedEndingGame | null;
     skip: boolean;
     skipReason?: string;
 }
@@ -257,24 +271,54 @@ function extractPage(
     let correct: string[] = [];
     let wrong: string[] = [];
     let mode: string | null = null;
+    let phase: string | null = null;
     let skip = false;
     let skipReason: string | undefined;
 
     let hasCustomComplete = false;
     let hasCustomFailed = false;
     let hasCustomButton = false;
+    let buttonLabel: string | null = null;
+    let multipleChoice: ExtractedMultipleChoice | null = null;
+    let endingGame: ExtractedEndingGame | null = null;
+    let removalTarget: string | null = null;
+    let textMethod: ts.MethodDeclaration | null = null;
 
     for (const m of cls.members) {
         if (!ts.isMethodDeclaration(m) || !m.name) continue;
         const name = m.name.getText();
         if (name === "text") {
+            textMethod = m;
             const r = extractPgettextOrStringReturn(m);
             if (r !== null) text = r;
             else textIsReact = true;
         } else if (name === "complete") hasCustomComplete = true;
         else if (name === "failed") hasCustomFailed = true;
-        else if (name === "button") hasCustomButton = true;
-        else if (name === "config") {
+        else if (name === "button") {
+            hasCustomButton = true;
+            // Extract the first _("...") / pgettext(...) call inside button()
+            if (m.body) {
+                const scan = (n: ts.Node): string | null => {
+                    if (ts.isCallExpression(n)) {
+                        const s = extractPgettextCallText(n);
+                        if (s) return s;
+                    }
+                    let found: string | null = null;
+                    n.forEachChild((c) => {
+                        if (!found) found = scan(c);
+                    });
+                    return found;
+                };
+                buttonLabel = scan(m.body);
+            }
+        } else if (name === "onStoneRemoval") {
+            // Find: if (stone_removal_string === "<X>") { this.success = true; ... }
+            if (m.body) {
+                const src = m.body.getText();
+                const mt = src.match(/stone_removal_string\s*===\s*"([^"]+)"/);
+                if (mt) removalTarget = mt[1];
+            }
+        } else if (name === "config") {
             const cfg = m.body?.statements.find(ts.isReturnStatement);
             if (cfg?.expression && ts.isObjectLiteralExpression(cfg.expression)) {
                 for (const p of cfg.expression.properties) {
@@ -284,6 +328,7 @@ function extractPage(
                     if (key === "width") width = literalNumber(v);
                     else if (key === "height") height = literalNumber(v);
                     else if (key === "mode") mode = literalString(v);
+                    else if (key === "phase") phase = literalString(v);
                     else if (key === "initial_player") {
                         const s = literalString(v);
                         if (s === "black" || s === "white") initialPlayer = s;
@@ -310,21 +355,45 @@ function extractPage(
         }
     }
 
+    // Detect EndingGame tutorial pages.
+    if (mode === "play" && phase === "stone removal" && removalTarget) {
+        endingGame = { interaction: "stoneRemoval", targetRemoval: removalTarget };
+    } else if (hasCustomButton && buttonLabel) {
+        const lbl = buttonLabel.toLowerCase();
+        if (lbl.includes("pass")) endingGame = { interaction: "pass" };
+        else if (lbl.includes("finish")) endingGame = { interaction: "finish" };
+    }
+
     if (textIsReact) {
-        skip = true;
-        skipReason = "text() returns React element";
+        // Try to parse MultipleChoice JSX. If successful, override skip.
+        const mc = textMethod ? extractMultipleChoice(textMethod) : null;
+        if (mc) {
+            multipleChoice = mc;
+            // Don't skip — we can render this as a multiple-choice level.
+            text = mc.question;
+        } else {
+            skip = true;
+            skipReason = "text() returns React element";
+        }
     }
-    if (mode && mode !== "puzzle") {
-        skip = true;
-        skipReason = skipReason ?? `unsupported mode: ${mode}`;
-    }
-    if (hasCustomComplete || hasCustomFailed || hasCustomButton) {
-        skip = true;
-        skipReason = skipReason ?? "has custom complete/failed/button (UI-driven)";
-    }
-    if (correct.length === 0 && !skip) {
-        skip = true;
-        skipReason = skipReason ?? "no correct moves in move_tree";
+    if (multipleChoice) {
+        // MC pages legitimately have no move_tree and often custom button/complete.
+        // Don't mark them skipped for those reasons.
+    } else if (endingGame) {
+        // EndingGame pages have custom button/complete and play mode — all expected.
+    } else {
+        if (mode && mode !== "puzzle") {
+            skip = true;
+            skipReason = skipReason ?? `unsupported mode: ${mode}`;
+        }
+        if (hasCustomComplete || hasCustomFailed || hasCustomButton) {
+            skip = true;
+            skipReason = skipReason ?? "has custom complete/failed/button (UI-driven)";
+        }
+        if (correct.length === 0 && !skip) {
+            skip = true;
+            skipReason = skipReason ?? "no correct moves in move_tree";
+        }
     }
 
     return {
@@ -339,6 +408,8 @@ function extractPage(
             marks,
             correct,
             wrong,
+            multipleChoice,
+            endingGame,
             skip,
             skipReason,
         },
@@ -346,6 +417,144 @@ function extractPage(
         hasCustomFailed,
         hasCustomButton,
     };
+}
+
+/**
+ * Parse a `text()` method whose body returns a MultipleChoice-style JSX element.
+ * Returns null if the structure doesn't match the expected pattern.
+ *
+ * Expected pattern (CountLiberties-style):
+ *   text() {
+ *     function MultipleChoice(props) {
+ *       const [value, setValue] = React.useState("");
+ *       const handleChange = (event) => {
+ *         const selectedValue = event.target.value;
+ *         setValue(selectedValue);
+ *         if (selectedValue === "<CORRECT>") { props.onCorrectAnswer(); }
+ *         else if (selectedValue !== "") { props.onWrongAnswer(); }
+ *       };
+ *       return (<div>
+ *         <p>{_("Question text")}</p>
+ *         <label><input value="X" .../>X-label</label>
+ *         <label><input value="Y" .../>Y-label</label>
+ *         ...
+ *       </div>);
+ *     }
+ *     return <MultipleChoice ... />;
+ *   }
+ *
+ * We extract: question text, options [{value, label}], correct value, and
+ * whether the config has a board worth showing.
+ */
+function extractMultipleChoice(m: ts.MethodDeclaration): ExtractedMultipleChoice | null {
+    if (!m.body) return null;
+    // Find: selectedValue === "<X>"
+    let correctValue: string | null = null;
+    const sourceText = m.body.getText();
+    const correctMatch = sourceText.match(/selectedValue\s*===\s*"([^"]+)"/);
+    if (!correctMatch) return null;
+    correctValue = correctMatch[1];
+
+    // Find the returned JSX (<div> containing <p> and <label>s).
+    // Walk all nodes, find the first JsxElement whose opening tag is <div> and
+    // contains at least one <label>.
+    let question: string | null = null;
+    const options: { value: string; label: string }[] = [];
+
+    function visit(node: ts.Node): void {
+        if (ts.isJsxElement(node) && node.openingElement.tagName.getText() === "div") {
+            // Inside this div, find <p>{...}</p> for question and <label>...</label> for options.
+            for (const child of node.children) {
+                if (ts.isJsxElement(child) && child.openingElement.tagName.getText() === "p") {
+                    if (question === null) question = extractJsxText(child);
+                } else if (ts.isJsxElement(child) && child.openingElement.tagName.getText() === "label") {
+                    const opt = extractOptionFromLabel(child);
+                    if (opt) options.push(opt);
+                }
+            }
+        }
+        ts.forEachChild(node, visit);
+    }
+    visit(m.body);
+
+    if (question === null || options.length === 0 || correctValue === null) return null;
+    // Sanity: correctValue must match one of the options.
+    if (!options.some((o) => o.value === correctValue)) return null;
+
+    return {
+        question,
+        options,
+        correctValue,
+        hasBoard: true, // config still has board to display
+    };
+}
+
+/** Extract the visible text content of a JSX element (e.g. <p>{_("foo")}</p> → "foo"). */
+function extractJsxText(el: ts.JsxElement): string {
+    const parts: string[] = [];
+    for (const child of el.children) {
+        if (ts.isJsxText(child)) {
+            const t = child.text.trim();
+            if (t) parts.push(t);
+        } else if (ts.isJsxExpression(child)) {
+            // {_("foo")} / {pgettext("ctx", "foo")}
+            const e = child.expression;
+            if (e) {
+                const s = literalString(e) ?? extractPgettextCallText(e);
+                if (s) parts.push(s);
+            }
+        } else if (ts.isJsxElement(child)) {
+            // nested element — recurse for its text content
+            const nested = extractJsxText(child);
+            if (nested) parts.push(nested);
+        }
+    }
+    return parts.join(" ").trim();
+}
+
+/** Recognize pgettext("ctx", "str") / _("str") and return the string arg. */
+function extractPgettextCallText(e: ts.Expression): string | null {
+    if (ts.isCallExpression(e)) {
+        const fn = e.expression.getText();
+        if (fn === "_" && e.arguments.length >= 1) return literalString(e.arguments[0]);
+        if (fn === "pgettext" && e.arguments.length >= 2) return literalString(e.arguments[1]);
+    }
+    return null;
+}
+
+/** Parse `<label><input value="X"/>label-text</label>` → { value, label }. */
+function extractOptionFromLabel(labelEl: ts.JsxElement): { value: string; label: string } | null {
+    let value: string | null = null;
+    let labelText = "";
+    for (const child of labelEl.children) {
+        if (ts.isJsxSelfClosingElement(child) && child.tagName.getText() === "input") {
+            for (const attr of child.attributes.properties) {
+                if (ts.isJsxAttribute(attr) && attr.name.getText() === "value") {
+                    if (attr.initializer) {
+                        const v = literalString(stripJsxExpression(attr.initializer));
+                        if (v !== null) value = v;
+                    }
+                }
+            }
+        } else if (ts.isJsxText(child)) {
+            labelText += child.text;
+        } else if (ts.isJsxExpression(child)) {
+            if (child.expression) {
+                const s = literalString(child.expression) ?? extractPgettextCallText(child.expression);
+                if (s) labelText += s;
+            }
+        }
+    }
+    if (value === null) return null;
+    return { value, label: labelText.trim() };
+}
+
+function stripJsxExpression(node: ts.Node): ts.Node {
+    // value={X} wraps X in a JsxExpression; literalString wants the inner expression.
+    if ("expression" in node && (node as { expression?: unknown }).expression) {
+        return (node as { expression: ts.Node }).expression;
+    }
+    return node;
 }
 
 function extractSection(filePath: string): ExtractedSection | null {

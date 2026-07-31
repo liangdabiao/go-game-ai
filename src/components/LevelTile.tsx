@@ -5,16 +5,18 @@ interface LevelTileProps {
     level: Level;
     progress: LevelProgress | undefined;
     locale: Locale;
+    justUnlocked?: boolean;
     onSelect: () => void;
 }
 
-export function LevelTile({ level, progress, locale, onSelect }: LevelTileProps): React.ReactElement {
+export function LevelTile({ level, progress, locale, justUnlocked, onSelect }: LevelTileProps): React.ReactElement {
     const status = progress?.status ?? "locked";
     const stars = progress?.bestStars ?? 0;
+    const isNew = justUnlocked && status === "unlocked";
 
     return (
         <button
-            className={`level-tile ${status}`}
+            className={`level-tile ${status}${isNew ? " just-unlocked" : ""}`}
             onClick={status === "locked" ? undefined : onSelect}
             disabled={status === "locked"}
             title={level.title[locale] ?? level.title.en}

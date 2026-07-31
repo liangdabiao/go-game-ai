@@ -10,6 +10,7 @@ function freshProgress(): Record<string, LevelProgress> {
         p[level.id] = {
             status: level.order === 1 ? "unlocked" : "locked",
             bestStars: 0,
+            bestPoints: 0,
             attempts: 0,
             bestWrongAttempts: 0,
         };
@@ -50,9 +51,12 @@ export function loadSave(): GameSave {
                 parsed.progress[level.id] = {
                     status: level.order === 1 ? "unlocked" : "locked",
                     bestStars: 0,
+                    bestPoints: 0,
                     attempts: 0,
                     bestWrongAttempts: 0,
                 };
+            } else if (typeof parsed.progress[level.id].bestPoints !== "number") {
+                parsed.progress[level.id].bestPoints = 0;
             }
         }
         return parsed;
@@ -86,17 +90,26 @@ export function applyResult(save: GameSave, result: LevelResult): GameSave {
     next.progress[result.levelId] = {
         status: result.passed ? "completed" : cur.status,
         bestStars: (Math.max(cur.bestStars, result.stars) as 0 | 1 | 2 | 3),
+        bestPoints: result.passed ? Math.max(cur.bestPoints, result.points) : cur.bestPoints,
         attempts: cur.attempts + 1,
         bestWrongAttempts: bestWrong,
         lastPlayedAt: Date.now(),
     };
 
     if (result.passed) {
+        const wasFirstCompletion = cur.status !== "completed";
         const idx = LEVELS.findIndex((l) => l.id === result.levelId);
         const nxt = LEVELS[idx + 1];
         if (nxt && next.progress[nxt.id]?.status === "locked") {
             next.progress[nxt.id] = { ...next.progress[nxt.id], status: "unlocked" };
             next.currentLevelId = nxt.id;
+            if (wasFirstCompletion) {
+                try {
+                    sessionStorage.setItem("go-game:just-unlocked", nxt.id);
+                } catch {
+                    // ignore
+                }
+            }
         }
     }
     persistSave(next);
@@ -117,11 +130,25 @@ export function totalStars(save: GameSave): number {
     return total;
 }
 
+export function totalPoints(save: GameSave): number {
+    let total = 0;
+    for (const level of LEVELS) {
+        total += save.progress[level.id]?.bestPoints ?? 0;
+    }
+    return total;
+}
+
+export function maxPoints(): number {
+    return LEVELS.length * 300;
+}
+
 export interface ChapterStats {
     total: number;
     completed: number;
     stars: number;
     maxStars: number;
+    points: number;
+    maxPoints: number;
     unlocked: boolean;
     firstUnlockedLevelId?: string;
 }
@@ -131,11 +158,13 @@ export function chapterStats(chapterId: string, save: GameSave): ChapterStats {
     const total = levels.length;
     let completed = 0;
     let stars = 0;
+    let points = 0;
     let firstUnlockedLevelId: string | undefined;
     for (const lv of levels) {
         const p = save.progress[lv.id];
         if (p?.status === "completed") completed++;
         stars += p?.bestStars ?? 0;
+        points += p?.bestPoints ?? 0;
         if (p?.status !== "locked" && !firstUnlockedLevelId) {
             firstUnlockedLevelId = lv.id;
         }
@@ -145,6 +174,8 @@ export function chapterStats(chapterId: string, save: GameSave): ChapterStats {
         completed,
         stars,
         maxStars: total * 3,
+        points,
+        maxPoints: total * 300,
         unlocked: !!firstUnlockedLevelId,
         firstUnlockedLevelId,
     };

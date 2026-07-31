@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CHAPTERS, LEVELS } from "../game/levels";
-import { chapterStats, loadSave, totalStars } from "../game/progress";
+import { chapterStats, loadSave, totalPoints, totalStars } from "../game/progress";
 import type { GameSave, Locale } from "../game/types";
 import { ChapterCard } from "../components/ChapterCard";
 import { TopBar } from "../components/TopBar";

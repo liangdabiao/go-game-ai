@@ -19,6 +19,16 @@ import * as path from "path";
 interface ExtractedMark {
     [shape: string]: string;
 }
+interface ExtractedMultipleChoice {
+    question: string;
+    options: { value: string; label: string }[];
+    correctValue: string;
+    hasBoard: boolean;
+}
+interface ExtractedEndingGame {
+    interaction: "pass" | "stoneRemoval" | "finish";
+    targetRemoval?: string;
+}
 interface ExtractedPage {
     pageClassName: string;
     pageIndex: number;
@@ -30,6 +40,8 @@ interface ExtractedPage {
     marks: ExtractedMark | null;
     correct: string[];
     wrong: string[];
+    multipleChoice: ExtractedMultipleChoice | null;
+    endingGame: ExtractedEndingGame | null;
     skip: boolean;
     skipReason?: string;
 }
@@ -101,12 +113,15 @@ function splitLocale(arg: string): { zh: string; en: string } {
 }
 
 /** Map a section title to a stable, human-readable level title for each page. */
-function makeLevelTitle(sectionTitle: string, pageIndex: number, pageCount: number): { zh: string; en: string } {
-    // e.g. "The Board · 1 / 3"
+function makeLevelTitle(
+    sectionTitle: string,
+    sectionTitleZh: string,
+    pageIndex: number,
+    pageCount: number,
+): { zh: string; en: string } {
     const en = pageCount > 1 ? `${sectionTitle} · ${pageIndex + 1}/${pageCount}` : sectionTitle;
-    // We don't translate section titles here — they are proper nouns / short phrases;
-    // the level *instruction* is translated separately. For zh title we just reuse en.
-    return { zh: en, en };
+    const zh = pageCount > 1 ? `${sectionTitleZh} · ${pageIndex + 1}/${pageCount}` : sectionTitleZh;
+    return { zh, en };
 }
 
 function generate(args: Args): string {
@@ -163,7 +178,12 @@ function generate(args: Args): string {
             order++;
             const textEn = p.text ?? "";
             const textZh = translations[textEn] ?? textEn;
-            const title = makeLevelTitle(section.title, i, usablePages.length);
+            const title = makeLevelTitle(
+                section.title,
+                translations[section.title] ?? section.title,
+                i,
+                usablePages.length,
+            );
             const levelId = `${args.chapterId}-${section.sectionId}-${i + 1}`;
 
             lines.push(`    {`);
@@ -172,6 +192,11 @@ function generate(args: Args): string {
             lines.push(`        order: ${order},`);
             lines.push(`        title: { zh: ${str(title.zh)}, en: ${str(title.en)} },`);
             lines.push(`        instruction: { zh: ${str(textZh)}, en: ${str(textEn)} },`);
+            if (p.multipleChoice) {
+                lines.push(`        kind: "multipleChoice",`);
+            } else if (p.endingGame) {
+                lines.push(`        kind: "endingGame",`);
+            }
             lines.push(`        puzzle: {`);
             lines.push(`            width: ${p.width},`);
             lines.push(`            height: ${p.height},`);
@@ -194,6 +219,56 @@ function generate(args: Args): string {
                 lines.push(`            wrong: [${p.wrong.map(str).join(", ")}],`);
             }
             lines.push(`        },`);
+            if (p.multipleChoice) {
+                const mc = p.multipleChoice;
+                const mcQuestionZh = translations[mc.question] ?? mc.question;
+                const opts = mc.options
+                    .map((o) => {
+                        const optZh = translations[o.label] ?? o.label;
+                        return `{ value: ${str(o.value)}, label: { zh: ${str(optZh)}, en: ${str(o.label)} } }`;
+                    })
+                    .join(", ");
+                lines.push(`        multipleChoice: {`);
+                lines.push(`            question: { zh: ${str(mcQuestionZh)}, en: ${str(mc.question)} },`);
+                lines.push(`            options: [${opts}],`);
+                lines.push(`            correctValue: ${str(mc.correctValue)},`);
+                if (mc.hasBoard && p.initialState) {
+                    lines.push(`            board: {`);
+                    lines.push(`                width: ${p.width},`);
+                    lines.push(`                height: ${p.height},`);
+                    lines.push(`                initial_state: { black: ${str(p.initialState.black)}, white: ${str(p.initialState.white)} },`);
+                    if (p.marks) {
+                        const entries = Object.entries(p.marks)
+                            .map(([k, v]) => `${k}: ${str(v)}`)
+                            .join(", ");
+                        lines.push(`                marks: { ${entries} },`);
+                    }
+                    lines.push(`            },`);
+                }
+                lines.push(`        },`);
+            }
+            if (p.endingGame) {
+                const eg = p.endingGame;
+                lines.push(`        endingGame: {`);
+                lines.push(`            width: ${p.width},`);
+                lines.push(`            height: ${p.height},`);
+                if (p.initialState) {
+                    lines.push(`            initial_state: { black: ${str(p.initialState.black)}, white: ${str(p.initialState.white)} },`);
+                } else {
+                    lines.push(`            initial_state: { black: "", white: "" },`);
+                }
+                if (p.marks) {
+                    const entries = Object.entries(p.marks)
+                        .map(([k, v]) => `${k}: ${str(v)}`)
+                        .join(", ");
+                    lines.push(`            marks: { ${entries} },`);
+                }
+                lines.push(`            interaction: ${str(eg.interaction)},`);
+                if (eg.targetRemoval) {
+                    lines.push(`            targetRemoval: ${str(eg.targetRemoval)},`);
+                }
+                lines.push(`        },`);
+            }
             lines.push(`    },`);
         });
 

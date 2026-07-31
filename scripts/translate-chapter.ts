@@ -24,8 +24,13 @@ import * as path from "path";
 interface ExtractedPage {
     text: string | null;
     skip: boolean;
+    multipleChoice?: {
+        question: string;
+        options: { value: string; label: string }[];
+    } | null;
 }
 interface ExtractedSection {
+    title: string;
     pages: ExtractedPage[];
 }
 interface Extracted {
@@ -233,12 +238,24 @@ function saveTranslations(p: string, t: Record<string, string>): void {
 function collectUniqueTexts(extracted: Extracted): string[] {
     const seen = new Set<string>();
     const out: string[] = [];
+    const add = (s: string | null | undefined) => {
+        if (!s) return;
+        if (!seen.has(s)) {
+            seen.add(s);
+            out.push(s);
+        }
+    };
     for (const s of extracted.sections) {
+        add(s.title);
         for (const p of s.pages) {
-            if (p.skip || !p.text) continue;
-            if (!seen.has(p.text)) {
-                seen.add(p.text);
-                out.push(p.text);
+            if (p.skip) continue;
+            add(p.text);
+            if (p.multipleChoice) {
+                add(p.multipleChoice.question);
+                for (const o of p.multipleChoice.options) {
+                    // Translate textual labels; skip pure numbers.
+                    if (o.label && !/^\d+$/.test(o.label)) add(o.label);
+                }
             }
         }
     }

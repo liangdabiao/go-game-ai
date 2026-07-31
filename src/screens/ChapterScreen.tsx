@@ -5,6 +5,21 @@ import type { GameSave, Locale } from "../game/types";
 import { LevelTile } from "../components/LevelTile";
 import { TopBar } from "../components/TopBar";
 
+const JUST_UNLOCKED_KEY = "go-game:just-unlocked";
+
+function consumeJustUnlocked(chapterId: string): string | null {
+    try {
+        const id = sessionStorage.getItem(JUST_UNLOCKED_KEY);
+        if (!id) return null;
+        const lv = LEVELS.find((l) => l.id === id);
+        if (lv?.chapterId !== chapterId) return null;
+        sessionStorage.removeItem(JUST_UNLOCKED_KEY);
+        return id;
+    } catch {
+        return null;
+    }
+}
+
 interface ChapterScreenProps {
     chapterId: string;
     locale: Locale;
@@ -14,6 +29,7 @@ interface ChapterScreenProps {
 
 export function ChapterScreen({ chapterId, locale, onBack, onSelectLevel }: ChapterScreenProps): React.ReactElement {
     const [save, setSave] = useState<GameSave>(() => loadSave());
+    const [justUnlockedId] = useState<string | null>(() => consumeJustUnlocked(chapterId));
     const chapter = getChapter(chapterId);
     const levels = LEVELS.filter((l) => l.chapterId === chapterId);
     const stars = totalStars(save);
@@ -47,6 +63,7 @@ export function ChapterScreen({ chapterId, locale, onBack, onSelectLevel }: Chap
                         level={lv}
                         progress={save.progress[lv.id]}
                         locale={locale}
+                        justUnlocked={lv.id === justUnlockedId}
                         onSelect={() => {
                             onSelectLevel(lv.id);
                             setSave(loadSave());

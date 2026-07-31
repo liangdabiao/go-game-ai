@@ -9,27 +9,914 @@ export const CHAPTER_ID = "basic-principles";
 
 export const CHAPTER: Chapter = {
     id: "basic-principles",
-    title: { zh: "围棋基本原理", en: "Basic Principles" },
+    title: { zh: "白银", en: "Silver" },
     description: {
-        zh: "围棋基本原理",
-        en: "Basic Principles",
+        zh: "理解气、打吃、提子与连接切断",
+        en: "Liberties, atari, captures, connections and cuts",
     },
 };
 
-/* Section count-liberties (Liberties) had no migratable pages — skipped. */
+const countLibertiesLevels: Level[] = [
+    {
+        id: "basic-principles-count-liberties-1",
+        chapterId: "basic-principles",
+        order: 1,
+        title: { zh: "气 · 1/12", en: "Liberties · 1/12" },
+        instruction: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ee", white: "ddde" },
+            marks: { cross: "edeffe" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+            options: [{ value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }, { value: "6", label: { zh: "6", en: "6" } }],
+            correctValue: "3",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ee", white: "ddde" },
+                marks: { cross: "edeffe" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-liberties-2",
+        chapterId: "basic-principles",
+        order: 2,
+        title: { zh: "气 · 2/12", en: "Liberties · 2/12" },
+        instruction: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ih", white: "ii" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+            options: [{ value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }],
+            correctValue: "2",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ih", white: "ii" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-liberties-3",
+        chapterId: "basic-principles",
+        order: 3,
+        title: { zh: "气 · 3/12", en: "Liberties · 3/12" },
+        instruction: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "aaba", white: "abbb" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+            options: [{ value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }],
+            correctValue: "1",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "aaba", white: "abbb" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-liberties-4",
+        chapterId: "basic-principles",
+        order: 4,
+        title: { zh: "气 · 4/12", en: "Liberties · 4/12" },
+        instruction: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "hahbibic", white: "hcgegd" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+            options: [{ value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }, { value: "5", label: { zh: "5", en: "5" } }],
+            correctValue: "4",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "hahbibic", white: "hcgegd" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-liberties-5",
+        chapterId: "basic-principles",
+        order: 5,
+        title: { zh: "气 · 5/12", en: "Liberties · 5/12" },
+        instruction: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "fhfigihiii", white: "fgghhhff" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+            options: [{ value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }],
+            correctValue: "3",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "fhfigihiii", white: "fgghhhff" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-liberties-6",
+        chapterId: "basic-principles",
+        order: 6,
+        title: { zh: "气 · 6/12", en: "Liberties · 6/12" },
+        instruction: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "aeafbebf", white: "bdbgcgdf" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+            options: [{ value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }, { value: "5", label: { zh: "5", en: "5" } }],
+            correctValue: "4",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "aeafbebf", white: "bdbgcgdf" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-liberties-7",
+        chapterId: "basic-principles",
+        order: 7,
+        title: { zh: "气 · 7/12", en: "Liberties · 7/12" },
+        instruction: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cf", white: "de" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+            options: [{ value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }, { value: "7", label: { zh: "7", en: "7" } }],
+            correctValue: "4",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cf", white: "de" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-liberties-8",
+        chapterId: "basic-principles",
+        order: 8,
+        title: { zh: "气 · 8/12", en: "Liberties · 8/12" },
+        instruction: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ecfcgced", white: "ebfbgbhbhddeee" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+            options: [{ value: "4", label: { zh: "4", en: "4" } }, { value: "5", label: { zh: "5", en: "5" } }, { value: "6", label: { zh: "6", en: "6" } }],
+            correctValue: "5",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ecfcgced", white: "ebfbgbhbhddeee" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-liberties-9",
+        chapterId: "basic-principles",
+        order: 9,
+        title: { zh: "气 · 9/12", en: "Liberties · 9/12" },
+        instruction: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dcdddeeefeff", white: "dbfdcfdfeffggg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+            options: [{ value: "7", label: { zh: "7", en: "7" } }, { value: "8", label: { zh: "8", en: "8" } }, { value: "9", label: { zh: "9", en: "9" } }],
+            correctValue: "7",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dcdddeeefeff", white: "dbfdcfdfeffggg" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-liberties-10",
+        chapterId: "basic-principles",
+        order: 10,
+        title: { zh: "气 · 10/12", en: "Liberties · 10/12" },
+        instruction: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "icid", white: "gdhd" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+            options: [{ value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }, { value: "5", label: { zh: "5", en: "5" } }],
+            correctValue: "3",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "icid", white: "gdhd" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-liberties-11",
+        chapterId: "basic-principles",
+        order: 11,
+        title: { zh: "气 · 11/12", en: "Liberties · 11/12" },
+        instruction: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cdceddedeeef", white: "bcccdcdfdgegff" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+            options: [{ value: "6", label: { zh: "6", en: "6" } }, { value: "7", label: { zh: "7", en: "7" } }, { value: "8", label: { zh: "8", en: "8" } }],
+            correctValue: "7",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cdceddedeeef", white: "bcccdcdfdgegff" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-liberties-12",
+        chapterId: "basic-principles",
+        order: 12,
+        title: { zh: "气 · 12/12", en: "Liberties · 12/12" },
+        instruction: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "eedfefeg", white: "edfdcfffcgdgfgeh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算黑棋棋串的气数。", en: "Count the number of liberties of the black chain." },
+            options: [{ value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }],
+            correctValue: "2",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "eedfefeg", white: "edfdcfffcgdgfgeh" },
+            },
+        },
+    },
+];
 
-/* Section count_chains (Chains) had no migratable pages — skipped. */
+const countChainsLevels: Level[] = [
+    {
+        id: "basic-principles-count_chains-1",
+        chapterId: "basic-principles",
+        order: 13,
+        title: { zh: "棋串 · 1/6", en: "Chains · 1/6" },
+        instruction: { zh: "只有直接连接的棋子才能形成棋串。计算白棋棋串的数量。", en: "Only stones that are directly connected form a chain. Count the number of white chains." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "", white: "egehgcgdgehhdf" },
+            marks: { 1: "df", 2: "egeh", 3: "gcgdge", 4: "hh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "只有直接连接的棋子才能形成棋串。计算白棋棋串的数量。", en: "Only stones that are directly connected form a chain. Count the number of white chains." },
+            options: [{ value: "2", label: { zh: "2", en: "2" } }, { value: "4", label: { zh: "4", en: "4" } }, { value: "7", label: { zh: "7", en: "7" } }],
+            correctValue: "4",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "", white: "egehgcgdgehhdf" },
+                marks: { 1: "df", 2: "egeh", 3: "gcgdge", 4: "hh" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count_chains-2",
+        chapterId: "basic-principles",
+        order: 14,
+        title: { zh: "棋串 · 2/6", en: "Chains · 2/6" },
+        instruction: { zh: "计算白棋棋串的数量。", en: "Count the number of white chains." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "", white: "egfghbgcgdhgigai" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算白棋棋串的数量。", en: "Count the number of white chains." },
+            options: [{ value: "3", label: { zh: "3", en: "3" } }, { value: "5", label: { zh: "5", en: "5" } }, { value: "8", label: { zh: "8", en: "8" } }],
+            correctValue: "5",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "", white: "egfghbgcgdhgigai" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count_chains-3",
+        chapterId: "basic-principles",
+        order: 15,
+        title: { zh: "棋串 · 3/6", en: "Chains · 3/6" },
+        instruction: { zh: "计算白棋棋串的数量。", en: "Count the number of white chains." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "", white: "cccddddbechbgbgcgdhgighhhighih" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算白棋棋串的数量。", en: "Count the number of white chains." },
+            options: [{ value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }, { value: "5", label: { zh: "5", en: "5" } }],
+            correctValue: "5",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "", white: "cccddddbechbgbgcgdhgighhhighih" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count_chains-4",
+        chapterId: "basic-principles",
+        order: 16,
+        title: { zh: "棋串 · 4/6", en: "Chains · 4/6" },
+        instruction: { zh: "计算白棋棋串的数量。", en: "Count the number of white chains." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "echbgdgehhhigfcecfcgdh", white: "dcedcdfbgbgchgigghih" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算白棋棋串的数量。", en: "Count the number of white chains." },
+            options: [{ value: "3", label: { zh: "3", en: "3" } }, { value: "5", label: { zh: "5", en: "5" } }, { value: "6", label: { zh: "6", en: "6" } }],
+            correctValue: "6",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "echbgdgehhhigfcecfcgdh", white: "dcedcdfbgbgchgigghih" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count_chains-5",
+        chapterId: "basic-principles",
+        order: 17,
+        title: { zh: "棋串 · 5/6", en: "Chains · 5/6" },
+        instruction: { zh: "计算白棋棋串的数量。", en: "Count the number of white chains." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dcechfhehchbcgchdfee", white: "bbcbdbccgdgegffghg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算白棋棋串的数量。", en: "Count the number of white chains." },
+            options: [{ value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }],
+            correctValue: "4",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dcechfhehchbcgchdfee", white: "bbcbdbccgdgegffghg" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count_chains-6",
+        chapterId: "basic-principles",
+        order: 18,
+        title: { zh: "棋串 · 6/6", en: "Chains · 6/6" },
+        instruction: { zh: "计算白棋棋串的数量。", en: "Count the number of white chains." },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cgdedgeaeceeehfbfefhgbghhb", white: "bbbgbhcbchcidbdcdhedfdgd" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "计算白棋棋串的数量。", en: "Count the number of white chains." },
+            options: [{ value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }],
+            correctValue: "3",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cgdedgeaeceeehfbfefhgbghhb", white: "bbbgbhcbchcidbdcdhedfdgd" },
+            },
+        },
+    },
+];
 
-/* Section in_atari (Atari) had no migratable pages — skipped. */
+const inAtariLevels: Level[] = [
+    {
+        id: "basic-principles-in_atari-1",
+        chapterId: "basic-principles",
+        order: 19,
+        title: { zh: "打吃 · 1/6", en: "Atari · 1/6" },
+        instruction: { zh: "如果一个棋串只有一口气，它就处于打吃状态。标记的棋串是否处于打吃？", en: "If a chain has only one liberty, it is in atari. Is the marked chain in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cfdeef", white: "dfeg" },
+            marks: { triangle: "df", cross: "dg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "如果一个棋串只有一口气，它就处于打吃状态。标记的棋串是否处于打吃？", en: "If a chain has only one liberty, it is in atari. Is the marked chain in atari?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cfdeef", white: "dfeg" },
+                marks: { triangle: "df", cross: "dg" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-in_atari-2",
+        chapterId: "basic-principles",
+        order: 20,
+        title: { zh: "打吃 · 2/6", en: "Atari · 2/6" },
+        instruction: { zh: "标记的棋串是否处于打吃状态？", en: "Is the marked chain in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dieiehfggghh", white: "chdgegfifh" },
+            marks: { triangle: "dieieh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "标记的棋串是否处于打吃状态？", en: "Is the marked chain in atari?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dieiehfggghh", white: "chdgegfifh" },
+                marks: { triangle: "dieieh" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-in_atari-3",
+        chapterId: "basic-principles",
+        order: 21,
+        title: { zh: "打吃 · 3/6", en: "Atari · 3/6" },
+        instruction: { zh: "标记的棋串是否处于打吃状态？", en: "Is the marked chain in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ciegeffifh", white: "dieiehfggg" },
+            marks: { triangle: "dieieh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "标记的棋串是否处于打吃状态？", en: "Is the marked chain in atari?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ciegeffifh", white: "dieiehfggg" },
+                marks: { triangle: "dieieh" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-in_atari-4",
+        chapterId: "basic-principles",
+        order: 22,
+        title: { zh: "打吃 · 4/6", en: "Atari · 4/6" },
+        instruction: { zh: "标记的棋串是否处于打吃状态？", en: "Is the marked chain in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "agbgcich", white: "ahbibh" },
+            marks: { triangle: "ahbibh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "标记的棋串是否处于打吃状态？", en: "Is the marked chain in atari?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "agbgcich", white: "ahbibh" },
+                marks: { triangle: "ahbibh" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-in_atari-5",
+        chapterId: "basic-principles",
+        order: 23,
+        title: { zh: "打吃 · 5/6", en: "Atari · 5/6" },
+        instruction: { zh: "标记的棋串是否处于打吃状态？", en: "Is the marked chain in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dgdfcecd", white: "cfdeegef" },
+            marks: { triangle: "dgdf" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "标记的棋串是否处于打吃状态？", en: "Is the marked chain in atari?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dgdfcecd", white: "cfdeegef" },
+                marks: { triangle: "dgdf" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-in_atari-6",
+        chapterId: "basic-principles",
+        order: 24,
+        title: { zh: "打吃 · 6/6", en: "Atari · 6/6" },
+        instruction: { zh: "标记的棋串是否处于打吃状态？", en: "Is the marked chain in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dgdfcecddceeed", white: "bhcgcfdhdeef" },
+            marks: { triangle: "dgdf" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "标记的棋串是否处于打吃状态？", en: "Is the marked chain in atari?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dgdfcecddceeed", white: "bhcgcfdhdeef" },
+                marks: { triangle: "dgdf" },
+            },
+        },
+    },
+];
 
-/* Section count-atari (Count Atari) had no migratable pages — skipped. */
+const countAtariLevels: Level[] = [
+    {
+        id: "basic-principles-count-atari-1",
+        chapterId: "basic-principles",
+        order: 25,
+        title: { zh: "计算打吃 · 1/12", en: "Count Atari · 1/12" },
+        instruction: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "bbdbbcccfddfcgeghhhi", white: "cbgdfecfffdgbhihii" },
+            marks: { cross: "cadhig" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+            options: [{ value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }],
+            correctValue: "3",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "bbdbbcccfddfcgeghhhi", white: "cbgdfecfffdgbhihii" },
+                marks: { cross: "cadhig" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-atari-2",
+        chapterId: "basic-principles",
+        order: 26,
+        title: { zh: "计算打吃 · 2/12", en: "Count Atari · 2/12" },
+        instruction: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cidibhcgdgeddchcdbebfbgb", white: "aibichdhddecfcgcegfggg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+            options: [{ value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }],
+            correctValue: "2",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cidibhcgdgeddchcdbebfbgb", white: "aibichdhddecfcgcegfggg" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-atari-3",
+        chapterId: "basic-principles",
+        order: 27,
+        title: { zh: "计算打吃 · 3/12", en: "Count Atari · 3/12" },
+        instruction: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cddeefedfg", white: "ddeeffcc" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+            options: [{ value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }],
+            correctValue: "2",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cddeefedfg", white: "ddeeffcc" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-atari-4",
+        chapterId: "basic-principles",
+        order: 28,
+        title: { zh: "计算打吃 · 4/12", en: "Count Atari · 4/12" },
+        instruction: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cddeedgeeffd", white: "ddeefedfgd" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+            options: [{ value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }],
+            correctValue: "2",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cddeedgeeffd", white: "ddeefedfgd" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-atari-5",
+        chapterId: "basic-principles",
+        order: 29,
+        title: { zh: "计算打吃 · 5/12", en: "Count Atari · 5/12" },
+        instruction: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "agbibfddhdeefegeecgc", white: "aiahbgedfdgddcdefb" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+            options: [{ value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }],
+            correctValue: "2",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "agbibfddhdeefegeecgc", white: "aiahbgedfdgddcdefb" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-atari-6",
+        chapterId: "basic-principles",
+        order: 30,
+        title: { zh: "计算打吃 · 6/12", en: "Count Atari · 6/12" },
+        instruction: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "efffedfdgebahbgb", white: "dfddeefeaaiaha" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+            options: [{ value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }, { value: "3", label: { zh: "3", en: "3" } }],
+            correctValue: "2",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "efffedfdgebahbgb", white: "dfddeefeaaiaha" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-atari-7",
+        chapterId: "basic-principles",
+        order: 31,
+        title: { zh: "计算打吃 · 7/12", en: "Count Atari · 7/12" },
+        instruction: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cgcedfddegef", white: "chcfdhdgff" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+            options: [{ value: "0", label: { zh: "0", en: "0" } }, { value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }],
+            correctValue: "1",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cgcedfddegef", white: "chcfdhdgff" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-atari-8",
+        chapterId: "basic-principles",
+        order: 32,
+        title: { zh: "计算打吃 · 8/12", en: "Count Atari · 8/12" },
+        instruction: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "deegfffegghf", white: "dgehfhfggf" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+            options: [{ value: "0", label: { zh: "0", en: "0" } }, { value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }],
+            correctValue: "1",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "deegfffegghf", white: "dgehfhfggf" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-atari-9",
+        chapterId: "basic-principles",
+        order: 33,
+        title: { zh: "计算打吃 · 9/12", en: "Count Atari · 9/12" },
+        instruction: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "bgbecgcddfdeegff", white: "bhbfchcfcedhdg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+            options: [{ value: "0", label: { zh: "0", en: "0" } }, { value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }],
+            correctValue: "1",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "bgbecgcddfdeegff", white: "bhbfchcfcedhdg" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-atari-10",
+        chapterId: "basic-principles",
+        order: 34,
+        title: { zh: "计算打吃 · 10/12", en: "Count Atari · 10/12" },
+        instruction: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "dhehfggh", white: "cddffhgg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+            options: [{ value: "0", label: { zh: "0", en: "0" } }, { value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }],
+            correctValue: "1",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dhehfggh", white: "cddffhgg" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-atari-11",
+        chapterId: "basic-principles",
+        order: 35,
+        title: { zh: "计算打吃 · 11/12", en: "Count Atari · 11/12" },
+        instruction: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "chcfdhdfegef", white: "cgdgehfifggh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+            options: [{ value: "0", label: { zh: "0", en: "0" } }, { value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }],
+            correctValue: "1",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "chcfdhdfegef", white: "cgdgehfifggh" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-count-atari-12",
+        chapterId: "basic-principles",
+        order: 36,
+        title: { zh: "计算打吃 · 12/12", en: "Count Atari · 12/12" },
+        instruction: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "bfcgdfeheffg", white: "cfdgdeegfhgh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "有多少个白棋棋串处于打吃状态？", en: "How many white chains are in atari?" },
+            options: [{ value: "0", label: { zh: "0", en: "0" } }, { value: "1", label: { zh: "1", en: "1" } }, { value: "2", label: { zh: "2", en: "2" } }],
+            correctValue: "2",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "bfcgdfeheffg", white: "cfdgdeegfhgh" },
+            },
+        },
+    },
+];
 
 const captureStoneLevels: Level[] = [
     {
         id: "basic-principles-capture_stone-1",
         chapterId: "basic-principles",
-        order: 1,
-        title: { zh: "Capture Stone · 1/6", en: "Capture Stone · 1/6" },
+        order: 37,
+        title: { zh: "提子 · 1/6", en: "Capture Stone · 1/6" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stone." },
         puzzle: {
             width: 9,
@@ -43,8 +930,8 @@ const captureStoneLevels: Level[] = [
     {
         id: "basic-principles-capture_stone-2",
         chapterId: "basic-principles",
-        order: 2,
-        title: { zh: "Capture Stone · 2/6", en: "Capture Stone · 2/6" },
+        order: 38,
+        title: { zh: "提子 · 2/6", en: "Capture Stone · 2/6" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stone." },
         puzzle: {
             width: 9,
@@ -58,8 +945,8 @@ const captureStoneLevels: Level[] = [
     {
         id: "basic-principles-capture_stone-3",
         chapterId: "basic-principles",
-        order: 3,
-        title: { zh: "Capture Stone · 3/6", en: "Capture Stone · 3/6" },
+        order: 39,
+        title: { zh: "提子 · 3/6", en: "Capture Stone · 3/6" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stone." },
         puzzle: {
             width: 9,
@@ -73,8 +960,8 @@ const captureStoneLevels: Level[] = [
     {
         id: "basic-principles-capture_stone-4",
         chapterId: "basic-principles",
-        order: 4,
-        title: { zh: "Capture Stone · 4/6", en: "Capture Stone · 4/6" },
+        order: 40,
+        title: { zh: "提子 · 4/6", en: "Capture Stone · 4/6" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stone." },
         puzzle: {
             width: 9,
@@ -88,8 +975,8 @@ const captureStoneLevels: Level[] = [
     {
         id: "basic-principles-capture_stone-5",
         chapterId: "basic-principles",
-        order: 5,
-        title: { zh: "Capture Stone · 5/6", en: "Capture Stone · 5/6" },
+        order: 41,
+        title: { zh: "提子 · 5/6", en: "Capture Stone · 5/6" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stone." },
         puzzle: {
             width: 9,
@@ -103,8 +990,8 @@ const captureStoneLevels: Level[] = [
     {
         id: "basic-principles-capture_stone-6",
         chapterId: "basic-principles",
-        order: 6,
-        title: { zh: "Capture Stone · 6/6", en: "Capture Stone · 6/6" },
+        order: 42,
+        title: { zh: "提子 · 6/6", en: "Capture Stone · 6/6" },
         instruction: { zh: "黑先。吃掉被标记的白棋。", en: "Black to play. Capture the marked white stone." },
         puzzle: {
             width: 9,
@@ -121,8 +1008,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-1",
         chapterId: "basic-principles",
-        order: 7,
-        title: { zh: "Capture Chain · 1/16", en: "Capture Chain · 1/16" },
+        order: 43,
+        title: { zh: "吃掉棋串 · 1/16", en: "Capture Chain · 1/16" },
         instruction: { zh: "黑先。被标记的白棋棋串处于打吃状态。吃掉这些棋子。", en: "Black to play. The marked white chain is in atari. Capture these stones." },
         puzzle: {
             width: 9,
@@ -136,8 +1023,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-2",
         chapterId: "basic-principles",
-        order: 8,
-        title: { zh: "Capture Chain · 2/16", en: "Capture Chain · 2/16" },
+        order: 44,
+        title: { zh: "吃掉棋串 · 2/16", en: "Capture Chain · 2/16" },
         instruction: { zh: "黑先。吃掉一个或多个白棋。", en: "Black to play. Capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -150,8 +1037,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-3",
         chapterId: "basic-principles",
-        order: 9,
-        title: { zh: "Capture Chain · 3/16", en: "Capture Chain · 3/16" },
+        order: 45,
+        title: { zh: "吃掉棋串 · 3/16", en: "Capture Chain · 3/16" },
         instruction: { zh: "黑先。吃掉一个或多个白棋。", en: "Black to play. Capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -164,8 +1051,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-4",
         chapterId: "basic-principles",
-        order: 10,
-        title: { zh: "Capture Chain · 4/16", en: "Capture Chain · 4/16" },
+        order: 46,
+        title: { zh: "吃掉棋串 · 4/16", en: "Capture Chain · 4/16" },
         instruction: { zh: "黑先。吃掉一个或多个白棋。", en: "Black to play. Capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -178,8 +1065,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-5",
         chapterId: "basic-principles",
-        order: 11,
-        title: { zh: "Capture Chain · 5/16", en: "Capture Chain · 5/16" },
+        order: 47,
+        title: { zh: "吃掉棋串 · 5/16", en: "Capture Chain · 5/16" },
         instruction: { zh: "黑先。吃掉一个或多个白棋。", en: "Black to play. Capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -192,8 +1079,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-6",
         chapterId: "basic-principles",
-        order: 12,
-        title: { zh: "Capture Chain · 6/16", en: "Capture Chain · 6/16" },
+        order: 48,
+        title: { zh: "吃掉棋串 · 6/16", en: "Capture Chain · 6/16" },
         instruction: { zh: "黑先。吃掉一个或多个白棋。", en: "Black to play. Capture one or more white stones." },
         puzzle: {
             width: 9,
@@ -206,8 +1093,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-7",
         chapterId: "basic-principles",
-        order: 13,
-        title: { zh: "Capture Chain · 7/16", en: "Capture Chain · 7/16" },
+        order: 49,
+        title: { zh: "吃掉棋串 · 7/16", en: "Capture Chain · 7/16" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -220,8 +1107,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-8",
         chapterId: "basic-principles",
-        order: 14,
-        title: { zh: "Capture Chain · 8/16", en: "Capture Chain · 8/16" },
+        order: 50,
+        title: { zh: "吃掉棋串 · 8/16", en: "Capture Chain · 8/16" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -234,8 +1121,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-9",
         chapterId: "basic-principles",
-        order: 15,
-        title: { zh: "Capture Chain · 9/16", en: "Capture Chain · 9/16" },
+        order: 51,
+        title: { zh: "吃掉棋串 · 9/16", en: "Capture Chain · 9/16" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -248,8 +1135,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-10",
         chapterId: "basic-principles",
-        order: 16,
-        title: { zh: "Capture Chain · 10/16", en: "Capture Chain · 10/16" },
+        order: 52,
+        title: { zh: "吃掉棋串 · 10/16", en: "Capture Chain · 10/16" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -262,8 +1149,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-11",
         chapterId: "basic-principles",
-        order: 17,
-        title: { zh: "Capture Chain · 11/16", en: "Capture Chain · 11/16" },
+        order: 53,
+        title: { zh: "吃掉棋串 · 11/16", en: "Capture Chain · 11/16" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -276,8 +1163,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-12",
         chapterId: "basic-principles",
-        order: 18,
-        title: { zh: "Capture Chain · 12/16", en: "Capture Chain · 12/16" },
+        order: 54,
+        title: { zh: "吃掉棋串 · 12/16", en: "Capture Chain · 12/16" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -290,8 +1177,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-13",
         chapterId: "basic-principles",
-        order: 19,
-        title: { zh: "Capture Chain · 13/16", en: "Capture Chain · 13/16" },
+        order: 55,
+        title: { zh: "吃掉棋串 · 13/16", en: "Capture Chain · 13/16" },
         instruction: { zh: "白先。双方都处于打吃状态。吃掉一个或多个黑棋。", en: "White to play. Both players are in atari. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -304,8 +1191,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-14",
         chapterId: "basic-principles",
-        order: 20,
-        title: { zh: "Capture Chain · 14/16", en: "Capture Chain · 14/16" },
+        order: 56,
+        title: { zh: "吃掉棋串 · 14/16", en: "Capture Chain · 14/16" },
         instruction: { zh: "白先。双方都处于打吃状态。吃掉一个或多个黑棋。", en: "White to play. Both players are in atari. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -318,8 +1205,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-15",
         chapterId: "basic-principles",
-        order: 21,
-        title: { zh: "Capture Chain · 15/16", en: "Capture Chain · 15/16" },
+        order: 57,
+        title: { zh: "吃掉棋串 · 15/16", en: "Capture Chain · 15/16" },
         instruction: { zh: "白先。双方都处于打吃状态。吃掉一个或多个黑棋。", en: "White to play. Both players are in atari. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -332,8 +1219,8 @@ const captureChainLevels: Level[] = [
     {
         id: "basic-principles-capture_chain-16",
         chapterId: "basic-principles",
-        order: 22,
-        title: { zh: "Capture Chain · 16/16", en: "Capture Chain · 16/16" },
+        order: 58,
+        title: { zh: "吃掉棋串 · 16/16", en: "Capture Chain · 16/16" },
         instruction: { zh: "白先。双方都处于打吃状态。吃掉一个或多个黑棋。", en: "White to play. Both players are in atari. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -349,8 +1236,8 @@ const bothAtariLevels: Level[] = [
     {
         id: "basic-principles-both_atari-1",
         chapterId: "basic-principles",
-        order: 23,
-        title: { zh: "Both Atari · 1/12", en: "Both Atari · 1/12" },
+        order: 59,
+        title: { zh: "双方打吃 · 1/12", en: "Both Atari · 1/12" },
         instruction: { zh: "白先。被标记的白棋处于打吃状态。你可以通过吃掉被标记的黑棋来救活这颗棋子。吃掉这些黑棋。", en: "White to play. The marked white stone is in atari. You can save this stone by capturing the marked black stones. Capture these black stones." },
         puzzle: {
             width: 9,
@@ -364,8 +1251,8 @@ const bothAtariLevels: Level[] = [
     {
         id: "basic-principles-both_atari-2",
         chapterId: "basic-principles",
-        order: 24,
-        title: { zh: "Both Atari · 2/12", en: "Both Atari · 2/12" },
+        order: 60,
+        title: { zh: "双方打吃 · 2/12", en: "Both Atari · 2/12" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -378,8 +1265,8 @@ const bothAtariLevels: Level[] = [
     {
         id: "basic-principles-both_atari-3",
         chapterId: "basic-principles",
-        order: 25,
-        title: { zh: "Both Atari · 3/12", en: "Both Atari · 3/12" },
+        order: 61,
+        title: { zh: "双方打吃 · 3/12", en: "Both Atari · 3/12" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -392,8 +1279,8 @@ const bothAtariLevels: Level[] = [
     {
         id: "basic-principles-both_atari-4",
         chapterId: "basic-principles",
-        order: 26,
-        title: { zh: "Both Atari · 4/12", en: "Both Atari · 4/12" },
+        order: 62,
+        title: { zh: "双方打吃 · 4/12", en: "Both Atari · 4/12" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -406,8 +1293,8 @@ const bothAtariLevels: Level[] = [
     {
         id: "basic-principles-both_atari-5",
         chapterId: "basic-principles",
-        order: 27,
-        title: { zh: "Both Atari · 5/12", en: "Both Atari · 5/12" },
+        order: 63,
+        title: { zh: "双方打吃 · 5/12", en: "Both Atari · 5/12" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -420,8 +1307,8 @@ const bothAtariLevels: Level[] = [
     {
         id: "basic-principles-both_atari-6",
         chapterId: "basic-principles",
-        order: 28,
-        title: { zh: "Both Atari · 6/12", en: "Both Atari · 6/12" },
+        order: 64,
+        title: { zh: "双方打吃 · 6/12", en: "Both Atari · 6/12" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -434,8 +1321,8 @@ const bothAtariLevels: Level[] = [
     {
         id: "basic-principles-both_atari-7",
         chapterId: "basic-principles",
-        order: 29,
-        title: { zh: "Both Atari · 7/12", en: "Both Atari · 7/12" },
+        order: 65,
+        title: { zh: "双方打吃 · 7/12", en: "Both Atari · 7/12" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -448,8 +1335,8 @@ const bothAtariLevels: Level[] = [
     {
         id: "basic-principles-both_atari-8",
         chapterId: "basic-principles",
-        order: 30,
-        title: { zh: "Both Atari · 8/12", en: "Both Atari · 8/12" },
+        order: 66,
+        title: { zh: "双方打吃 · 8/12", en: "Both Atari · 8/12" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -462,8 +1349,8 @@ const bothAtariLevels: Level[] = [
     {
         id: "basic-principles-both_atari-9",
         chapterId: "basic-principles",
-        order: 31,
-        title: { zh: "Both Atari · 9/12", en: "Both Atari · 9/12" },
+        order: 67,
+        title: { zh: "双方打吃 · 9/12", en: "Both Atari · 9/12" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -476,8 +1363,8 @@ const bothAtariLevels: Level[] = [
     {
         id: "basic-principles-both_atari-10",
         chapterId: "basic-principles",
-        order: 32,
-        title: { zh: "Both Atari · 10/12", en: "Both Atari · 10/12" },
+        order: 68,
+        title: { zh: "双方打吃 · 10/12", en: "Both Atari · 10/12" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -490,8 +1377,8 @@ const bothAtariLevels: Level[] = [
     {
         id: "basic-principles-both_atari-11",
         chapterId: "basic-principles",
-        order: 33,
-        title: { zh: "Both Atari · 11/12", en: "Both Atari · 11/12" },
+        order: 69,
+        title: { zh: "双方打吃 · 11/12", en: "Both Atari · 11/12" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -504,8 +1391,8 @@ const bothAtariLevels: Level[] = [
     {
         id: "basic-principles-both_atari-12",
         chapterId: "basic-principles",
-        order: 34,
-        title: { zh: "Both Atari · 12/12", en: "Both Atari · 12/12" },
+        order: 70,
+        title: { zh: "双方打吃 · 12/12", en: "Both Atari · 12/12" },
         instruction: { zh: "白先。吃掉一个或多个黑棋。", en: "White to play. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -521,8 +1408,8 @@ const escapeLevels: Level[] = [
     {
         id: "basic-principles-escape-1",
         chapterId: "basic-principles",
-        order: 35,
-        title: { zh: "Escape · 1/6", en: "Escape · 1/6" },
+        order: 71,
+        title: { zh: "逃跑 · 1/6", en: "Escape · 1/6" },
         instruction: { zh: "白先。通过延长白棋棋串并增加气数，来解救被打吃的被标记棋串。", en: "White to play. Escape with the marked chain that is in atari, by lengthening the white chain and creating more liberties." },
         puzzle: {
             width: 9,
@@ -536,8 +1423,8 @@ const escapeLevels: Level[] = [
     {
         id: "basic-principles-escape-2",
         chapterId: "basic-principles",
-        order: 36,
-        title: { zh: "Escape · 2/6", en: "Escape · 2/6" },
+        order: 72,
+        title: { zh: "逃跑 · 2/6", en: "Escape · 2/6" },
         instruction: { zh: "白先。解救被打吃的被标记棋串。", en: "White to play. Escape with the marked chain that is in atari." },
         puzzle: {
             width: 9,
@@ -551,8 +1438,8 @@ const escapeLevels: Level[] = [
     {
         id: "basic-principles-escape-3",
         chapterId: "basic-principles",
-        order: 37,
-        title: { zh: "Escape · 3/6", en: "Escape · 3/6" },
+        order: 73,
+        title: { zh: "逃跑 · 3/6", en: "Escape · 3/6" },
         instruction: { zh: "白先。解救被打吃的被标记棋串。", en: "White to play. Escape with the marked chain that is in atari." },
         puzzle: {
             width: 9,
@@ -566,8 +1453,8 @@ const escapeLevels: Level[] = [
     {
         id: "basic-principles-escape-4",
         chapterId: "basic-principles",
-        order: 38,
-        title: { zh: "Escape · 4/6", en: "Escape · 4/6" },
+        order: 74,
+        title: { zh: "逃跑 · 4/6", en: "Escape · 4/6" },
         instruction: { zh: "白先。解救被打吃的被标记棋串。", en: "White to play. Escape with the marked chain that is in atari." },
         puzzle: {
             width: 9,
@@ -581,8 +1468,8 @@ const escapeLevels: Level[] = [
     {
         id: "basic-principles-escape-5",
         chapterId: "basic-principles",
-        order: 39,
-        title: { zh: "Escape · 5/6", en: "Escape · 5/6" },
+        order: 75,
+        title: { zh: "逃跑 · 5/6", en: "Escape · 5/6" },
         instruction: { zh: "白先。解救被打吃的被标记棋串。", en: "White to play. Escape with the marked chain that is in atari." },
         puzzle: {
             width: 9,
@@ -596,8 +1483,8 @@ const escapeLevels: Level[] = [
     {
         id: "basic-principles-escape-6",
         chapterId: "basic-principles",
-        order: 40,
-        title: { zh: "Escape · 6/6", en: "Escape · 6/6" },
+        order: 76,
+        title: { zh: "逃跑 · 6/6", en: "Escape · 6/6" },
         instruction: { zh: "白先。解救被打吃的被标记棋串。", en: "White to play. Escape with the marked chain that is in atari." },
         puzzle: {
             width: 9,
@@ -614,8 +1501,8 @@ const findEscapeLevels: Level[] = [
     {
         id: "basic-principles-find_escape-1",
         chapterId: "basic-principles",
-        order: 41,
-        title: { zh: "Find Escape · 1/12", en: "Find Escape · 1/12" },
+        order: 77,
+        title: { zh: "寻找逃跑 · 1/12", en: "Find Escape · 1/12" },
         instruction: { zh: "黑先。找到处于打吃状态的黑棋棋串，并解救它。", en: "Black to play. Find the black chain that is in atari and escape with this chain." },
         puzzle: {
             width: 9,
@@ -628,8 +1515,8 @@ const findEscapeLevels: Level[] = [
     {
         id: "basic-principles-find_escape-2",
         chapterId: "basic-principles",
-        order: 42,
-        title: { zh: "Find Escape · 2/12", en: "Find Escape · 2/12" },
+        order: 78,
+        title: { zh: "寻找逃跑 · 2/12", en: "Find Escape · 2/12" },
         instruction: { zh: "黑先。解救处于打吃的棋串。", en: "Black to play. Escape with the chain that is in atari." },
         puzzle: {
             width: 9,
@@ -642,8 +1529,8 @@ const findEscapeLevels: Level[] = [
     {
         id: "basic-principles-find_escape-3",
         chapterId: "basic-principles",
-        order: 43,
-        title: { zh: "Find Escape · 3/12", en: "Find Escape · 3/12" },
+        order: 79,
+        title: { zh: "寻找逃跑 · 3/12", en: "Find Escape · 3/12" },
         instruction: { zh: "黑先。解救处于打吃的棋串。", en: "Black to play. Escape with the chain that is in atari." },
         puzzle: {
             width: 9,
@@ -656,8 +1543,8 @@ const findEscapeLevels: Level[] = [
     {
         id: "basic-principles-find_escape-4",
         chapterId: "basic-principles",
-        order: 44,
-        title: { zh: "Find Escape · 4/12", en: "Find Escape · 4/12" },
+        order: 80,
+        title: { zh: "寻找逃跑 · 4/12", en: "Find Escape · 4/12" },
         instruction: { zh: "黑先。解救处于打吃的棋串。", en: "Black to play. Escape with the chain that is in atari." },
         puzzle: {
             width: 9,
@@ -670,8 +1557,8 @@ const findEscapeLevels: Level[] = [
     {
         id: "basic-principles-find_escape-5",
         chapterId: "basic-principles",
-        order: 45,
-        title: { zh: "Find Escape · 5/12", en: "Find Escape · 5/12" },
+        order: 81,
+        title: { zh: "寻找逃跑 · 5/12", en: "Find Escape · 5/12" },
         instruction: { zh: "黑先。解救处于打吃的棋串。", en: "Black to play. Escape with the chain that is in atari." },
         puzzle: {
             width: 9,
@@ -684,8 +1571,8 @@ const findEscapeLevels: Level[] = [
     {
         id: "basic-principles-find_escape-6",
         chapterId: "basic-principles",
-        order: 46,
-        title: { zh: "Find Escape · 6/12", en: "Find Escape · 6/12" },
+        order: 82,
+        title: { zh: "寻找逃跑 · 6/12", en: "Find Escape · 6/12" },
         instruction: { zh: "黑先。解救处于打吃的棋串。", en: "Black to play. Escape with the chain that is in atari." },
         puzzle: {
             width: 9,
@@ -698,8 +1585,8 @@ const findEscapeLevels: Level[] = [
     {
         id: "basic-principles-find_escape-7",
         chapterId: "basic-principles",
-        order: 47,
-        title: { zh: "Find Escape · 7/12", en: "Find Escape · 7/12" },
+        order: 83,
+        title: { zh: "寻找逃跑 · 7/12", en: "Find Escape · 7/12" },
         instruction: { zh: "黑先。解救处于打吃的棋串。", en: "Black to play. Escape with the chain that is in atari." },
         puzzle: {
             width: 9,
@@ -712,8 +1599,8 @@ const findEscapeLevels: Level[] = [
     {
         id: "basic-principles-find_escape-8",
         chapterId: "basic-principles",
-        order: 48,
-        title: { zh: "Find Escape · 8/12", en: "Find Escape · 8/12" },
+        order: 84,
+        title: { zh: "寻找逃跑 · 8/12", en: "Find Escape · 8/12" },
         instruction: { zh: "黑先。解救处于打吃的棋串。", en: "Black to play. Escape with the chain that is in atari." },
         puzzle: {
             width: 9,
@@ -726,8 +1613,8 @@ const findEscapeLevels: Level[] = [
     {
         id: "basic-principles-find_escape-9",
         chapterId: "basic-principles",
-        order: 49,
-        title: { zh: "Find Escape · 9/12", en: "Find Escape · 9/12" },
+        order: 85,
+        title: { zh: "寻找逃跑 · 9/12", en: "Find Escape · 9/12" },
         instruction: { zh: "黑先。解救处于打吃的棋串。", en: "Black to play. Escape with the chain that is in atari." },
         puzzle: {
             width: 9,
@@ -740,8 +1627,8 @@ const findEscapeLevels: Level[] = [
     {
         id: "basic-principles-find_escape-10",
         chapterId: "basic-principles",
-        order: 50,
-        title: { zh: "Find Escape · 10/12", en: "Find Escape · 10/12" },
+        order: 86,
+        title: { zh: "寻找逃跑 · 10/12", en: "Find Escape · 10/12" },
         instruction: { zh: "黑先。解救处于打吃的棋串。", en: "Black to play. Escape with the chain that is in atari." },
         puzzle: {
             width: 9,
@@ -754,8 +1641,8 @@ const findEscapeLevels: Level[] = [
     {
         id: "basic-principles-find_escape-11",
         chapterId: "basic-principles",
-        order: 51,
-        title: { zh: "Find Escape · 11/12", en: "Find Escape · 11/12" },
+        order: 87,
+        title: { zh: "寻找逃跑 · 11/12", en: "Find Escape · 11/12" },
         instruction: { zh: "黑先。解救处于打吃的棋串。", en: "Black to play. Escape with the chain that is in atari." },
         puzzle: {
             width: 9,
@@ -768,8 +1655,8 @@ const findEscapeLevels: Level[] = [
     {
         id: "basic-principles-find_escape-12",
         chapterId: "basic-principles",
-        order: 52,
-        title: { zh: "Find Escape · 12/12", en: "Find Escape · 12/12" },
+        order: 88,
+        title: { zh: "寻找逃跑 · 12/12", en: "Find Escape · 12/12" },
         instruction: { zh: "黑先。解救处于打吃的棋串。", en: "Black to play. Escape with the chain that is in atari." },
         puzzle: {
             width: 9,
@@ -785,8 +1672,8 @@ const createOpeningLevels: Level[] = [
     {
         id: "basic-principles-create_opening-1",
         chapterId: "basic-principles",
-        order: 53,
-        title: { zh: "Create Opening · 1/12", en: "Create Opening · 1/12" },
+        order: 89,
+        title: { zh: "创造开口 · 1/12", en: "Create Opening · 1/12" },
         instruction: { zh: "白先。被标记的白棋棋串无法通过在A点延伸来逃脱。但白棋可以通过制造一个突破口来逃脱。吃掉被标记的黑棋以制造突破口。", en: "White to play. The marked white chain can not escape by lengthening this chain at A. But white can escape by creating an opening. Capture the marked black stone to create this opening." },
         puzzle: {
             width: 9,
@@ -800,8 +1687,8 @@ const createOpeningLevels: Level[] = [
     {
         id: "basic-principles-create_opening-2",
         chapterId: "basic-principles",
-        order: 54,
-        title: { zh: "Create Opening · 2/12", en: "Create Opening · 2/12" },
+        order: 90,
+        title: { zh: "创造开口 · 2/12", en: "Create Opening · 2/12" },
         instruction: { zh: "白先。通过制造一个突破口来解救被打吃的棋串。", en: "White to play. Escape with the chain in atari by creating an opening." },
         puzzle: {
             width: 9,
@@ -814,8 +1701,8 @@ const createOpeningLevels: Level[] = [
     {
         id: "basic-principles-create_opening-3",
         chapterId: "basic-principles",
-        order: 55,
-        title: { zh: "Create Opening · 3/12", en: "Create Opening · 3/12" },
+        order: 91,
+        title: { zh: "创造开口 · 3/12", en: "Create Opening · 3/12" },
         instruction: { zh: "白先。通过制造一个突破口来解救被打吃的棋串。", en: "White to play. Escape with the chain in atari by creating an opening." },
         puzzle: {
             width: 9,
@@ -828,8 +1715,8 @@ const createOpeningLevels: Level[] = [
     {
         id: "basic-principles-create_opening-4",
         chapterId: "basic-principles",
-        order: 56,
-        title: { zh: "Create Opening · 4/12", en: "Create Opening · 4/12" },
+        order: 92,
+        title: { zh: "创造开口 · 4/12", en: "Create Opening · 4/12" },
         instruction: { zh: "白先。通过制造一个突破口来解救被打吃的棋串。", en: "White to play. Escape with the chain in atari by creating an opening." },
         puzzle: {
             width: 9,
@@ -842,8 +1729,8 @@ const createOpeningLevels: Level[] = [
     {
         id: "basic-principles-create_opening-5",
         chapterId: "basic-principles",
-        order: 57,
-        title: { zh: "Create Opening · 5/12", en: "Create Opening · 5/12" },
+        order: 93,
+        title: { zh: "创造开口 · 5/12", en: "Create Opening · 5/12" },
         instruction: { zh: "白先。通过制造一个突破口来解救被打吃的棋串。", en: "White to play. Escape with the chain in atari by creating an opening." },
         puzzle: {
             width: 9,
@@ -856,8 +1743,8 @@ const createOpeningLevels: Level[] = [
     {
         id: "basic-principles-create_opening-6",
         chapterId: "basic-principles",
-        order: 58,
-        title: { zh: "Create Opening · 6/12", en: "Create Opening · 6/12" },
+        order: 94,
+        title: { zh: "创造开口 · 6/12", en: "Create Opening · 6/12" },
         instruction: { zh: "白先。通过制造一个突破口来解救被打吃的棋串。", en: "White to play. Escape with the chain in atari by creating an opening." },
         puzzle: {
             width: 9,
@@ -870,8 +1757,8 @@ const createOpeningLevels: Level[] = [
     {
         id: "basic-principles-create_opening-7",
         chapterId: "basic-principles",
-        order: 59,
-        title: { zh: "Create Opening · 7/12", en: "Create Opening · 7/12" },
+        order: 95,
+        title: { zh: "创造开口 · 7/12", en: "Create Opening · 7/12" },
         instruction: { zh: "白先。通过制造一个突破口来解救被打吃的棋串。", en: "White to play. Escape with the chain in atari by creating an opening." },
         puzzle: {
             width: 9,
@@ -884,8 +1771,8 @@ const createOpeningLevels: Level[] = [
     {
         id: "basic-principles-create_opening-8",
         chapterId: "basic-principles",
-        order: 60,
-        title: { zh: "Create Opening · 8/12", en: "Create Opening · 8/12" },
+        order: 96,
+        title: { zh: "创造开口 · 8/12", en: "Create Opening · 8/12" },
         instruction: { zh: "白先。通过制造一个突破口来解救被打吃的棋串。", en: "White to play. Escape with the chain in atari by creating an opening." },
         puzzle: {
             width: 9,
@@ -898,8 +1785,8 @@ const createOpeningLevels: Level[] = [
     {
         id: "basic-principles-create_opening-9",
         chapterId: "basic-principles",
-        order: 61,
-        title: { zh: "Create Opening · 9/12", en: "Create Opening · 9/12" },
+        order: 97,
+        title: { zh: "创造开口 · 9/12", en: "Create Opening · 9/12" },
         instruction: { zh: "白先。通过制造一个突破口来解救被打吃的棋串。", en: "White to play. Escape with the chain in atari by creating an opening." },
         puzzle: {
             width: 9,
@@ -912,8 +1799,8 @@ const createOpeningLevels: Level[] = [
     {
         id: "basic-principles-create_opening-10",
         chapterId: "basic-principles",
-        order: 62,
-        title: { zh: "Create Opening · 10/12", en: "Create Opening · 10/12" },
+        order: 98,
+        title: { zh: "创造开口 · 10/12", en: "Create Opening · 10/12" },
         instruction: { zh: "白先。通过制造一个突破口来解救被打吃的棋串。", en: "White to play. Escape with the chain in atari by creating an opening." },
         puzzle: {
             width: 9,
@@ -926,8 +1813,8 @@ const createOpeningLevels: Level[] = [
     {
         id: "basic-principles-create_opening-11",
         chapterId: "basic-principles",
-        order: 63,
-        title: { zh: "Create Opening · 11/12", en: "Create Opening · 11/12" },
+        order: 99,
+        title: { zh: "创造开口 · 11/12", en: "Create Opening · 11/12" },
         instruction: { zh: "白先。通过制造一个突破口来解救被打吃的棋串。", en: "White to play. Escape with the chain in atari by creating an opening." },
         puzzle: {
             width: 9,
@@ -940,8 +1827,8 @@ const createOpeningLevels: Level[] = [
     {
         id: "basic-principles-create_opening-12",
         chapterId: "basic-principles",
-        order: 64,
-        title: { zh: "Create Opening · 12/12", en: "Create Opening · 12/12" },
+        order: 100,
+        title: { zh: "创造开口 · 12/12", en: "Create Opening · 12/12" },
         instruction: { zh: "白先。通过制造一个突破口来解救被打吃的棋串。", en: "White to play. Escape with the chain in atari by creating an opening." },
         puzzle: {
             width: 9,
@@ -957,8 +1844,8 @@ const connectLevels: Level[] = [
     {
         id: "basic-principles-connect-1",
         chapterId: "basic-principles",
-        order: 65,
-        title: { zh: "Connect · 1/6", en: "Connect · 1/6" },
+        order: 101,
+        title: { zh: "连接 · 1/6", en: "Connect · 1/6" },
         instruction: { zh: "棋子可以通过形成棋串来互相帮助。棋串比单颗棋子更难被吃。你可以通过连接你的棋子来形成棋串。连接白棋。", en: "Stones can help each other by forming a chain. Chains are harder to capture than single stones. You can form a chain by connecting your stones. Connect the white stones." },
         puzzle: {
             width: 9,
@@ -972,8 +1859,8 @@ const connectLevels: Level[] = [
     {
         id: "basic-principles-connect-2",
         chapterId: "basic-principles",
-        order: 66,
-        title: { zh: "Connect · 2/6", en: "Connect · 2/6" },
+        order: 102,
+        title: { zh: "连接 · 2/6", en: "Connect · 2/6" },
         instruction: { zh: "白先。连接白棋。", en: "White to play. Connect the white stones." },
         puzzle: {
             width: 9,
@@ -986,8 +1873,8 @@ const connectLevels: Level[] = [
     {
         id: "basic-principles-connect-3",
         chapterId: "basic-principles",
-        order: 67,
-        title: { zh: "Connect · 3/6", en: "Connect · 3/6" },
+        order: 103,
+        title: { zh: "连接 · 3/6", en: "Connect · 3/6" },
         instruction: { zh: "白先。连接白棋。", en: "White to play. Connect the white stones." },
         puzzle: {
             width: 9,
@@ -1000,8 +1887,8 @@ const connectLevels: Level[] = [
     {
         id: "basic-principles-connect-4",
         chapterId: "basic-principles",
-        order: 68,
-        title: { zh: "Connect · 4/6", en: "Connect · 4/6" },
+        order: 104,
+        title: { zh: "连接 · 4/6", en: "Connect · 4/6" },
         instruction: { zh: "白先。连接白棋。", en: "White to play. Connect the white stones." },
         puzzle: {
             width: 9,
@@ -1014,8 +1901,8 @@ const connectLevels: Level[] = [
     {
         id: "basic-principles-connect-5",
         chapterId: "basic-principles",
-        order: 69,
-        title: { zh: "Connect · 5/6", en: "Connect · 5/6" },
+        order: 105,
+        title: { zh: "连接 · 5/6", en: "Connect · 5/6" },
         instruction: { zh: "白先。连接白棋。", en: "White to play. Connect the white stones." },
         puzzle: {
             width: 9,
@@ -1028,8 +1915,8 @@ const connectLevels: Level[] = [
     {
         id: "basic-principles-connect-6",
         chapterId: "basic-principles",
-        order: 70,
-        title: { zh: "Connect · 6/6", en: "Connect · 6/6" },
+        order: 106,
+        title: { zh: "连接 · 6/6", en: "Connect · 6/6" },
         instruction: { zh: "白先。连接白棋。", en: "White to play. Connect the white stones." },
         puzzle: {
             width: 9,
@@ -1045,8 +1932,8 @@ const cutLevels: Level[] = [
     {
         id: "basic-principles-cut-1",
         chapterId: "basic-principles",
-        order: 71,
-        title: { zh: "Cut · 1/6", en: "Cut · 1/6" },
+        order: 107,
+        title: { zh: "切断 · 1/6", en: "Cut · 1/6" },
         instruction: { zh: "白棋可以在A点落子来连接这些棋子。轮到黑棋走，可以阻止白棋连接这些白棋。切断白棋。", en: "White can connect the stones by playing at A. Black is to play and can prevent White from connecting these white stones. Cut the white stones." },
         puzzle: {
             width: 9,
@@ -1060,8 +1947,8 @@ const cutLevels: Level[] = [
     {
         id: "basic-principles-cut-2",
         chapterId: "basic-principles",
-        order: 72,
-        title: { zh: "Cut · 2/6", en: "Cut · 2/6" },
+        order: 108,
+        title: { zh: "切断 · 2/6", en: "Cut · 2/6" },
         instruction: { zh: "黑先。切断白棋。", en: "Black to play. Cut the white stones." },
         puzzle: {
             width: 9,
@@ -1074,8 +1961,8 @@ const cutLevels: Level[] = [
     {
         id: "basic-principles-cut-3",
         chapterId: "basic-principles",
-        order: 73,
-        title: { zh: "Cut · 3/6", en: "Cut · 3/6" },
+        order: 109,
+        title: { zh: "切断 · 3/6", en: "Cut · 3/6" },
         instruction: { zh: "黑先。切断白棋。", en: "Black to play. Cut the white stones." },
         puzzle: {
             width: 9,
@@ -1088,8 +1975,8 @@ const cutLevels: Level[] = [
     {
         id: "basic-principles-cut-4",
         chapterId: "basic-principles",
-        order: 74,
-        title: { zh: "Cut · 4/6", en: "Cut · 4/6" },
+        order: 110,
+        title: { zh: "切断 · 4/6", en: "Cut · 4/6" },
         instruction: { zh: "黑先。切断白棋。", en: "Black to play. Cut the white stones." },
         puzzle: {
             width: 9,
@@ -1102,8 +1989,8 @@ const cutLevels: Level[] = [
     {
         id: "basic-principles-cut-5",
         chapterId: "basic-principles",
-        order: 75,
-        title: { zh: "Cut · 5/6", en: "Cut · 5/6" },
+        order: 111,
+        title: { zh: "切断 · 5/6", en: "Cut · 5/6" },
         instruction: { zh: "黑先。切断白棋。", en: "Black to play. Cut the white stones." },
         puzzle: {
             width: 9,
@@ -1116,8 +2003,8 @@ const cutLevels: Level[] = [
     {
         id: "basic-principles-cut-6",
         chapterId: "basic-principles",
-        order: 76,
-        title: { zh: "Cut · 6/6", en: "Cut · 6/6" },
+        order: 112,
+        title: { zh: "切断 · 6/6", en: "Cut · 6/6" },
         instruction: { zh: "黑先。切断白棋。", en: "Black to play. Cut the white stones." },
         puzzle: {
             width: 9,
@@ -1129,20 +2016,816 @@ const cutLevels: Level[] = [
     },
 ];
 
-/* Section bp-self-capture (Self-capture) had no migratable pages — skipped. */
+const bpSelfCaptureLevels: Level[] = [
+    {
+        id: "basic-principles-bp-self-capture-1",
+        chapterId: "basic-principles",
+        order: 113,
+        title: { zh: "自杀 · 1/12", en: "Self-capture · 1/12" },
+        instruction: { zh: "在落子后自身无气的点落子是不允许的。但如果你能吃掉对手的一些棋子，并为刚下的棋子创造出气，那么这样落子是允许的。白先。白棋能在A点落子吗？", en: "Playing at a point where your stone does not have any liberty is not allowed. But if you can capture some of opponent's stones and create liberties for your played stone, playing there is allowed. White to play. Can White play at A?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "dgdhdiegfggghghhhi", white: "eheifhghgi" },
+            marks: { A: "fi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "在落子后自身无气的点落子是不允许的。但如果你能吃掉对手的一些棋子，并为刚下的棋子创造出气，那么这样落子是允许的。白先。白棋能在A点落子吗？", en: "Playing at a point where your stone does not have any liberty is not allowed. But if you can capture some of opponent's stones and create liberties for your played stone, playing there is allowed. White to play. Can White play at A?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dgdhdiegfggghghhhi", white: "eheifhghgi" },
+                marks: { A: "fi" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-self-capture-2",
+        chapterId: "basic-principles",
+        order: 114,
+        title: { zh: "自杀 · 2/12", en: "Self-capture · 2/12" },
+        instruction: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "fcedgdeegeefgffg", white: "fd" },
+            marks: { A: "fe" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "fcedgdeegeefgffg", white: "fd" },
+                marks: { A: "fe" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-self-capture-3",
+        chapterId: "basic-principles",
+        order: 115,
+        title: { zh: "自杀 · 3/12", en: "Self-capture · 3/12" },
+        instruction: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "fcedgdeegeefgffg", white: "fd" },
+            marks: { A: "ff" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "fcedgdeegeefgffg", white: "fd" },
+                marks: { A: "ff" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-self-capture-4",
+        chapterId: "basic-principles",
+        order: 116,
+        title: { zh: "自杀 · 4/12", en: "Self-capture · 4/12" },
+        instruction: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "fcedgdeegeefgffg", white: "fdff" },
+            marks: { A: "fe" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "fcedgdeegeefgffg", white: "fdff" },
+                marks: { A: "fe" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-self-capture-5",
+        chapterId: "basic-principles",
+        order: 117,
+        title: { zh: "自杀 · 5/12", en: "Self-capture · 5/12" },
+        instruction: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "eddefeef", white: "ecddfdcegedfffeg" },
+            marks: { A: "ee" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "eddefeef", white: "ecddfdcegedfffeg" },
+                marks: { A: "ee" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-self-capture-6",
+        chapterId: "basic-principles",
+        order: 118,
+        title: { zh: "自杀 · 6/12", en: "Self-capture · 6/12" },
+        instruction: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "ahbhchdhdi", white: "aiciagbgcgdgehei" },
+            marks: { A: "bi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ahbhchdhdi", white: "aiciagbgcgdgehei" },
+                marks: { A: "bi" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-self-capture-7",
+        chapterId: "basic-principles",
+        order: 119,
+        title: { zh: "自杀 · 7/12", en: "Self-capture · 7/12" },
+        instruction: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "bdcededfbgcgahchbi", white: "afbfcfdgfgdhcidi" },
+            marks: { A: "bh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "bdcededfbgcgahchbi", white: "afbfcfdgfgdhcidi" },
+                marks: { A: "bh" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-self-capture-8",
+        chapterId: "basic-principles",
+        order: 120,
+        title: { zh: "自杀 · 8/12", en: "Self-capture · 8/12" },
+        instruction: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "dfefffgfbgcgahchbi", white: "afbfcfagdgdhcidi" },
+            marks: { A: "bh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dfefffgfbgcgahchbi", white: "afbfcfagdgdhcidi" },
+                marks: { A: "bh" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-self-capture-9",
+        chapterId: "basic-principles",
+        order: 121,
+        title: { zh: "自杀 · 9/12", en: "Self-capture · 9/12" },
+        instruction: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "deeecfffcgegdh", white: "cdddedcedfdg" },
+            marks: { A: "ef" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "deeecfffcgegdh", white: "cdddedcedfdg" },
+                marks: { A: "ef" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-self-capture-10",
+        chapterId: "basic-principles",
+        order: 122,
+        title: { zh: "自杀 · 10/12", en: "Self-capture · 10/12" },
+        instruction: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "dbfbgbdccedecfefcgfgdheh", white: "eccdfdbebfdfgfbgggbhgh" },
+            marks: { A: "dg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dbfbgbdccedecfefcgfgdheh", white: "eccdfdbebfdfgfbgggbhgh" },
+                marks: { A: "dg" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-self-capture-11",
+        chapterId: "basic-principles",
+        order: 123,
+        title: { zh: "自杀 · 11/12", en: "Self-capture · 11/12" },
+        instruction: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "cdcfcgdgfgggchehciei", white: "ebeceddfefegdhfhfi" },
+            marks: { A: "di" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cdcfcgdgfgggchehciei", white: "ebeceddfefegdhfhfi" },
+                marks: { A: "di" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-self-capture-12",
+        chapterId: "basic-principles",
+        order: 124,
+        title: { zh: "自杀 · 12/12", en: "Self-capture · 12/12" },
+        instruction: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "dbdcedceeedfffeg", white: "ecddfddefecfgf" },
+            marks: { A: "ef" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "白先。白棋能在A点落子吗？", en: "White to play. Can White play at A?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dbdcedceeedfffeg", white: "ecddfddefecfgf" },
+                marks: { A: "ef" },
+            },
+        },
+    },
+];
 
-/* Section real-false-eye (Eye) had no migratable pages — skipped. */
+const realFalseEyeLevels: Level[] = [
+    {
+        id: "basic-principles-real-false-eye-1",
+        chapterId: "basic-principles",
+        order: 125,
+        title: { zh: "眼 · 1/6", en: "Eye · 1/6" },
+        instruction: { zh: "如果一个眼能被攻击，它就不是真眼，而是假眼。A点是真眼还是假眼？", en: "If an eye can be challenged, it is not a real, but a false eye. Is A a real or a false eye?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "gcgffgdhehghfi", white: "cgdgegchcidiei" },
+            marks: { A: "fh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "如果一个眼能被攻击，它就不是真眼，而是假眼。A点是真眼还是假眼？", en: "If an eye can be challenged, it is not a real, but a false eye. Is A a real or a false eye?" },
+            options: [{ value: "real", label: { zh: "真眼", en: "Real" } }, { value: "false", label: { zh: "假眼", en: "False" } }],
+            correctValue: "false",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "gcgffgdhehghfi", white: "cgdgegchcidiei" },
+                marks: { A: "fh" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-real-false-eye-2",
+        chapterId: "basic-principles",
+        order: 126,
+        title: { zh: "眼 · 2/6", en: "Eye · 2/6" },
+        instruction: { zh: "A点是真眼还是假眼？", en: "Is A a real or a false eye?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "ccdcfdfegffgggdhehgheifi", white: "hehfcgdgeghgchhhcidigihi" },
+            marks: { A: "fh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "A点是真眼还是假眼？", en: "Is A a real or a false eye?" },
+            options: [{ value: "real", label: { zh: "真眼", en: "Real" } }, { value: "false", label: { zh: "假眼", en: "False" } }],
+            correctValue: "false",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ccdcfdfegffgggdhehgheifi", white: "hehfcgdgeghgchhhcidigihi" },
+                marks: { A: "fh" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-real-false-eye-3",
+        chapterId: "basic-principles",
+        order: 127,
+        title: { zh: "眼 · 3/6", en: "Eye · 3/6" },
+        instruction: { zh: "A点是真眼还是假眼？", en: "Is A a real or a false eye?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cceecgdgfgeh", white: "gffhghhhfihi" },
+            marks: { A: "gi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "A点是真眼还是假眼？", en: "Is A a real or a false eye?" },
+            options: [{ value: "real", label: { zh: "真眼", en: "Real" } }, { value: "false", label: { zh: "假眼", en: "False" } }],
+            correctValue: "real",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cceecgdgfgeh", white: "gffhghhhfihi" },
+                marks: { A: "gi" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-real-false-eye-4",
+        chapterId: "basic-principles",
+        order: 128,
+        title: { zh: "眼 · 4/6", en: "Eye · 4/6" },
+        instruction: { zh: "A点是真眼还是假眼？", en: "Is A a real or a false eye?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "eefgehfhei", white: "gfghhhfihi" },
+            marks: { A: "gi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "A点是真眼还是假眼？", en: "Is A a real or a false eye?" },
+            options: [{ value: "real", label: { zh: "真眼", en: "Real" } }, { value: "false", label: { zh: "假眼", en: "False" } }],
+            correctValue: "false",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "eefgehfhei", white: "gfghhhfihi" },
+                marks: { A: "gi" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-real-false-eye-5",
+        chapterId: "basic-principles",
+        order: 129,
+        title: { zh: "眼 · 5/6", en: "Eye · 5/6" },
+        instruction: { zh: "A点是真眼还是假眼？", en: "Is A a real or a false eye?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "eecgfgehfh", white: "gfghhhfihi" },
+            marks: { A: "gi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "A点是真眼还是假眼？", en: "Is A a real or a false eye?" },
+            options: [{ value: "real", label: { zh: "真眼", en: "Real" } }, { value: "false", label: { zh: "假眼", en: "False" } }],
+            correctValue: "false",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "eecgfgehfh", white: "gfghhhfihi" },
+                marks: { A: "gi" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-real-false-eye-6",
+        chapterId: "basic-principles",
+        order: 130,
+        title: { zh: "眼 · 6/6", en: "Eye · 6/6" },
+        instruction: { zh: "A点是真眼还是假眼？", en: "Is A a real or a false eye?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "hgfhghihfihi", white: "bgcgegfgeh" },
+            marks: { A: "gi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "A点是真眼还是假眼？", en: "Is A a real or a false eye?" },
+            options: [{ value: "real", label: { zh: "真眼", en: "Real" } }, { value: "false", label: { zh: "假眼", en: "False" } }],
+            correctValue: "real",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "hgfhghihfihi", white: "bgcgegfgeh" },
+                marks: { A: "gi" },
+            },
+        },
+    },
+];
 
-/* Section bp-ko (Ko) had no migratable pages — skipped. */
+const bpKoLevels: Level[] = [
+    {
+        id: "basic-principles-bp-ko-1",
+        chapterId: "basic-principles",
+        order: 131,
+        title: { zh: "劫 · 1/6", en: "Ko · 1/6" },
+        instruction: { zh: "黑棋用1号棋子吃掉了标记为三角形的白棋。如果白棋提回后，棋盘局面与黑棋下1号棋子前完全相同，则此提回不被允许。白棋是否能立即提回1号棋子？", en: "Black captures with stone 1 the white stone marked with a triangle. If the recapture by White results in the same board position as just before Black's move 1, this recapture is not allowed. Is White allowed to recapture stone 1 immediately?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "ecfebfdfcgce", white: "cdgdbedecfcf" },
+            marks: { 1: "ce", triangle: "cf" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋用1号棋子吃掉了标记为三角形的白棋。如果白棋提回后，棋盘局面与黑棋下1号棋子前完全相同，则此提回不被允许。白棋是否能立即提回1号棋子？", en: "Black captures with stone 1 the white stone marked with a triangle. If the recapture by White results in the same board position as just before Black's move 1, this recapture is not allowed. Is White allowed to recapture stone 1 immediately?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ecfebfdfcgce", white: "cdgdbedecfcf" },
+                marks: { 1: "ce", triangle: "cf" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-ko-2",
+        chapterId: "basic-principles",
+        order: 132,
+        title: { zh: "劫 · 2/6", en: "Ko · 2/6" },
+        instruction: { zh: "黑棋用1号棋子吃掉了标记为三角形的白棋棋串。白棋是否能立即提回？", en: "Black captures with stone 1 the white chain marked with triangles. Is White allowed to recapture immediately?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "dacbebccecgcbddd", white: "dbdccdeddegfcgdbdc" },
+            marks: { 1: "dd", triangle: "dbdc" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋用1号棋子吃掉了标记为三角形的白棋棋串。白棋是否能立即提回？", en: "Black captures with stone 1 the white chain marked with triangles. Is White allowed to recapture immediately?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "dacbebccecgcbddd", white: "dbdccdeddegfcgdbdc" },
+                marks: { 1: "dd", triangle: "dbdc" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-ko-3",
+        chapterId: "basic-principles",
+        order: 133,
+        title: { zh: "劫 · 3/6", en: "Ko · 3/6" },
+        instruction: { zh: "黑棋用1号棋子吃掉了标记为三角形的白棋。白棋是否能立即提回？", en: "Black captures with 1 the white stone marked with a triangle. Is White allowed to recapture immediately?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "fbfcddgdfegegged", white: "ccdceccdfddeeefd" },
+            marks: { 1: "ed", triangle: "fd" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋用1号棋子吃掉了标记为三角形的白棋。白棋是否能立即提回？", en: "Black captures with 1 the white stone marked with a triangle. Is White allowed to recapture immediately?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "fbfcddgdfegegged", white: "ccdceccdfddeeefd" },
+                marks: { 1: "ed", triangle: "fd" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-ko-4",
+        chapterId: "basic-principles",
+        order: 134,
+        title: { zh: "劫 · 4/6", en: "Ko · 4/6" },
+        instruction: { zh: "黑棋用1号棋子吃掉了标记为三角形的白棋。白棋是否能立即提回？", en: "Black captures with 1 the white stone marked with a triangle. Is White allowed to recapture immediately?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "hbhcicheggia", white: "gahafbibfcib" },
+            marks: { 1: "ia", triangle: "ib" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋用1号棋子吃掉了标记为三角形的白棋。白棋是否能立即提回？", en: "Black captures with 1 the white stone marked with a triangle. Is White allowed to recapture immediately?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "hbhcicheggia", white: "gahafbibfcib" },
+                marks: { 1: "ia", triangle: "ib" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-ko-5",
+        chapterId: "basic-principles",
+        order: 135,
+        title: { zh: "劫 · 5/6", en: "Ko · 5/6" },
+        instruction: { zh: "黑棋用1号棋子吃掉了标记为三角形的白棋。白棋是否能立即提回？", en: "Black captures with 1 the white stone marked with a triangle. Is White allowed to recapture immediately?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "abacaebbbfcbbd", white: "adbcbecccdedad" },
+            marks: { 1: "bd", triangle: "ad" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋用1号棋子吃掉了标记为三角形的白棋。白棋是否能立即提回？", en: "Black captures with 1 the white stone marked with a triangle. Is White allowed to recapture immediately?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "abacaebbbfcbbd", white: "adbcbecccdedad" },
+                marks: { 1: "bd", triangle: "ad" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-bp-ko-6",
+        chapterId: "basic-principles",
+        order: 136,
+        title: { zh: "劫 · 6/6", en: "Ko · 6/6" },
+        instruction: { zh: "黑棋用1号棋子吃掉了标记为三角形的白棋。白棋是否能立即提回？", en: "Black captures with 1 the white stone marked with a triangle. Is White allowed to recapture immediately?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "white",
+            initial_state: { black: "fcgagbhaicib", white: "hbhchdiaidia" },
+            marks: { 1: "ib", triangle: "ia" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋用1号棋子吃掉了标记为三角形的白棋。白棋是否能立即提回？", en: "Black captures with 1 the white stone marked with a triangle. Is White allowed to recapture immediately?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "fcgagbhaicib", white: "hbhchdiaidia" },
+                marks: { 1: "ib", triangle: "ia" },
+            },
+        },
+    },
+];
 
-/* Section group-alive (Group Alive) had no migratable pages — skipped. */
+const groupAliveLevels: Level[] = [
+    {
+        id: "basic-principles-group-alive-1",
+        chapterId: "basic-principles",
+        order: 137,
+        title: { zh: "活棋 · 1/6", en: "Group Alive · 1/6" },
+        instruction: { zh: "如果一个棋块拥有两个真眼，它就是活棋。黑棋棋块是活棋吗？", en: "A group of stones is alive, if it has two real eyes. Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "black",
+            initial_state: { black: "fifhghhihhih", white: "eiehegfggghgig" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "如果一个棋块拥有两个真眼，它就是活棋。黑棋棋块是活棋吗？", en: "A group of stones is alive, if it has two real eyes. Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "fifhghhihhih", white: "eiehegfggghgig" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-group-alive-2",
+        chapterId: "basic-principles",
+        order: 138,
+        title: { zh: "活棋 · 2/6", en: "Group Alive · 2/6" },
+        instruction: { zh: "黑棋棋块是活棋吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "black",
+            initial_state: { black: "didhehfifh", white: "cichdgegfggigh" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋棋块是活棋吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "didhehfifh", white: "cichdgegfggigh" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-group-alive-3",
+        chapterId: "basic-principles",
+        order: 139,
+        title: { zh: "活棋 · 3/6", en: "Group Alive · 3/6" },
+        instruction: { zh: "黑棋棋块是活棋吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "black",
+            initial_state: { black: "ahbhchdidh", white: "agbibgcgdgeieheg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋棋块是活棋吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ahbhchdidh", white: "agbibgcgdgeieheg" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-group-alive-4",
+        chapterId: "basic-principles",
+        order: 140,
+        title: { zh: "活棋 · 4/6", en: "Group Alive · 4/6" },
+        instruction: { zh: "黑棋棋块是活棋吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "black",
+            initial_state: { black: "cichcgdgehegfifh", white: "bibhbgcfdidfeffggighgf" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋棋块是活棋吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "no",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cichcgdgehegfifh", white: "bibhbgcfdidfeffggighgf" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-group-alive-5",
+        chapterId: "basic-principles",
+        order: 141,
+        title: { zh: "活棋 · 5/6", en: "Group Alive · 5/6" },
+        instruction: { zh: "黑棋棋块是活棋吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "black",
+            initial_state: { black: "ahbhcichdheieh", white: "agbibgcgdgegfifhfg" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋棋块是活棋吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "ahbhcichdheieh", white: "agbibgcgdgegfifhfg" },
+            },
+        },
+    },
+    {
+        id: "basic-principles-group-alive-6",
+        chapterId: "basic-principles",
+        order: 142,
+        title: { zh: "活棋 · 6/6", en: "Group Alive · 6/6" },
+        instruction: { zh: "黑棋棋块是活棋吗？", en: "Is the black group alive?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_player: "black",
+            initial_state: { black: "heieffgfiffghgigfhgh", white: "gdhdideefegeefegehhhiheifigihi" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "黑棋棋块是活棋吗？", en: "Is the black group alive?" },
+            options: [{ value: "yes", label: { zh: "是", en: "Yes" } }, { value: "no", label: { zh: "否", en: "No" } }],
+            correctValue: "yes",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "heieffgfiffghgigfhgh", white: "gdhdideefegeefegehhhiheifigihi" },
+            },
+        },
+    },
+];
 
 const makeAliveLevels: Level[] = [
     {
         id: "basic-principles-make-alive-1",
         chapterId: "basic-principles",
-        order: 77,
-        title: { zh: "Two Eyes · 1/6", en: "Two Eyes · 1/6" },
+        order: 143,
+        title: { zh: "两眼 · 1/6", en: "Two Eyes · 1/6" },
         instruction: { zh: "白棋棋块还不安全。黑棋可以通过在A点落子来阻止白棋做出两只眼。白先。通过做出两只眼来使白棋棋块活棋。", en: "The white group is not safe yet. Black can prevent White from making two eyes by playing at A. White to play. Make the white group alive by making two eyes." },
         puzzle: {
             width: 9,
@@ -1157,8 +2840,8 @@ const makeAliveLevels: Level[] = [
     {
         id: "basic-principles-make-alive-2",
         chapterId: "basic-principles",
-        order: 78,
-        title: { zh: "Two Eyes · 2/6", en: "Two Eyes · 2/6" },
+        order: 144,
+        title: { zh: "两眼 · 2/6", en: "Two Eyes · 2/6" },
         instruction: { zh: "白先。做出两只眼。", en: "White to play. Make two eyes." },
         puzzle: {
             width: 9,
@@ -1171,8 +2854,8 @@ const makeAliveLevels: Level[] = [
     {
         id: "basic-principles-make-alive-3",
         chapterId: "basic-principles",
-        order: 79,
-        title: { zh: "Two Eyes · 3/6", en: "Two Eyes · 3/6" },
+        order: 145,
+        title: { zh: "两眼 · 3/6", en: "Two Eyes · 3/6" },
         instruction: { zh: "白先。做出两只眼。", en: "White to play. Make two eyes." },
         puzzle: {
             width: 9,
@@ -1185,8 +2868,8 @@ const makeAliveLevels: Level[] = [
     {
         id: "basic-principles-make-alive-4",
         chapterId: "basic-principles",
-        order: 80,
-        title: { zh: "Two Eyes · 4/6", en: "Two Eyes · 4/6" },
+        order: 146,
+        title: { zh: "两眼 · 4/6", en: "Two Eyes · 4/6" },
         instruction: { zh: "白先。做出两只眼。", en: "White to play. Make two eyes." },
         puzzle: {
             width: 9,
@@ -1199,8 +2882,8 @@ const makeAliveLevels: Level[] = [
     {
         id: "basic-principles-make-alive-5",
         chapterId: "basic-principles",
-        order: 81,
-        title: { zh: "Two Eyes · 5/6", en: "Two Eyes · 5/6" },
+        order: 147,
+        title: { zh: "两眼 · 5/6", en: "Two Eyes · 5/6" },
         instruction: { zh: "白先。做出两只眼。", en: "White to play. Make two eyes." },
         puzzle: {
             width: 9,
@@ -1213,8 +2896,8 @@ const makeAliveLevels: Level[] = [
     {
         id: "basic-principles-make-alive-6",
         chapterId: "basic-principles",
-        order: 82,
-        title: { zh: "Two Eyes · 6/6", en: "Two Eyes · 6/6" },
+        order: 148,
+        title: { zh: "两眼 · 6/6", en: "Two Eyes · 6/6" },
         instruction: { zh: "白先。做出两只眼。", en: "White to play. Make two eyes." },
         puzzle: {
             width: 9,
@@ -1230,8 +2913,8 @@ const captureGroupLevels: Level[] = [
     {
         id: "basic-principles-capture-group-1",
         chapterId: "basic-principles",
-        order: 83,
-        title: { zh: "Capture Group · 1/6", en: "Capture Group · 1/6" },
+        order: 149,
+        title: { zh: "吃掉棋块 · 1/6", en: "Capture Group · 1/6" },
         instruction: { zh: "白棋可以通过在A点落子来做出两只眼。黑先。吃掉白棋棋块。", en: "White can make two eyes by playing at A. Black to play. Capture the white group." },
         puzzle: {
             width: 9,
@@ -1246,8 +2929,8 @@ const captureGroupLevels: Level[] = [
     {
         id: "basic-principles-capture-group-2",
         chapterId: "basic-principles",
-        order: 84,
-        title: { zh: "Capture Group · 2/6", en: "Capture Group · 2/6" },
+        order: 150,
+        title: { zh: "吃掉棋块 · 2/6", en: "Capture Group · 2/6" },
         instruction: { zh: "黑先。吃掉白棋棋块。", en: "Black to play. Capture the white group." },
         puzzle: {
             width: 9,
@@ -1261,8 +2944,8 @@ const captureGroupLevels: Level[] = [
     {
         id: "basic-principles-capture-group-3",
         chapterId: "basic-principles",
-        order: 85,
-        title: { zh: "Capture Group · 3/6", en: "Capture Group · 3/6" },
+        order: 151,
+        title: { zh: "吃掉棋块 · 3/6", en: "Capture Group · 3/6" },
         instruction: { zh: "黑先。吃掉白棋棋块。", en: "Black to play. Capture the white group." },
         puzzle: {
             width: 9,
@@ -1276,8 +2959,8 @@ const captureGroupLevels: Level[] = [
     {
         id: "basic-principles-capture-group-4",
         chapterId: "basic-principles",
-        order: 86,
-        title: { zh: "Capture Group · 4/6", en: "Capture Group · 4/6" },
+        order: 152,
+        title: { zh: "吃掉棋块 · 4/6", en: "Capture Group · 4/6" },
         instruction: { zh: "黑先。吃掉白棋棋块。", en: "Black to play. Capture the white group." },
         puzzle: {
             width: 9,
@@ -1291,8 +2974,8 @@ const captureGroupLevels: Level[] = [
     {
         id: "basic-principles-capture-group-5",
         chapterId: "basic-principles",
-        order: 87,
-        title: { zh: "Capture Group · 5/6", en: "Capture Group · 5/6" },
+        order: 153,
+        title: { zh: "吃掉棋块 · 5/6", en: "Capture Group · 5/6" },
         instruction: { zh: "黑先。吃掉白棋棋块。", en: "Black to play. Capture the white group." },
         puzzle: {
             width: 9,
@@ -1306,8 +2989,8 @@ const captureGroupLevels: Level[] = [
     {
         id: "basic-principles-capture-group-6",
         chapterId: "basic-principles",
-        order: 88,
-        title: { zh: "Capture Group · 6/6", en: "Capture Group · 6/6" },
+        order: 154,
+        title: { zh: "吃掉棋块 · 6/6", en: "Capture Group · 6/6" },
         instruction: { zh: "黑先。吃掉白棋棋块。", en: "Black to play. Capture the white group." },
         puzzle: {
             width: 9,
@@ -1321,6 +3004,10 @@ const captureGroupLevels: Level[] = [
 ];
 
 export const LEVELS: Level[] = [
+    ...countLibertiesLevels,
+    ...countChainsLevels,
+    ...inAtariLevels,
+    ...countAtariLevels,
     ...captureStoneLevels,
     ...captureChainLevels,
     ...bothAtariLevels,
@@ -1329,6 +3016,10 @@ export const LEVELS: Level[] = [
     ...createOpeningLevels,
     ...connectLevels,
     ...cutLevels,
+    ...bpSelfCaptureLevels,
+    ...realFalseEyeLevels,
+    ...bpKoLevels,
+    ...groupAliveLevels,
     ...makeAliveLevels,
     ...captureGroupLevels,
 ];

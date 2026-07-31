@@ -35,6 +35,43 @@ export interface LevelPuzzle {
     wrong?: CoordString[];
 }
 
+export interface MultipleChoiceOption {
+    value: string;
+    label: LocalizedText;
+}
+
+export interface LevelMultipleChoice {
+    /** 题干（双语） */
+    question: LocalizedText;
+    /** 选项 */
+    options: MultipleChoiceOption[];
+    /** 正确选项的 value */
+    correctValue: string;
+    /** 用于展示的可选棋盘配置（缺省时不画棋盘） */
+    board?: {
+        width: number;
+        height: number;
+        initial_state: InitialState;
+        marks?: LevelMarks;
+    };
+}
+
+export interface LevelEndingGame {
+    /** 棋盘展示配置（与 puzzle 共用 initial_state / marks / width / height） */
+    width: number;
+    height: number;
+    initial_state: InitialState;
+    marks?: LevelMarks;
+    /**
+     * - "pass"：只读棋盘 + "停一手" 按钮，点击即过关
+     * - "stoneRemoval"：进入移死子阶段，玩家点击死子，凑齐 targetRemoval 即过关
+     * - "finish"：只读棋盘 + "完成" 按钮，点击即过关
+     */
+    interaction: "pass" | "stoneRemoval" | "finish";
+    /** stoneRemoval 专用：期望被移除的棋子坐标串（goban getStoneRemovalString 格式） */
+    targetRemoval?: string;
+}
+
 export interface Chapter {
     id: string;
     title: LocalizedText;
@@ -47,8 +84,16 @@ export interface Level {
     /** 全局顺序，从 1 开始；决定解锁次序 */
     order: number;
     title: LocalizedText;
+    /** puzzle 类型的题面（兼容旧字段） */
     instruction: LocalizedText;
+    /** "puzzle" 缺省——在棋盘上落子；"multipleChoice" 走多选题；"endingGame" 走终局教学 */
+    kind?: "puzzle" | "multipleChoice" | "endingGame";
+    /** 当 kind === "puzzle" 时有效 */
     puzzle: LevelPuzzle;
+    /** 当 kind === "multipleChoice" 时有效 */
+    multipleChoice?: LevelMultipleChoice;
+    /** 当 kind === "endingGame" 时有效 */
+    endingGame?: LevelEndingGame;
 }
 
 export type LevelStatus = "locked" | "unlocked" | "completed";
@@ -56,6 +101,7 @@ export type LevelStatus = "locked" | "unlocked" | "completed";
 export interface LevelProgress {
     status: LevelStatus;
     bestStars: 0 | 1 | 2 | 3;
+    bestPoints: number;
     attempts: number;
     bestWrongAttempts: number;
     lastPlayedAt?: number;

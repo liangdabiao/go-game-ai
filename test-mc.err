@@ -1,0 +1,18 @@
+
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+Error [TransformError]: Transform failed with 1 error:
+D:\online-go.com-main\go-game\scripts\extract-levels.ts:477:8: ERROR: The symbol "label" has already been declared
+    at failureErrorWithLog (C:\Users\49707\AppData\Local\npm-cache\_npx\fd45a72a545557e9\node_modules\esbuild\lib\main.js:1748:15)
+    at C:\Users\49707\AppData\Local\npm-cache\_npx\fd45a72a545557e9\node_modules\esbuild\lib\main.js:1017:50
+    at responseCallbacks.<computed> (C:\Users\49707\AppData\Local\npm-cache\_npx\fd45a72a545557e9\node_modules\esbuild\lib\main.js:884:9)
+    at handleIncomingPacket (C:\Users\49707\AppData\Local\npm-cache\_npx\fd45a72a545557e9\node_modules\esbuild\lib\main.js:939:12)
+    at Socket.readFromStdout (C:\Users\49707\AppData\Local\npm-cache\_npx\fd45a72a545557e9\node_modules\esbuild\lib\main.js:862:7)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+
+Node.js v22.18.0

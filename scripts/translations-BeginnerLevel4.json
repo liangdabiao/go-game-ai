@@ -46,5 +46,10 @@
   "Stretching towards the edge of the board is called 'sagari' in Japanese. It is a tesuji to create extra liberties. White can play sagari at A to create extra liberties. Win the capturing race with White.": "向棋盘边缘延伸在日语中称为'下がり'。这是一种制造额外气的手筋。白棋可以在A点下がり来制造额外气。用白棋赢得对杀。",
   "White has two liberties and Black three. White can prevent Black from playing atari at A by playing at B. Black has to capture this white stone first, before playing atari at A. This gives White time to fill the liberties of the black group of three stones. Win the capturing race with White.": "白棋有两口气，黑棋有三口气。白棋可以通过在B点落子来阻止黑棋在A点打吃。黑棋必须先提掉这个白棋棋子，才能在A点打吃。这给了白棋时间来填掉黑棋三子棋块的气。用白棋赢得对杀。",
   "White to play. Win the capturing race.": "白先。赢得对杀。",
-  "Black to play. Win the capturing race.": "黑先。赢得对杀。"
+  "Black to play. Win the capturing race.": "黑先。赢得对杀。",
+  "Opening": "布局",
+  "Joseki": "定式",
+  "Skills": "技巧",
+  "Tesuji": "手筋",
+  "Capturing Race": "对杀"
 }

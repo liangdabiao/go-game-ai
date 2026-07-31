@@ -1,14 +1,19 @@
+import { useState } from "react";
 import type { Locale } from "../game/types";
+import { ScorecardDialog } from "./ScorecardDialog";
 
 interface TopBarProps {
     title: string;
     subtitle?: string;
     totalStars: number;
+    totalPoints: number;
     locale: Locale;
     onBack?: () => void;
 }
 
-export function TopBar({ title, subtitle, totalStars, locale, onBack }: TopBarProps): React.ReactElement {
+export function TopBar({ title, subtitle, totalStars, totalPoints, locale, onBack }: TopBarProps): React.ReactElement {
+    const [scorecardOpen, setScorecardOpen] = useState(false);
+
     return (
         <header className="topbar">
             {onBack ? (
@@ -22,9 +27,21 @@ export function TopBar({ title, subtitle, totalStars, locale, onBack }: TopBarPr
                 {subtitle && <div className="topbar-subtitle">{subtitle}</div>}
                 <h2>{title}</h2>
             </div>
-            <div className="stars-badge">
-                {locale === "zh" ? "⭐ 总星" : "⭐ Stars"}: {totalStars}
+            <div className="topbar-badges">
+                <span className="stars-badge">
+                    {locale === "zh" ? "⭐" : "⭐"} {totalStars}
+                </span>
+                <button
+                    className="points-badge"
+                    onClick={() => setScorecardOpen(true)}
+                    title={locale === "zh" ? "查看成绩单" : "View scorecard"}
+                >
+                    🏆 +{totalPoints}
+                </button>
             </div>
+            {scorecardOpen && (
+                <ScorecardDialog locale={locale} onClose={() => setScorecardOpen(false)} />
+            )}
         </header>
     );
 }

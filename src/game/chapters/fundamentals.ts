@@ -9,10 +9,10 @@ export const CHAPTER_ID = "fundamentals";
 
 export const CHAPTER: Chapter = {
     id: "fundamentals",
-    title: { zh: "围棋基础", en: "Fundamentals" },
+    title: { zh: "青铜", en: "Bronze" },
     description: {
-        zh: "围棋基础",
-        en: "Fundamentals",
+        zh: "入门启蒙，认识棋盘、棋子与基本规则",
+        en: "First steps: the board, stones, and basic rules",
     },
 };
 
@@ -21,7 +21,7 @@ const rulesIntroLevels: Level[] = [
         id: "fundamentals-rules-intro-1",
         chapterId: "fundamentals",
         order: 1,
-        title: { zh: "The Game of Go · 1/6", en: "The Game of Go · 1/6" },
+        title: { zh: "围棋游戏 · 1/6", en: "The Game of Go · 1/6" },
         instruction: { zh: "棋局从一个空棋盘开始。两位玩家，黑和白，轮流在棋盘上落子。黑棋先行。你可以在任意空交叉点落子，包括最外圈。请下一步继续。", en: "The game starts with an empty board. Two players, Black and White, take turns placing stones on the board. Black starts. You can play a stone on any empty intersection, even the outer ones. Make a move to continue." },
         puzzle: {
             width: 9,
@@ -34,7 +34,7 @@ const rulesIntroLevels: Level[] = [
         id: "fundamentals-rules-intro-2",
         chapterId: "fundamentals",
         order: 2,
-        title: { zh: "The Game of Go · 2/6", en: "The Game of Go · 2/6" },
+        title: { zh: "围棋游戏 · 2/6", en: "The Game of Go · 2/6" },
         instruction: { zh: "黑棋已经走了第一步。现在轮到白棋。请下一步继续。", en: "Black has played the first move. Now it is White's turn. Make a move to continue." },
         puzzle: {
             width: 9,
@@ -48,7 +48,7 @@ const rulesIntroLevels: Level[] = [
         id: "fundamentals-rules-intro-3",
         chapterId: "fundamentals",
         order: 3,
-        title: { zh: "The Game of Go · 3/6", en: "The Game of Go · 3/6" },
+        title: { zh: "围棋游戏 · 3/6", en: "The Game of Go · 3/6" },
         instruction: { zh: "棋子相邻的空点叫做『气』。请填上黑子的一个气。", en: "The points next to a stone are called liberties. Fill one of the liberties of the black stone." },
         puzzle: {
             width: 9,
@@ -63,7 +63,7 @@ const rulesIntroLevels: Level[] = [
         id: "fundamentals-rules-intro-4",
         chapterId: "fundamentals",
         order: 4,
-        title: { zh: "The Game of Go · 4/6", en: "The Game of Go · 4/6" },
+        title: { zh: "围棋游戏 · 4/6", en: "The Game of Go · 4/6" },
         instruction: { zh: "当一个棋子所有的气都被对方棋子占满，它就被吃掉了。请填上黑子的最后一口气把它吃掉。", en: "A stone is captured when all its liberties are occupied by the opponent's stones. Capture the black stone by filling the last liberty of the black stone." },
         puzzle: {
             width: 9,
@@ -78,7 +78,7 @@ const rulesIntroLevels: Level[] = [
         id: "fundamentals-rules-intro-5",
         chapterId: "fundamentals",
         order: 5,
-        title: { zh: "The Game of Go · 5/6", en: "The Game of Go · 5/6" },
+        title: { zh: "围棋游戏 · 5/6", en: "The Game of Go · 5/6" },
         instruction: { zh: "同色相邻的棋子连成一气，称为『链』。请填上这条黑链的一个气。", en: "Stones of the same color next to each other form a chain. Fill one of the liberties of the black chain." },
         puzzle: {
             width: 9,
@@ -93,7 +93,7 @@ const rulesIntroLevels: Level[] = [
         id: "fundamentals-rules-intro-6",
         chapterId: "fundamentals",
         order: 6,
-        title: { zh: "The Game of Go · 6/6", en: "The Game of Go · 6/6" },
+        title: { zh: "围棋游戏 · 6/6", en: "The Game of Go · 6/6" },
         instruction: { zh: "这条黑链只剩一气了，这叫做『打吃』（atari）。请吃掉这条被打吃的黑链。", en: "The black chain has only one liberty left. This is called 'atari'. Capture the black chain that is in atari." },
         puzzle: {
             width: 9,
@@ -111,7 +111,7 @@ const selfCaptureLevels: Level[] = [
         id: "fundamentals-self-capture-1",
         chapterId: "fundamentals",
         order: 7,
-        title: { zh: "Self-capture · 1/3", en: "Self-capture · 1/3" },
+        title: { zh: "自杀 · 1/3", en: "Self-capture · 1/3" },
         instruction: { zh: "白先。下在 A 或 B 是『自杀』（白没有气），不允许。但下在 C 是允许的，因为能吃掉标▲的黑子从而给自己造出气。请吃掉标▲的黑子。", en: "White to play. Playing at A or B is called 'self-capture' (no liberties for White) and is not allowed. But playing at C is allowed, because it captures the marked stones, creating liberties for White. Capture the marked black stones." },
         puzzle: {
             width: 9,
@@ -126,7 +126,7 @@ const selfCaptureLevels: Level[] = [
         id: "fundamentals-self-capture-2",
         chapterId: "fundamentals",
         order: 8,
-        title: { zh: "Self-capture · 2/3", en: "Self-capture · 2/3" },
+        title: { zh: "自杀 · 2/3", en: "Self-capture · 2/3" },
         instruction: { zh: "白先。双方都被打吃。没有气的着法不允许，除非能吃掉对方。请吃掉一颗或更多黑子。", en: "White to play. Both players are in atari. Placing a stone where you have no liberties is not allowed, unless you can capture stones. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -140,7 +140,7 @@ const selfCaptureLevels: Level[] = [
         id: "fundamentals-self-capture-3",
         chapterId: "fundamentals",
         order: 9,
-        title: { zh: "Self-capture · 3/3", en: "Self-capture · 3/3" },
+        title: { zh: "自杀 · 3/3", en: "Self-capture · 3/3" },
         instruction: { zh: "白先。双方都被打吃。没有气的着法不允许，除非能吃掉对方。请吃掉一颗或更多黑子。", en: "White to play. Both players are in atari. Placing a stone where you have no liberties is not allowed, unless you can capture stones. Capture one or more black stones." },
         puzzle: {
             width: 9,
@@ -157,7 +157,7 @@ const eyesLevels: Level[] = [
         id: "fundamentals-eyes-1",
         chapterId: "fundamentals",
         order: 10,
-        title: { zh: "Eyes · 1/4", en: "Eyes · 1/4" },
+        title: { zh: "眼 · 1/4", en: "Eyes · 1/4" },
         instruction: { zh: "A 点被白子包围，这叫『眼』。黑不能下在 A（自吃）。B 点也是眼，但黑可以下在 B 并吃掉白子。请吃掉这些白子。", en: "Point A is surrounded by white stones; it is called an 'eye'. Black can not play at A (self-capture). Point B is also an eye, but Black can play at B and capture. Capture the white stones." },
         puzzle: {
             width: 9,
@@ -172,7 +172,7 @@ const eyesLevels: Level[] = [
         id: "fundamentals-eyes-2",
         chapterId: "fundamentals",
         order: 11,
-        title: { zh: "Eyes · 2/4", en: "Eyes · 2/4" },
+        title: { zh: "眼 · 2/4", en: "Eyes · 2/4" },
         instruction: { zh: "白棋有一个由两个空点组成的大眼，但白棋并不安全。黑先，逐一填眼吃掉白棋。", en: "White has a single bigger eye of two points, but the white group is not safe. Black to play. Capture the white stones by filling the eye point by point." },
         puzzle: {
             width: 9,
@@ -186,7 +186,7 @@ const eyesLevels: Level[] = [
         id: "fundamentals-eyes-3",
         chapterId: "fundamentals",
         order: 12,
-        title: { zh: "Eyes · 3/4", en: "Eyes · 3/4" },
+        title: { zh: "眼 · 3/4", en: "Eyes · 3/4" },
         instruction: { zh: "白棋有两块棋。一块有两只眼，另一块只有一个大眼。两眼的那块是活的，永远吃不掉。黑先，吃掉那块可以吃的白棋。", en: "White has two groups of stones. One group has two eyes. The other group has a single big eye. The group with two eyes is safe and can never be captured. Black to play. Capture a white group." },
         puzzle: {
             width: 9,
@@ -201,7 +201,7 @@ const eyesLevels: Level[] = [
         id: "fundamentals-eyes-4",
         chapterId: "fundamentals",
         order: 13,
-        title: { zh: "Eyes · 4/4", en: "Eyes · 4/4" },
+        title: { zh: "眼 · 4/4", en: "Eyes · 4/4" },
         instruction: { zh: "一块白棋有两只『真眼』。另一块在 A 处有真眼、在 B 处是『假眼』。假眼不安全，可以被攻破。黑先，从假眼入手吃掉这块白棋。", en: "One white group has two 'real' eyes. The other group has a real eye at A and a 'false' eye at B. The false eye is not safe and can be attacked. Black to play. Capture the white group by attacking the false eye." },
         puzzle: {
             width: 9,
@@ -219,7 +219,7 @@ const koLevels: Level[] = [
         id: "fundamentals-ko-1",
         chapterId: "fundamentals",
         order: 14,
-        title: { zh: "Ko · 1/5", en: "Ko · 1/5" },
+        title: { zh: "劫 · 1/5", en: "Ko · 1/5" },
         instruction: { zh: "为了避免无限互相提子，有一条特殊规则叫『劫规』：禁止立即提回同样的形状。黑可以吃掉标▲的白子，但白不能立刻提回。白必须先在别处下一手。请吃掉标▲的白子。", en: "To prevent endlessly recapturing the same space, there is a special rule called the 'Ko rule' which prevents immediately recapturing the same position. Black can capture the marked white stone. White is not allowed to recapture the black stone immediately. White has to play elsewhere first. Capture the marked stone." },
         puzzle: {
             width: 9,
@@ -234,7 +234,7 @@ const koLevels: Level[] = [
         id: "fundamentals-ko-2",
         chapterId: "fundamentals",
         order: 15,
-        title: { zh: "Ko · 2/5", en: "Ko · 2/5" },
+        title: { zh: "劫 · 2/5", en: "Ko · 2/5" },
         instruction: { zh: "利用劫规吃掉这块白棋。", en: "Capture the white group by exploiting the Ko rule." },
         puzzle: {
             width: 9,
@@ -248,7 +248,7 @@ const koLevels: Level[] = [
         id: "fundamentals-ko-3",
         chapterId: "fundamentals",
         order: 16,
-        title: { zh: "Ko · 3/5", en: "Ko · 3/5" },
+        title: { zh: "劫 · 3/5", en: "Ko · 3/5" },
         instruction: { zh: "请把你的黑子连接起来。", en: "Connect your black stones." },
         puzzle: {
             width: 9,
@@ -263,7 +263,7 @@ const koLevels: Level[] = [
         id: "fundamentals-ko-4",
         chapterId: "fundamentals",
         order: 17,
-        title: { zh: "Ko · 4/5", en: "Ko · 4/5" },
+        title: { zh: "劫 · 4/5", en: "Ko · 4/5" },
         instruction: { zh: "利用劫规吃掉这两颗白子。", en: "Capture two white stones by exploiting the Ko rule." },
         puzzle: {
             width: 9,
@@ -278,7 +278,7 @@ const koLevels: Level[] = [
         id: "fundamentals-ko-5",
         chapterId: "fundamentals",
         order: 18,
-        title: { zh: "Ko · 5/5", en: "Ko · 5/5" },
+        title: { zh: "劫 · 5/5", en: "Ko · 5/5" },
         instruction: { zh: "白刚走了 1 吃掉一颗黑子。要绕过劫规，请为黑棋找一个白必须应的地方下子，这叫做『劫材』。然后黑就能吃掉标▲的白棋。", en: "White just captured a black stone by playing 1. To move past the ko rule, find a place to play for Black where White must capture. This is called a 'ko threat'. Next, Black can capture White's marked group." },
         puzzle: {
             width: 13,
@@ -292,16 +292,367 @@ const koLevels: Level[] = [
     },
 ];
 
-/* Section territory (Territory) had no migratable pages — skipped. */
+const territoryLevels: Level[] = [
+    {
+        id: "fundamentals-territory-1",
+        chapterId: "fundamentals",
+        order: 19,
+        title: { zh: "领地 · 1/12", en: "Territory · 1/12" },
+        instruction: { zh: "如果你用棋子包围了棋盘的一部分，这部分就称为你的'领地'。领地中的每个空交叉点都为你计一分。分数可以通过领地和提子来获得。游戏结束时，得分最多者获胜。角部的领地有多少分？", en: "If you have surrounded a part of the board by your stones, that part is called your 'territory'. Each empty point in your territory counts as a point for you. Points can be scored by territory and by capturing stones. Whoever has the most points at the end of the game wins. How many points is the territory in the corner?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "fifhgigghhhgig", white: "eiehegfggfhfif" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "如果你用棋子包围了棋盘的一部分，这部分就称为你的'领地'。领地中的每个空交叉点都为你计一分。分数可以通过领地和提子来获得。游戏结束时，得分最多者获胜。角部的领地有多少分？", en: "If you have surrounded a part of the board by your stones, that part is called your 'territory'. Each empty point in your territory counts as a point for you. Points can be scored by territory and by capturing stones. Whoever has the most points at the end of the game wins. How many points is the territory in the corner?" },
+            options: [{ value: "3", label: { zh: "3", en: "3" } }, { value: "4", label: { zh: "4", en: "4" } }, { value: "5", label: { zh: "5", en: "5" } }],
+            correctValue: "4",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "fifhgigghhhgig", white: "eiehegfggfhfif" },
+            },
+        },
+    },
+    {
+        id: "fundamentals-territory-2",
+        chapterId: "fundamentals",
+        order: 20,
+        title: { zh: "领地 · 2/12", en: "Territory · 2/12" },
+        instruction: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "didhdgegffgfhfif", white: "eiehfhfggghihgig" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+            options: [{ value: "6", label: { zh: "6", en: "6" } }, { value: "7", label: { zh: "7", en: "7" } }, { value: "8", label: { zh: "8", en: "8" } }],
+            correctValue: "6",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "didhdgegffgfhfif", white: "eiehfhfggghihgig" },
+            },
+        },
+    },
+    {
+        id: "fundamentals-territory-3",
+        chapterId: "fundamentals",
+        order: 21,
+        title: { zh: "领地 · 3/12", en: "Territory · 3/12" },
+        instruction: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "didhdgdfeieffegfgehfif", white: "ehegfifgffgghihgig" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+            options: [{ value: "5", label: { zh: "5", en: "5" } }, { value: "6", label: { zh: "6", en: "6" } }, { value: "7", label: { zh: "7", en: "7" } }],
+            correctValue: "6",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "didhdgdfeieffegfgehfif", white: "ehegfifgffgghihgig" },
+            },
+        },
+    },
+    {
+        id: "fundamentals-territory-4",
+        chapterId: "fundamentals",
+        order: 22,
+        title: { zh: "领地 · 4/12", en: "Territory · 4/12" },
+        instruction: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "fifhfggfhhhfif", white: "eiehegeeffgeheie" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+            options: [{ value: "7", label: { zh: "7", en: "7" } }, { value: "8", label: { zh: "8", en: "8" } }, { value: "9", label: { zh: "9", en: "9" } }],
+            correctValue: "8",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "fifhfggfhhhfif", white: "eiehegeeffgeheie" },
+            },
+        },
+    },
+    {
+        id: "fundamentals-territory-5",
+        chapterId: "fundamentals",
+        order: 23,
+        title: { zh: "领地 · 5/12", en: "Territory · 5/12" },
+        instruction: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "eiehfgeeffgeheie", white: "fifhgggfhhhfif" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+            options: [{ value: "7", label: { zh: "7", en: "7" } }, { value: "8", label: { zh: "8", en: "8" } }, { value: "9", label: { zh: "9", en: "9" } }],
+            correctValue: "7",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "eiehfgeeffgeheie", white: "fifhgggfhhhfif" },
+            },
+        },
+    },
+    {
+        id: "fundamentals-territory-6",
+        chapterId: "fundamentals",
+        order: 24,
+        title: { zh: "领地 · 6/12", en: "Territory · 6/12" },
+        instruction: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "eiehegfggghihgig", white: "didhdgdfefffgfhfif" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+            options: [{ value: "6", label: { zh: "6", en: "6" } }, { value: "7", label: { zh: "7", en: "7" } }, { value: "8", label: { zh: "8", en: "8" } }],
+            correctValue: "7",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "eiehegfggghihgig", white: "didhdgdfefffgfhfif" },
+            },
+        },
+    },
+    {
+        id: "fundamentals-territory-7",
+        chapterId: "fundamentals",
+        order: 25,
+        title: { zh: "领地 · 7/12", en: "Territory · 7/12" },
+        instruction: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "eiehegfggghhhfif", white: "didhdgdfefffgfheie" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+            options: [{ value: "8", label: { zh: "8", en: "8" } }, { value: "9", label: { zh: "9", en: "9" } }, { value: "10", label: { zh: "10", en: "10" } }],
+            correctValue: "9",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "eiehegfggghhhfif", white: "didhdgdfefffgfheie" },
+            },
+        },
+    },
+    {
+        id: "fundamentals-territory-8",
+        chapterId: "fundamentals",
+        order: 26,
+        title: { zh: "领地 · 8/12", en: "Territory · 8/12" },
+        instruction: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "bibhbgcgdgegffgfhfigif", white: "cichdhehfggghihgih" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+            options: [{ value: "7", label: { zh: "7", en: "7" } }, { value: "8", label: { zh: "8", en: "8" } }, { value: "9", label: { zh: "9", en: "9" } }],
+            correctValue: "8",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "bibhbgcgdgegffgfhfigif", white: "cichdhehfggghihgih" },
+            },
+        },
+    },
+    {
+        id: "fundamentals-territory-9",
+        chapterId: "fundamentals",
+        order: 27,
+        title: { zh: "领地 · 9/12", en: "Territory · 9/12" },
+        instruction: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cichcgcfcedeeefegeheie", white: "didhdgdfefffghgfhfif" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+            options: [{ value: "12", label: { zh: "12", en: "12" } }, { value: "14", label: { zh: "14", en: "14" } }, { value: "15", label: { zh: "15", en: "15" } }],
+            correctValue: "14",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cichcgcfcedeeefegeheie", white: "didhdgdfefffghgfhfif" },
+            },
+        },
+    },
+    {
+        id: "fundamentals-territory-10",
+        chapterId: "fundamentals",
+        order: 28,
+        title: { zh: "领地 · 10/12", en: "Territory · 10/12" },
+        instruction: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "didhdgegfggghgig", white: "cichcgcfdfefffgfhfif" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+            options: [{ value: "8", label: { zh: "8", en: "8" } }, { value: "10", label: { zh: "10", en: "10" } }, { value: "12", label: { zh: "12", en: "12" } }],
+            correctValue: "10",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "didhdgegfggghgig", white: "cichcgcfdfefffgfhfif" },
+            },
+        },
+    },
+    {
+        id: "fundamentals-territory-11",
+        chapterId: "fundamentals",
+        order: 29,
+        title: { zh: "领地 · 11/12", en: "Territory · 11/12" },
+        instruction: { zh: "对手在你的领地里的棋子如果缺少两个眼，就会被吃掉。这些被吃的棋子称为'死子'。在游戏结束时，死子作为俘虏被从棋盘上提走，留下一个空的领地交叉点。因此，一个死子相当于两分：一分是俘虏，一分是领地。角部的领地有多少分？", en: "Opponent's stones in your territory are lost if they do not have two eyes. These lost stones are called 'dead'. At the end of the game, dead stones are taken from the board as prisoners, leaving behind an empty territory point. So, a dead stone counts as two points: prisoner and territory. How many points is the territory in the corner?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "fifhfggggfhhhfif", white: "eiehegeeffgehgheie" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "对手在你的领地里的棋子如果缺少两个眼，就会被吃掉。这些被吃的棋子称为'死子'。在游戏结束时，死子作为俘虏被从棋盘上提走，留下一个空的领地交叉点。因此，一个死子相当于两分：一分是俘虏，一分是领地。角部的领地有多少分？", en: "Opponent's stones in your territory are lost if they do not have two eyes. These lost stones are called 'dead'. At the end of the game, dead stones are taken from the board as prisoners, leaving behind an empty territory point. So, a dead stone counts as two points: prisoner and territory. How many points is the territory in the corner?" },
+            options: [{ value: "6", label: { zh: "6", en: "6" } }, { value: "7", label: { zh: "7", en: "7" } }, { value: "8", label: { zh: "8", en: "8" } }],
+            correctValue: "8",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "fifhfggggfhhhfif", white: "eiehegeeffgehgheie" },
+            },
+        },
+    },
+    {
+        id: "fundamentals-territory-12",
+        chapterId: "fundamentals",
+        order: 30,
+        title: { zh: "领地 · 12/12", en: "Territory · 12/12" },
+        instruction: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+        kind: "multipleChoice",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "cichcgcfdfeheffhffgfhfif", white: "didhdgegfgghgghgig" },
+            correct: [],
+        },
+        multipleChoice: {
+            question: { zh: "角部的领地有多少分？", en: "How many points is the territory in the corner?" },
+            options: [{ value: "7", label: { zh: "7", en: "7" } }, { value: "9", label: { zh: "9", en: "9" } }, { value: "11", label: { zh: "11", en: "11" } }],
+            correctValue: "11",
+            board: {
+                width: 9,
+                height: 9,
+                initial_state: { black: "cichcgcfdfeheffhffgfhfif", white: "didhdgegfgghgghgig" },
+            },
+        },
+    },
+];
 
-/* Section ending-the-game (End of the Game) had no migratable pages — skipped. */
+const endingTheGameLevels: Level[] = [
+    {
+        id: "fundamentals-ending-the-game-1",
+        chapterId: "fundamentals",
+        order: 31,
+        title: { zh: "对局结束 · 1/3", en: "End of the Game · 1/3" },
+        instruction: { zh: "轮到你落子时，你并非必须在棋盘上放置棋子。你可以选择停一手。当双方都认为没有更好的着法时，通过双方连续停一手来结束这局棋。本局已经结束。请点击“停一手”来结束对局。", en: "You are not obliged to place a stone on the board when it is your turn. You can instead pass. When they don't think there are any more good moves to make, to end the game both players pass their turns. This game is finished. Click pass to end it." },
+        kind: "endingGame",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "fafbgbhbgdhdcedeheiebfdfefgfhfagcgegfggg", white: "eahaebibbcccecfcgchcicadcdddfdidaebeeefegeafff" },
+            correct: ["b6"],
+        },
+        endingGame: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "fafbgbhbgdhdcedeheiebfdfefgfhfagcgegfggg", white: "eahaebibbcccecfcgchcicadcdddfdidaebeeefegeafff" },
+            interaction: "pass",
+        },
+    },
+    {
+        id: "fundamentals-ending-the-game-2",
+        chapterId: "fundamentals",
+        order: 32,
+        title: { zh: "对局结束 · 2/3", en: "End of the Game · 2/3" },
+        instruction: { zh: "双方都停一手后，会进入“提子阶段”，此时你可以从棋局中移除明显已死的棋子。请点击并移除那些死掉的黑棋棋子。", en: "After both players have passed, you enter a \"Stone Removal Phase\", where you can remove obviously dead stones from play. Remove the dead black stones by clicking them." },
+        kind: "endingGame",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "fafbgbhbgdhdcedeheiebfdfefgfhfagcgegfggg", white: "eahaebibbcccecfcgchcicadcdddfdidaebeeefegeafff" },
+            correct: [],
+        },
+        endingGame: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "fafbgbhbgdhdcedeheiebfdfefgfhfagcgegfggg", white: "eahaebibbcccecfcgchcicadcdddfdidaebeeefegeafff" },
+            interaction: "stoneRemoval",
+            targetRemoval: "fafbgbhb",
+        },
+    },
+    {
+        id: "fundamentals-ending-the-game-3",
+        chapterId: "fundamentals",
+        order: 33,
+        title: { zh: "对局结束 · 3/3", en: "End of the Game · 3/3" },
+        instruction: { zh: "移除死子后，计算黑白双方领地的大小。黑棋领地有24目。白棋领地有18目，加上被吃的4颗死子，共计22目。因此，黑棋赢得了本局。请点击“完成”来结束对局。", en: "After removing the dead stones, the sizes of the black and white territories are counted. The size of the black territory is 24 points. White has 18 territory points. The captured 4 dead stones are added to this resulting in 22 points for White. So, Black has won the game. Click Finish to end the game." },
+        kind: "endingGame",
+        puzzle: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "gdhdcedeheiebfdfefgfhfagcgegfggg", white: "eahaebibbcccecfcgchcicadcdddfdidaebeeefegeafff" },
+            correct: ["b6"],
+        },
+        endingGame: {
+            width: 9,
+            height: 9,
+            initial_state: { black: "gdhdcedeheiebfdfefgfhfagcgegfggg", white: "eahaebibbcccecfcgchcicadcdddfdidaebeeefegeafff" },
+            interaction: "finish",
+        },
+    },
+];
 
 const theBoardLevels: Level[] = [
     {
         id: "fundamentals-the-board-1",
         chapterId: "fundamentals",
-        order: 19,
-        title: { zh: "The Board · 1/3", en: "The Board · 1/3" },
+        order: 34,
+        title: { zh: "棋盘 · 1/3", en: "The Board · 1/3" },
         instruction: { zh: "棋盘上哪里都能下，但常见的好策略是先占角、再占边、最后走中腹。请把棋子下在右上角。", en: "You can play anywhere, but a good general strategy is to focus on the corners first, then sides, then the middle. Play a stone in the upper right hand corner." },
         puzzle: {
             width: 9,
@@ -313,8 +664,8 @@ const theBoardLevels: Level[] = [
     {
         id: "fundamentals-the-board-2",
         chapterId: "fundamentals",
-        order: 20,
-        title: { zh: "The Board · 2/3", en: "The Board · 2/3" },
+        order: 35,
+        title: { zh: "棋盘 · 2/3", en: "The Board · 2/3" },
         instruction: { zh: "围棋的棋盘大小不限，但最常见的是 9×9（建议新手从这里开始）、13×13，以及最流行的 19×19。请把棋子下在棋盘右侧（不要下在角上）。", en: "Go can be played on any size board, but the most common are 9x9 (which you should start on), 13x13, and the most popular, 19x19. Play on the right side of the board (not in a corner)." },
         puzzle: {
             width: 13,
@@ -326,8 +677,8 @@ const theBoardLevels: Level[] = [
     {
         id: "fundamentals-the-board-3",
         chapterId: "fundamentals",
-        order: 21,
-        title: { zh: "The Board · 3/3", en: "The Board · 3/3" },
+        order: 36,
+        title: { zh: "棋盘 · 3/3", en: "The Board · 3/3" },
         instruction: { zh: "棋盘上有几个圆点，叫做『星位』。它们本身并不特别，只是用来帮助定位。请下在任意一个星位上。", en: "You will note that there are several circles on the board, these are called \"Star Points\". These are not particularly special, they are just useful for orienting yourself with the board. Play on a star point." },
         puzzle: {
             width: 19,
@@ -343,5 +694,7 @@ export const LEVELS: Level[] = [
     ...selfCaptureLevels,
     ...eyesLevels,
     ...koLevels,
+    ...territoryLevels,
+    ...endingTheGameLevels,
     ...theBoardLevels,
 ];
