@@ -40,7 +40,8 @@ export function Board({
     }, []);
 
     useEffect(() => {
-        if (!containerRef.current || displayWidth === 0) return;
+        const container = containerRef.current;
+        if (!container) return;
 
         const { width, height, initial_state, marks, initial_player } = level.puzzle!;
         const config: GobanRendererConfig = {
@@ -53,7 +54,12 @@ export function Board({
             initial_state,
             marks: buildMarks(marks),
             move_tree: buildMoveTree(level.puzzle!),
-            display_width: displayWidth,
+            // Fallback keeps the goban constructible even if the container is
+            // momentarily 0-width (layout flash / ResizeObserver timing).
+            // Without this the effect would bail out, and because the cleanup
+            // of the previous run always destroys the goban, the board would
+            // disappear and never come back.
+            display_width: displayWidth > 0 ? displayWidth : container.clientWidth || 640,
             square_size: "auto",
             puzzle_player_move_mode: "free",
             puzzle_opponent_move_mode: "automatic",
@@ -63,17 +69,40 @@ export function Board({
 
         const goban = createGoban(config);
 
+        // Guard the goban's own error surface. When an illegal move (e.g. a
+        // self-capture attempt) is played, the engine calls showMessage() from
+        // inside the canvas click handler; if anything in that path throws, the
+        // exception escapes as an uncaught error and can take the whole React
+        // tree down ("Self-capture is not allowed" → board vanishes).
+        const rawShowMessage = goban.showMessage?.bind(goban) as
+            | ((...a: unknown[]) => unknown)
+            | undefined;
+        if (rawShowMessage) {
+            goban.showMessage = ((...args: unknown[]) => {
+                try {
+                    return rawShowMessage(...args);
+                } catch (err) {
+                    console.warn("[board] showMessage failed", err);
+                    return undefined;
+                }
+            }) as typeof goban.showMessage;
+        }
+
         // Capture detection: snapshot stones before placement, check diff after.
         let prevStoneCount = 0;
         const onMoveMade = (): void => {
-            const cur = goban.engine.board;
-            let curCount = 0;
-            for (const row of cur) for (const cell of row) if (cell !== 0) curCount++;
-            // More stones on board than before + delta == 1 → pure place.
-            // Fewer/same stones or delta > 1 → captures happened.
-            const delta = curCount - prevStoneCount;
-            audio.play(delta < 1 ? "capture" : "place");
-            prevStoneCount = curCount;
+            try {
+                const cur = goban.engine.board;
+                let curCount = 0;
+                for (const row of cur) for (const cell of row) if (cell !== 0) curCount++;
+                // More stones on board than before + delta == 1 → pure place.
+                // Fewer/same stones or delta > 1 → captures happened.
+                const delta = curCount - prevStoneCount;
+                audio.play(delta < 1 ? "capture" : "place");
+                prevStoneCount = curCount;
+            } catch (err) {
+                console.warn("[board] move-made handler failed", err);
+            }
         };
         goban.on("move-made", onMoveMade);
 
@@ -98,8 +127,18 @@ export function Board({
         });
 
         return () => {
-            detach();
-            goban.destroy();
+            // Tearing the goban down must never throw: this runs inside a React
+            // effect cleanup, where an exception unmounts the entire tree.
+            try {
+                detach();
+            } catch (err) {
+                console.warn("[board] detach failed", err);
+            }
+            try {
+                goban.destroy();
+            } catch (err) {
+                console.warn("[board] goban destroy failed", err);
+            }
         };
     }, [level, resetKey, interactive, displayWidth]);
 

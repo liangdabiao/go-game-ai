@@ -1,7 +1,7 @@
 /**
  * Board ↔ text codec for the AI duel.
  *
- * The text form is what gets sent to the LLM (MiMo). Column letters and row
+ * The text form is what gets sent to the LLM (DeepSeek). Column letters and row
  * numbers mirror the rendered goban exactly, so a coordinate the AI replies
  * with maps 1:1 to a board point:
  *

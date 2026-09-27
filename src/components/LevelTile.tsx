@@ -10,7 +10,8 @@ interface LevelTileProps {
 }
 
 export function LevelTile({ level, progress, locale, justUnlocked, onSelect }: LevelTileProps): React.ReactElement {
-    const status = progress?.status ?? "locked";
+    // 锁已全部放开：缺失进度记录时同样按可进入处理，避免残留锁图标
+    const status = progress?.status ?? "unlocked";
     const stars = progress?.bestStars ?? 0;
     const isNew = justUnlocked && status === "unlocked";
     // AI 对战关用棋盘尺寸做标签（如 "7×7"），其余关卡显示全局序号

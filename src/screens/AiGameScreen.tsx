@@ -7,7 +7,7 @@ import { applyResult, loadSave, totalPoints, totalStars } from "../game/progress
 import { audio } from "../game/audio";
 import { parseCoord, serializeBoard, xyToCoord } from "../game/ai/boardCodec";
 import { findFallbackMove, isLegal } from "../game/ai/goAI";
-import { requestAiMove } from "../game/ai/mimoClient";
+import { requestAiMove } from "../game/ai/deepseekClient";
 import type { GameSave, Level, LevelResult, Locale } from "../game/types";
 import "../vendor/goban/Goban.css";
 
@@ -150,7 +150,7 @@ export function AiGameScreen({
         const h = goban.engine.height;
         const prevBlack = countColor(board, 1);
 
-        // Choose the AI's move: MiMo first, local greedy fallback, then any legal point.
+        // Choose the AI's move: DeepSeek first, local greedy fallback, then any legal point.
         const candidates: Array<{ x: number; y: number }> = [];
         let aiPasses = false;
 
@@ -239,7 +239,7 @@ export function AiGameScreen({
             st.consecutivePasses++;
         }
 
-        // Surface MiMo's talk only when its decision was actually honored
+        // Surface DeepSeek's talk only when its decision was actually honored
         // (its move was placed, or it chose to pass); a fallback move shows none.
         if (mimoPassed) {
             setAiTalk(mimoTalk);
@@ -381,8 +381,8 @@ export function AiGameScreen({
                 title={t}
                 subtitle={
                     locale === "zh"
-                        ? `MiMo AI 对战 · ${ai.width}×${ai.height}`
-                        : `MiMo AI Duel · ${ai.width}×${ai.height}`
+                        ? `DeepSeek AI 对战 · ${ai.width}×${ai.height}`
+                        : `DeepSeek AI Duel · ${ai.width}×${ai.height}`
                 }
                 totalStars={stars}
                 totalPoints={points}
@@ -417,7 +417,7 @@ export function AiGameScreen({
             {thinking && (
                 <div className="ai-thinking">
                     <span className="ai-thinking-dot" />
-                    {locale === "zh" ? "MiMo AI 思考中…" : "MiMo AI is thinking…"}
+                    {locale === "zh" ? "DeepSeek AI 思考中…" : "DeepSeek AI is thinking…"}
                 </div>
             )}
 

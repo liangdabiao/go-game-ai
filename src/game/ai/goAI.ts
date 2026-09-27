@@ -3,7 +3,7 @@
  *
  * Pure functions on plain 2D arrays (0=empty, 1=black, 2=white) so we can
  * evaluate candidate moves WITHOUT mutating the live goban engine. Used to
- * validate MiMo's reply and to produce a sane local move when the LLM call
+ * validate DeepSeek's reply and to produce a sane local move when the LLM call
  * fails or is unreachable (e.g. before the edge function is deployed).
  */
 

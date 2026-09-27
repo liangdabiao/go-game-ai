@@ -1,5 +1,5 @@
 /**
- * Client for the MiMo-backed AI move. POSTs the current board (serialized by
+ * Client for the DeepSeek-backed AI move. POSTs the current board (serialized by
  * boardCodec) to the same-origin route `/api/ai-move` — served in dev by the
  * Vite middleware (vite.config.ts) and in production by the Edge Function
  * `functions/api/ai-move.ts`. Any failure (no key configured, network, bad
@@ -41,7 +41,7 @@ export async function requestAiMove(req: AiMoveRequest): Promise<AiMoveResult | 
             body: JSON.stringify(req),
         });
         if (!res.ok) {
-            console.warn(`[ai-move] HTTP ${res.status} — MiMo AI 不可用，降级为本地 AI`);
+            console.warn(`[ai-move] HTTP ${res.status} — DeepSeek AI 不可用，降级为本地 AI`);
             return null;
         }
         const data = (await res.json()) as {
@@ -51,7 +51,7 @@ export async function requestAiMove(req: AiMoveRequest): Promise<AiMoveResult | 
             comment?: unknown;
         };
         if (typeof data.move !== "string" || data.move.length === 0) {
-            console.warn("[ai-move] MiMo 返回了空走子 — 降级为本地 AI");
+            console.warn("[ai-move] DeepSeek 返回了空走子 — 降级为本地 AI");
             return null;
         }
         const result: AiMoveResult = { move: data.move };

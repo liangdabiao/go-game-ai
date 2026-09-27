@@ -130,6 +130,14 @@ body {
     border-left-color: #e74c3c;
 }
 
+.error-boundary-title {
+    margin: 2rem 0 0;
+    text-align: center;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #f5c451;
+}
+
 .go-game-board {
     width: min(80vw, 560px);
     height: min(80vw, 560px);

@@ -10,21 +10,21 @@ import { onRequest } from "./functions/api/ai-move";
  * greedy AI. This middleware runs the SAME onRequest logic locally (Node 18+
  * provides global fetch/Request/Response), so the MiMo LLM decides the AI's
  * move during development. API key comes from `.env.local` / `.env`
- * (XIAOMI_API_KEY).
+ * (DEEPSEEK_API_KEY).
  */
 function aiMoveDevPlugin(): Plugin {
     return {
         name: "ai-move-dev-middleware",
         configureServer(server: ViteDevServer) {
             const env = loadEnv(server.config.mode, server.config.envDir ?? process.cwd(), "");
-            if (!env.XIAOMI_API_KEY) {
+            if (!env.DEEPSEEK_API_KEY) {
                 server.config.logger.warn(
-                    "[ai-move] XIAOMI_API_KEY 未设置（请复制 .env.example 为 .env.local 并填入）。" +
+                    "[ai-move] DEEPSEEK_API_KEY 未设置（请复制 .env.example 为 .env.local 并填入）。" +
                         " /api/ai-move 将返回 503，AI 走子降级为本地贪心 AI。",
                 );
             } else {
                 server.config.logger.info(
-                    `[ai-move] MiMo AI 已启用（key 来自 ${server.config.mode} 环境，model=${env.XIAOMI_MODEL ?? "default"}）`,
+                    `[ai-move] DeepSeek AI 已启用（key 来自 ${server.config.mode} 环境，model=${env.DEEPSEEK_MODEL ?? "default"}）`,
                 );
             }
 

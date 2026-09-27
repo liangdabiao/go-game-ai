@@ -54,9 +54,9 @@ async function onRequest({ request, env }) {
         return json({ error: "method not allowed" }, 405);
     }
 
-    const apiKey = env.XIAOMI_API_KEY ?? "";
+    const apiKey = env.DEEPSEEK_API_KEY ?? "";
     if (!apiKey) {
-        return json({ error: "server not configured (missing XIAOMI_API_KEY)" }, 503);
+        return json({ error: "server not configured (missing DEEPSEEK_API_KEY)" }, 503);
     }
 
     let body;
@@ -112,8 +112,8 @@ async function onRequest({ request, env }) {
         .filter(Boolean)
         .join("\n");
 
-    const baseUrl = env.XIAOMI_BASE_URL ?? "https://api.xiaomimimo.com/v1";
-    const model = env.XIAOMI_MODEL ?? "mimo-v2.5-pro";
+    const baseUrl = env.DEEPSEEK_BASE_URL ?? "https://api.deepseek.com";
+    const model = env.DEEPSEEK_MODEL ?? "deepseek-flash";
 
     let reply = null;
     try {

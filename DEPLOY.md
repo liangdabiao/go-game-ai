@@ -21,7 +21,7 @@
 
 **关键事实**：
 - 没有使用 history 路由，所有 URL 都落在 `/`，**不需要任何 SPA fallback 重写规则**。
-- 主体是纯静态前端；唯一可选的服务端能力是 **BOSS 关 AI**：`functions/api/ai-move.ts`（Edge Function，调用小米 MiMo 大模型决定 AI 落子），依赖环境变量 `XIAOMI_API_KEY`。
+- 主体是纯静态前端；唯一可选的服务端能力是 **BOSS 关 AI**：`functions/api/ai-move.ts`（Edge Function，调用 DeepSeek 大模型决定 AI 落子），依赖环境变量 `DEEPSEEK_API_KEY`。
 - **该 Edge Function 是可选增强**：不部署时，前端自动降级为本地贪心 AI（`src/game/ai/goAI.ts`），关卡照常可玩，只是 AI 较弱。
 - 构建产物（`dist/`）本身可直接丢到任意静态文件服务器；若要完整 AI 体验，再单独部署 Functions 目录。
 
@@ -29,9 +29,9 @@
 
 | 变量 | 必填 | 说明 |
 | --- | --- | --- |
-| `XIAOMI_API_KEY` | ✅ | 小米 MiMo 开放平台的 API Key；缺失时函数返回 503，前端降级为本地贪心 AI |
-| `XIAOMI_BASE_URL` | 否 | MiMo 兼容接口地址，默认 `https://api.xiaomimimo.com/v1` |
-| `XIAOMI_MODEL` | 否 | 模型名，默认 `mimo-v2.5-pro` |
+| `DEEPSEEK_API_KEY` | ✅ | DeepSeek 开放平台的 API Key；缺失时函数返回 503，前端降级为本地贪心 AI |
+| `DEEPSEEK_BASE_URL` | 否 | DeepSeek 兼容接口地址，默认 `https://api.deepseek.com` |
+| `DEEPSEEK_MODEL` | 否 | 模型名，默认 `deepseek-flash` |
 
 同一份变量两处使用：**本地开发**放 `.env.local`（`vite.config.ts` 的 dev 中间件读取）；**线上部署（EdgeOne）**把 `cp .env.local .env` 后重新部署即可——CLI 打包器构建时从 `.env` 烘焙进函数产物（见第四节路径 B 第 3 步）。注意 `.env` / `.env.local` **绝不能提交进 Git**（见第四节方式 B 的 `.gitignore`）。
 
@@ -151,7 +151,7 @@ Source map 文件默认不会被浏览器加载（只有打开 devtools 才请�
    git push -u origin main
    ```
 
-   注意：`.gitignore` 应包含（**务必包含 `.env` 系列，防止把 `XIAOMI_API_KEY` 提交进仓库**）：
+   注意：`.gitignore` 应包含（**务必包含 `.env` 系列，防止把 `DEEPSEEK_API_KEY` 提交进仓库**）：
    ```
    node_modules
    dist
@@ -227,15 +227,15 @@ Source map 文件默认不会被浏览器加载（只有打开 devtools 才请�
 
 ### 部署 BOSS 关 AI（可选，Edge Function）
 
-`functions/api/ai-move.ts` 是一个 Edge Function：前端 POST 棋盘序列化数据，服务端调用小米 MiMo 大模型，返回 `{ move, react, review, comment }`（落子点 + 表情 + 对玩家落子的点评 + AI 落子理由）。**不部署它不影响游戏运行**——前端自动降级为本地贪心 AI（`src/game/ai/goAI.ts`），只是 AI 较弱、没有毒舌点评。
+`functions/api/ai-move.ts` 是一个 Edge Function：前端 POST 棋盘序列化数据，服务端调用 DeepSeek 大模型，返回 `{ move, react, review, comment }`（落子点 + 表情 + 对玩家落子的点评 + AI 落子理由）。**不部署它不影响游戏运行**——前端自动降级为本地贪心 AI（`src/game/ai/goAI.ts`），只是 AI 较弱、没有毒舌点评。
 
 **同源约束**：前端用同源 `fetch` 调 `/api/ai-move`，所以函数**必须和站点部署在同一个域名下**，不能把函数放在另一个平台。
 
 **本地 vs 生产**：
-- 本地开发：`vite.config.ts` 内置 `/api/ai-move` 的 dev 中间件，复用同一个 `onRequest` 逻辑，从 `.env.local` 读密钥。`cp .env.example .env.local` 填好 key 后 `npm run dev` 即有完整 MiMo。**该中间件只活在 dev server，部署时不包含。**
+- 本地开发：`vite.config.ts` 内置 `/api/ai-move` 的 dev 中间件，复用同一个 `onRequest` 逻辑，从 `.env.local` 读密钥。`cp .env.example .env.local` 填好 key 后 `npm run dev` 即有完整 DeepSeek。**该中间件只活在 dev server，部署时不包含。**
 - 生产：函数由平台的 Functions 运行时托管。
 
-**平台差异（重要，务必核对）**：当前函数按 **Cloudflare Pages Functions 约定**编写（`functions/` 目录、named export `onRequest({ request, env })`、`env.XIAOMI_API_KEY`）。
+**平台差异（重要，务必核对）**：当前函数按 **Cloudflare Pages Functions 约定**编写（`functions/` 目录、named export `onRequest({ request, env })`、`env.DEEPSEEK_API_KEY`）。
 
 | 平台 | 目录 | 导出 / 环境变量 | 当前文件是否开箱即用 |
 | --- | --- | --- | --- |
@@ -250,15 +250,15 @@ Source map 文件默认不会被浏览器加载（只有打开 devtools 才请�
    wrangler pages deploy dist --project-name=go-game
    ```
    （Wrangler 会从项目根自动识别 `functions/` 目录；`functions/` 在仓库根，不在 `dist/` 里）
-2. 控制台 **Settings → Environment variables** 添加 `XIAOMI_API_KEY`（及可选的 `XIAOMI_BASE_URL` / `XIAOMI_MODEL`）。
+2. 控制台 **Settings → Environment variables** 添加 `DEEPSEEK_API_KEY`（及可选的 `DEEPSEEK_BASE_URL` / `DEEPSEEK_MODEL`）。
 3. 重新部署后 `/api/ai-move` 自动可用。
 
 **推荐路径 B：EdgeOne Pages —— 国内速度快，AI 函数需适配（已验证可用）**
 1. 静态站按方式 A/B/C 部署即可（只传 `dist/`），BOSS AI 未启用时走本地贪心兜底，可玩。
 2. 若要启用 AI 函数：按 [EdgeOne 边缘函数文档](https://edgeone.ai/zh/document/162227908259442688) 适配 `functions/api/ai-move.ts`——目录名、导出方式（default export）与环境变量读取（全局作用域）可能与 Cloudflare 不同，需要相应修改。本项目已在仓库根放好适配版 `edge-functions/api/ai-move.js`，路由到 `/api/ai-move`。
-3. **环境变量（关键）**：EdgeOne CLI 的 `edgeone makers env set` 实测不可靠（静默无操作）。**正确做法是把密钥写进仓库根的 `.env` 文件**——CLI 的 edge-functions 打包器在构建时读取 `.env`（不存在才回退 `.env.local`），用 esbuild `define` 把 `env.XIAOMI_*` 直接烘焙进函数产物。因此：
+3. **环境变量（关键）**：EdgeOne CLI 的 `edgeone makers env set` 实测不可靠（静默无操作）。**正确做法是把密钥写进仓库根的 `.env` 文件**——CLI 的 edge-functions 打包器在构建时读取 `.env`（不存在才回退 `.env.local`），用 esbuild `define` 把 `env.DEEPSEEK_*` 直接烘焙进函数产物。因此：
    ```bash
-   cp .env.local .env   # 或手动写入 XIAOMI_API_KEY / XIAOMI_BASE_URL / XIAOMI_MODEL
+   cp .env.local .env   # 或手动写入 DEEPSEEK_API_KEY / DEEPSEEK_BASE_URL / DEEPSEEK_MODEL
    PAGES_SOURCE=skills edgeone makers deploy -n go-game --json
    ```
    注意 `.env` 已被 `.gitignore` 覆盖，不会提交进仓库。
