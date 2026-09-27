@@ -11,8 +11,7 @@
 
 ## 在线试玩
 
-- EdgeOne Pages：<https://go-game.edgeone.app>
-- Cloudflare Pages：<https://go-game.pages.dev>
+- EdgeOne Pages：<https://go-game.liangdabiao.com/> 
 
 （若地址尚未配置，请参考 [DEPLOY.md](./DEPLOY.md) 自行部署）
 
