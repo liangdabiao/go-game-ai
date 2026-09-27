@@ -13,6 +13,11 @@ export function LevelTile({ level, progress, locale, justUnlocked, onSelect }: L
     const status = progress?.status ?? "locked";
     const stars = progress?.bestStars ?? 0;
     const isNew = justUnlocked && status === "unlocked";
+    // AI 对战关用棋盘尺寸做标签（如 "7×7"），其余关卡显示全局序号
+    const label =
+        level.kind === "aiGame" && level.aiGame
+            ? `${level.aiGame.width}×${level.aiGame.height}`
+            : String(level.order);
 
     return (
         <button
@@ -25,7 +30,7 @@ export function LevelTile({ level, progress, locale, justUnlocked, onSelect }: L
                 {status === "locked" ? (
                     <span className="level-tile-lock">🔒</span>
                 ) : (
-                    <span className="level-tile-no">{level.order}</span>
+                    <span className="level-tile-no">{label}</span>
                 )}
             </div>
             <StarRow count={stars} size="sm" />

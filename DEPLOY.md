@@ -11,9 +11,9 @@
 | 项目 | 值 |
 | --- | --- |
 | 名称 | 围棋闯关（go-game） |
-| 类型 | 单页应用（SPA），纯静态，无后端 |
+| 类型 | 单页应用（SPA）+ 可选边缘函数（BOSS AI，`functions/api/ai-move.ts`） |
 | 技术栈 | React 19 + TypeScript 5.9 + Vite 7 |
-| 关卡规模 | 3563 关 / 7 章（青铜 → 王者） |
+| 关卡规模 | 3564 关 / 8 章（青铜 → 王者 → 终极 BOSS） |
 | 棋盘引擎 | goban（vendored in `src/vendor/goban/`） |
 | 持久化 | localStorage（进度、语言、音效、BGM） |
 | 路由方式 | 内存 view 状态机 + `location.hash`（`#level=...`） |
@@ -21,8 +21,19 @@
 
 **关键事实**：
 - 没有使用 history 路由，所有 URL 都落在 `/`，**不需要任何 SPA fallback 重写规则**。
-- 没有服务端接口、没有环境变量、没有鉴权。
-- 构建产物可直接丢到任意静态文件服务器。
+- 主体是纯静态前端；唯一可选的服务端能力是 **BOSS 关 AI**：`functions/api/ai-move.ts`（Edge Function，调用小米 MiMo 大模型决定 AI 落子），依赖环境变量 `XIAOMI_API_KEY`。
+- **该 Edge Function 是可选增强**：不部署时，前端自动降级为本地贪心 AI（`src/game/ai/goAI.ts`），关卡照常可玩，只是 AI 较弱。
+- 构建产物（`dist/`）本身可直接丢到任意静态文件服务器；若要完整 AI 体验，再单独部署 Functions 目录。
+
+### 环境变量一览（仅部署 BOSS AI 时需要）
+
+| 变量 | 必填 | 说明 |
+| --- | --- | --- |
+| `XIAOMI_API_KEY` | ✅ | 小米 MiMo 开放平台的 API Key；缺失时函数返回 503，前端降级为本地贪心 AI |
+| `XIAOMI_BASE_URL` | 否 | MiMo 兼容接口地址，默认 `https://api.xiaomimimo.com/v1` |
+| `XIAOMI_MODEL` | 否 | 模型名，默认 `mimo-v2.5-pro` |
+
+同一份变量两处使用：**本地开发**放 `.env.local`（`vite.config.ts` 的 dev 中间件读取）；**线上部署（EdgeOne）**把 `cp .env.local .env` 后重新部署即可——CLI 打包器构建时从 `.env` 烘焙进函数产物（见第四节路径 B 第 3 步）。注意 `.env` / `.env.local` **绝不能提交进 Git**（见第四节方式 B 的 `.gitignore`）。
 
 ---
 
@@ -140,13 +151,17 @@ Source map 文件默认不会被浏览器加载（只有打开 devtools 才请�
    git push -u origin main
    ```
 
-   注意：`.gitignore` 应包含：
+   注意：`.gitignore` 应包含（**务必包含 `.env` 系列，防止把 `XIAOMI_API_KEY` 提交进仓库**）：
    ```
    node_modules
    dist
    .playwright-mcp
    *.log
+   .env
+   .env.local
+   .env.*.local
    ```
+   （`.env.example` 只含变量名不含密钥，可以正常提交。）
 
 2. 登录 [EdgeOne 控制台](https://console.tencentcloud.com/edgeone/makers)。
 
@@ -210,6 +225,49 @@ Source map 文件默认不会被浏览器加载（只有打开 devtools 才请�
 
 ---
 
+### 部署 BOSS 关 AI（可选，Edge Function）
+
+`functions/api/ai-move.ts` 是一个 Edge Function：前端 POST 棋盘序列化数据，服务端调用小米 MiMo 大模型，返回 `{ move, react, review, comment }`（落子点 + 表情 + 对玩家落子的点评 + AI 落子理由）。**不部署它不影响游戏运行**——前端自动降级为本地贪心 AI（`src/game/ai/goAI.ts`），只是 AI 较弱、没有毒舌点评。
+
+**同源约束**：前端用同源 `fetch` 调 `/api/ai-move`，所以函数**必须和站点部署在同一个域名下**，不能把函数放在另一个平台。
+
+**本地 vs 生产**：
+- 本地开发：`vite.config.ts` 内置 `/api/ai-move` 的 dev 中间件，复用同一个 `onRequest` 逻辑，从 `.env.local` 读密钥。`cp .env.example .env.local` 填好 key 后 `npm run dev` 即有完整 MiMo。**该中间件只活在 dev server，部署时不包含。**
+- 生产：函数由平台的 Functions 运行时托管。
+
+**平台差异（重要，务必核对）**：当前函数按 **Cloudflare Pages Functions 约定**编写（`functions/` 目录、named export `onRequest({ request, env })`、`env.XIAOMI_API_KEY`）。
+
+| 平台 | 目录 | 导出 / 环境变量 | 当前文件是否开箱即用 |
+| --- | --- | --- | --- |
+| Cloudflare Pages | `functions/` | named `onRequest` + `context.env` | ✅ 是 |
+| EdgeOne Pages / Makers | 按官方文档（`edge-functions/` 等） | 以 default export、全局环境变量为主 | ⚠️ 需适配 |
+
+**推荐路径 A：Cloudflare Pages —— 开箱即用，完整 AI 体验**
+站点 + `functions/` 一起部署，函数自动路由到 `/api/ai-move`：
+1. Git 直连（见第五节方式 A）或 Wrangler 直传：
+   ```bash
+   npm run build
+   wrangler pages deploy dist --project-name=go-game
+   ```
+   （Wrangler 会从项目根自动识别 `functions/` 目录；`functions/` 在仓库根，不在 `dist/` 里）
+2. 控制台 **Settings → Environment variables** 添加 `XIAOMI_API_KEY`（及可选的 `XIAOMI_BASE_URL` / `XIAOMI_MODEL`）。
+3. 重新部署后 `/api/ai-move` 自动可用。
+
+**推荐路径 B：EdgeOne Pages —— 国内速度快，AI 函数需适配（已验证可用）**
+1. 静态站按方式 A/B/C 部署即可（只传 `dist/`），BOSS AI 未启用时走本地贪心兜底，可玩。
+2. 若要启用 AI 函数：按 [EdgeOne 边缘函数文档](https://edgeone.ai/zh/document/162227908259442688) 适配 `functions/api/ai-move.ts`——目录名、导出方式（default export）与环境变量读取（全局作用域）可能与 Cloudflare 不同，需要相应修改。本项目已在仓库根放好适配版 `edge-functions/api/ai-move.js`，路由到 `/api/ai-move`。
+3. **环境变量（关键）**：EdgeOne CLI 的 `edgeone makers env set` 实测不可靠（静默无操作）。**正确做法是把密钥写进仓库根的 `.env` 文件**——CLI 的 edge-functions 打包器在构建时读取 `.env`（不存在才回退 `.env.local`），用 esbuild `define` 把 `env.XIAOMI_*` 直接烘焙进函数产物。因此：
+   ```bash
+   cp .env.local .env   # 或手动写入 XIAOMI_API_KEY / XIAOMI_BASE_URL / XIAOMI_MODEL
+   PAGES_SOURCE=skills edgeone makers deploy -n go-game --json
+   ```
+   注意 `.env` 已被 `.gitignore` 覆盖，不会提交进仓库。
+4. 重新部署后 `/api/ai-move` 即可用。
+
+**验证函数是否生效**：进入 BOSS 关落一子，看棋盘上方是否出现「AI 表情 + 点评 + 落子理由」；若只有棋子没有点评，说明 `/api/ai-move` 未生效（走兜底）。
+
+---
+
 ### 绑定自定义域名（可选）
 
 1. 在 EdgeOne 控制台 → 项目设置 → **自定义域名** → 添加域名，例如 `game.yourdomain.com`。
@@ -263,7 +321,7 @@ wrangler pages deploy dist --project-name=go-game
 部署成功后，在浏览器打开线上地址，按顺序确认：
 
 - [ ] 页面正常加载，标题为"围棋闯关"，favicon 显示
-- [ ] 世界地图显示 7 个章节卡片，"青铜"可点击，其余锁定
+- [ ] 世界地图显示 8 个章节卡片（含「王者荣耀」），全部可从世界地图进入
 - [ ] 进入"青铜" → 第 1 关 → 棋盘 canvas 正常渲染
 - [ ] 下一手棋（或正确答案），出现绿色 `+xxx` 浮字，约 1 秒后自动跳到下一关
 - [ ] 点齿轮 → 切换 English/中文，UI 即时切换
@@ -273,6 +331,10 @@ wrangler pages deploy dist --project-name=go-game
 - [ ] 刷新页面后停留在世界地图（按设计要求）
 - [ ] 在手机浏览器打开，布局自适应、可点落子
 - [ ] 断网状态下仍能继续玩（静态资源已缓存，关卡数据在 JS 里）
+- [ ] 进入「王者荣耀」→ 第一关（7×7）初始即解锁，通关后解锁下一关（9×9→13×13→19×19），互不依赖前 7 章
+- [ ] 进入 BOSS 关，黑棋落子后 AI（白）回击
+- [ ] 棋盘上方出现「AI 表情 + 点评你的落子 + 落子理由」（毒舌风格）
+- [ ] （若已部署 AI 函数）落子响应快、AI 棋形明显更像真人；未部署则本地贪心 AI 兜底可玩
 
 ---
 
@@ -283,7 +345,7 @@ wrangler pages deploy dist --project-name=go-game
    若需优化，按章做 code-split：`const chapter = await import('./chapters/bronze.ts')`，主包可降到 ~400 KB。
    当前阶段不阻塞上线。
 
-2. **localStorage 配额**：单个游戏存档约 100～300 KB（3563 关状态）。
+2. **localStorage 配额**：单个游戏存档约 100～300 KB（3564 关状态）。
    主流浏览器 5 MB 配额绰绰有余，但 Safari 私密模式下 localStorage 可能被禁用。
    代码中所有 localStorage 写入都包了 try/catch，禁用时游戏仍可玩，只是进度不保存。
 
@@ -304,10 +366,13 @@ wrangler pages deploy dist --project-name=go-game
 
 ## 八、推荐执行路径
 
-1. **现在**：用 EdgeOne CLI（方式 A）首次部署，10 分钟内拿到线上地址。
+1. **现在**：用 EdgeOne CLI（方式 A）首次部署，10 分钟内拿到线上地址（BOSS AI 未启用时走兜底，仍可玩）。
 2. **验证**：用手机和桌面浏览器各过一遍自检清单。
-3. **稳定后**：把 `go-game/` 推到 GitHub，切换到 Git 直连（方式 B），获得自动部署能力。
-4. **可选**：绑定自定义域名（如 `weiqi.yourdomain.com`）。
+3. **完整 AI 体验**（二选一）：
+   - 想省事：全站迁 **Cloudflare Pages**（站点 + `functions/` + 环境变量一体，函数开箱即用，见第四节路径 A）。
+   - 想留在 EdgeOne：按第四节「部署 BOSS 关 AI」路径 B 适配 `edge-functions/` 后启用函数。
+4. **稳定后**：把 `go-game/` 推到 GitHub，切换到 Git 直连（方式 B），获得自动部署能力。
+5. **可选**：绑定自定义域名（如 `weiqi.yourdomain.com`）。
 
 ---
 

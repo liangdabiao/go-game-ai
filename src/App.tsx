@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { LevelScreen } from "./screens/LevelScreen";
 import { MultipleChoiceScreen } from "./screens/MultipleChoiceScreen";
 import { EndingGameScreen } from "./screens/EndingGameScreen";
+import { AiGameScreen } from "./screens/AiGameScreen";
 import { WorldMapScreen } from "./screens/WorldMapScreen";
 import { ChapterScreen } from "./screens/ChapterScreen";
 import { SettingsDialog } from "./components/SettingsDialog";
@@ -84,6 +85,16 @@ export function App(): React.ReactElement {
                 if (level.kind === "endingGame") {
                     return (
                         <EndingGameScreen
+                            level={level}
+                            locale={locale}
+                            onBack={back}
+                            onAdvance={goLevel}
+                        />
+                    );
+                }
+                if (level.kind === "aiGame") {
+                    return (
+                        <AiGameScreen
                             level={level}
                             locale={locale}
                             onBack={back}

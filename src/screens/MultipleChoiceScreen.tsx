@@ -56,7 +56,7 @@ export function MultipleChoiceScreen({
                 },
             };
         }
-        return { ...level, puzzle: { ...level.puzzle, correct: [], wrong: [] } };
+        return { ...level, puzzle: { ...level.puzzle!, correct: [], wrong: [] } };
     }, [level, mc]);
 
     const submit = useCallback(

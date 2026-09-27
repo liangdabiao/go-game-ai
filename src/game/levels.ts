@@ -6,6 +6,7 @@ import { CHAPTER as BEGINNER_1_CHAPTER, LEVELS as BEGINNER_1_LEVELS } from "./ch
 import { CHAPTER as BEGINNER_2_CHAPTER, LEVELS as BEGINNER_2_LEVELS } from "./chapters/beginner-level2";
 import { CHAPTER as BEGINNER_3_CHAPTER, LEVELS as BEGINNER_3_LEVELS } from "./chapters/beginner-level3";
 import { CHAPTER as BEGINNER_4_CHAPTER, LEVELS as BEGINNER_4_LEVELS } from "./chapters/beginner-level4";
+import { CHAPTER as BOSS_CHAPTER, LEVELS as BOSS_LEVELS } from "./chapters/boss";
 
 /**
  * Chapter + level registry. Levels are auto-generated from LearningHub source
@@ -21,6 +22,7 @@ export const CHAPTERS: Chapter[] = [
     BEGINNER_2_CHAPTER,
     BEGINNER_3_CHAPTER,
     BEGINNER_4_CHAPTER,
+    BOSS_CHAPTER,
 ];
 
 export const LEVELS: Level[] = [
@@ -31,6 +33,7 @@ export const LEVELS: Level[] = [
     ...BEGINNER_2_LEVELS,
     ...BEGINNER_3_LEVELS,
     ...BEGINNER_4_LEVELS,
+    ...BOSS_LEVELS,
 ];
 
 export function getLevel(id: string): Level | undefined {

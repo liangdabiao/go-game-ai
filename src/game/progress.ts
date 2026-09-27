@@ -6,9 +6,13 @@ const SAVE_VERSION = 1;
 
 function freshProgress(): Record<string, LevelProgress> {
     const p: Record<string, LevelProgress> = {};
+    const chapterSeen = new Set<string>();
     for (const level of LEVELS) {
+        const firstOfChapter = !chapterSeen.has(level.chapterId);
+        chapterSeen.add(level.chapterId);
         p[level.id] = {
-            status: level.order === 1 ? "unlocked" : "locked",
+            // 每章第 1 关初始即解锁，章内逐关解锁，互不关联
+            status: firstOfChapter ? "unlocked" : "locked",
             bestStars: 0,
             bestPoints: 0,
             attempts: 0,
@@ -31,10 +35,11 @@ function isValidSave(save: unknown): save is GameSave {
     const s = save as GameSave;
     if (s.version !== SAVE_VERSION) return false;
     if (typeof s.currentLevelId !== "string") return false;
-    if (!s.progress) return false;
+    if (!s.progress || typeof s.progress !== "object") return false;
     for (const level of LEVELS) {
         const p = s.progress[level.id];
-        if (!p || typeof p.bestStars !== "number") return false;
+        if (!p) continue; // 新增关卡允许缺失，由 loadSave 补齐
+        if (typeof p !== "object" || typeof p.bestStars !== "number") return false;
     }
     return true;
 }
@@ -45,18 +50,28 @@ export function loadSave(): GameSave {
         if (!raw) return freshSave();
         const parsed = JSON.parse(raw);
         if (!isValidSave(parsed)) return freshSave();
-        // 补齐新增关卡（升级时使用）
-        for (const level of LEVELS) {
-            if (!parsed.progress[level.id]) {
+        // 补齐新增关卡（升级时使用）：缺失关卡默认锁定，
+        // 若是章节首关（LEVELS 中该章第一项）或前序关卡已通关则解锁。
+        const chapterSeen = new Set<string>();
+        for (let i = 0; i < LEVELS.length; i++) {
+            const level = LEVELS[i];
+            const firstOfChapter = !chapterSeen.has(level.chapterId);
+            chapterSeen.add(level.chapterId);
+            const cur = parsed.progress[level.id];
+            if (!cur) {
+                const prev = i > 0 ? parsed.progress[LEVELS[i - 1].id] : null;
                 parsed.progress[level.id] = {
-                    status: level.order === 1 ? "unlocked" : "locked",
+                    status:
+                        prev?.status === "completed" || firstOfChapter
+                            ? "unlocked"
+                            : "locked",
                     bestStars: 0,
                     bestPoints: 0,
                     attempts: 0,
                     bestWrongAttempts: 0,
                 };
-            } else if (typeof parsed.progress[level.id].bestPoints !== "number") {
-                parsed.progress[level.id].bestPoints = 0;
+            } else if (typeof cur.bestPoints !== "number") {
+                cur.bestPoints = 0;
             }
             // 旧存档回填：已通关但没积分记录的关卡，按最佳星数折算（100/星）
             const lv = parsed.progress[level.id];

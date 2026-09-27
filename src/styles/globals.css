@@ -898,3 +898,98 @@ body {
     color: #6bce8a;
     font-weight: 700;
 }
+
+/* ---------- AiGame (boss duel) ---------- */
+
+.ai-scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.ai-score {
+    padding: 0.35rem 0.9rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    color: #e8e8f0;
+    white-space: nowrap;
+}
+
+.ai-vs {
+    color: #f5c451;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+}
+
+.ai-thinking {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #f5c451;
+    font-size: 0.9rem;
+    min-height: 1.6rem;
+    animation: ai-pulse 1.2s ease-in-out infinite;
+}
+
+.ai-thinking-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: #f5c451;
+    animation: ai-blink 1.2s ease-in-out infinite;
+}
+
+@keyframes ai-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+}
+
+@keyframes ai-blink {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(0.5); opacity: 0.4; }
+}
+
+.ai-talk {
+    align-self: center;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    width: min(80vw, 560px);
+    padding: 0.45rem 0.8rem;
+    background: rgba(245, 196, 81, 0.08);
+    border: 1px solid rgba(245, 196, 81, 0.25);
+    border-radius: 10px;
+    box-sizing: border-box;
+    animation: fade-in 0.25s ease-out;
+}
+
+.ai-talk-emoji {
+    font-size: 1.35rem;
+    line-height: 1;
+    flex: none;
+}
+
+.ai-talk-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+}
+
+.ai-talk-review {
+    color: #ffd470;
+    font-weight: 600;
+}
+
+.ai-talk-comment {
+    color: #b9bed1;
+}

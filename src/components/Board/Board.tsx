@@ -42,7 +42,7 @@ export function Board({
     useEffect(() => {
         if (!containerRef.current || displayWidth === 0) return;
 
-        const { width, height, initial_state, marks, initial_player } = level.puzzle;
+        const { width, height, initial_state, marks, initial_player } = level.puzzle!;
         const config: GobanRendererConfig = {
             board_div: containerRef.current,
             width,
@@ -52,7 +52,7 @@ export function Board({
             initial_player: initial_player ?? "black",
             initial_state,
             marks: buildMarks(marks),
-            move_tree: buildMoveTree(level.puzzle),
+            move_tree: buildMoveTree(level.puzzle!),
             display_width: displayWidth,
             square_size: "auto",
             puzzle_player_move_mode: "free",

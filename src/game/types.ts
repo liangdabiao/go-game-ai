@@ -72,6 +72,22 @@ export interface LevelEndingGame {
     targetRemoval?: string;
 }
 
+export interface LevelAiGame {
+    /** 棋盘尺寸（建议 9×9） */
+    width: number;
+    height: number;
+    /** 玩家执子颜色 */
+    playerColor: "black" | "white";
+    /** AI 执子颜色 */
+    aiColor: "black" | "white";
+    /** 提子目标数：先提掉 targetCaptures 颗即获胜 */
+    targetCaptures: number;
+    /** 步数上限：双方合计走到该数仍未达目标，判负 */
+    maxMoves: number;
+    /** 贴目补偿，通常取 0（提子制不贴目） */
+    komi?: number;
+}
+
 export interface Chapter {
     id: string;
     title: LocalizedText;
@@ -86,14 +102,16 @@ export interface Level {
     title: LocalizedText;
     /** puzzle 类型的题面（兼容旧字段） */
     instruction: LocalizedText;
-    /** "puzzle" 缺省——在棋盘上落子；"multipleChoice" 走多选题；"endingGame" 走终局教学 */
-    kind?: "puzzle" | "multipleChoice" | "endingGame";
+    /** "puzzle" 缺省——在棋盘上落子；"multipleChoice" 走多选题；"endingGame" 走终局教学；"aiGame" 与 AI 对战 */
+    kind?: "puzzle" | "multipleChoice" | "endingGame" | "aiGame";
     /** 当 kind === "puzzle" 时有效 */
-    puzzle: LevelPuzzle;
+    puzzle?: LevelPuzzle;
     /** 当 kind === "multipleChoice" 时有效 */
     multipleChoice?: LevelMultipleChoice;
     /** 当 kind === "endingGame" 时有效 */
     endingGame?: LevelEndingGame;
+    /** 当 kind === "aiGame" 时有效 */
+    aiGame?: LevelAiGame;
 }
 
 export type LevelStatus = "locked" | "unlocked" | "completed";
